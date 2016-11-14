@@ -1,9 +1,13 @@
-def func(ff):
-    try:
-        ff=int(ff)
-        return isinstance(ff,int)
-    except ValueError:
-        return False
+import re
+import os
+import sys
 
-ss="-242.99999999999997"
-print(func(ss))
+import re
+content='Where are you from? You look so hansome.'
+regex=re.compile(r'\w*so4m\w*')
+m=regex.search(content)
+if m:
+    print(m.group(0))
+else:
+    print("Not found")
+

@@ -20,7 +20,9 @@ def compute(m,x,y):
 
 tt="1 - 2 * ( (60-30 +(-40.5/5*6*5+35) * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (-4*3)/ (16-3*2) )"
 ###获取括号最里面的公式
+
 t1=re.search(r'\([^()]+\)',tt).group()
+ss=t1
 print("##获取括号最里面的公式T1:",t1)
 # print(re.search(r'[\d]+[\*|\/][\d]+',t1).group())
 # print(re.search(r'\d+',t1).group())
@@ -43,7 +45,7 @@ def rege(content):
         return False
 ##判断是不是有加减符号
 def rege2(content):
-    regex=re.compile(r'\w*\+\w*')
+    regex=re.compile(r'\w*\+|\-\w*')
     m=regex.search(content)
     if m:
         return True
@@ -107,5 +109,9 @@ def comp(t1):
         time.sleep(3)
     return t1
 
-
-print(comp(t1))
+print(func(1.5*54))
+#
+while rege(tt) and rege2(tt):
+     t1=comp(t1)
+     tt=tt.replace(str(ss),str(t1))
+print(tt)

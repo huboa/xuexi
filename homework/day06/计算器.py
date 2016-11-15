@@ -3,11 +3,16 @@ import os
 import sys
 
 import re
-content='Where are you from? You look so hansome.'
-regex=re.compile(r'\w*so4m\w*')
-m=regex.search(content)
-if m:
-    print(m.group(0))
-else:
-    print("Not found")
+def compute(m,x,y):
+    if m == "+":
+        return x + y
+    elif m == "-":
+        return x - y
+    elif m == "*":
+       return x * y
+    elif m == "/" :
+       return x / y
+    else:
+        print("运算符号错误")
 
+print(compute("+",int(2),int(1)))

@@ -2,6 +2,6 @@ import shelve
 
 
 f = shelve.open('12345')
-print(f["test"])
+print(f["day06"])
 print(f["info"])
-# print(f["func"])("test",30)
+# print(f["func"])("day06",30)

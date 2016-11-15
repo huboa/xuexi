@@ -7,7 +7,7 @@ def stu_data(name,age):
 
 name = ["a","b","c"]
 info = {"name":"zsc","age":22}
-d["test"] = name #持久化
+d["day06"] = name #持久化
 d["info"] = info
 d["func"] = stu_data("zsc",22)
 

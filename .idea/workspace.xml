@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbe33c11-3128-46c9-be6d-3c267d515d02" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day04-作业.py" afterPath="$PROJECT_DIR$/homework/day04/day04-作业.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/README" afterPath="$PROJECT_DIR$/homework/day05/atm/README" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/bin/1234" afterPath="$PROJECT_DIR$/homework/day05/atm/bin/1234" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/bin/atm_index.py" afterPath="$PROJECT_DIR$/homework/day05/atm/bin/atm_index.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/core/auth.py" afterPath="$PROJECT_DIR$/homework/day05/atm/core/auth.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/core/login.py" afterPath="$PROJECT_DIR$/homework/day05/atm/core/login.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/core/main.py" afterPath="$PROJECT_DIR$/homework/day05/atm/core/main.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/db/1234" afterPath="$PROJECT_DIR$/homework/day05/atm/db/1234" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/db/1235" afterPath="$PROJECT_DIR$/homework/day05/atm/db/1235" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/db/DBOpt.py" afterPath="$PROJECT_DIR$/homework/day05/atm/db/DBOpt.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/db/id" afterPath="$PROJECT_DIR$/homework/day05/atm/db/id" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/atm/tttest.py" afterPath="$PROJECT_DIR$/homework/day05/atm/tttest.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/shopping/shopping.py" afterPath="$PROJECT_DIR$/homework/day05/shopping/shopping.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/homework/day05-homework/shopping/test.py" afterPath="$PROJECT_DIR$/homework/day05/shopping/test.py" />
-    </list>
+    <list default="true" id="bbe33c11-3128-46c9-be6d-3c267d515d02" name="Default" comment="" />
     <ignored path="xuexi.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +43,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="191" />
-    <option name="y" value="112" />
+    <option name="x" value="366" />
+    <option name="y" value="103" />
     <option name="width" value="1400" />
     <option name="height" value="840" />
   </component>
@@ -102,20 +88,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="xuexi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xuexi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xuexi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="homework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,7 +326,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="191" y="112" width="1400" height="840" extended-state="0" />
+    <frame x="366" y="103" width="1400" height="840" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />

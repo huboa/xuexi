@@ -1,8 +1,8 @@
 import logging
 import time
 
-logging.debug("test debug")
-logging.info("test.info")
+logging.debug("day06 debug")
+logging.info("day06.info")
 logging.warning("user zsc")
 logging.error("tset error")
 logging.critical("critical")

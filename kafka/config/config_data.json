@@ -1,0 +1,9 @@
+{
+    "hostname": "mx-151", 
+    "moduleslist": [
+        {
+            "logfilepath": "/home/mtime/logs/mx.payment.admin.web/soa.log", 
+            "modulename": "mx.payment.admin.web"
+        }
+    ]
+}

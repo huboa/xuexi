@@ -4,7 +4,7 @@
 # for n in LL:
 #     print(n)
 
-###字典的
+###字典diedaik可以迭代key value both
 d = {'a': 1, 'b': 2, 'c': 3}
 
 for key in d:
@@ -16,7 +16,7 @@ for v in d.values():
 for k,v in d.items():
     print(k,v)
 
-
+###循环下标
 ll=['A', 'B', 'C']
 for i, value in enumerate(ll):
      print(i,value)

@@ -31,6 +31,7 @@ print(s1)
 s2=set([2,4,6])
 print(s1 & s2)
 print(s1|s2)
+
 ####不可变对象
 ##sort
 a = ['c', 'b', 'a']

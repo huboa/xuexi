@@ -23,6 +23,6 @@ for k,v in d.items():
     print(k,'=',v)
 print([k +'=' + v for k, v in d.items()])
 
-##列表变更成小写
+##列表变更成小写判断是不是字符串
 L = ['Hello', 'World', 'IBM', 'Apple','15',44]
 print([s.lower() for s in L if  isinstance(s,str)])

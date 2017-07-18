@@ -7,7 +7,7 @@ class Student(object):
     def print_score(std):
         print('%s: %s' % (std.name, std.score))
 
-    def get_grade(self):
+    def get_grade(self):  #增加新方法后
         if self.score >= 90:
                 return 'A'
         elif self.score >= 60:
@@ -25,8 +25,9 @@ bart = Student('Bart Simpson', 59)
 
 # print('%s: %s' % (zsc.name,zsc.score))
 
-zsc.print_score()
+zsc.print_score()   ####类的封装 直接访问类的方法 就是数据封装
 print(zsc.get_grade())
+print(bart.get_grade())
 
 
 

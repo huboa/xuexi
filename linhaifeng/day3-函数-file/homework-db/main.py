@@ -7,16 +7,15 @@ def sql_parse(sql):  ##insert delete update select
     '''
     print("接收字符串 %s" % sql)
     parse_func={
-        'insert':insert_parse,
-        'delete':delete_parse,
-        'update':update_parse,
-        'select':select_parse,
+        'insert':print(insert_parse),
+        'delete':print(delete_parse),
+        'update':print(update_parse),
+        'select':print(select_parse),
     }
 
     sql_l=sql.split()
-    print("sql_1 == ",type(sql_l),sql_l)
+    print("切割后列表 sql_1 == ",type(sql_l),sql_l)
     func=sql_l[0]
-
     res=''
     if func in parse_func:
         res=parse_func[func](sql_l)

@@ -1,0 +1,14 @@
+本程序有增删改查功能
+表名：staff_table 
+字段：id,name,age,phone,dept,enroll_date
+example：
+select * from staff_table where id =1
+select * from staff_table where name like xiao
+delete from staff_table where id=5
+insert into staff_table values xiaomeinv,23,18002888111,运维,2017-7-1
+update staff_table set name="balabal",age="23" where id>30
+
+
+
+博客链接：
+http://www.cnblogs.com/jnbb/p/7216911.html

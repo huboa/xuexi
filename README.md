@@ -1,5 +1,4 @@
-# xuexi
-学习python
+# 提交code-到 git python
 ```
 sudo rm -rf dir
 git add -A

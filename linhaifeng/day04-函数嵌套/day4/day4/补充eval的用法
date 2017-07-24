@@ -1,0 +1,22 @@
+>>> cmd="print('ok')"
+>>>
+>>>
+>>>
+>>>
+>>> cmd
+"print('ok')"
+>>>
+>>>
+>>> eval(cmd)
+ok
+>>> dic='{"name":"alex","password":"alex3714"}'
+>>> dic
+'{"name":"alex","password":"alex3714"}'
+>>>
+>>>
+>>> eval(dic)
+{'name': 'alex', 'password': 'alex3714'}
+>>> d=eval(dic)
+>>> type(d)
+<class 'dict'>
+>>>

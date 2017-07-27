@@ -87,5 +87,6 @@ for n in open('db.txt', 'r', encoding='utf-8'):
     dd=n.split()
     print(dd)
 
-with open('db.txt', 'r', encoding='utf-8') as f:
-    f.write(list(dd))
+with open('db.txt', 'a', encoding='utf-8') as f:
+    tt=".".join(dd)
+    f.write((tt+"\n"))

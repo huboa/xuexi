@@ -1,6 +1,6 @@
 # info={'name':'egon','age':18,'sex':'male'}
-#本质info=dict({'name':'egon','age':18,'sex':'male'})
-
+# #本质info=dict({'name':'egon','age':18,'sex':'male'})
+#
 # print(info['age'])
 # info['height']=1.80
 #
@@ -28,11 +28,11 @@
 
 
 #字典其他的方法
-# info={'name':'egon','age':18,'sex':'male'}
+info={'name':'egon','age':18,'sex':'male'}
 # print(info.popitem())
 # print(info.popitem())
 # print(info)
-#
+# #
 # print(info.keys(),type(info.keys()))
 # print(info.values())
 
@@ -42,8 +42,8 @@
 # for key in info.values():
 #     print(key)
 #
-# for key in info:
-#     print(key,info[key])
+for key in info:
+    print(key,info[key])
 
 # print(info.items())
 # for key,value in info.items(): # key,value=('name','egon')

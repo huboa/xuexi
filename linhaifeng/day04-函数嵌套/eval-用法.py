@@ -31,7 +31,7 @@ dictObj = {
     }
 
 jsObj = json.dumps(dictObj)
-
+print(jsObj)
 with open('jsonFile.json', 'w',encoding='utf-8') as f:
     f.write(jsObj)
     f.write("\n")
@@ -47,13 +47,13 @@ with open('jsonFile.json', 'w',encoding='utf-8') as f:
 #      print(n,dic1[n])
 # print(dic)
 
-with open('jsonFile.json','r',encoding='utf-8') as f:
-     while True:
-         ff=f.readline()
-
-         print(type(ff))
-
-print(ff)
+# with open('jsonFile.json','r',encoding='utf-8') as f:
+#      while True:
+#          ff=f.readline()
+#
+#          print(type(ff))
+#
+# print(ff)
 
 ##http://blog.csdn.net/qinglu000/article/details/44981701
 

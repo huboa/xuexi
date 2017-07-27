@@ -16,7 +16,7 @@ with open('iptables.txt', 'w', encoding='utf-8') as f:
 
 
 
-###字典的写
+###字典的写json
 dictObj = {
         'andy': {
             'age': 23,
@@ -29,13 +29,34 @@ dictObj = {
             'skill': 'js'
         }
     }
-print(dict(dictObj))
-jsObj = json.dumps(dictObj)
 
-with open('jsonFile.json', 'w',encoding='utf-8') as f:
-    f.write(jsObj)
-    f.write("\n")
-    f.write(jsObj)
+
+
+# jsObj = json.dumps(dictObj)
+#
+# with open('jsonFile.json', 'w',encoding='utf-8') as f:
+#     f.write(jsObj)
+#     f.write("\n")
+#     f.write(jsObj)
+
+###字典写文件
+dictObj = {
+        'andy': {
+            'age': 23,
+            'city': 'shanghai',
+            'skill': 'python'
+        },
+        'william': {
+            'age': 33,
+            'city': 'hangzhou',
+            'skill': 'js'
+        }
+    }
+print(dictObj)
+
+# with open("db.txt",'w',encoding="utf-8") as f:
+#     f.write(eval())
+
 
 ####字典的读
 #dic='{"name":"zsc","password":"123"}'

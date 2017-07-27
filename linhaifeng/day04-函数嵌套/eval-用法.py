@@ -54,8 +54,9 @@ dictObj = {
     }
 
 for key, value in dictObj.items():
-  print("\"%s\":\"%s\"" % (key, value))
-
+    a="\"%s\":\"%s\"" % (key, value)
+    print(a)
+    print(key,value)
 # with open("db.txt",'w',encoding="utf-8") as f:
 #     f.write(eval())
 

@@ -52,8 +52,8 @@ dictObj = {
             'skill': 'js'
         }
     }
-print(dictObj)
-
+a=print(dictObj)
+print(a)
 # with open("db.txt",'w',encoding="utf-8") as f:
 #     f.write(eval())
 

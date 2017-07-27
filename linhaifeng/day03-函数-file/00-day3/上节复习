@@ -1,0 +1,52 @@
+朴东野，王磊：自己说自己交了，好好查查
+赵攀,杨乐:第一天没来
+姚军
+
+
+
+
+#未发
+刘本强
+杨琪琪
+周跃跃
+
+
+
+字符编码：
+    什么字符编码？
+        把人类的字符翻译成计算机能认识数字
+    什么字符编码表？
+        就是一张字符与数字对应关系的表
+        ascii
+        gbk
+        utf-8
+        unicode
+
+        unicode---->encode('utf-8')---->bytes
+        bytes------->decode('utf-8')--->unicode
+
+    原则：
+        字符以什么格式编译的，就要以什么格式解码
+
+    PS:
+        python3中的字符串分为两种
+            x='egon' 存成unicode
+            y=x.encode('utf-8') 存成bytes
+
+        python2中字符串也分为两种
+            x=u'egon' 与python3的字符串一样
+            y='alex' 与python3的bytes一样
+
+
+
+
+
+
+
+
+
+
+
+
+
+

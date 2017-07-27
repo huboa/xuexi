@@ -52,8 +52,10 @@ dictObj = {
             'skill': 'js'
         }
     }
-a=print(dictObj)
-print(a)
+
+for key, value in dictObj.items():
+  print("\"%s\":\"%s\"" % (key, value))
+
 # with open("db.txt",'w',encoding="utf-8") as f:
 #     f.write(eval())
 

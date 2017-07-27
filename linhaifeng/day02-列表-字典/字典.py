@@ -42,33 +42,33 @@ info={'name':'egon','age':18,'sex':'male'}
 # for key in info.values():
 #     print(key)
 #
-for key in info:
-    print(key,info[key])
+# for key in info:
+#     print(key,info[key])
 
 # print(info.items())
 # for key,value in info.items(): # key,value=('name','egon')
 #     print(key,value)
 
-
+#
 # msg_dic={
 # 'apple':10,
 # 'tesla':100000,
 # 'mac':3000,
 # 'lenovo':30000,
 # 'chicken':10,
-# }
+# # }
 # for key,value in msg_dic.items():
 #     print(key,value)
-
+#
 
 # info={'name':'egon','age':18,'sex':'male'}
 # info.clear()
 # print(info)
-
+#
 # print(info.items())
 # dic=info.fromkeys(['name','age','sex'],11111111)
 # print(dic)
-#
+
 # dic=info.fromkeys(['name','age','sex'],None)
 # print(dic)
 

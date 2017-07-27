@@ -80,9 +80,8 @@
 #             continue
 #         res=sql_activn(sql_dic)
 
-ipTable = [1,Alex Li,22,13651054608,IT,2013-04-01]
 
-with open('iptables.txt', 'w', encoding='utf-8') as f:
-    for ip in ipTable:
-        f.write(ip)
-        f.write('\n')
+
+with open('db.txt', 'r', encoding='utf-8') as f:
+    w
+        print(f.readline())

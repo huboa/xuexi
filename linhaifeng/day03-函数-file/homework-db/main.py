@@ -83,5 +83,5 @@
 
 
 with open('db.txt', 'r', encoding='utf-8') as f:
-    w
+    for n in f:
         print(f.readline())

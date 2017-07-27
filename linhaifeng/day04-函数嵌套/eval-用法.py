@@ -29,9 +29,9 @@ dictObj = {
             'skill': 'js'
         }
     }
-
+print(dict(dictObj))
 jsObj = json.dumps(dictObj)
-print(jsObj)
+
 with open('jsonFile.json', 'w',encoding='utf-8') as f:
     f.write(jsObj)
     f.write("\n")

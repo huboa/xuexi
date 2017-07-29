@@ -4,4 +4,4 @@
 #缺点：
 #应用场景：
 
-##tailf -f access.log |grep 'error '
+##grep -rl 'error' /dir/

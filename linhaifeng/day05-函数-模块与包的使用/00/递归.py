@@ -56,20 +56,23 @@
 
 l=[1,4,5,7,8,9,12,15,16,34,45,56,78,98]
 def binary_search(l,num):
-    print(l)
-    mid_index=len(l)//2
+
+    if len[l] > 1:
+        mid_index=len(l)//2
+
     if num > l[mid_index]:
         #in the right
-        l=l[mid_index+1:]
+        l=l[mid_index:]
         binary_search(l,num)
     elif num < l[mid_index]:
         l=l[:mid_index]
         binary_search(l, num)
-    else:
+    elif mid_index ==num:
         print('find it')
+    else:
+        print("no find")
 
-
-binary_search(l,5)
+binary_search(l,55)
 
 
 

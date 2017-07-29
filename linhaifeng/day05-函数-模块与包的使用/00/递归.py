@@ -54,22 +54,22 @@
 #
 ###二分法
 
-l= [1,5,3,22,66,88,222,6,3,89,23]
-
+l=[1,4,5,7,8,9,12,15,16,34,45,56,78,98]
 def binary_search(l,num):
+    print(l)
     mid_index=len(l)//2
     if num > l[mid_index]:
         #in the right
         l=l[mid_index+1:]
         binary_search(l,num)
     elif num < l[mid_index]:
-        
+        l=l[:mid_index]
+        binary_search(l, num)
+    else:
+        print('find it')
 
 
-
-
-
-
+binary_search(l,5)
 
 
 

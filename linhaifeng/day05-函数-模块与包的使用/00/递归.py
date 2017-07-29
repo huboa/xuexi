@@ -56,11 +56,9 @@
 
 l=[1,4,5,7,8,9,12,15,16,34,45,56,78,98]
 def binary_search(l,num):
-    lll=len[l]
-    if lll > 1:
-        mid_index=len(l)//2
-    else:
-        quit()
+
+    mid_index=len(l)//2
+
 
     if num > l[mid_index]:
         #in the right

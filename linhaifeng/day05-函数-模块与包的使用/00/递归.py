@@ -27,32 +27,43 @@
 # age(1)=18
 
 # age(n)=age(n-1)+2 #n>1
-# age(1)=18 #n=1
+# # age(1)=18 #n=1
+#
+# def age(n):
+#     if n == 1:
+#         return 18
+#     return age(n-1)+2
+#
+# print(age(5))
+#
+# #递归的执行分为两个阶段：
+# #1 递推
+# #2 回溯
+#
+#
+# l =[1, 2, [3, [4, 5, 6, [7, 8, [9, 10, [11, 12, 13, [14, 15,[16,[17,]],19]]]]]]]
+#
+# def search(l):
+#     for item in l:
+#         if type(item) is list:
+#             search(item)
+#         else:
+#             print(item)
+#
+# search(l)
+#
+###二分法
 
-def age(n):
-    if n == 1:
-        return 18
-    return age(n-1)+2
+l= [1,5,3,22,66,88,222,6,3,89,23]
 
-print(age(5))
-
-#递归的执行分为两个阶段：
-#1 递推
-#2 回溯
-
-
-l =[1, 2, [3, [4, 5, 6, [7, 8, [9, 10, [11, 12, 13, [14, 15,[16,[17,]],19]]]]]]]
-
-def search(l):
-    for item in l:
-        if type(item) is list:
-            search(item)
-        else:
-            print(item)
-
-search(l)
-
-
+def binary_search(l,num):
+    mid_index=len(l)//2
+    if num > l[mid_index]:
+        #in the right
+        l=l[mid_index+1:]
+        binary_search(l,num)
+    elif num < l[mid_index]:
+        
 
 
 

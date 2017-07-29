@@ -38,3 +38,4 @@ zsc_g=eater('zsc')
 next(zsc_g)
 ##第二阶段：给yield 传值
 zsc_g.send('粥')
+zsc_g.send('大虾')

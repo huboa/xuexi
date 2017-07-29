@@ -28,3 +28,5 @@ def age(n):
     return age(n-1)+2
 
 print(age(5))
+
+###递归的执行分两个阶段 递推和回溯

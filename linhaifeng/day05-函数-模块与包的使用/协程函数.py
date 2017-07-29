@@ -31,8 +31,8 @@ def eater(name):
         print('%s eat %s' %(name,food))
 
 zsc_g=eater('zsc')
-print(next(zsc_g))
-print(next(zsc_g))
+# print(next(zsc_g))
+# print(next(zsc_g))
 
 ##第一阶段：初始化
 next(zsc_g)

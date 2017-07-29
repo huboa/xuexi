@@ -14,5 +14,13 @@
 # print(money)
 # spam.read1()
 
+##别名调用
 import spam as s1
 print(s1.money)
+
+sql_type=input('sql_type')
+if sql_type == "mysql":
+    import mysql as sql
+elif sql_type == 'oracle':
+    import oracle as sql
+sql.sqlparse

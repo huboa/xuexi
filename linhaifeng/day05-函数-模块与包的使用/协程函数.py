@@ -26,8 +26,10 @@
 ##用法
 def eater(name):
     print('%s start to eat' %name)
+    food_list=[]
     while True:
-        food=yield
+        food=yield  food_list
+        food_list.append(food)
         print('%s eat %s' %(name,food))
 
 zsc_g=eater('zsc')
@@ -35,7 +37,10 @@ zsc_g=eater('zsc')
 # print(next(zsc_g))
 
 ##第一阶段：初始化
-next(zsc_g)
+next(zsc_g)##等于 zsc_g.send(None)
+#zsc_g.send(None)
+
+
 ##第二阶段：给yield 传值
 zsc_g.send('粥')
-zsc_g.send('大虾')
+print(zsc_g.send('大虾'))

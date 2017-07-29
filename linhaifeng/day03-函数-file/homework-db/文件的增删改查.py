@@ -57,7 +57,7 @@ with open('db.txt', 'r+',encoding='utf-8') as f:
         if line != '':
             f.write(line + '\n')
     f.truncate()
-    
+
 with open("db.txt","r",encoding='utf-8') as f:
     for line in f:
         line_list= line.strip("\n").split(',')  ###去掉字符并以,号切分

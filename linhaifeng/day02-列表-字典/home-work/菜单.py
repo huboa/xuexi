@@ -1,7 +1,8 @@
 
 dic = {
     "河北": {
-        "衡水": ["安平", "饶阳", "深州"],
+        "衡水": ["安平", "饶阳", "神州"],
+        "石家庄": ["鹿泉", "藁城", "元氏"],
         "邯郸": ["永年", "涉县", "磁县"],
     },
     "河南": {
@@ -10,7 +11,6 @@ dic = {
     "山西": {
         ...
     }}
-print(dic)
 
 level=dic
 
@@ -27,10 +27,8 @@ while True:
         level=dic
         continue
 
-    if key in level:  ##判断在不在里面
+    if key in level and isinstance(level,list):  ##判断在不在里面
         level = level[key]
     else:
         print("请输入正确选项")
-
-
 

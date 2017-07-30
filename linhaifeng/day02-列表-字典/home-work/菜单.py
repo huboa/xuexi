@@ -15,7 +15,7 @@ print(dic)
 while True:
     key = input(">> :").strip()
     print(key)
-    # for key1 in dic:
-    #     print(key1)
+    for key1 in dic:
+         print(key1)
     #     for key2 in dic[key1]:
     #         print(key2)

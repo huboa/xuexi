@@ -21,8 +21,8 @@ while True:
     key = input(" 请输入 >> :").strip()
 
     print('level====', type(level),len(level))
-    print(isinstance(level,dict))
-    level=level[key]
+    if isinstance(level,dict):  ###如果是字典则进入不是则不进入
+        level=level[key]
 
 
     #     for key2 in dic[key1]:

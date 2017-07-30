@@ -16,6 +16,6 @@ for good in goods:
 
     n += 1
     good['id'] = n
-    print('商品编号：%d ,商品名称：%s ,商品价格：%d' % (n, good['name'], good['price']))
+    print()''
 
 print('==============商品信息===============')

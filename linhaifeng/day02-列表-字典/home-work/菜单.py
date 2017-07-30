@@ -14,14 +14,14 @@ print(dic)
 
 level=dic
 
-print(level["河北"])
-# while True:
-#     for n in level:
-#         print(n)
-#     key = input(" 请输入 >> :").strip()
-#
-#     print('level====', type(level))
-#     level=dic[key]
+
+while True:
+    for n in level:
+        print(n)
+    key = input(" 请输入 >> :").strip()
+
+    print('level====', type(level))
+    level=level[key]
 
 
     #     for key2 in dic[key1]:

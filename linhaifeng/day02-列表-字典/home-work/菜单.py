@@ -13,7 +13,7 @@ dic = {
 print(dic)
 
 level=dic
-back_level=dic
+back_level=[]
 while True:
     for n in level:
         print(n)
@@ -27,7 +27,8 @@ while True:
         continue
 
     if isinstance(level,dict):  ###如果是字典则进入不是则不进入
-        back_level=level
+        back_level.append(key)
+        print(back_level,"back_level_list")
         level=level[key]
 
 

@@ -19,8 +19,9 @@ while True:
     for n in level:
         print(n)
     key = input(" 请输入 >> :").strip()
-    
+
     print('level====', type(level),len(level))
+    if type(level}
     level=level[key]
 
 

@@ -14,8 +14,7 @@ print(dic)
 
 while True:
     key = input(">> :").strip()
-    print(key)
-    for key1 in dic:
-         print(dic[key1])
+    for n in dic[key]:
+        print(n)
     #     for key2 in dic[key1]:
     #         print(key2)

@@ -13,6 +13,7 @@ dic = {
 print(dic)
 
 level=dic
+
 back_level=[]
 while True:
     for n in level:

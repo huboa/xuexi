@@ -1,7 +1,7 @@
 
 dic = {
     "河北": {
-        "石家庄": ["鹿泉", "藁城", "元氏"],
+        "衡水": ["安平", "饶阳", "深州"],
         "邯郸": ["永年", "涉县", "磁县"],
     },
     "河南": {
@@ -14,9 +14,8 @@ print(dic)
 
 level=dic
 
-back_level=[]
 while True:
-    for n in level:
+    for n in level:  ##显示字典
         print(n)
 
     key = input("请输入: q退出 m主菜单  -->> :").strip()
@@ -32,11 +31,6 @@ while True:
         level = level[key]
     else:
         print("请输入正确选项")
-
-
-    if isinstance(level,list):  ###如果是字典则进入不是则不进入
-        print("已经是最后一层")
-        continue
 
 
 

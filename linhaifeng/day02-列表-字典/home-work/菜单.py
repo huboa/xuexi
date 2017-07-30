@@ -13,16 +13,19 @@ dic = {
 print(dic)
 
 level=dic
-
+back_level=dic
 while True:
     for n in level:
         print(n)
     key = input(" 请输入 >> :").strip()
 
     print('level====', type(level),len(level))
-    if key == "q" :
-        exit()
+    if key == ""  :continue
+    if key == "q" :exit()   ##退出
+    if key == "b" :level=back_level  ###回退前一列表
+
     if isinstance(level,dict):  ###如果是字典则进入不是则不进入
+        back_level=level
         level=level[key]
 
 

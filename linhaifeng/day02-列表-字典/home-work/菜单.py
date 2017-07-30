@@ -12,9 +12,15 @@ dic = {
     }}
 print(dic)
 
+level=dic
+
+
 while True:
-    key = input(">> :").strip()
-    for n in dic[key]:
+    for n in level:
         print(n)
+    key = input(" 请输入 >> :").strip()
+    for n in level:
+        print(n)
+        level=[dic[key]]
     #     for key2 in dic[key1]:
     #         print(key2)

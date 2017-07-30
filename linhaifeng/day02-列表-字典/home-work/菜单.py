@@ -14,7 +14,7 @@ print(dic)
 
 level=dic
 
-print(level[河北])
+print(level["河北"])
 # while True:
 #     for n in level:
 #         print(n)

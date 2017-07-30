@@ -20,9 +20,9 @@ while True:
         print(n)
     key = input(" 请输入 >> :").strip()
 
-
+    print('level====', type(level))
     level=dic[key]
-    print('level',type(level))
+
 
     #     for key2 in dic[key1]:
     #         print(key2)

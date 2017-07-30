@@ -19,8 +19,6 @@ while True:
     for n in level:
         print(n)
     key = input(" 请输入 >> :").strip()
-    for n in level:
-        print(n)
-        level=[dic[key]]
+    level=[dic[key]]
     #     for key2 in dic[key1]:
     #         print(key2)

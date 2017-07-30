@@ -22,7 +22,7 @@ while True:
 
 
     level=dic[key]
-    print(type(level))
+    print('level',type(level))
 
     #     for key2 in dic[key1]:
     #         print(key2)

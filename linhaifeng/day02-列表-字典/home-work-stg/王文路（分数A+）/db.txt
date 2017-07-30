@@ -1,0 +1,1 @@
+{'lucy': {'password': '123', 'balance': 5945, 'cart': {}, 'road': {'password': '321', 'balance': 2000, 'cart': {}}}

@@ -16,6 +16,6 @@ for good in goods:
 
     n += 1
     good['id'] = n
-    print()''
+    print(''
 
 print('==============商品信息===============')

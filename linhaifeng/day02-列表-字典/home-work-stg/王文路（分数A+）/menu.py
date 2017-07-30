@@ -21,7 +21,9 @@ while True:
     if choice == 'b':
         if len(prev_menu) > 0:
             now_menu = prev_menu.pop()
+            print(now_menu)
     if choice in now_menu:
 
         prev_menu.append(now_menu)
+        print(prev_menu)
         now_menu = now_menu[choice]

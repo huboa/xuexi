@@ -17,9 +17,8 @@ back_level=dic
 while True:
     for n in level:
         print(n)
-    key = input(" 请输入 >> :").strip()
+    key = input(" 请输入 b 回退 q 退出 >> :").strip()
 
-    print('level====', type(level),len(level))
     if key == ""  :continue
     if key == "q" :exit()   ##退出
     if key == "b" :

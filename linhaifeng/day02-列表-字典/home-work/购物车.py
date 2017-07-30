@@ -11,6 +11,11 @@ monney=0
 
 ###显示
 print('==============商品信息===============')
-for n in goods:
-    print(n[name])
+n=0
+for good in goods:
+
+    n += 1
+    good['id'] = n
+    print('商品编号：%d ,商品名称：%s ,商品价格：%d' % (n, good['name'], good['price']))
+
 print('==============商品信息===============')

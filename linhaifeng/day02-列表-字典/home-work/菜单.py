@@ -22,17 +22,11 @@ while True:
 
     if key == ""  :continue
     if key == "q" :exit()   ##退出
-    if key == "b" :
-        level=back_level  ###回退前一列表
-        print(back_level)
+    if key == "m" :
+        level=dic ###回退主菜单
         continue
 
-   # if isinstance(level,dict):  ###如果是字典则进入不是则不进入
-    if key in level:
-        back_level.append(level)
-        print(back_level,"back_level_list")
+    if isinstance(level,dict):  ###如果是字典则进入不是则不进入
         level=level[key]
 
         print("test",str(dict))
-    #     for key2 in dic[key1]:
-    #         print(key2)

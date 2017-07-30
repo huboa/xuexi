@@ -98,16 +98,16 @@
 # d=dict.setdefault(['a','b','c'],[])
 # print(d)
 
-d={}
-print(d)
-d['name']='egon'
-d['age']=18
-d['sex']='male'
-d['hobby']=[]
-d['hobby'].append('play basketball')
-d['hobby'].append('play football')
-
-d.setdefault('hobby',[]).append('play1') #d['hobby']
-d.setdefault('hobby',[]).append('play2') #d['hobby']
-d.setdefault('hobby',[]).append('play3') #d['hobby']
-print(d)
+# d={}
+# print(d)
+# d['name']='egon'
+# d['age']=18
+# d['sex']='male'
+# d['hobby']=[]
+# d['hobby'].append('play basketball')
+# d['hobby'].append('play football')
+#
+# d.setdefault('hobby',[]).append('play1') #d['hobby']
+# d.setdefault('hobby',[]).append('play2') #d['hobby']
+# d.setdefault('hobby',[]).append('play3') #d['hobby']
+# print(d)

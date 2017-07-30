@@ -22,7 +22,10 @@ while True:
     print('level====', type(level),len(level))
     if key == ""  :continue
     if key == "q" :exit()   ##退出
-    if key == "b" :level=back_level  ###回退前一列表
+    if key == "b" :
+        level=back_level  ###回退前一列表
+        print(back_level)
+        continue
 
     if isinstance(level,dict):  ###如果是字典则进入不是则不进入
         back_level=level

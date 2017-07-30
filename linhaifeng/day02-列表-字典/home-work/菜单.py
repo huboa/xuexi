@@ -27,14 +27,16 @@ while True:
     if key == "m" :   ###回退主菜单
         level=dic
         continue
-        
+
     if key in level:  ##判断在不在里面
         level = level[key]
+    else:
+        print("请输入正确选项")
+
 
     if isinstance(level,list):  ###如果是字典则进入不是则不进入
         print("已经是最后一层")
         continue
 
 
-    else:
-        print("请输入正确选项")
+

@@ -27,12 +27,12 @@ while True:
         print(back_level)
         continue
 
-    if isinstance(level,dict):  ###如果是字典则进入不是则不进入
+   # if isinstance(level,dict):  ###如果是字典则进入不是则不进入
+    if key in level:
         back_level.append(level)
         print(back_level,"back_level_list")
         level=level[key]
 
-
-
+        print("test",str(dict))
     #     for key2 in dic[key1]:
     #         print(key2)

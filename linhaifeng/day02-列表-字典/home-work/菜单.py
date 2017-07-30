@@ -21,7 +21,7 @@ while True:
     key = input(" 请输入 >> :").strip()
 
     print('level====', type(level),len(level))
-    if type(level}
+    print(isinstance(level,dict))
     level=level[key]
 
 

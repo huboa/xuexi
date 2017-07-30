@@ -5,6 +5,6 @@ goods = [
     {"name": "游艇", "price": 20},
     {"name": "美女", "price": 998},
 ]
-print(type(goods))
+
 for n in goods:
     print(n)

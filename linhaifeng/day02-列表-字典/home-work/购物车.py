@@ -6,5 +6,10 @@ goods = {
     {"name": "美女", "price": 998},
 }
 
+###总资产
+monney=0
+
+###显示
+
 for n in goods:
     print(n)

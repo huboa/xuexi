@@ -20,14 +20,12 @@ while True:
 
     key = input("请输入: q退出 m主菜单  -->> :").strip()
 
-    if key == ""  :continue
+    if key == ""  :continue  ##空退出
     if key == "q" :exit()   ##退出
 
     if key == "m" :   ###回退主菜单
         level=dic
         continue
-
-
 
     if key in level:  ##判断在不在里面
         if not isinstance(level, dict): continue  ##判断是不是字典

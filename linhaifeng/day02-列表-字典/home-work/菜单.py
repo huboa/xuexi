@@ -30,8 +30,8 @@ while True:
 
 
     if key in level:  ##判断在不在里面
-        if not isinstance(level[key], dict): continue  ##判断是不是字典
-        level = level[key]               
+        if not isinstance(level, dict): continue  ##判断是不是字典
+        level = level[key]
     else:
         print("请输入正确选项")
 

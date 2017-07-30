@@ -18,15 +18,20 @@ back_level=[]
 while True:
     for n in level:
         print(n)
-    key = input(" e：退出 m:主菜单，请输入  >> :").strip()
+    key = input("请输入: e退出 m主菜单  -->> :").strip()
 
     if key == ""  :continue
     if key == "q" :exit()   ##退出
-    if key == "m" :
-        level=dic ###回退主菜单
+
+    if key == "m" :   ###回退主菜单
+        level=dic
         continue
 
     if isinstance(level,dict):  ###如果是字典则进入不是则不进入
-        level=level[key]
+        print("已经是最小菜单")
+        continue
 
-        print("test",str(dict))
+    if key in level:        ##判断在不在里面
+            level=level[key]
+    else:
+        print("请输入正确选项")

@@ -41,7 +41,7 @@
 
 
 
-#python3 tail.py -f access.log
+#python3 02--tail.py -f access.log
 # import time
 # import sys
 #

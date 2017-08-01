@@ -22,18 +22,19 @@ while True:
 while True:
 
 ##显示商品信息
-    print('==============商品信息start===============')
+    print('===商品信息start===')
     print('编号  名称  价格')
     n=1
     for good in goods:
         print('  %d   %s  %s' % (n, good["name"], good["price"]))
         n += 1
-    print('==============商品信息end===============')
+    print('===商品信息end===')
 
 
 ##输入选项
     good_c=1
-    choice=input("请输入商品编号,q 退出 :").strip()
+    print('您的余额是%s'% money)
+    choice=input("请输入商品编号加入购物车,q 退出 :").strip()
     if choice == '':continue    ###空则跳过
     if choice =="q":break
     if choice.isdigit():
@@ -48,15 +49,15 @@ while True:
         continue
 
 ###购物车相关
-
     if money >= cart_cost + goods[choice-1]["price"]:     ##钱够不够.
         if choice not in cart_dic.keys(): cart_dic[choice] = 0  # 字典key不存在,初始化0
         cart_dic[choice]= cart_dic[choice] +1   #添加购物车
     else:
-        print("您的钱不够.请充值")
+        print('您的余额是%s,不能购买' % money)
         continue
-    print(cart_dic)
-    print('==============购物车start ===============')
+    print('=======购物车start =======')
+
+
     print('编号  名称   单格      数量 合计')
 
 
@@ -64,7 +65,7 @@ while True:
         print('  %d   %s   %d    %d  %d '% (n,goods[n-1]["name"],goods[n-1]["price"], cart_dic[n],goods[n-1]["price"]*cart_dic[n]))
         cart_cost=cart_cost+goods[n-1]["price"]*cart_dic[n]
 
-    print("                     总计:  ", cart_cost)
-    print('==============购物车 end ===============',"\n")
+    print("                       总计:  ", cart_cost)
+    print('=======购物车 end =======',"\n")
 
 

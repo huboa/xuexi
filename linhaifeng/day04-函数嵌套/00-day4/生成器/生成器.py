@@ -85,7 +85,7 @@
 
 
 
-# python3 tail.py -f access.log | grep 'error'
+# python3 02--tail.py -f access.log | grep 'error'
 import time
 
 def tail(filepath):

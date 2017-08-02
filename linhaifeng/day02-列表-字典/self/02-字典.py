@@ -1,7 +1,10 @@
-# info={'name':'egon','age':18,'sex':'male'}
+info={'name':'egon','age':18,'sex':'male'}
 # #本质info=dict({'name':'egon','age':18,'sex':'male'})
 #
-# print(info['age'])
+print(info['age'])
+
+print("age" in info)
+
 # info['height']=1.80
 #
 # print(info)

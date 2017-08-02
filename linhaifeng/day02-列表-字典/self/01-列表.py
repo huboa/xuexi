@@ -1,4 +1,5 @@
 my_girl_friends=['alex','wupeiqi','yuanhao',4,10,30]
+print(my_girl_friends[0:2])
 # my_girl_friends=list(['alex','wupeiqi','yuanhao',4,10,30])
 
 

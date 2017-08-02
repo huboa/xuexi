@@ -38,11 +38,6 @@
 
 
 
-
-
-
-
-
 # def foo(x,y,**kwargs): #nums={'z':3,'b':2,'a':1}
 #     print(x)
 #     print(y)
@@ -63,8 +58,6 @@
 #     print(y)
 #
 # foo(**{'y':1,'x':2})  # foo(y=1,x=2)
-
-
 
 
 

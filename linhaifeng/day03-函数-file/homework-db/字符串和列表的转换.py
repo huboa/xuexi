@@ -11,10 +11,11 @@ i=0
 for line in open("db.txt","r",encoding='utf-8'):
     i=i+1
     line_list= line.strip().split(',')  ###去掉字符并以,号切分
-    print(line_list,type(line_list),i)
+    # print(line_list,type(line_list),i)
+    #
     line_str=','.join(line_list)
     print(type(line_str),line_str)
-
+    #
 
 #
 # theList = ['a','b','c']
@@ -23,3 +24,6 @@ for line in open("db.txt","r",encoding='utf-8'):
 #
 # if 'd' not in theList:
 #     print 'd is not in the list'
+
+ll=[['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1'], ['1']]
+res_str=','.join(ll[0:])

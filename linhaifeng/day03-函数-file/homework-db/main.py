@@ -18,15 +18,12 @@ def sql_parse(sql):
 
         for n in sql_l[3].split(","):
             from_table.append(n)
-        if sql_l[5] :
+        if len(sql_l) > 5 and sql_l[4] == "where":      ####判断有没有where
             for n in sql_l[5].split(","):
                 where_fields.append(n)
-        if sql_l[7]:
-            for n in sql_l[7].split(","):
-                limit.append(n)
+
 
         print(sql_l[1:sql_l.index("from")])
-
 
 
 
@@ -35,7 +32,6 @@ def sql_parse(sql):
             'select': select_fields,  ##查询字段
             'from': from_table,  ##数据库表
             'where': where_fields,  ##filter 条件
-            'limit': limit  ##limit 条件
         }
         return sql_dic
 
@@ -55,31 +51,39 @@ def sql_parse(sql):
     if func in parse_func:
         return  parse_func[func]
 
-
-
-
-
-    #
-    #
-
-
-#
-#
 # ###第二部分执行操作
-# def sql_activn():
-#     '''从字典sql_dic 提取命令'''
-#     pass
-# def insert(sql_dic):
-#     pass
-# def insert(sql_dic):
-#     pass
-# def update(sql_dic):
-#     pass
-# def delete(sql_dic):
-#     pass
-# def select():
-#     pass
-#
+def sql_activn(sql_dic):
+    action_func = {
+        'select':  select(sql_dic)
+      #  'insert': select(sql_dic)
+    }
+
+    func=sql_dic["func"]
+    if  func in action_func:
+        return action_func[func]
+
+def select(sql_dic):
+    print(sql_dic["select"])
+    print(sql_dic["from"])
+    field_list = sql_dic["select"]
+    fields=["*","id","name","age","phone","dept","date"]
+    filed_indexs=[]
+    for n in field_list:
+        filed_indexs.append(fields.index(n))
+    return read_db(filed_indexs)
+
+def read_db(filed_indexs):
+    res=[]
+    i = 0
+    for line in open("db.txt", "r", encoding='utf-8'):
+        i = i + 1
+        line_list = line.strip().split(',')  ###去掉字符并以,号切分
+        res1=[]
+        for n in filed_indexs:
+            res1.append(line_list[n])
+        res.append(res1)
+    return  res
+
 # ###主函数
 if __name__== '__main__':
     while True:
@@ -91,9 +95,10 @@ if __name__== '__main__':
 
         sql_dic = sql_parse(sql)   ###获取语句
         print(sql_dic)
-        # if len(sql_dic) == 0:
-        #     continue
-#        res=sql_activn(sql_dic)
+        if len(sql_dic) == 0:
+            continue
+        res=sql_activn(sql_dic)
+        print(res)
 
 
 

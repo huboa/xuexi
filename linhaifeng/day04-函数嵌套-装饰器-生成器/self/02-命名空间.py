@@ -10,22 +10,23 @@
 #名字的查找顺序
 
 
-
-# max=1
-# def foo():
-#     max=2
-#     print(max)
-# foo()
-
-x=0
-def f1():
-    x=1
-    def f2():
-        x=2
-        def f3():
-            x=3
-            print(x)
-f1()
+max=1
+def foo():
+    max=99
+    print(max)
+foo()
+#
+# x=0
+# def f1():
+#     x=1
+#     print("def1",x)
+#     def f2():
+#         x=2
+#         print("def2",x)
+#         def f3():
+#             x=3
+#             print(x,"def3")
+# f1()
 
 ###作用域：作用的范围，
 # 全局作用域：全局存活，全局有效 内置命名空间，全局命名空间
@@ -37,37 +38,35 @@ def f1():
                 print(max)
                 print(x)
 
-
-
 f1()
 # 局部作用域：临时存活，局部有效
-def f1():
-    x=1
-    x=2
-    def f2():pass
-    print(locals())
-    print(globals())
-print(locals())
-print(globals())
-print(locals() is globals())
+# def f1():
+#     x=1
+#     x=2
+#     def f2():pass
+#     print(locals())
+#     print(globals())
+# print(locals())
+# print(globals())
+# print(locals() is globals())
 
 
 ###global nonlocal  #尽量不用影响
 
-x=1
-def f1():
-    global x
-    x=2
-
-f1()
-print(x)
-
-l=[]
-def f2():
-    l.append('f2')
-f2()
-print(l)
-
+# x=1
+# def f1():
+#     global x
+#     x=2
+#
+# f1()
+# print(x)
+#
+# l=[]
+# def f2():
+#     l.append('f2')
+# f2()
+# print(l)
+#
 x=0
 def f1():
     x=1
@@ -92,6 +91,6 @@ def f1():
     def f2():
         print(x)
     return f2()
-
+f1()
 
 

@@ -72,5 +72,5 @@ def printer():
 g = search(opener(cat(grep('os'.encode('utf-8'), printer()))))
 # g.send(r'C:\Users\Administrator\PycharmProjects\python18期周末班\day5\aaa')
 
-g.send(r'C:\Users\Administrator\PycharmProjects\python18期周末班')
+g.send(r'D:\data\git\xuexi\linhaifeng\day05-函数-模块与包的使用\self')
 #a1.txt,a2.txt,b1.txt

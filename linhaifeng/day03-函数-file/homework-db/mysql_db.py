@@ -66,8 +66,10 @@ def select(sql_dic):
     print(sql_dic["select"])
     print(sql_dic["from"])
     field_list = sql_dic["select"]
-    fields=["*","id","name","age","phone","dept","date"]
+    fields=["id","name","age","phone","dept","date"]
     filed_indexs=[]
+    if field_list[0]  == "*":
+        field_list=fields
     for n in field_list:
         filed_indexs.append(fields.index(n))
     return read_db(filed_indexs)
@@ -98,7 +100,8 @@ if __name__== '__main__':
         if len(sql_dic) == 0:
             continue
         res=sql_activn(sql_dic)
-        print(res)
+        for n in res:
+            print(n)
 
 
 

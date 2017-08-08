@@ -1,0 +1,7 @@
+age=(11,22,33,44,55)
+print(age[3])
+print(age[:3])
+print(len(age))
+print(11 in age)
+print(age.index(33))
+print(age.count(33))

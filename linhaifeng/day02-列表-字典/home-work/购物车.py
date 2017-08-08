@@ -22,20 +22,20 @@ while True:
 while True:
 
 ##显示商品信息
-    print('===商品信息start===')
+    print('商品信息start'.center(30))
     print('编号  名称  价格')
     n=1
     for good in goods:
         print('  %d   %s  %s' % (n, good["name"], good["price"]))
         n += 1
-    print('===商品信息end===')
+    print('商品信息end'.center(30))
 
 
 ##输入选项
     good_c=1
     print('您的余额是%s'% money)
     choice=input("请输入商品编号加入购物车,q 退出 :").strip()
-    if choice == '':continue    ###空则跳过
+    if len(choice) == 0 :continue    ###空则跳过
     if choice =="q":break
     if choice.isdigit():
          choice = int(choice)  ##转换成数字
@@ -55,7 +55,7 @@ while True:
     else:
         print('您的余额是%s,不能购买' % money)
         continue
-    print('=======购物车start =======')
+    print('购物车start'.center(30))
 
 
     print('编号  名称   单格      数量 合计')
@@ -66,6 +66,6 @@ while True:
         cart_cost=cart_cost+goods[n-1]["price"]*cart_dic[n]
 
     print("                       总计:  ", cart_cost)
-    print('=======购物车 end =======',"\n")
+    print('购物车 end '.center(30,'='),"\n")
 
 

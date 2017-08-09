@@ -16,7 +16,7 @@ def main1():
     content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)', expression).group()
 #    content = re.search('\(([\-\+\*\/]*\d+\.?\d*)+\)', expression).group()
     print(content)
-    pp=re.search('(\-?\d+\.?\d*[\*\/])',content).group()
+    pp=re.search('(\-?\d+\.?\d*[\*\/]\-?\d+\.?\d*)',content).group()
     print(pp)
 
 main1()

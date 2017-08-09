@@ -1,15 +1,15 @@
 import re
-print(re.findall('\w','hello_ | zsc 123'))
-print(re.findall('\W','hello_ | zsc 123'))
-print(re.findall('\s','hello_ | zsc 123 \n \t'))
+# print(re.findall('\w','hello_ | zsc 123'))
+# print(re.findall('\W','hello_ | zsc 123'))
+# print(re.findall('\s','hello_ | zsc 123 \n \t'))
 print(re.findall('\S','hello_ | zsc 123 \n \t'))
 print(re.findall('\d','hello_ | zsc 123 \n \t'))
-print(re.findall('\D','hello_ | zsc 123 \n \t'))
-print(re.findall('h','hello_ | hello_ h zsc 123 \n \t'))
-print(re.findall('\Ah','hello_ | hello_ h zsc 123 \n \t123'))
-print(re.findall('123\Z','hello_ | hello_ h zsc 123 \n \t123'))
-print(re.findall('^he','hello_ | hello_ h zsc 123 \n \t123'))
-print(re.findall('123$','hello_ | hello_ h zsc 123 \n \t123'))
+# print(re.findall('\D','hello_ | zsc 123 \n \t'))
+# print(re.findall('h','hello_ | hello_ h zsc 123 \n \t'))
+# print(re.findall('\Ah','hello_ | hello_ h zsc 123 \n \t123'))
+# print(re.findall('123\Z','hello_ | hello_ h zsc 123 \n \t123'))
+# print(re.findall('^he','hello_ | hello_ h zsc 123 \n \t123'))
+# print(re.findall('123$','hello_ | hello_ h zsc 123 \n \t123'))
 
 ## . 与 [] [^]
 # #. 本身就代表一个字符

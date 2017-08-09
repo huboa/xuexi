@@ -1,15 +1,15 @@
 import re
-# print(re.findall('\w','hello_ | zsc 123'))
-# print(re.findall('\W','hello_ | zsc 123'))
-# print(re.findall('\s','hello_ | zsc 123 \n \t'))
-# print(re.findall('\S','hello_ | zsc 123 \n \t'))
-# print(re.findall('\d','hello_ | zsc 123 \n \t'))
-# print(re.findall('\D','hello_ | zsc 123 \n \t'))
-# print(re.findall('h','hello_ | hello_ h zsc 123 \n \t'))
-# print(re.findall('\Ah','hello_ | hello_ h zsc 123 \n \t123'))
-# print(re.findall('123\Z','hello_ | hello_ h zsc 123 \n \t123'))
-# print(re.findall('^he','hello_ | hello_ h zsc 123 \n \t123'))
-# print(re.findall('123$','hello_ | hello_ h zsc 123 \n \t123'))
+print(re.findall('\w','hello_ | zsc 123'))
+print(re.findall('\W','hello_ | zsc 123'))
+print(re.findall('\s','hello_ | zsc 123 \n \t'))
+print(re.findall('\S','hello_ | zsc 123 \n \t'))
+print(re.findall('\d','hello_ | zsc 123 \n \t'))
+print(re.findall('\D','hello_ | zsc 123 \n \t'))
+print(re.findall('h','hello_ | hello_ h zsc 123 \n \t'))
+print(re.findall('\Ah','hello_ | hello_ h zsc 123 \n \t123'))
+print(re.findall('123\Z','hello_ | hello_ h zsc 123 \n \t123'))
+print(re.findall('^he','hello_ | hello_ h zsc 123 \n \t123'))
+print(re.findall('123$','hello_ | hello_ h zsc 123 \n \t123'))
 
 ## . 与 [] [^]
 # #. 本身就代表一个字符
@@ -44,31 +44,31 @@ import re
 # #.* .*? #贪婪匹配
 # #.*
 # print(re.findall('a.*c','acadad7asd8adc'))
-# #.*?
-# print(re.findall('a.*?c','acadacd7asd8adc'))
+# # #.*?
+# # print(re.findall('a.*?c','acadacd7asd8adc'))
+# #
 #
-
-#|
-
-print(re.findall('compan(?:y|ies)','Too many companies have gone bankrupt, and the next one is my company'))
-#():分组
-print(re.findall('(ab)','abababaabaab123'))
-print(re.findall('(ab)+','abababaabaab123'))
-print(re.findall('ab+123','abababaabaab123'))
-print(re.findall('(ab)+123','abababaabaab123'))
-
-
-###re的其他方法
-print(re.findall('ab','abababaabaab123'))
-print(re.search('ab','abababaabaab123'))
-print(re.search('ab','abababaabaab123').group())
-print(re.search('abad','abababaabaab123'))
-print(re.match('ab','123ab456'))
-print(re.search('ab','123ab456').group())
-print(re.split('b','abcde'))
-print(re.split('[ab]','abcde'))
-print(re.sub('alex','SB','alex make love for alex',1))
-print(re.subn('alex','SB','alex make love for alex'))
-
-
-print(re.sub('(\w+)(\W+)(\w+)(\W+)(\w+)',r'\3\2\1',"a fu b"))
+# #|
+#
+# print(re.findall('compan(?:y|ies)','Too many companies have gone bankrupt, and the next one is my company'))
+# #():分组
+# print(re.findall('(ab)','abababaabaab123'))
+# print(re.findall('(ab)+','abababaabaab123'))
+# print(re.findall('ab+123','abababaabaab123'))
+# print(re.findall('(ab)+123','abababaabaab123'))
+#
+#
+# ###re的其他方法
+# print(re.findall('ab','abababaabaab123'))
+# print(re.search('ab','abababaabaab123'))
+# print(re.search('ab','abababaabaab123').group())
+# print(re.search('abad','abababaabaab123'))
+# print(re.match('ab','123ab456'))
+# print(re.search('ab','123ab456').group())
+# print(re.split('b','abcde'))
+# print(re.split('[ab]','abcde'))
+# print(re.sub('alex','SB','alex make love for alex',1))
+# print(re.subn('alex','SB','alex make love for alex'))
+#
+#
+# print(re.sub('(\w+)(\W+)(\w+)(\W+)(\w+)',r'\3\2\1',"a fu b"))

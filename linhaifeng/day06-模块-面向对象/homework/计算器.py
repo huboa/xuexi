@@ -57,10 +57,11 @@ while True:
         content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
         print('//////////////',content1)
         content=content.replace(content1,multiply(content1))
+        print(content)
     if '-' or '+' in content:
         print('/////////',content)
         content=plus_minus(content)
-
+        print('/////////', content)
 
 
     expression1=expression1.replace(expression_old,content)

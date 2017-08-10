@@ -42,16 +42,19 @@ while True:
     print('express1',expression1)
     if '(' or ')' in expression1:
         content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
+        expression_old = content
+        content = content.strip('()')
     else:
         content=expression1
-        
-    expression_old=content
-    print(('expression_old %s content %s') % (expression_old, content))
-    content = content.strip('()')
 
-    print('expression_old',expression_old)
+
+    # print(('expression_old %s content %s') % (expression_old, content))
+
+
     if '/'or '*' in content:
+
         content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
+        print('//////////////',content1)
         content=content.replace(content1,multiply(content1))
     if '-' or '+' in content:
         content=plus_minus(content)

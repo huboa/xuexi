@@ -46,8 +46,8 @@ def main1():
         if '-' or '+' in content:
             content=plus_minus(content)
 
-
-        expression1 = expression1.replace(expression_old,content)
+        print(expression_old,content)
+        print(expression1.replace(expression_old,content),'=======')
 
 
 main1()

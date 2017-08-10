@@ -35,11 +35,12 @@ expression='1-2*(60+2*(-3-40.0/0.5))'
 #主函数
 def main1():
 
-    while True:
+    # while True:
         content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)', expression).group()
         expression_old=content
-        content = re.search('[^\(\)]',content)
-
+        print(expression_old,'expresss11111111111')
+        content = content.strip('()')
+        print(content)
         print(content)
         if '/'or '*' in content:
             content1=re.search('\d+\.?\d*[\*\/]\d+\.?\d*',content).group()

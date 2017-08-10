@@ -43,6 +43,7 @@ while True:
 
     print('express1',expression1)
     content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
+
     expression_old=content
     content = content.strip('()')
 
@@ -53,10 +54,10 @@ while True:
         print(content)
     if '-' or '+' in content:
         content=plus_minus(content)
+        print(content)
 
 
-    # print(expression_old,type(expression_old),content,type(content),'\n')
-    # expression1=expression1.replace(expression_old,content)
+    expression1=expression1.replace(expression_old,content)
     time.sleep(1)
 
 

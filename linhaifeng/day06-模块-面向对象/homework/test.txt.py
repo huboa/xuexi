@@ -1,19 +1,14 @@
-import re
+import  re
+expression1='1-2*(60+2*-3))'
 
-res='60+-6.0'
-def plus_minus(res):
-    res=res.replace('--','+')
-    res=res.replace('+-','-')
-    list=re.findall('[\-\+]?\d+\.?\d*',res)
-    list1=re.findall('\-\d+\.?\d*',res)
-    sum1=sum2=0
-    for n in list1:
-        list.remove(n)
-        n=re.search('\d+\.?\d*',n).group()
-        sum1=sum1+float(n)
-    for n in list:
-        n = re.search('\d+\.?\d*', n).group()
-        sum2 = sum2 + float(n)
-    return str(sum2-sum1)   ###返回加减后的值
+print('express1', expression1)
+content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)', expression1).group()
 
-print(plus_minus(res))
+expression_old = content
+content = content.strip('()')
+print('''=====-------''',content)
+print(expression_old,'old_expression')
+
+expression1 = expression1.replace(expression_old, content)
+print(expression1, '=====')
+

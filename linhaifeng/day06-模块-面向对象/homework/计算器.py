@@ -29,16 +29,12 @@ def times_divide(res):
     # print(list)
     return str(sum2/sum1)
 
-expression='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
+# expression='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
+
+expression='1-2*(60+2*(-3-40.0/0.5))'
 #主函数
 def main1():
-<<<<<<< HEAD
-    content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)', expression).group()
-#    content = re.search('\(([\-\+\*\/]*\d+\.?\d*)+\)', expression).group()
-    print(content)
-    pp=re.search('(\-?\d+\.?\d*[\-\+]\-?\d+\.?\d*)',content).group()
-    print(pp)
-=======
+
     while True:
         content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)', expression).group()
         expression_old=content
@@ -47,18 +43,14 @@ def main1():
         print(content)
         if '/'or '*' in content:
             content1=re.search('\d+\.?\d*[\*\/]\d+\.?\d*',content).group()
-            content2=times_divide(content1)
-            print(content,content1,content2)
-            content=content.replace(content1,content2)
+            print(content1)
+            content=content.replace(content1,times_divide(content1))
         if '-' or '+' in content:
-            print(content)
-            print(content1,'conten1++++++')
-            content2=plus_add(content1)
-            content=content.replace(content1,content2)
-            print(content, content1, content2)
+            content=content.replace(content1,plus_add(content1))
+            print(content, content1)
             print(expression)
         # expression = expression.replace(expression,content)
->>>>>>> 80432a23153ee00b8f0273c5a3711e7399c9665f
+
 
 main1()
 

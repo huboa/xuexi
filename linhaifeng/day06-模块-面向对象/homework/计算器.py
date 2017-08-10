@@ -46,12 +46,14 @@ while True:
     print('expression_old',expression_old)
     if '/'or '*' in content:
         content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
+
+        print(content1,multiply(content1))
         content=content.replace(content1,multiply(content1))
     if '-' or '+' in content:
         content=plus_minus(content)
 
 
-    print(expression_old,type(expression_old),content,type(content),'\n')
+    # print(expression_old,type(expression_old),content,type(content),'\n')
     # expression1=expression1.replace(expression_old,content)
     time.sleep(1)
 

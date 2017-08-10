@@ -31,14 +31,10 @@ def multiply(res):
     # print(list)
     return str(sum2/sum1)
 
-expression1='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
-
 #主函数
-
 def main1(expression1):
     tag = True
     while tag:
-
         print('express1:',expression1)
         if '(' and ')'  in expression1:
             content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
@@ -62,7 +58,7 @@ def main1(expression1):
 
 
         expression1=expression1.replace(expression_old,content)
-        time.sleep(1)
+        time.sleep(0.5)
         if tag == False:
             break
 
@@ -70,4 +66,5 @@ def main1(expression1):
 
     return res
 
+expression1='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
 print(main1(expression1))

@@ -36,12 +36,13 @@ def multiply(res):
 expression1='1-2*(60+2*(-3-40.0/0.5))'
 expression1='1-2*(60+2*-3)'
 #主函数
-tag=True
+
 def main1(expression1):
-    while True:
+    tag = True
+    while tag:
 
         print('express1',expression1)
-        if '('  in expression1:
+        if '(' and ')'  in expression1:
             content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
             expression_old = content
             content = content.strip('()')
@@ -69,11 +70,13 @@ def main1(expression1):
 
         expression1=expression1.replace(expression_old,content)
         time.sleep(1)
-        
+        if tag == False:
+            break
+
 
 
     return expression1
 
 
 
-main1(expression1)
+print(main1(expression1))

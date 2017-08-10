@@ -32,7 +32,7 @@ def multiply(res):
 # expression='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
 
 expression1='1-2*(60+2*(-3-40.0/0.5))'
-expression1='1-2*(60+2*(-3))'
+expression1='1-2*(60+2*-3))'
 #主函数
 
 while True:
@@ -47,6 +47,7 @@ while True:
         content=content.replace(content1,multiply(content1))
     if '-' or '+' in content:
         content=plus_minus(content)
+
 
     print(expression_old,type(expression_old),content,type(content),'\n')
     # expression1=expression1.replace(expression_old,content)

@@ -47,6 +47,7 @@ def main1(expression1):
             content = content.strip('()')
         else:
             content=expression1
+            tag=False
             print('ttt')
 
 
@@ -67,8 +68,13 @@ def main1(expression1):
 
 
         expression1=expression1.replace(expression_old,content)
-        return expression1
         time.sleep(1)
+        if tag :
+            break
+
+
+    return expression1
 
 
 
+main1(expression1)

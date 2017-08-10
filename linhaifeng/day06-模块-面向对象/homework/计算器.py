@@ -36,38 +36,39 @@ def multiply(res):
 expression1='1-2*(60+2*(-3-40.0/0.5))'
 expression1='1-2*(60+2*-3)'
 #主函数
+tag=True
+def main1(expression1):
+    while True:
 
-while True:
-
-    print('express1',expression1)
-    if '('  in expression1:
-        content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
-        expression_old = content
-        content = content.strip('()')
-    else:
-        content=expression1
-        print('#########',content)
-
-
-    # print(('expression_old %s content %s') % (expression_old, content))
+        print('express1',expression1)
+        if '('  in expression1:
+            content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
+            expression_old = content
+            content = content.strip('()')
+        else:
+            content=expression1
+            print('ttt')
 
 
-    if '/'or '*' in content:
-        print('///////////',content)
-        content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
-        print('//////////////',content1)
-        content=content.replace(content1,multiply(content1))
-        print(content)
-    if '-' or '+' in content:
-        print('/////////',content)
-        content=plus_minus(content)
-        print('/////////', content)
+
+        # print(('expression_old %s content %s') % (expression_old, content))
 
 
-    expression1=expression1.replace(expression_old,content)
-    print(len(expression1))
-    print(expression1,'=====')
-    time.sleep(1)
+        if '/'or '*' in content:
+            print('///////////',content)
+            content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
+            print('//////////////',content1)
+            content=content.replace(content1,multiply(content1))
+            print(content)
+        if '-' or '+' in content:
+            print('/////////',content)
+            content=plus_minus(content)
+            print('/////////', content)
+
+
+        expression1=expression1.replace(expression_old,content)
+        return expression1
+        time.sleep(1)
 
 
 

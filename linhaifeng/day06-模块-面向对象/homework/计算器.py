@@ -1,4 +1,4 @@
-import re
+import re,time,sys
 
 #加减函数 把所有负数 求和到sum1 sum2 为所有正数求和减
 def plus_minus(res):
@@ -46,9 +46,10 @@ def main1():
         if '-' or '+' in content:
             content=plus_minus(content)
 
-        print(expression_old,content)
-        expression1=expression1.replace(expression_old,content)
-
+        print(expression_old,type(expression_old),content,type(content),'\n')
+        expression=expression1.replace(expression_old,content)
+        print(expression)
+        time.sleep(1)
 
 main1()
 

@@ -58,10 +58,9 @@ def main1(expression1):
 
 
         expression1=expression1.replace(expression_old,content)
-        time.sleep(0.5)
+        time.sleep(1)
         if tag == False:
             break
-
 
 
     return res

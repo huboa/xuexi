@@ -31,25 +31,23 @@ def multiply(res):
 
 # expression='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
 
-expression='1-2*(60+2*(-3-40.0/0.5))'
+expression1='1-2*(60+2*(-3-40.0/0.5))'
 #主函数
 def main1():
-
-    # while True:
-        content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)', expression).group()
+    while True:
+        print(expression1)
+        content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
         expression_old=content
+        print(expression_old)
         content = content.strip('()')
-
         if '/'or '*' in content:
             content1=re.search('\d+\.?\d*[\*\/]\d+\.?\d*',content).group()
             content=content.replace(content1,multiply(content1))
-            print(content)
-
         if '-' or '+' in content:
             content=plus_minus(content)
-            print(content)
-            # print(expression)
-        # expression = expression.replace(expression,content)
+
+
+        expression1 = expression1.replace(expression_old,content)
 
 
 main1()

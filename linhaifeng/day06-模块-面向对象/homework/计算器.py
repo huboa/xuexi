@@ -1,7 +1,7 @@
 import re
 
 #加减函数 把所有负数 求和到sum1 sum2 为所有正数求和减
-def plus_(res):
+def plus_minus(res):
     list=re.findall('[\-\+]?\d+\.?\d*',res)
     list1=re.findall('\-\d+\.?\d*',res)
     sum1=sum2=0
@@ -15,7 +15,7 @@ def plus_(res):
     return str(sum2-sum1)   ###返回加减后的值
 
 #乘除函数
-def times_divide(res):
+def multiply(res):
     list = re.findall('[\/]?\d+\.?\d*', res)
     list1 = re.findall('\/\d+\.?\d*', res)
     sum1 = sum2 = 1
@@ -42,12 +42,12 @@ def main1():
 
         if '/'or '*' in content:
             content1=re.search('\d+\.?\d*[\*\/]\d+\.?\d*',content).group()
-            content=content.replace(content1,times_divide(content1))
+            content=content.replace(content1,multiply(content1))
             print(content)
 
         if '-' or '+' in content:
-            content=content.replace(content1,plus_add(content1))
-            print(content, content1)
+            content=plus_minus(content)
+            print(content)
             # print(expression)
         # expression = expression.replace(expression,content)
 

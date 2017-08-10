@@ -1,7 +1,7 @@
 import re
 
 #加减函数 把所有负数 求和到sum1 sum2 为所有正数求和减
-def plus_add(res):
+def plus_(res):
     list=re.findall('[\-\+]?\d+\.?\d*',res)
     list1=re.findall('\-\d+\.?\d*',res)
     sum1=sum2=0
@@ -38,18 +38,17 @@ def main1():
     # while True:
         content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)', expression).group()
         expression_old=content
-        print(expression_old,'expresss11111111111')
         content = content.strip('()')
-        print(content)
-        print(content)
+
         if '/'or '*' in content:
             content1=re.search('\d+\.?\d*[\*\/]\d+\.?\d*',content).group()
-            print(content1)
             content=content.replace(content1,times_divide(content1))
+            print(content)
+
         if '-' or '+' in content:
             content=content.replace(content1,plus_add(content1))
             print(content, content1)
-            print(expression)
+            # print(expression)
         # expression = expression.replace(expression,content)
 
 

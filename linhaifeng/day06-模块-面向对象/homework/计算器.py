@@ -40,8 +40,10 @@ expression1='1-2*(60+2*-3)'
 while True:
 
     print('express1',expression1)
-    content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
-
+    if '()' in expression1:
+        content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
+    else:
+        content=expression1
     expression_old=content
     content = content.strip('()')
 
@@ -49,12 +51,11 @@ while True:
     if '/'or '*' in content:
         content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
         content=content.replace(content1,multiply(content1))
-        print(content)
     if '-' or '+' in content:
         content=plus_minus(content)
-        print(content)
 
-    print(expression_old)
+
+    print(content,'replace',expression_old)
     expression1=expression1.replace(expression_old,content)
     print(expression1,'=====')
     time.sleep(1)

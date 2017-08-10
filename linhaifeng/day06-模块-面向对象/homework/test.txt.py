@@ -1,5 +1,5 @@
 import re
-res='60+2*-3'
+res='2*-3*4*5/5/5/-4'
 def multiply(res):
     list = re.findall('[\/\-]?\d+\.?\d*', res)
     list1 = re.findall('\/\d+\.?\d*', res)
@@ -16,4 +16,4 @@ def multiply(res):
     # print(list)
     return str(sum2/sum1)
 
-multiply(res)
+print(multiply(res))

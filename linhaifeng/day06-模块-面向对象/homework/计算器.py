@@ -36,6 +36,8 @@ expression1='1-2*(60+2*-3))'
 #主函数
 
 while True:
+    # if '*-' in expression1:
+
     print('express1',expression1)
     content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
     expression_old=content
@@ -43,7 +45,7 @@ while True:
 
     print('expression_old',expression_old)
     if '/'or '*' in content:
-        content1=re.search('\d+\.?\d*[\*\/]\d+\.?\d*',content).group()
+        content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
         content=content.replace(content1,multiply(content1))
     if '-' or '+' in content:
         content=plus_minus(content)

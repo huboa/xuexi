@@ -1,19 +1,19 @@
 import re
-res='2 * -3'
-def multiply(res):
-    list = re.findall('\/?\-?\d+\.?\d*', res)
-    list1 = re.findall('\/\-?\d+\.?\d*', res)
-    print(list,'list')
-    print(list1, 'list1')
-    sum1 = sum2 = 1
+
+res='60+-6.0'
+def plus_minus(res):
+    res=res.replace('--','+')
+    res=res.replace('+-','-')
+    list=re.findall('[\-\+]?\d+\.?\d*',res)
+    list1=re.findall('\-\d+\.?\d*',res)
+    sum1=sum2=0
     for n in list1:
         list.remove(n)
-        n = re.search('\-?\d+\.?\d*', n).group()
-        sum1 = sum1 * float(n)
+        n=re.search('\d+\.?\d*',n).group()
+        sum1=sum1+float(n)
     for n in list:
-        n = re.search('\-?\d+\.?\d*', n).group()
-        sum2 = sum2 * float(n)
-    # print(list)
-    return str(sum2/sum1)
+        n = re.search('\d+\.?\d*', n).group()
+        sum2 = sum2 + float(n)
+    return str(sum2-sum1)   ###返回加减后的值
 
-print(multiply(res))
+print(plus_minus(res))

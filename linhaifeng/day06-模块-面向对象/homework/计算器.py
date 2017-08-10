@@ -2,6 +2,8 @@ import re,time,sys
 
 #加减函数 把所有负数 求和到sum1 sum2 为所有正数求和减
 def plus_minus(res):
+    res=res.replace('--','+')
+    res=res.replace('+-','-')
     list=re.findall('[\-\+]?\d+\.?\d*',res)
     list1=re.findall('\-\d+\.?\d*',res)
     sum1=sum2=0
@@ -47,9 +49,8 @@ while True:
     print('expression_old',expression_old)
     if '/'or '*' in content:
         content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
-
-        print(content1,multiply(content1))
         content=content.replace(content1,multiply(content1))
+        print(content)
     if '-' or '+' in content:
         content=plus_minus(content)
 

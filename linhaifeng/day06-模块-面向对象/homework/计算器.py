@@ -35,11 +35,11 @@ expression1='1-2*(60+2*(-3-40.0/0.5))'
 #主函数
 def main1():
     while True:
-        print(expression1)
+        print('express1',expression1)
         content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
-        expression_old=content
-        print(expression_old)
         content = content.strip('()')
+        expression_old=content
+        print('expression_old',expression_old)
         if '/'or '*' in content:
             content1=re.search('\d+\.?\d*[\*\/]\d+\.?\d*',content).group()
             content=content.replace(content1,multiply(content1))
@@ -47,7 +47,7 @@ def main1():
             content=plus_minus(content)
 
         print(expression_old,content)
-        print(expression1.replace(expression_old,content),'=======')
+        expression1=expression1.replace(expression_old,content)
 
 
 main1()

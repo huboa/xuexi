@@ -65,6 +65,7 @@ while True:
 
 
     expression1=expression1.replace(expression_old,content)
+    print(len(expression1))
     print(expression1,'=====')
     time.sleep(1)
 

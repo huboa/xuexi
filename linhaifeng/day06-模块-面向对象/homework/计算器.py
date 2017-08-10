@@ -38,8 +38,6 @@ expression1='1-2*(60+2*-3))'
 #主函数
 
 while True:
-    if '*-' in expression1:
-        print(re.sub('(\w+)( .* )(\w+)', r'\3\2\1', '60+2*-3'))
 
     print('express1',expression1)
     content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
@@ -56,8 +54,9 @@ while True:
         content=plus_minus(content)
         print(content)
 
-
+    print(expression_old)
     expression1=expression1.replace(expression_old,content)
+    print(expression1,'=====')
     time.sleep(1)
 
 

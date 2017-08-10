@@ -40,11 +40,13 @@ expression1='1-2*(60+2*-3)'
 while True:
 
     print('express1',expression1)
-    if '()' in expression1:
+    if '(' or ')' in expression1:
         content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
     else:
         content=expression1
+        
     expression_old=content
+    print(('expression_old %s content %s') % (expression_old, content))
     content = content.strip('()')
 
     print('expression_old',expression_old)

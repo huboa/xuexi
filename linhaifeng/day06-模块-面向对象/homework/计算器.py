@@ -31,17 +31,15 @@ def multiply(res):
     # print(list)
     return str(sum2/sum1)
 
-# expression='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
+expression1='1-2*((60+2*(-3-40.0/0.5)*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
 
-expression1='1-2*(60+2*(-3-40.0/0.5))'
-expression1='1-2*(60+2*-3)'
 #主函数
 
 def main1(expression1):
     tag = True
     while tag:
 
-        print('express1',expression1)
+        print('express1:',expression1)
         if '(' and ')'  in expression1:
             content = re.search('\(([\-\+\*\/]*\d+\.?\d*)*\)',expression1).group()
             expression_old = content
@@ -49,23 +47,18 @@ def main1(expression1):
         else:
             content=expression1
             tag = False
-            print('ttt')
-
-
-
-        # print(('expression_old %s content %s') % (expression_old, content))
-
 
         if '/'or '*' in content:
-            print('///////////',content)
+            print('content:',content)
             content1=re.search('\d+\.?\d*[\*\/][\-]?\d+\.?\d*',content).group()
-            print('//////////////',content1)
+            print('content:',content1)
             content=content.replace(content1,multiply(content1))
             print(content)
         if '-' or '+' in content:
-            print('/////////',content)
+            print('content:',content)
             content=plus_minus(content)
-            print('/////////', content)
+            print('content:', content)
+            res=content
 
 
         expression1=expression1.replace(expression_old,content)
@@ -75,8 +68,6 @@ def main1(expression1):
 
 
 
-    return expression1
-
-
+    return res
 
 print(main1(expression1))

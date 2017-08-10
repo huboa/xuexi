@@ -1,7 +1,7 @@
 import re
 res='2*-3*4*5/5/-5/-4/-1'
 def multiply(res):
-    list = re.findall('[\-\/]?\d+\.?\d*', res)
+    list = re.findall('[\*\-]?\d+\.?\d*', res)
     list1 = re.findall('\/\-?\d+\.?\d*', res)
     print(list,'list')
     print(list1, 'list1')

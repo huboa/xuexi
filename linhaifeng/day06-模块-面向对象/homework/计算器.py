@@ -47,8 +47,7 @@ def main1():
             content=plus_minus(content)
 
         print(expression_old,type(expression_old),content,type(content),'\n')
-        expression=expression1.replace(expression_old,content)
-        print(expression)
+        # expression1=expression1.replace(expression_old,content)
         time.sleep(1)
 
 main1()

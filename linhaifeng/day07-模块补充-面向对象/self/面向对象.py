@@ -44,10 +44,17 @@ obj2
 
 '''
 class oldboy_student:
-    school='oldboy'
+    school='oldboy' ##类的数据属性
     def learn(self):
-        print('is learning')
-    print('=====>')
+        print('is learning')##类的函数属性
+    def eat(self):
+        print('is eating')
+#    print('=====>')
 
 ##类体的代码在类定义阶段会执行
 print(oldboy_student.__dict__)
+print(oldboy_student.__dict__['school'])
+print(oldboy_student.__dict__['learn'])
+res=oldboy_student.__dict__['learn']
+res('learn')
+print(oldboy_student.school)

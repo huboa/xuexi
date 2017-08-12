@@ -69,12 +69,36 @@ obj2
 
 ###产生程序对象 类名加（）调用类，产生一个实际存在的对象，称为实例化，产生结果又称为实例
 
+#
+# class oldboy_student:
+#     def __init__(self,name,age,sex):
+#         self.name=name
+#         self.age=age
+#         self.sex=sex
+#
+#     school='oldboy' ##类的数据属性
+#     def learn(self):
+#         print('is learning')##类的函数属性
+#     def eat(self):
+#         print('is eating')
+# #    print('=====>')
+# print(callable(oldboy_student))
+# obj1=oldboy_student('zz','18','女')
+# # obj2=oldboy_student()
+# # obj3=oldboy_student()
+#
+# print(obj1)
+# # print(obj2)
+# # print(obj3)
 
+
+###
 class oldboy_student:
     def __init__(self,name,age,sex):
         self.name=name
         self.age=age
         self.sex=sex
+
     school='oldboy' ##类的数据属性
     def learn(self):
         print('is learning')##类的函数属性

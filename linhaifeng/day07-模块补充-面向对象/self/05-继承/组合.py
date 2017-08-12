@@ -54,7 +54,7 @@ egon_obj=OldboyTeacher('egon',18,'male',3.1,'沙河霸道金牌讲师')
 
 
 yl_obj=OldboyStudent('yanglei',28,'female')
-yl_obj.course.append(python)
+yl_obj.course.append(python,bigdata)
 
 for i in yl_obj.course:
     # print(i.course_name,i.course_period,i.course_price)

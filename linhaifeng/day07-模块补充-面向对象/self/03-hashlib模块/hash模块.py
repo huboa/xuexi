@@ -12,3 +12,8 @@ m=hashlib.md5()
 m.update('h'.encode('utf-8'))
 m.update('elloworld'.encode('utf-8'))
 print(m.hexdigest())
+
+with open ('a.xml','rb') as f:
+    for line in f:
+        m.update(line)
+    print(m.hexdigest())

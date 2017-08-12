@@ -58,3 +58,4 @@ print(oldboy_student.__dict__['learn'])
 res=oldboy_student.__dict__['learn']
 res('learn')
 print(oldboy_student.school)
+oldboy_student.learn(111)

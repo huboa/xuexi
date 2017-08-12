@@ -59,3 +59,9 @@ res=oldboy_student.__dict__['learn']
 res('learn')
 print(oldboy_student.school)
 oldboy_student.learn(111)
+
+oldboy_student.x=111111
+oldboy_student.school='33'
+del oldboy_student.school
+print(oldboy_student.__dict__)
+print(oldboy_student.__dict__)

@@ -7,4 +7,4 @@ class SubClass1(ParentClass1):
     pass
 class SubClass2(ParentClass1,ParentClass2):
     pass
-print(SubClass1.__base__)
+print(SubClass2.__base__)

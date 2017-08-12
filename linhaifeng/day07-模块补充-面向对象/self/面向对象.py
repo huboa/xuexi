@@ -42,26 +42,50 @@ obj2
 第二阶段：程序中的类----》》程序中的类
 
 
-'''
+# '''
+# class oldboy_student:
+#     school='oldboy' ##类的数据属性
+#     def learn(self):
+#         print('is learning')##类的函数属性
+#     def eat(self):
+#         print('is eating')
+# #    print('=====>')
+
+##类体的代码在类定义阶段会执行
+# print(oldboy_student.__dict__)
+# print(oldboy_student.__dict__['school'])
+# print(oldboy_student.__dict__['learn'])
+# res=oldboy_student.__dict__['learn']
+# res('learn')
+# print(oldboy_student.school)
+# oldboy_student.learn(111)
+#
+# oldboy_student.x=111111
+# oldboy_student.school='33'
+# del oldboy_student.school
+# print(oldboy_student.__dict__)
+# print(oldboy_student.__dict__)
+
+
+###产生程序对象 类名加（）调用类，产生一个实际存在的对象，称为实例化，产生结果又称为实例
+
+
 class oldboy_student:
+    def __init__(self,name,age,sex):
+        self.name=name
+        self.age=age
+        self.sex=sex
     school='oldboy' ##类的数据属性
     def learn(self):
         print('is learning')##类的函数属性
     def eat(self):
         print('is eating')
 #    print('=====>')
+print(callable(oldboy_student))
+obj1=oldboy_student()
+obj2=oldboy_student()
+obj3=oldboy_student()
 
-##类体的代码在类定义阶段会执行
-print(oldboy_student.__dict__)
-print(oldboy_student.__dict__['school'])
-print(oldboy_student.__dict__['learn'])
-res=oldboy_student.__dict__['learn']
-res('learn')
-print(oldboy_student.school)
-oldboy_student.learn(111)
-
-oldboy_student.x=111111
-oldboy_student.school='33'
-del oldboy_student.school
-print(oldboy_student.__dict__)
-print(oldboy_student.__dict__)
+print(obj1)
+print(obj2)
+print(obj3)

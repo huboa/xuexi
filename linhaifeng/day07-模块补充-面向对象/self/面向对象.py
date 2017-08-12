@@ -94,10 +94,13 @@ obj2
 
 ###
 class oldboy_student:
+
     def __init__(self,name,age,sex):
         self.name=name
         self.age=age
         self.sex=sex
+        self.cc+=1
+
 
     school='oldboy' ##类的数据属性
     def learn(self):
@@ -107,8 +110,8 @@ class oldboy_student:
 #    print('=====>')
 print(callable(oldboy_student))
 obj1=oldboy_student('zz','18','女')
-# obj2=oldboy_student()
-# obj3=oldboy_student()
+obj2=oldboy_student('zz','18','女')
+obj3=oldboy_student('zz','18','女')
 
 print(obj1.learn())
 print(oldboy_student.__dict__)

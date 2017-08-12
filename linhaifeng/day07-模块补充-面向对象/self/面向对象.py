@@ -101,7 +101,7 @@ class oldboy_student:
 
     school='oldboy' ##类的数据属性
     def learn(self):
-        print('is learning')##类的函数属性
+        print('%s is learning' %self.name)##类的函数属性
     def eat(self):
         print('is eating')
 #    print('=====>')
@@ -110,6 +110,7 @@ obj1=oldboy_student('zz','18','女')
 # obj2=oldboy_student()
 # obj3=oldboy_student()
 
-print(obj1)
+print(obj1.learn())
+print(oldboy_student.__dict__)
 # print(obj2)
 # print(obj3)

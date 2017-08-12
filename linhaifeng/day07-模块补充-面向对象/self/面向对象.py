@@ -93,7 +93,7 @@ obj2
 
 
 ###
-class oldboy_student:
+class oldboy_student(cc=1):
 
     def __init__(self,name,age,sex):
         self.name=name

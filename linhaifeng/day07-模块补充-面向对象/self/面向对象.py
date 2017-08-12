@@ -93,27 +93,39 @@ obj2
 
 
 ###
-class oldboy_student(cc=1):
-
-    def __init__(self,name,age,sex):
-        self.name=name
-        self.age=age
-        self.sex=sex
-        self.cc+=1
-
-
-    school='oldboy' ##类的数据属性
-    def learn(self):
-        print('%s is learning' %self.name)##类的函数属性
-    def eat(self):
-        print('is eating')
-#    print('=====>')
-print(callable(oldboy_student))
-obj1=oldboy_student('zz','18','女')
-obj2=oldboy_student('zz','18','女')
-obj3=oldboy_student('zz','18','女')
-
-print(obj1.learn())
-print(oldboy_student.__dict__)
-# print(obj2)
-# print(obj3)
+# class oldboy_student(cc=1):
+#
+#     def __init__(self,name,age,sex):
+#         self.name=name
+#         self.age=age
+#         self.sex=sex
+#         self.cc+=1
+#
+#
+#     school='oldboy' ##类的数据属性
+#     def learn(self):
+#         print('%s is learning' %self.name)##类的函数属性
+#     def eat(self):
+#         print('is eating')
+# #    print('=====>')
+# print(callable(oldboy_student))
+# obj1=oldboy_student('zz','18','女')
+# obj2=oldboy_student('zz','18','女')
+# obj3=oldboy_student('zz','18','女')
+#
+# print(obj1.learn())
+# print(oldboy_student.__dict__)
+# # print(obj2)
+# # print(obj3)
+class Foo:
+    count=0
+    def __init__(self,x,y,z):
+        self.x = x
+        self.y = y
+        self.z = z
+        Foo.count+=1
+obj1=Foo(1,1,1)
+obj2=Foo(2,2,2)
+obj3=Foo(3,3,3)
+print(Foo.count)
+print(obj1.count)

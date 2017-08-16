@@ -16,7 +16,8 @@ def auth(func):
 def foo(name):
     print(name)
 
-foo(123)
+while True:
+    foo('认证OK')
 
 
 

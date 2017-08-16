@@ -5,6 +5,7 @@ def auth(func):
         if user_static['user']:
             print(user_static['user'])
             return func(*args, **kwargs)
+
         name=input('name:').strip()
         password=input('password:').strip()
         dic = json.load(open('../db/user.json', 'r'))

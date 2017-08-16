@@ -4,11 +4,12 @@ def auth(func):
     def wrapper(*args,**kwargs):
         if user_static['user']:
             print(user_static['user'])
+            return func(*args, **kwargs)
         name=input('name:').strip()
         password=input('password:').strip()
         dic = json.load(open('../db/user.json', 'r'))
         if name in dic and password == dic[name]["password"]:
-
+            user_static['user']=name
             res=func(*args,**kwargs)
 
             return res
@@ -24,9 +25,9 @@ def foo(name):
 def foo1(name):
     print(name)
 
-while True:
-    foo('认证OK')
-    foo1('二次认证')
+
+foo('认证OK')
+foo1('二次认证')
 
 
 

@@ -10,11 +10,11 @@
 #名字的查找顺序
 
 
-max=1
-def foo():
-    max=99
-    print(max)
-foo()
+# max=1
+# def foo():
+#     max=99
+#     print(max)
+# foo()
 #
 # x=0
 # def f1():
@@ -30,28 +30,36 @@ foo()
 
 ###作用域：作用的范围，
 # 全局作用域：全局存活，全局有效 内置命名空间，全局命名空间
-x=1
-def f1():
-    def f2():
-        def f3():
-            def f4():
-                print(max)
-                print(x)
+# x=1
+# def f1():
+#     def f2():
+#         def f3():
+#             def f4():
+#                 print(max,'max')
+#                 print(x)
+#             f4()
+#         f3()
+#     f2()
+#
+# f1()
 
-f1()
+
 # 局部作用域：临时存活，局部有效
 # def f1():
 #     x=1
 #     x=2
 #     def f2():pass
-#     print(locals())
-#     print(globals())
+#     print(locals())    ###局部的
+#     print(globals())   ##全局空间
+# f1()
+# print(locals() is globals())  ###全局查看是一样的
 # print(locals())
 # print(globals())
-# print(locals() is globals())
 
+###内部命名空间
+# print(dir(globals()['__builtins__']))
 
-###global nonlocal  #尽量不用影响
+###global nonlocal  #尽量不用影响 变成全局的
 
 # x=1
 # def f1():
@@ -66,21 +74,22 @@ f1()
 #     l.append('f2')
 # f2()
 # print(l)
+# #
+# x=0
+# def f1():
+#     x=1
+#     def f2():
+#         # x=2
+#         def f3():
+#             # global   ##指定全局
+#             nonlocal x   ###改变上一个 x  只在内部生效
+#             x = 3
 #
-x=0
-def f1():
-    x=1
-    def f2():
-        x=2
-        def f3():
-            nonlocal x
-            x = 3
-
-        f3()
-    f2()
-    print(x)
-f1()
-print(x)
+#         f3()
+#     f2()
+#     print(x)
+# f1()
+# # print(x)x
 
 
 ###优先掌握：
@@ -90,7 +99,14 @@ x=1
 def f1():
     def f2():
         print(x)
-    return f2()
-f1()
-
-
+    return f2
+func=f1()
+# print(func)
+# x=1000
+# func()
+#
+x=2000
+def foo(func):
+    x=10000
+    func()
+foo(func)

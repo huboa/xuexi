@@ -1,6 +1,7 @@
 import pickle,json
 def auth(func):
     def wrapper(*args,**kwargs):
+        dic = json.load(open('../db/user.json', 'r'))
         if True:
             res=func(*args,**kwargs)
             return res
@@ -12,7 +13,7 @@ def foo(name):
 
 foo(123)
 
-dic=json.load(open('../db/user.json','r'))
+
 print(dic)
 #
 # with open ('../db/user.json','w') as f:

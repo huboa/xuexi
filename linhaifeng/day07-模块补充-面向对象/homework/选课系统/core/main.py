@@ -1,3 +1,5 @@
+import auth
+
 class school:
     def __init__(self, name, address,city):
         self.name = name
@@ -38,45 +40,43 @@ class study_record:
        self.status=status
        self.date=date
        self.score=score
-
-#db.txt内容:egon1|egon2|
-dic={
-    'sudo1':{'password':'123','count':0},
-    'sudo2':{'password':'123','count':0},
-    'sudo3':{'password':'123','count':0},
-}
-
-
-count=0
-while True:
-    name=input('请输入用户名 q退出程序 >>: ')
-    if name == 'q':break
-    if name not in dic:
-        print('用户不存在')
-        continue
-
-    with open('db.txt','r') as f:
-        lock_users=f.read().split('|')
-        if name  in lock_users:
-            print('用户%s已经被锁定' %name)
-            break
-
-
+def create_id():
     while True:
-        if dic[name]['count'] > 2:
-            print('尝试次数过多,锁定')
-            with open('db.txt', 'a') as f:
-                f.write('%s|' % name)
-            break
 
-        password=input('p >>: ')
-        if password == dic[name]['password']:
-            print('登录成功')
-            break
+        goods = [
+            {"name": "校区", "class_name": school},
+            {"name": "课程", "class_name": course},
+            {"name": "班级", "class_name": classes},
+        ]
+        ##显示商品信息
+        print('编号  名称  功能')
+        n = 1
+        for good in goods:
+            print('  %d   %s  %s' % (n, good["name"], good["class_name"]))
+            n += 1
+
+        ##输入选项
+        good_c = 1
+        choice = input("请输入要选择的功能,q 退出 :").strip()
+        if len(choice) == 0: continue  ###空则跳过
+        if choice == "q": break
+        if choice.isdigit():
+            choice = int(choice)  ##转换成数字
         else:
-            print('用户名或密码错误')
-            dic[name]['count']+=1
+            print("请输入数字")
+            continue
 
+        good_all_c = range(1, len(goods) + 1)
+        if choice not in good_all_c:
+            print("编号错误,请重新输入")
+            continue
+
+@auth.auth
+def main():
+    while True:
+        create_id()
+
+main()
 
 
 

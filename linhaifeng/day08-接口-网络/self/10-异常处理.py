@@ -1,0 +1,4 @@
+aaaaa
+print('=====>')
+
+if :pass

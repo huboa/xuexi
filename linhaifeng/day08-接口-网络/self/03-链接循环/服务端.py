@@ -9,22 +9,26 @@ phone.bind(('127.0.0.1',8080))
 phone.listen(5)
 
 #等电话
-print('等待电话')
-conn,client_addr=phone.accept()
-print('连接')
-print(conn,client_addr)
+while True:   ###连接循环
+    print('等待电话')
+    conn,client_addr=phone.accept()
+    print('连接')
+    print(conn,client_addr)
 
 
-###基于建立的连接，收发消息
-while True:##通话交流
-    client_data=conn.recv(1024)
-    print('客户信息')
-    print(client_data.upper())
-    conn.send(client_data.upper())
+    ###基于建立的连接，收发消息
+    while True:##通话交流
+        try:
+            client_data=conn.recv(1024)
+            if not client_data:break###针对对linux
+            print('客户信息')
+            print(client_data.upper())
+            conn.send(client_data.upper())
+        except Exception: ##针对windows
+            break
 
 
-
-##挂电话
-conn.close()
+    ##挂电话
+    conn.close()
 ###关机
 phone.close()

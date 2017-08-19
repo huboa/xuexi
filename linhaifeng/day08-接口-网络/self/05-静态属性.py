@@ -11,3 +11,5 @@ p=People('zsc',75,1.80)
 p.height=1.8
 print(p.bmi)
 # print(p.bmi())
+
+###可以增删改查

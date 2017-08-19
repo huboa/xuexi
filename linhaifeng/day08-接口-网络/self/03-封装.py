@@ -35,7 +35,7 @@ class People:
 
 p=People('egon',18)
 p.tell_info()
-p.set_info('zsc',"19")
+# p.set_info('zsc',"19")##报错可以在set那加
 p.set_info('zsc',19)
 p.tell_info()
 #

@@ -1,3 +1,4 @@
+###在对象资源被释放的时候触发__del__
 class Foo:
     def __init__(self,x):
         self.x=x

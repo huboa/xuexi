@@ -1,16 +1,16 @@
 ##买手机
 import socket
 phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)###tcp
-##udp
-
 
 #插卡
-phone.bind('127.0.0.1',8080)
+phone.bind(('127.0.0.1',8080))
 #开机
 phone.listen(5)
 
 #等电话
+print('等待电话')
 conn,client_addr=phone.accept()
+print('连接')
 print(conn,client_addr)
 
 

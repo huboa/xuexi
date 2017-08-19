@@ -2,7 +2,7 @@
 import socket,time
 
 phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)###tcp
-
+phone.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) ###复用
 #插卡
 phone.bind(('127.0.0.1',8080))
 #开机

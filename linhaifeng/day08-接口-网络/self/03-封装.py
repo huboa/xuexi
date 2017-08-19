@@ -23,7 +23,7 @@ class People:
         self.__Name=name
         self.__Age=age
     def tell_info(self):
-        
+        print('tt')
 
 #取款是功能,而这个功能有很多功能组成:插卡、密码认证、输入金额、打印账单、取钱
 #对使用者来说,只需要知道取款这个功能即可,其余功能我们都可以隐藏起来,很明显这么做

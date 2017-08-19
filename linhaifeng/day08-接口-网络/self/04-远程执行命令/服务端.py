@@ -20,14 +20,18 @@ while True:   ###连接循环
     ###基于建立的连接，收发消息
     while True:##通话交流
         try:
-            cmd_data=conn.recv(1024)
-            if not cmd_data:break###针对对linux
+            cmd=conn.recv(1024)
+            if not cmd:break###针对对linux
             print('客户信息')
-            res=subprocess.Popen(cmd.decode('utf-8'))
-                
+            res=subprocess.Popen(cmd.decode('utf-8'),
+                                 shell=True,
+                                 stdout=subprocess.PIPE,
+                                 stderr=subprocess.PIPE)
+            stdout=res.stdout.read()
+            stderr=res.stderr.read()
 
 
-            conn.send(client_data.upper())
+            conn.send(stdout+stderr)
         except Exception: ##针对windows
             break
 

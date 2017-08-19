@@ -9,5 +9,5 @@ while True:
     if not cmd:continue
     phone.send(cmd.encode('utf-8'))
     cmd_res=phone.recv(1024)
-    print('收到的消息是',cmd_res.decode('utf-8'))
+    print(cmd_res.decode('utf-8'))
 phone.close()

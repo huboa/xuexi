@@ -17,6 +17,7 @@ print(conn,client_addr)
 ###基于建立的连接，收发消息
 client_data=conn.recv(1024)
 print('客户信息')
+print(client_data.upper())
 conn.send(client_data.upper())
 
 

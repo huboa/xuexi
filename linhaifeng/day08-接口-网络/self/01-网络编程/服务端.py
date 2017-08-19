@@ -11,9 +11,12 @@ phone.listen(5)
 
 #等电话
 conn,client_addr=phone.accept()
+print(conn,client_addr)
+
 
 ###基于建立的连接，收发消息
 client_data=conn.recv(1024)
+print('客户信息')
 conn.send(client_data.upper())
 
 

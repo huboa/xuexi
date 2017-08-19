@@ -1,5 +1,6 @@
 ##买手机
-import socket,time
+import socket
+import subprocess
 
 phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)###tcp
 phone.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) ###复用
@@ -19,10 +20,13 @@ while True:   ###连接循环
     ###基于建立的连接，收发消息
     while True:##通话交流
         try:
-            client_data=conn.recv(1024)
-            if not client_data:break###针对对linux
+            cmd_data=conn.recv(1024)
+            if not cmd_data:break###针对对linux
             print('客户信息')
-            print(client_data.upper())
+            res=subprocess.Popen(cmd.decode('utf-8'))
+                
+
+
             conn.send(client_data.upper())
         except Exception: ##针对windows
             break

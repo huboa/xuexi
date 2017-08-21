@@ -7,7 +7,6 @@
         <neighbor direction="W" name="Switzerland" />
     </country>
     <country name="Singapore">
-        <rank updated="yes">5</rank>
         <year updated="yes" version="2.0">2020</year>
         <gdppc>59900</gdppc>
         <neighbor direction="N" name="Malaysia" />

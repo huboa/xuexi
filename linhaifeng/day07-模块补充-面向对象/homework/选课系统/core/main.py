@@ -42,13 +42,12 @@ class study_record:
        self.score=score
 def create_id():
     while True:
-
         goods = [
-            {"name": "校区", "class_name": school},
-            {"name": "课程", "class_name": course},
-            {"name": "班级", "class_name": classes},
+            {"name": "校区", "class_name": "school"},
+            {"name": "课程", "class_name": "course"},
+            {"name": "班级", "class_name": "classes"},
         ]
-        ##显示商品信息
+        ##操作台功能
         print('编号  名称  功能')
         n = 1
         for good in goods:
@@ -56,7 +55,6 @@ def create_id():
             n += 1
 
         ##输入选项
-        good_c = 1
         choice = input("请输入要选择的功能,q 退出 :").strip()
         if len(choice) == 0: continue  ###空则跳过
         if choice == "q": break

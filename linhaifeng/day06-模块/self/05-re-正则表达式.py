@@ -2,8 +2,8 @@ import re
 # print(re.findall('\w','hello_ | zsc 123'))
 # print(re.findall('\W','hello_ | zsc 123'))
 # print(re.findall('\s','hello_ | zsc 123 \n \t'))
-print(re.findall('\S','hello_ | zsc 123 \n \t'))
-print(re.findall('\d','hello_ | zsc 123 \n \t'))
+# print(re.findall('\S','hello_ | zsc 123 \n \t'))
+# print(re.findall('\d','hello_ | zsc 123 \n \t'))
 # print(re.findall('\D','hello_ | zsc 123 \n \t'))
 # print(re.findall('h','hello_ | hello_ h zsc 123 \n \t'))
 # print(re.findall('\Ah','hello_ | hello_ h zsc 123 \n \t123'))
@@ -12,14 +12,14 @@ print(re.findall('\d','hello_ | zsc 123 \n \t'))
 # print(re.findall('123$','hello_ | hello_ h zsc 123 \n \t123'))
 
 ## . 与 [] [^]
-# #. 本身就代表一个字符
+# . 本身就代表一个字符
 # print(re.findall('a.c','a a1c a*c a2c abc a c aaaac'))
 # print(re.findall('a.c','a a1c a*c a2c a\nc'))
 # print(re.findall('a.c','a a1c a*c a2c a\nc',re.DOTALL))
 # print(re.findall('a.c','a a1c a*c a2c a\nc',re.S))
-# ##[]内部可以有多个字符，但本身只配多个字符中的一个
+##[]内部可以有多个字符，但本身只配多个字符中的一个
 # print(re.findall('a[123\n]c','a a1c a*c a2c a\nc',re.S))
-# print(re.findall('a[123\n][123]c','a a1c a*c a22c a\nc',re.S))
+print(re.findall('a[123\n][123]c','a a1c a*c a22c a\nc',re.S))
 # print(re.findall('a[a-z]c','a a1c a*c a22c aac a\nc',re.S))
 # print(re.findall('a[A-z]c','a a1c a*c a22c aac a\nc a/c a+c ',re.S))
 # print(re.findall('a[+/*-]c','a a1c a*c a22c aac a\nc a/c a+c ',re.S))

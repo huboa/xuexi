@@ -19,6 +19,7 @@ while True:
 
     #再收报头
     header_bytes=phone.recv(header_size)
+    print(header_bytes)
     head_json=header_bytes.decode('utf-8')
     head_dic=json.loads(head_json)
 

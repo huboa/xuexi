@@ -16,9 +16,14 @@ while True:
     ##再收执行结果
 
     recv_size=0
-    while recv_size < body_size
-    cmd_res=phone.recv(1024)
-    print(cmd_res.decode('utf-8'))
-    # print(cmd_res.decode('gbk'))
+    data=b''
+    print(type(data))
+    while recv_size < body_size:
+        recv_data=phone.recv(1024)
+        recv_size+=len(recv_data)
+        data+=recv_data
+
+    ##打印结果
+    print(data.decode('utf-8'))
 
 phone.close()

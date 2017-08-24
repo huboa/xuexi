@@ -1,5 +1,6 @@
 ####建立连接
 import socket
+import struct
 import subprocess
 phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)###tcp
 phone.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) ###复用
@@ -22,7 +23,12 @@ while True:   ###连接循环
                                  stderr=subprocess.PIPE)
             stdout=res.stdout.read()
             stderr=res.stderr.read()
+
+            ##先发报头（固定长度）
+            header=len(stdout)+len(stderr)
+            conn.send(header)
             conn.send(stdout+stderr)
+
 
 
 

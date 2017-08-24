@@ -14,6 +14,7 @@ while True:
     #先收报头的长度
     struct_res=phone.recv(4)
     header_size=struct.unpack('i',struct_res)[0]
+    print(header_bytes)
 
     #再收报头
     header_bytes=phone.recv(header_size)

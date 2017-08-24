@@ -9,7 +9,7 @@ while True:
     if not cmd:continue
     phone.send(cmd.encode('utf-8'))
     cmd_res=phone.recv(1024)
-    # print(cmd_res.decode('utf-8'))
-    print(cmd_res.decode('gbk'))
+    print(cmd_res.decode('utf-8'))
+    # print(cmd_res.decode('gbk'))
 
 phone.close()

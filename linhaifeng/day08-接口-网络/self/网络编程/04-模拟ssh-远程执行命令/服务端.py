@@ -14,7 +14,7 @@ while True:   ###连接循环
     while True:
         try:
             cmd=conn.recv(1024)
-            if not cmd:break  ###针对对linux
+            if not cmd:break  ###针对对linux异常断开就跳出
             print('客户信息')
             res=subprocess.Popen(cmd.decode('utf-8'),
                                  shell=True,
@@ -25,7 +25,7 @@ while True:   ###连接循环
 
 
             conn.send(stdout+stderr)
-        except Exception: ##针对windows
+        except Exception: ##针对windows异常跳出
             break
 
 

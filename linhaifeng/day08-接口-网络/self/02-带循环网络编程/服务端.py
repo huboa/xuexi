@@ -17,15 +17,13 @@ print('已连接')
 # print('client_addr',client_addr)
 
 ###基于建立的连接，收发消息
-while True:##通话交流
+while True:
+    print('等待接收信息1024个')
     client_data=conn.recv(1024)
-    print('客户信息')
-    print(client_data.upper())
+    print("处理信息-变成大写字母",client_data.upper())
     conn.send(client_data.upper())
 
-
-
-##挂电话
+##关闭连接
 conn.close()
-###关机
+###关机、关闭实例
 phone.close()

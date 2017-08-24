@@ -12,4 +12,5 @@ while True:
     phone.send(msg.encode('utf-8'))
     server_data=phone.recv(1024)
     print('收到的消息是',server_data.decode('utf-8'))
+
 phone.close()

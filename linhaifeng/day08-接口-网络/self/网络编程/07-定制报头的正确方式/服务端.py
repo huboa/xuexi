@@ -28,8 +28,11 @@ while True: #链接循环
 
             #制作报头
             header_dic={'total_size':len(stdout)+len(stderr),'md5':None}
+            print(header_dic)
             header_json=json.dumps(header_dic)
+            print(header_json)
             header_bytes=header_json.encode('utf-8')
+            print(header_bytes)
 
 
             #1 先发报头的长度（固定4个bytes）

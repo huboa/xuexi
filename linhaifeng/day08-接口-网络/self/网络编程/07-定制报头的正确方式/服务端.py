@@ -32,7 +32,7 @@ while True: #链接循环
             header_json=json.dumps(header_dic)
             print(header_json)
             header_bytes=header_json.encode('utf-8')
-            print(header_bytes)
+            print(header_bytes,len(header_bytes))
 
 
             #1 先发报头的长度（固定4个bytes）

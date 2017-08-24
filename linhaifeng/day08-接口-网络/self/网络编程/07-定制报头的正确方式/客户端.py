@@ -13,8 +13,9 @@ while True:
 
     #先收报头的长度
     struct_res=phone.recv(4)
+    print(struct_res)
     header_size=struct.unpack('i',struct_res)[0]
-    print(header_bytes)
+    print(header_size)
 
     #再收报头
     header_bytes=phone.recv(header_size)
@@ -31,6 +32,6 @@ while True:
         data+=recv_data
 
     #打印结果
-    print(data.decode('gbk'))
-
+    # print(data.decode('gbk'))
+    print(data.decode('utf-8'))
 phone.close()

@@ -12,7 +12,12 @@ while True:
 
     #先收报头
     header=phone.recv(4)
-    cmd_res=phone.recv(header)
+    body_size=struct.unpack('i',header)[0]
+    ##再收执行结果
+
+    recv_size=0
+    while recv_size < body_size
+    cmd_res=phone.recv(1024)
     print(cmd_res.decode('utf-8'))
     # print(cmd_res.decode('gbk'))
 

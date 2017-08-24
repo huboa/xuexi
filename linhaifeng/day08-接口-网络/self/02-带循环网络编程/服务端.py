@@ -13,7 +13,7 @@ print('等待连接')
 conn,client_addr=phone.accept()
 print('已连接')
 print('conn',conn)
-print(conn,client_addr)
+print('client_addr')
 
 ###基于建立的连接，收发消息
 while True:##通话交流

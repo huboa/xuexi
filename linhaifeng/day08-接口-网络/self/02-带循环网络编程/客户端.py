@@ -1,7 +1,9 @@
-##买手机
+##导入模块
 import socket
-phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)###tcp
 
+###创建socket对象
+phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)###tcp
+##建立连接
 phone.connect(('127.0.0.1',8080))
 
 while True:

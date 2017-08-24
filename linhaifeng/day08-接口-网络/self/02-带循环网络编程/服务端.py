@@ -1,19 +1,19 @@
-##买手机
+##导入模块
 import socket,time
-
+###创建连接对象
 phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)###tcp
 phone.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) ###复用
-#插卡
+#绑定连接tcp
 phone.bind(('127.0.0.1',8080))
-#开机
+#监听端口
 phone.listen(5)
 
-#等电话
-print('等待电话')
+#等待连接
+print('等待连接')
 conn,client_addr=phone.accept()
-print('连接')
+print('已连接')
+print('conn',conn)
 print(conn,client_addr)
-
 
 ###基于建立的连接，收发消息
 while True:##通话交流

@@ -13,8 +13,8 @@ while True:
     #先收报头
     header=phone.recv(4)
     body_size=struct.unpack('i',header)[0]
-    ##再收执行结果
 
+    ##再收全部内容
     recv_size=0
     data=b''
     print(type(data))

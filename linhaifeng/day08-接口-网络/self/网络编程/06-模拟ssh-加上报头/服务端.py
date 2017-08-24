@@ -23,6 +23,9 @@ while True:   ###连接循环
             stdout=res.stdout.read()
             stderr=res.stderr.read()
             conn.send(stdout+stderr)
+
+
+
         except Exception: ##针对windows异常跳出
             break
 

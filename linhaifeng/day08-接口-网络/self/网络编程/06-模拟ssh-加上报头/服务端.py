@@ -25,9 +25,11 @@ while True:   ###连接循环
             stderr=res.stderr.read()
 
             ##先发报头（固定长度）
-            header=len(stdout)+len(stderr)
+            header=struct.pack('i',len(stdout)+len(stderr))
             conn.send(header)
-            conn.send(stdout+stderr)
+            ##再发真实数据
+            conn.send(stdout)
+            conn.send(stderr)
 
 
 

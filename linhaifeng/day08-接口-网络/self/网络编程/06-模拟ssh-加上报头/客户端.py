@@ -10,9 +10,9 @@ while True:
     ##发命令
     phone.send(cmd.encode('utf-8'))
 
-    #先发报头
-    header=p
-    cmd_res=phone.recv(1024)
+    #先收报头
+    header=phone.recv(4)
+    cmd_res=phone.recv(header)
     print(cmd_res.decode('utf-8'))
     # print(cmd_res.decode('gbk'))
 

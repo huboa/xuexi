@@ -1,6 +1,6 @@
 from multiprocessing import Process,Lock
 import time,os
-def work(name,*args,**kwargs):
+def work(name,mutex):
     mutex.acquire()
     print('%s%stask %s is running' %(os.getpid(),os.getppid(),name))
     time.sleep(2)

@@ -1,9 +1,9 @@
-from socket import *
 import socketserver
 
 class MyUDPhandler(socketserver.BaseRequestHandler):
     def handle(self):
         print(self.request)
+        print(self.client_address)
         self.request[1].sendto(self.request[0].upper(),self.client_address)
 
 if __name__ == '__main__':

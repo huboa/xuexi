@@ -1,6 +1,21 @@
 from multiprocessing import Pool
-import os
-if __name__ == '__main__':
-    p=Pool(4)
+import os,time
 
-print(os.cpu_count())
+def work(n):
+    print('task %s is running' %os.getpid())
+    time.sleep(2)
+    print('task %s is done' %os.getpid())
+    return n**2
+
+if __name__ == '__main__':
+    p=Pool(8)
+###同步
+# print(os.cpu_count())
+#     for i in range(10):
+#         res=p.apply(work,args=(i,))
+#         print(res)
+
+###异步
+    for i in range(10):
+            res=p.apply_async(work,args=(i,))
+            print(res)

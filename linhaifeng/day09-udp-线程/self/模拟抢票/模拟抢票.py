@@ -12,7 +12,7 @@ def get_ticket():
         time.sleep(0.5)  ##模拟写数据库网络延时
         json.dump(dic,open('db.txt','w'))
 
-        print('购票成功'%os.getpid())
+        print('购票成功%s' %os.getpid())
 def task(mutex):
     search()
     mutex.acquire()

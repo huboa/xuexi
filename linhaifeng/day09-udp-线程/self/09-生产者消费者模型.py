@@ -1,11 +1,12 @@
 from multiprocessing import Process,Queue
 import time,os
 def producer(q):
-    for i in range(10):
+    for i in range(3):
         time.sleep(1)
         res='包子%s'%i
         q.put(res)
         print('\33[45m<%s> 生产[%s]\033[20m' % (os.getpid(), res))
+    q.put(None)
 def consumer(q):
     while True:
         res = q.get()
@@ -23,4 +24,3 @@ if __name__ == '__main__':
 
 
 
-    

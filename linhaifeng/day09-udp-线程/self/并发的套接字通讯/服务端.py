@@ -22,5 +22,5 @@ if __name__ == '__main__':
         conn,addr=s.accept()
         p=Process(target=talk,args=(conn,addr))
         p.start()
-        print(p)
+        print(p.pid)
     s.close()

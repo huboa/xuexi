@@ -19,5 +19,5 @@ if __name__ == '__main__':
     p.start()
     p1=Process(target=work, args=('zsc',))
     p1.start()
-    p1.join()
+    p1.join() ##主进程等，等待p1运行结束
     print('主')

@@ -16,6 +16,13 @@ if __name__ == '__main__':
 #         print(res)
 
 ###异步
+    res_list=[]
     for i in range(10):
             res=p.apply_async(work,args=(i,))
+            res_list.append(res)
             print(res)
+    p.close() ###不允许提交新任务
+    p.join()
+
+    for res in res_list:
+        print(res.get())

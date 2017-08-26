@@ -10,7 +10,7 @@ def consumer(q):
     while True:
         res = q.get()
         time.sleep(1.5)
-        print('\033[34m<%s> 吃了[%s]\033[0m'%(os.getpid(),res))
+        print('\033[34m<%s> 吃了[%s]\033[33m'%(os.getpid(),res))
 
 if __name__ == '__main__':
     q=Queue()
@@ -19,3 +19,8 @@ if __name__ == '__main__':
     p1.start()
     c1.start()
     print('主')
+
+
+
+
+    

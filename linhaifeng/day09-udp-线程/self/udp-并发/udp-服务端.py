@@ -4,11 +4,8 @@ import socketserver
 class MyUDPhandler(socketserver.BaseRequestHandler):
     def handle(self):
         print(self.request)
-
+        self.request[1].sendto(self.request[0].upper(),self.client_address)
 
 if __name__ == '__main__':
-
-udp_server=socket(AF_INET,SOCK_DGRAM)
-
-udp_server.bind(('127.0.0.1',8080))
-
+    s=socketserver.ThreadingUDPServer(('127.0.0.1',8080),MyUDPhandler)
+    s.serve_forever()

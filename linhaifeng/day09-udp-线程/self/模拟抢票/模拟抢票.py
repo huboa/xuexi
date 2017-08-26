@@ -1,7 +1,7 @@
 import json,os,time
 def search():
     dic=json.load(open('db.txt'))
-    print('%s票数%s'%(os.getpid(),dic[count]))
+    print('%s票数%s'%(os.getpid(),dic['count']))
 
 def get_ticket():
     dic =json.load(open('db.txt'))

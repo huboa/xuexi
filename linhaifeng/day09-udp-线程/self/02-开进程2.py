@@ -1,5 +1,13 @@
 from multiprocessing import Process
 import time
+
+class MyProcess(Process):
+
+    def __init__(self,name):
+        super().__init__()
+        self.name=name
+
+
 def work(name):
     print('task %s is running' %name)
     time.sleep(2)

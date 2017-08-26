@@ -9,16 +9,15 @@ class MyProcess(Process):
 
 
 def work():
-
     print('parent:%s task %s is running' %(os.getpid(),os.getppid()))
     time.sleep(2)
-    print('parent:%s task %s is done' % (os.getpid(),os.getppid()))
+    print('parent:%s task %s is done' %(os.getpid(),os.getppid()))
 
 if __name__ == '__main__':
     p1=Process(target=work,args=('egon',))
 
     # p=Process(target=work,kwargs={'name':'zsc'})
-
+    p1.daemon=True
     p1.start()
     p1.terminate()  ###
     time.sleep(3)

@@ -8,11 +8,11 @@ class MyProcess(Process):
         self.name=name
 
 
-def work(name):
+def work():
 
-    print('task %s is running' %name)
+    print('parent:%s task %s is running' %(os.getpid(),os.getppid()))
     time.sleep(2)
-    print('task %s is done' % name)
+    print('parent:%s task %s is done' % (os.getpid(),os.getppid()))
 
 if __name__ == '__main__':
     p1=Process(target=work,args=('egon',))
@@ -25,6 +25,5 @@ if __name__ == '__main__':
     print(p1.is_alive())  ####存活
     print(p1.name)
     print(p1.pid)
-    print('主pid',os.gepid)
 
     print('主')

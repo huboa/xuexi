@@ -1,5 +1,6 @@
-
+###查询
 def fetch(data):
+    #backend www.oldboy.com
     backend_data='backend %s'%data
     record_list=[]
     with  open('haproxy.conf','r') as f:
@@ -17,10 +18,19 @@ def fetch(data):
     return record_list
 
 def add(data):
+    # data={'backend':'www.oldboy.com','record':{'server':'1.1.1.11','weight':22,'maxconn':33}}
     backend=data['backend']
     record_list=fetch(backend)
-    backend_data="backend %s"%backend
-
+    current_record='server %s %s weight %s maxconn %s' %(data['record']['server'], \
+                                                         data['record']['server'], \
+                                                         data['record']['weight'],\
+                                                         data['record']['maxconn'])
+    backend_data="backend %s"  %backend
+    if not record_list:
+        with  open('haproxy.conf', 'r') as read_file, \
+                open('haproxy_new.conf', 'w') as write_file:
+            for r_line in read_file:
+                write_file.write(r_line)
 
 
 def remove(data):
@@ -47,5 +57,5 @@ if __name__ == '__main__':
         data=input('数据：').strip()
         print(data)
         if choice != '1':
-            eval(data)
+            data=eval(data)
         menu_dic[choice](data) ##=== fetch(data)

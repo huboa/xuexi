@@ -8,5 +8,5 @@ def work():
     sm.release()
 if __name__ == '__main__':
     for i in range(20):
-        t=Thread(target=work())
+        t=Thread(target=work)
         t.start()

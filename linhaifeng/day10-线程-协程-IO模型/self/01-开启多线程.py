@@ -2,13 +2,13 @@ from threading import Thread
 from multiprocessing import Process
 import time
 
-def task():
-    print('is running')
-if __name__ == '__main__':
-    t=Thread(target=task,)
-    t=Process(target=task,)
-    t.start()
-    print('主')
+# def task():
+#     print('is running')
+# if __name__ == '__main__':
+#     t=Thread(target=task,)
+#     t=Process(target=task,)
+#     t.start()
+#     print('主')
 
 ###方式一
 def sayhi(name):
@@ -21,8 +21,6 @@ if __name__ == '__main__':
     print('主线程')
 
 # 方式二
-
-
 class Sayhi(Thread):
     def __init__(self, name):
         super().__init__()

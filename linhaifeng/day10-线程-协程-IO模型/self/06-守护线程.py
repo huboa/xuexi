@@ -24,7 +24,7 @@ import time
 ###守护线程
 def task():
     print('123')
-    time.sleep(2)
+    time.sleep(9)
     print('123done')
 
 def task2():

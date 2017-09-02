@@ -34,9 +34,9 @@ def task2():
 
 
 if __name__ == "__main__":
-    p=Thread(target=task)
-    p2=Thread(task2())
-    # p.daemon=True  ###守护线程
-    p.start()
-    p2.start()
+    t=Thread(target=task)
+    t2=Thread(target=task2)
+    t.daemon=True  ###守护线程
+    t.start()
+    t2.start()
     print('主')

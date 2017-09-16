@@ -7,5 +7,5 @@ while True:
     conn,addr=sock.accept()##默认阻塞
     data=conn.recv(1024)
     print('data',data)
-    conn.send(b"hello")
-
+    conn.send(b"HTTP/1.1 201 OK \r\n hello")
+    conn.close()

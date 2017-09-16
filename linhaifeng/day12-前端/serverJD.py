@@ -9,6 +9,6 @@ while True:
     print('data',data)
 
     with open("index.html") as f:
-        
-    conn.send(b"HTTP/1.1 201 OK \r\n \r\n <h1>hello</h1>")
+        index=f.read()
+    conn.send(("HTTP/1.1 201 OK \r\n \r\n %s"%index).encode('utf-8'))
     conn.close()

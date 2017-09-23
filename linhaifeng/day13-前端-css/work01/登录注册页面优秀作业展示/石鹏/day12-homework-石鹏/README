@@ -1,0 +1,36 @@
+1.博客地址
+    HTML基本知识：http://www.cnblogs.com/goodshipeng/p/7571767.html
+    CSS基本知识：http://www.cnblogs.com/goodshipeng/p/7571719.html
+
+2.需求
+    2.1 实现一个登陆页面，样式如下：需求/登录.png
+    2.2 实现一个注册页面，样式如下：需求/注册.png
+
+    作业的实现情况：完成登录页面和注册页面的样式，而且还可以进行响应页面的跳转。
+    例如：通过注册页面右下角的“免费注册”，跳转到注册页面，通过“登录”按钮，跳转到home.html页面
+          通过注册页面“同意以上协议并注册”，“登录”，跳转到登录页面。
+
+3.目录结构
+    common            共用文件夹
+        style.css     页面所需的样式
+    pic               所需要的图片文件夹
+        ico_01.png
+        ico_02.png
+        ...
+        register2.png
+    测试结果          测试结果文件夹
+        登录实现截图.png   登录测试结果截图
+        注册实现截图.png    注册实现截图
+    需求              需求文件
+        注册.png      注册需求图片
+        登录.png      登录需求图片
+    home.html         系统首页
+    login.html        登录页面
+    register.html     注册页面
+    README            项目介绍
+
+4.测试信息
+    利用谷歌、IE、360浏览器，直接打开login.html和register.html
+    测试结果
+        登录测试结果：效果截图在“测试结果/登录实现截图.png”
+        注册测试结果：效果截图在“测试结果/注册实现截图.png”

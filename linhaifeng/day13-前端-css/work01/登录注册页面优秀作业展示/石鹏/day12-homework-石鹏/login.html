@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="common/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="login_bg">
+        <div>
+            <img src="pic/login2.png" height="60">
+        </div>
+        <div class="login_center">
+            <div class="float_l login_left">
+                <img src="pic/login1.png" height="300px">
+            </div>
+            <form action="home.html" method="POST">
+                <div class="float_l login_right">
+                    <div class="txt_height">
+                        <label for="username" class="red_star">*</label>
+                        <label for="username">用户名：</label>
+                        <input id="username" type="text" class="txtcss_user">
+                    </div>
+                    <div class="txt_height" style="padding-left: 20px;">
+                        <label for="pwd" class="red_star">*</label>
+                        <label for="pwd">密码：</label>
+                        <input id="pwd" type="password" class="txtcss_pwd">
+                    </div>
+                    <div class="txt_height">
+                        <div class="float_l">
+                            <label for="mark" class="red_star">*</label>
+                            <label for="mark">验证码：</label>
+                            <input id="mark" type="text" class="txtcss_mark">
+                        </div>
+                        <div class="regist_verif_ico">
+                            <img src="pic/ico_mark.png" height="38">
+                        </div>
+                    </div>
+                    <div style="height: 50px;padding-left: 50px;padding-top: 10px;">
+                        <input type="checkbox" checked="checked">
+                        <label>自动登录</label>
+                        <a href="#" class="forget_pwd">忘记密码？</a>
+                    </div>
+                    <div style="padding-left: 30px;">
+                        <a href="home.html">
+                            <img src="pic/login3.png" width="320">
+                        </a>
+                    </div>
+                    <div class="login_regist_btn">
+                        <a href="register.html">
+                            <img src="pic/login4.png" width="160">
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="foot_css">
+            <label class="foot_size">&copy;</label> 2004-2015 www.autohome.com.cn All Rights Reserved.汽车之家 版权所有
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>用户中心Meilele</title>
+<link rel="icon" href="images/index.ico"/>
+    <style>
+        .user_login{
+            height:600px;
+        }
+        .user_login .Left{
+            width: 40%;
+            float: left;
+            margin: 50px 70px
+        }
+        .user_login img{
+            padding: 65px 20px;
+        }
+
+        label{
+            color: #7F9DBC;
+        }
+        a{
+             text-decoration:none
+        }
+        .input{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #d7d7d7;
+        }
+
+        .set_up{
+            height:98px;
+            position:relative;
+        }
+        .set_up div{
+            width: 200px;
+            height:60px;
+            background-color: #47CC4B;
+            position:absolute;
+            right:0;bottom:0;
+            text-align:center;
+            line-height: 60px;
+        }
+        .set_up a{
+            font-size: 30px;
+            color: #FFFFFF
+        }
+    </style>
+</head>
+<body>
+<header>
+<div>
+	<div style="width: 80%;margin: auto auto;height: 100px">
+		<img src="images/logo.png" alt="">
+	</div>
+</div>
+</header>
+<div style="height:700px;">
+	<div style="width: 80%;height:698px;margin: 0 auto;border: 1px solid #d7d7d7;">
+        <div class="user_login" style="">
+            <div class="Left">
+			<img src="images/194320.png" alt="">
+		</div>
+		    <div class="Left">
+			<div style="width: 415px;height:400px;margin: 0 auto;font-size: 24px;padding: 65px 20px;">
+				<form action="" method="post" enctype="multipart/form-data">
+					<p>
+						<label  for="username">用户名：</label>
+						<input class="input"  type="text" name="name" id="username">
+					</p>
+					<p>
+						<label for="password">密&nbsp&nbsp&nbsp&nbsp码：</label>
+						<input class="input" type="password" name="password" id="password">
+					</p>
+					<p style="padding: 10px 150px 10px 0px;">
+						<label for="id_code">验证码：</label>
+						<input class="input" style="width: 150px" type="text" name="id_code" id="id_code">
+					</p>
+					<div style="width: 300px;height: 24px;font-size: 15px;float: right">
+						<input style="float: left;" type="checkbox" name="remember" value="1">自动登录
+						<a style="float: right" href="" class="" id="forget-password">忘记密码 ?</a>
+					</div>
+					<div style="float: right">
+						<p>
+							<input style="border-radius: 0;border: 0 none;background: #cf000e none repeat scroll 0 0;cursor: pointer;height: 42px;outline: 0 none;width: 308px;font-size: 16px;color: #fff;" type="button" value="登录">
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+        </div>
+        <div class="set_up">
+            <div ><a href="set_up.html">免费注册 >></a></div>
+		</div>
+	</div>
+</div>
+<div style="text-align:center;">
+    <p style="font-size: 20px;">
+         © 2005-2016 美乐乐 版权所有，并保留所有权利。ICP备案证书号：粤ICP备08008334号
+    </p>
+</div>
+</body>
+</html>

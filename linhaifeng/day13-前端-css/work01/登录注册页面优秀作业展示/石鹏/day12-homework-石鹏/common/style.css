@@ -1,0 +1,153 @@
+body{
+    margin:0px;
+    border:0px;
+    padding:0px;
+}
+.regist_top_bg{
+    background-color: #F5F5F5;
+    height: 30px;
+    padding-top: 8px;
+    font-size: 16px;
+}
+.red_star{
+    color:red;
+}
+.register_center{
+    margin: 0px auto;
+    padding-top: 15px;
+    margin-top: 20px;
+    border: 1px solid #bdbdbd;
+    height: 540px;
+    width: 85%;
+}
+
+.txtcss_user{
+    border: 1px solid #bdbdbd;
+    height: 35px;
+    width: 250px;
+    background: url("../pic/ico_01.png") no-repeat scroll right center transparent;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.txtcss_phone{
+    border: 1px solid #bdbdbd;
+    height: 35px;
+    width: 250px;
+    background: url("../pic/ico_04.png") no-repeat scroll right center transparent;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.txtcss_pwd{
+    border: 1px solid #bdbdbd;
+    height: 35px;
+    width: 250px;
+    background: url("../pic/ico_02.png") no-repeat scroll right center transparent;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.txtcss_mark{
+    border: 1px solid #bdbdbd;
+    height: 35px;
+    width: 160px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.txt_height{
+    height: 60px;
+}
+
+.user_xieyi{
+    margin-left:5px;
+    text-decoration: none;
+    color:blue;
+}
+a:hover { text-decoration:underline;color: red}
+
+.regist_top {
+    float:left;
+    padding-left: 50px;
+}
+.regist_top_size{
+    padding-left: 20px;
+}
+.regist_second_logo{
+    clear:both;
+    margin-left: 100px;
+    margin-top: 18px;
+}
+.regist_third{
+    padding-left: 100px;
+    width: 60%;
+    border-right: 1px dashed #bdbdbd;
+    float: left;
+}
+.regist_title{
+    margin-left: -30px;
+}
+.regist_con_left{
+    padding-left: 16px;
+}
+.regist_verif_ico{
+    display: inline-block;
+    margin-left: 10px;
+}
+.regist_btn{
+    padding-left: 30px;
+}
+.regist_right_con{
+    float: left;
+    padding-left: 30px;
+}
+.regist_right_line{
+    padding-top: 50px;
+}
+
+.foot_css{
+    text-align: center;
+    margin: 25px auto;
+}
+.foot_size{
+    font-size: 20px;
+}
+
+.login_bg{
+    margin: 0px auto;
+    padding-top: 20px;
+    width: 85%;
+}
+.login_center{
+	margin-top: 30px;
+	border: 1px solid #bdbdbd;
+	height: 420px;
+	width: 100%;
+}
+.float_l{
+	float: left;
+}
+.login_left{
+	padding-top: 58px;
+	padding-left: 60px;
+}
+.login_right{
+	float: right;
+	padding-right: 180px;
+	font-size: 20px;
+	padding-top: 60px;
+}
+.forget_pwd{
+	margin-left:20px;
+	text-decoration: none;
+	color:blue;
+}
+
+.login_regist_btn{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    padding-top: 26px;
+    margin-right: -181px;
+    float: right;
+}

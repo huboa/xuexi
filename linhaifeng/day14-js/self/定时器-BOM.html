@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-function foo() {
-    //操作input 标签，让他的value 等于当前字符串
-   var ele=document.getElementById("timer");
-    ele.value=date.toLocaleString();
-}
+        var ID;
+        function begin() {
+            if (ID = undefined) {
+                foo();
+                ID = setInterval(foo, 1000);
+            }
+        }
+
+        function foo() {
+           var date=new Date();//操作input 标签，让他的value 等于当前字符串
+           var ele=document.getElementById("timer");
+            ele.value=date.toLocaleString();
+        }
+
+        function stop() {
+            clearInterval(ID);
+            ID=undefined;
+
+
+        }
+
     </script>
 </head>
 <body>
 
 <input type="text" value="" id="timer">
-<button onclick="foo()">begin</button>
+<button onclick="begin()">begin</button>
+<button onclick="stop()">stop</button>
 
 </body>
 </html>

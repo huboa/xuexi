@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<ul>
+<ul class="u1">
     <ui>111</ui>
     <ui>222</ui>
     <ui>333</ui>
@@ -19,7 +19,12 @@
 
     var ele=document.getElementsByClassName("c1")[0];
     ele.onclick=function () {
-         alert(123);
+         foo();
+    }
+
+    var ele=document.getElementsByClassName("u1")[0];
+    ele.onclick=function () {
+         foo();
     }
 </script>
 </html>

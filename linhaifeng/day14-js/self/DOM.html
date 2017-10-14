@@ -5,9 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-
+<ul>
+    <ui>111</ui>
+    <ui>222</ui>
+    <ui>333</ui>
+</ul>
+<p class="c1">pppp</p>
 </body>
 <script>
-    
+    function foo() {
+        alert(123);
+    }
+
+    var ele=document.getElementsByClassName("c1")[0];
+    ele.onclick=function () {
+         alert(123);
+    }
 </script>
 </html>

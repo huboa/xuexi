@@ -6,7 +6,7 @@
     <script>
         var ID;
         function begin() {
-            if (ID = undefined) {
+            if (ID == undefined) {
                 foo();
                 ID = setInterval(foo, 1000);
             }
@@ -29,7 +29,7 @@
 </head>
 <body>
 
-<input type="text" value="" id="timer">
+<input type="text" value="" id="timer" size="25">
 <button onclick="begin()">begin</button>
 <button onclick="stop()">stop</button>
 

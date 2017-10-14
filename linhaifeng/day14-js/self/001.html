@@ -85,13 +85,25 @@
     <script>
         //for 遍历循环 条件循环while in py
         //for while 一样都是条件循环
-        var n=0
+        var n=0;
         while (n<10){
-            console.log("OK")
+            console.log("OK");
             n++;
 
         }
+        //for :条件循环 三要素 ：初始变量；条件；自增自减（强烈推荐）
+        for(var i=0;i<10;i++){
+            console.log("OK");
+        }
 
+        //for 循环2  遍历循环数组
+        var arr=[11,22,33]
+        for (var i in arr){  //i指的是索引
+            console.log(i,arr[i]);
+        }
+        for(var i=0;i<arr.length;i++){
+            console.log(i,arr[i]);
+        }
     </script>
 </head>
 <body>

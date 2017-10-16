@@ -10,3 +10,4 @@
 #     else:
 #         print(n)
 print(bool([1]))
+print("\033[33;31m 无33此记录\033[0m")

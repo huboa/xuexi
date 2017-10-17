@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+       <div class="col-lg-9 col-md-offset-2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                   添加学生
+            </button>
+            <table class="table table-striped">
+            <thead>
+
+                    <tr>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>性别</th>
+                        <th>操作</th>
+                    </tr>
+
+            </thead>
+            <tbody id="tbody">
+
+              <div class="row">
+                   <tr>
+                        <td class="col-md-3">张三</td>
+                        <td class="col-md-3">22</td>
+                        <td class="col-md-3">男</td>
+                        <td  class="col-md-3">
+                           <button class="btn btn-success edit">编辑</button>
+                           <button class="btn btn-danger del">删除</button>
+                        </td>
+                    </tr>
+              </div>
+               <div class="row">
+                   <tr>
+                        <td class="col-md-3">李四</td>
+                        <td class="col-md-3">28</td>
+                        <td class="col-md-3">女</td>
+                        <td  class="col-md-3">
+                           <button class="btn btn-success edit">编辑</button>
+                           <button class="btn btn-danger del">删除</button>
+                        </td>
+                    </tr>
+              </div>
+               <div class="row">
+                   <tr>
+                        <td class="col-md-3">王五</td>
+                        <td class="col-md-3">29</td>
+                        <td class="col-md-3">女</td>
+                        <td  class="col-md-3">
+                           <button class="btn btn-success edit">编辑</button>
+                           <button class="btn btn-danger del">删除</button>
+                        </td>
+                    </tr>
+              </div>
+
+            </tbody>
+        </table>
+       </div>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+                <form>
+                      <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" class="form-control item" id="name" placeholder="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="age">年龄</label>
+                        <input type="text" class="form-control item" id="age" placeholder="age">
+                      </div>
+                      <div class="form-group">
+                        <label for="classes">班级</label>
+                        <input type="text" class="form-control item" id="classes" placeholder="classes">
+                      </div>
+
+                      <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary addKeepBtn">Save changes</button>
+                      </div>
+                </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+
+    function parseToDOM(str){
+       var div = document.createElement("table");
+       div.innerHTML = str;
+       return div.firstElementChild.firstElementChild;
+    }
+
+
+    var addKeepBtn=document.getElementsByClassName("addKeepBtn")[0];
+    var tbody=document.getElementById("tbody");
+    var myModal=document.getElementById("myModal");
+
+    // 添加学生信息保存!
+    addKeepBtn.onclick=function(){
+    var items=document.getElementsByClassName("item");
+        var arr=[];
+        for(var i=0;i<items.length;i++){
+
+           val=items[i].value;
+           arr.push(val)
+
+        }
+
+       s='<tr><td>'+arr[0]+'</td><td>'+arr[1]+'</td><td>'+arr[2]+'</td><td><button class="btn btn-success edit">编辑</button> <button class="btn btn-danger del">删除</button> </td> </tr>'
+
+       var tr=parseToDOM(s);
+
+       tbody.appendChild(tr);
+
+       //将对话框隐藏
+       $("#myModal").modal("hide");
+
+
+    };
+
+    // 删除学生信息
+
+    tbody.addEventListener("click",function(e){
+
+       if(e.target.className=="btn btn-danger del"){
+          tbody.removeChild(e.target.parentElement.parentElement)
+       }
+    });
+
+    // 编辑学生信息
+
+       tbody.addEventListener("click",function(e){
+
+        if(e.target.className=="btn btn-success edit"){
+               //  $("#myModal").modal("show")
+
+          // console.log(e.target.parentElement.parentElement);
+
+           var current_tr=e.target.parentElement.parentElement;
+           var tds=current_tr.children;
+           for(var i=0;i<tds.length-1;i++){
+//                 console.log(tds[i]) ;
+                 s='<input type="text" value="'+tds[i].innerHTML+'">';
+
+                 tds[i].innerHTML=s
+
+           }
+
+           e.target.innerHTML="保存";
+           e.target.className="btn btn-info keepEdit"
+       }
+        // 编辑保存
+        else if(e.target.className=="btn btn-info keepEdit"){
+
+                   var current_tr=e.target.parentElement.parentElement;
+//                   console.log(current_tr,"current_tr");
+                   var tds=current_tr.children;
+                   console.log(tds);
+
+                   for(var i=0;i<tds.length-1;i++){
+                         console.log(tds[i]) ;
+
+                         tds[i].innerHTML=tds[i].firstElementChild.value
+                   }
+
+                   e.target.innerHTML="编辑";
+                   e.target.className="btn btn-success edit"
+                   }
+
+       });
+
+
+</script>
+</body>
+</html>

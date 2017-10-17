@@ -1,0 +1,17 @@
+1.博客地址
+    CSS基本知识：http://www.cnblogs.com/goodshipeng/p/7653174.html
+
+2.需求
+    用html和css实现http://dig.chouti.com/首页的静态页面。
+
+    作业的实现情况：利用div对抽屉的首页实行分区域，利用position进行定位布局等。
+
+3.目录结构
+    images            所需要的图片文件夹
+    index.html        抽屉的首页静态页面
+    README            项目介绍
+
+4.测试信息
+    利用谷歌、360浏览器，直接打开index.html
+    测试结果
+        “抽屉效果截图.png”

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉新热榜-聚合每日热门、搞笑、有趣资讯</title>
+    <link rel="icon" href="http://dig.chouti.com/images/chouti.ico">
+    <style>
+
+            a{text-decoration: none;}
+            body{
+
+                background-color: #ededed;
+                width: 100%;
+                height: 1500px;
+            }
+
+
+            .header{
+                top: 0;
+                width: 1349px;
+                height: 44px;
+                position: fixed;
+                background-color: #2459a2;}
+            .header .headercontent{}
+            .digg-logo{
+
+                float: left;
+                width: 121px;
+                height: 23px;
+                background:url("http://dig.chouti.com/images/logo.png") no-repeat ;
+                margin-left: 164px;
+                margin-top: 12px;
+            }
+
+
+            .header div{
+                float: left;
+                line-height: 44px;
+                font-size: 12px;}
+            .header a{color: #c0cddf;}
+            .headercon{
+                 margin-left:17px;  }
+            .header .headerin:hover{
+                 background-color: #396bb3;}
+            .headercontent .headerin{
+                width:53px;
+                height:44px;
+                text-align: center;
+                float: left;
+                }
+            #q42{width: 54.11px;}
+            #at{width: 79.2px;}
+            #nw{width: 77px;}
+            .header img{
+                margin-top: 11px;}
+
+            .login a{color: white}
+            .login{
+                float: left;
+                width: 140px;
+                height: 44px;
+                margin-left:  205px;
+            }
+
+            .log{
+                width: 50px;
+                text-align: center;
+                margin-left: 4px;
+                }
+            .log:hover{
+                background-color: #396bb3;}
+            .location{color: #8e908c;
+
+            }
+            .location4{
+                width: 143px;
+                height: 43px;
+                background-color: #2459a2;
+                float: left;
+                margin-left: 3px;
+            }
+            .input_lab{
+                float: left;
+                width: 93px;
+                height: 27px;
+
+                margin-top: 4px;
+                margin-left: 5px;
+                background-color: #f4f4f4;
+            }
+
+            .search_lab{
+                background-color: white;
+                float: left;
+                width: 29px;
+                height: 31px;
+                margin-top: 4px;
+                margin-left: 0px;
+                background: #f4f4f4;
+                border: solid 1px;
+            }
+            .img1{
+                float: left;
+                margin-top: 10px;
+                width: 20px;
+                height: 16px;
+                background:url("http://dig.chouti.com/images/icon.png") no-repeat  10px -195px ;
+            }
+            .aaa{text-decoration: none}
+            .content{
+                margin-left: 150px;
+                margin-top: 37px;
+                float: left;
+                background-color: white;
+                width: 1016px;
+                height: 1000px;}
+            .bl{
+                margin-left: 38px;
+                margin-right: 28px;
+                margin-top: 11px;
+                float: left;}
+
+            .content1{
+                float: left;
+                text-decoration: none;
+                font-size: 15px;
+                color: #369;
+                font-weight: 600;
+                margin-top: 16px;
+            }
+
+            .item1_shang1:after{
+                content:"";
+                display: block;
+                clear: left;
+            }
+            .contenthead{
+                margin-left: 0;
+                width: 630px;
+                height: 43px;
+                font-size: 12px;
+                font-weight: 700;
+                text-align: center;
+                line-height: 26px;}
+            .lefthead{
+                float: left;}
+            .lefthead .head{
+                float: left;
+                width: 60px;
+                height: 26px;
+                background: url("http://dig.chouti.com/images/tip.png") no-repeat 0 -299px;}
+
+            .lefthead .head a{color: #333333;}
+            .lefthead .head a:hover{text-decoration: underline;}
+            .righthead{float: right;}
+            .righthead .head{
+                float: right;
+                line-height: 40px;
+                margin-left: 10px;
+                text-align: center;}
+            .righthead #fb{
+                margin-left: 10px;
+                width: 134px;
+                height: 30px;
+                background-color: #84a42b;
+                border: 1px solid #8aab30;
+                line-height: 30px;
+                font-size: 14px;}
+            .righthead #fb a{color: #fff;}
+            .righthead a{color: #390;font-weight: 400;}
+            .righthead #hh a{color: #b4b4b4;}
+            .new{width: 628px;
+                height: 25px;
+                margin-left: 0;
+                border: 1px solid #fbe9c0;
+                text-align: center;
+                background-color: #fff9e2;
+                font-size: 12px;
+                line-height: 25px;}
+
+            .item_zuo1{
+                float: left;
+                width: 520px;
+                height: 160px;
+                margin-top: 10px;
+
+            }
+            .content1{
+                float: left;
+                text-decoration: none;
+                font-size: 14px;
+                color: #369;
+                font-weight: 600;
+                margin-top: 0px;
+            }
+
+            .item1_shang1 .location1 {
+                float: left;
+                color:#b4b4b4;
+                margin-left: 0px;
+                font-size: 13px;
+                margin-top: 9px;
+            }
+            .item1_shang1 span{
+                color:#b4b4b4;
+                margin-left: 10px;
+            }
+
+            .item_you_1 img{
+                float: left;
+                height: 100px;
+                width: 100px;
+                margin-left: 530px;
+                margin-top: -80px;
+
+            }
+            .item1_xia1{
+                float:left;
+                width: 600px;
+                height: 40px;
+                border-bottom: solid 1px;
+                border-color: #ccdcef;
+                margin-top: 0px;
+
+            }
+            #a1_1,#a2_1,#a3_1,#a4_1{
+                margin-top: 2px;
+                width: 23px;
+                height:15px ;
+                float: left;
+            }
+            #a1_2,#a2_2,#a3_2,#a4_2{
+                float: left;
+                width: 23px;
+                height: 21px;
+            }
+            #a1_3,#a2_3,#a3_3,#a4_3{
+                float: left;
+                color: #99aecb;
+                font-weight: 700;
+                margin-top: 5px;
+            }
+            #a1_2{
+                background: url("http://dig.chouti.com/images/icon_18_118.png") no-repeat 3px -38px ;
+            }
+            #a1_3{
+                margin-left: 5px;
+            }
+            #a2_2{
+                background: url("http://dig.chouti.com/images/icon_18_118.png") no-repeat 2px -98px ;
+                margin-left: 20px;
+            }
+            #a2_3{
+                margin-left: 25px;
+            }
+            #a3_2{
+                background: url("http://dig.chouti.com/images/icon_18_118.png") no-repeat 2px -158px ;
+                margin-left: 15px;
+            }
+            #a3_3{
+                margin-left: 20px;
+                font-weight: 200;
+                font-size: small;
+            }
+            #a4_2{
+                background: url("http://dig.chouti.com/images/pp.jpg") no-repeat 2px 2px ;
+                margin-left: 15px;
+                border: solid 1px;
+                width: 20px;
+                height: 18px;
+                margin-top: 2px;
+            }
+            #a4_3{
+                margin-left: 20px;
+                font-weight: 200;
+                font-size: small;
+            }
+            #a5_1{
+                margin-top: 5px;
+                width: 86px;
+                height:15px ;
+                float: left;
+
+            }
+            #a5_2{
+                float: left;
+                width: 86px;
+                height: 15px;
+                margin-left: 20px;
+                font-size: 13px;
+                color:#e4393c;
+            }
+            #a5_3{
+                float: left;
+                color: #b4b4b4;
+                font-weight: 700;
+                margin-top: 5px;
+                margin-left: 30px;
+                font-weight: 200;
+                font-size: small;
+            }
+            .item_xia1_you{
+                float: left;
+                width: 130px ;
+                height: 20px;
+                margin-left: 10px;
+                margin-top: 2px;
+                display: none;
+            }
+            #share{
+                float: left;
+                color: #b4b4b4;
+                font-size: small;
+                margin-top:3px;
+                margin-right: 10px;
+            }
+            .item_xia1_you a{
+                float: left;
+                width: 17px;
+                height: 178px;
+                margin-right: 3px;
+
+            }
+            #share_one,#share_two,#share_three,#share_four{
+                margin-top: 1px;
+                width: 19px;
+                height: 16px;
+                float: left;
+            }
+            #share_one{
+                width: 16px;
+                background: url("http://dig.chouti.com/images/share_icon.png")  34px -177px ;
+            }
+            #share_two{
+                background: url("http://dig.chouti.com/images/share_icon.png")  36px -191px ;
+            }
+            #share_three{
+                background: url("http://dig.chouti.com/images/share_icon.png")  34px -207px ;
+            }
+            #share_four{
+                background: url("http://dig.chouti.com/images/share_icon.png")  36px -149px ;
+            }
+            .item_zuo1:hover .item_xia1_you{
+                display: block;
+            }
+            .content1:hover{
+                border-bottom: solid 1px;
+            }
+            .aone_three:hover{
+                border-bottom: solid 1px;
+            }
+            .atwo_three:hover{
+                border-bottom: solid 1px;
+            }
+            .athree_three:hover{
+                border-bottom: solid 1px;
+            }
+            .afour_three:hover{
+                border-bottom: solid 1px;
+            }
+            .afive_two:hover{
+                border-bottom: solid 1px;
+            }
+            .new .innew a{color: #d47f39;}
+            .new .innew a:hover{text-decoration: underline;}
+
+            .incontent{
+                width: 630px;
+                height: 600px;
+                margin-left: 0;
+                font-size: 14px;
+                margin-top: 0px;}
+
+            .page{
+                margin-top: 20px;
+                border-top: 0px solid;
+                width: 100%;
+                float: left;
+                font-size: 12px}
+            .page a{
+                text-decoration: none;
+                color:#3C8DB5;}
+            .page .p{
+                width: 34px;
+                height: 30px;
+                float: left;
+                margin-left: -1px;
+                margin-top: 6px;
+                line-height: 35px;
+                text-align: center;}
+            .page .p1:hover{background-color: #369;}
+            .page .p2:hover{background-color: #369;}
+            .page .p1{
+                width: 30px;
+                height: 30px;
+                float: left;
+                margin-left: 15px;
+                margin-top: 5px;
+                border: 1px solid;
+                border-color:#8e908c;
+                line-height: 34px;
+                text-align: center;
+                border-radius: 15%;}
+            .page .p2{
+                width: 77px;
+                height: 30px;
+                float: left;
+                margin-left: 10px;
+                margin-top: 5px;
+                border: 1px solid;
+                border-color:#8e908c;
+                line-height: 34px;
+                text-align: center;
+                border-radius: 5px;}
+            .rightcontent{
+                float: right;
+                margin-right: 20px;
+                margin-top: 5px;
+                width: 300px;}
+            .rightcontent .h1 .r1{display: inline-block;}
+            .rightcontent .h1 .r2{margin-left: 8px;}
+            .rightcontent .s1{
+                margin-left:0;
+                width:27px;
+                height:18px;
+                background: url("http://dig.chouti.com/images/view.png") no-repeat 0 0;
+                display: inline-block;
+                margin-top: 10px;
+                margin-right: 5px;}
+            .rightcontent a{
+                color: #369;
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: none;}
+            .rightcontent .h2{
+                margin-top: 10px;}
+            .rightcontent .all{
+                font-size: 17px;
+                font-weight: bold;}
+            .rightcontent .all .t10{color: #c30;}
+            .rightcontent .hot{
+                width: 300px;
+                height: 35px;
+                background-color: #4767b2;
+                color: #f4f4f4;
+                font-size: 12px;
+                text-align: center;
+                line-height: 35px;
+                margin-top: 10px;}
+            .top{
+                height: 40px;
+                width: 50px;
+                position: fixed;
+                top: 600px;
+                left: 1200px;
+                background: url("http://dig.chouti.com/images/Back-to-the-top_38_78.png") no-repeat 0 0;}
+            .Tbom{
+                width: 94%;
+                border-top: 1px solid;
+                border-color:#ccdcef;
+                margin-top: 50px;
+                float: left;
+                text-align: center;
+                margin-left: 28px;
+                margin-right: 28px;}
+            .bottom{
+                margin-left: 11%;
+                text-align: center;}
+            .bottom a{
+                text-decoration: none;
+                color: #369;
+                font-size: 10px;}
+            .bottom .t1{
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top:15px;
+                float: left;}
+            .bottom .t2{
+                float: left;
+                margin-top: 15px;}
+            .bottom .t3{
+                float: left;
+                margin-top: 18px;}
+            .Tbom .b2{
+                float: left;
+                clear: left;
+                margin-top: 7px;
+                margin-left: 23%;}
+            .Tbom .b1{
+                font-size: 12px;
+                margin-top: 7px;
+                float: left;}
+            .Tbom .b3{
+                float: left;
+                margin-top: 3px;}
+            .b3 a{
+                text-decoration: none;
+                color: #400;
+                font-size: 10px;}
+            .Tbom .b4{
+                float: left;
+                clear: left;
+                margin-top: 3px;
+                margin-left: 28%;}
+            .b4 a{
+                text-decoration: none;
+                color: #400;
+                font-size: 10px;}
+            .Tbom .b5{
+                float: left;
+                clear: left;
+                margin-top: 3px;
+                margin-left: 40%;
+                color: #999;
+                font-size: 10px;}
+
+
+        </style>
+</head>
+
+<body>
+<div class="left"></div>
+<div class="right"></div>
+<div class="header">
+    <a href="http://www.baidu.com" class="digg-logo"></a>
+
+    <div class="headercontent">
+        <div class="headercon">
+            <div class="headerin"><a href="" class="aaa">全部</a></div>
+            <div class="headerin" id="q42"><a href="" class="aaa">42区</a></div>
+            <div class="headerin"><a href="" class="aaa">段子</a></div>
+            <div class="headerin"><a href="" class="aaa">图片</a></div>
+            <div class="headerin" id="at"><a href="" class="aaa">挨踢1024</a></div>
+            <div class="headerin" id="nw"><a href="" class="aaa">你问我答</a></div>
+        </div>
+    </div>
+    <div class="login">
+        <div class="log"><a href="" class="aaa">注册</a></div>
+        <div class="log"><a href="" class="aaa">登录</a></div>
+    </div>
+    <div class="location4">
+         <input type="text" class="input_lab">
+         <a href="http://www.baidu.com" class="search_lab">
+             <span class="img1"></span>
+         </a>
+    </div>
+
+</div>
+<div class="content">
+    <div class="bl">
+        <div class="contenthead">
+            <div class="lefthead">
+                <div class="head"><a href="">最热</a></div>
+                <div class="head"><a href="">发现</a></div>
+                <div class="head"><a href="">人类发布</a></div>
+            </div>
+            <div class="righthead">
+                <div class="head" id="fb"><a href="">+发布</a></div>
+                <div class="head"><a href="">3天</a></div>
+                <div class="head"><a href="">24小时</a></div>
+                <div class="head" id="hh"><a href="">即时排序</a></div>
+            </div>
+        </div>
+        <div class="new">
+            <div class="innew"><a href="">3条入热榜，点击查看</a></div>
+        </div>
+
+
+        <div class="incontent">
+            <div class="item1">
+
+                      <div class="item_zuo1">
+                          <div class="item1_shang1">
+                            <a href="" class="content1">如何让无人车赢取信任？三菱想让它投射画面和行人沟通</a>
+                              <span>-www.thepaper.cn   <a href="" class="location">42区</a></span>
+                              <div class="location1"> 自动驾驶技术正在不断升级，但没有司机导致车辆无法有效提醒周围行人和车辆成为了新的安全问题。昨天，三菱公司推出了一套投影系统来将汽车的动态投影在地面上，用于提醒车辆附近的行人。这套系统被称为SafeandSecure照明系统，这并不是像...</div>
+
+
+                          </div>
+
+                          <div class="item_you_1"><img src="http://img3.chouti.com/CHOUTI_585348A1D25048ABA5ED21F2B60CE953_W750H440=C200x200.jpg" /> </div>
+
+                         <div class="item1_xia1">
+                            <div item_xia1_zuo>
+                                <a href="" id="a1_1"><span id="a1_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a1_3" class="aone_three">15</span></a>
+                                <a href="" id="a2_1"><span id="a2_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a2_3" class="atwo_three" >20</span></a>
+                                <a href="" id="a3_1"><span id="a3_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a3_3" class="athree_three" >私藏</span></a>
+                                <a href="" id="a4_1"><span id="a4_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a4_3" class="afour_three">网站</span></a>
+                                <a href="" id="a5_1"><span id="a5_2"class="afive_two">5小时31分钟前</span></a>
+                                <span id="a5_3">入热榜</span>
+                            </div>
+
+                            <div class="item_xia1_you">
+                                <span id="share">分享到</span>
+                                <a href="http://www.baidu.com"><span id="share_one"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_two"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_three"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_four"></span></a>
+                            </div>
+
+                         </div>
+                      </div>
+                      <div class="item_zuo1">
+                          <div class="item1_shang1">
+                            <a href="" class="content1">如何让无人车赢取信任？三菱想让它投射画面和行人沟通</a>
+                              <span>-www.thepaper.cn   <a href="" class="location">42区</a></span>
+                              <div class="location1"> 自动驾驶技术正在不断升级，但没有司机导致车辆无法有效提醒周围行人和车辆成为了新的安全问题。昨天，三菱公司推出了一套投影系统来将汽车的动态投影在地面上，用于提醒车辆附近的行人。这套系统被称为SafeandSecure照明系统，这并不是像...</div>
+
+
+                          </div>
+
+                          <div class="item_you_1"><img src="http://img3.chouti.com/CHOUTI_585348A1D25048ABA5ED21F2B60CE953_W750H440=C200x200.jpg" /> </div>
+
+                         <div class="item1_xia1">
+                            <div item_xia1_zuo>
+                                <a href="" id="a1_1"><span id="a1_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a1_3" class="aone_three">15</span></a>
+                                <a href="" id="a2_1"><span id="a2_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a2_3" class="atwo_three" >20</span></a>
+                                <a href="" id="a3_1"><span id="a3_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a3_3" class="athree_three" >私藏</span></a>
+                                <a href="" id="a4_1"><span id="a4_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a4_3" class="afour_three">网站</span></a>
+                                <a href="" id="a5_1"><span id="a5_2"class="afive_two">5小时31分钟前</span></a>
+                                <span id="a5_3">入热榜</span>
+                            </div>
+
+                            <div class="item_xia1_you">
+                                <span id="share">分享到</span>
+                                <a href="http://www.baidu.com"><span id="share_one"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_two"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_three"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_four"></span></a>
+                            </div>
+
+                         </div>
+                      </div>
+                      <div class="item_zuo1">
+                          <div class="item1_shang1">
+                            <a href="" class="content1">如何让无人车赢取信任？三菱想让它投射画面和行人沟通</a>
+                              <span>-www.thepaper.cn   <a href="" class="location">42区</a></span>
+                              <div class="location1"> 自动驾驶技术正在不断升级，但没有司机导致车辆无法有效提醒周围行人和车辆成为了新的安全问题。昨天，三菱公司推出了一套投影系统来将汽车的动态投影在地面上，用于提醒车辆附近的行人。这套系统被称为SafeandSecure照明系统，这并不是像...</div>
+
+
+                          </div>
+
+                          <div class="item_you_1"><img src="http://img3.chouti.com/CHOUTI_585348A1D25048ABA5ED21F2B60CE953_W750H440=C200x200.jpg" /> </div>
+
+                         <div class="item1_xia1">
+                            <div item_xia1_zuo>
+                                <a href="" id="a1_1"><span id="a1_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a1_3" class="aone_three">15</span></a>
+                                <a href="" id="a2_1"><span id="a2_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a2_3" class="atwo_three" >20</span></a>
+                                <a href="" id="a3_1"><span id="a3_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a3_3" class="athree_three" >私藏</span></a>
+                                <a href="" id="a4_1"><span id="a4_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a4_3" class="afour_three">网站</span></a>
+                                <a href="" id="a5_1"><span id="a5_2"class="afive_two">5小时31分钟前</span></a>
+                                <span id="a5_3">入热榜</span>
+                            </div>
+
+                            <div class="item_xia1_you">
+                                <span id="share">分享到</span>
+                                <a href="http://www.baidu.com"><span id="share_one"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_two"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_three"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_four"></span></a>
+                            </div>
+
+                         </div>
+                      </div>
+                      <div class="item_zuo1">
+                          <div class="item1_shang1">
+                            <a href="" class="content1">如何让无人车赢取信任？三菱想让它投射画面和行人沟通</a>
+                              <span>-www.thepaper.cn   <a href="" class="location">42区</a></span>
+                              <div class="location1"> 自动驾驶技术正在不断升级，但没有司机导致车辆无法有效提醒周围行人和车辆成为了新的安全问题。昨天，三菱公司推出了一套投影系统来将汽车的动态投影在地面上，用于提醒车辆附近的行人。这套系统被称为SafeandSecure照明系统，这并不是像...</div>
+
+
+                          </div>
+
+                          <div class="item_you_1"><img src="http://img3.chouti.com/CHOUTI_585348A1D25048ABA5ED21F2B60CE953_W750H440=C200x200.jpg" /> </div>
+
+                         <div class="item1_xia1">
+                            <div item_xia1_zuo>
+                                <a href="" id="a1_1"><span id="a1_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a1_3" class="aone_three">15</span></a>
+                                <a href="" id="a2_1"><span id="a2_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a2_3" class="atwo_three" >20</span></a>
+                                <a href="" id="a3_1"><span id="a3_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a3_3" class="athree_three" >私藏</span></a>
+                                <a href="" id="a4_1"><span id="a4_2"></span></a>
+                                <a href="http://www.baidu.com"><span id="a4_3" class="afour_three">网站</span></a>
+                                <a href="" id="a5_1"><span id="a5_2"class="afive_two">5小时31分钟前</span></a>
+                                <span id="a5_3">入热榜</span>
+                            </div>
+
+                            <div class="item_xia1_you">
+                                <span id="share">分享到</span>
+                                <a href="http://www.baidu.com"><span id="share_one"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_two"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_three"></span></a>
+                                <a href="http://www.baidu.com"><span id="share_four"></span></a>
+                            </div>
+
+                         </div>
+                      </div>
+
+             </div>
+
+
+
+
+
+        </div>
+            <div class="page">
+                <div class="p"><a href="">1</a></div>
+                <div class="p1"><a href="">2</a></div>
+                <div class="p1"><a href="">3</a></div>
+                <div class="p1"><a href="">4</a></div>
+                <div class="p1"><a href="">5</a></div>
+                <div class="p1"><a href="">6</a></div>
+                <div class="p1"><a href="">7</a></div>
+                <div class="p1"><a href="">8</a></div>
+                <div class="p1"><a href="">9</a></div>
+                <div class="p1"><a href="">10</a></div>
+                <div class="p2"><a href="">下一页</a></div>
+
+
+            </div>
+
+    </div>
+    <div class="rightcontent">
+        <div class="h1">
+            <span class="r1"><a href=""><img src="http://dig.chouti.com/images/report.png" alt=""></a></span>
+            <span class="r1 r2"><a href=""><img src="http://dig.chouti.com/images/report_children.png" alt=""></a></span>
+        </div>
+        <div class="s1"></div><span class="r1"><a href="">如何避免自己被封号</a></span>
+        <div class="h2"><span class="r1"><a href=""><img src="http://dig.chouti.com/images/homepage_download.png" alt=""></a></span></div>
+        <div class="all">24小时全部<span class="t10"> TOP 10</span></div>
+        <div class="hot">最热榜</div>
+    </div>
+    <div class="top"><a href="" title="回到顶部"></a></div>
+    <div class="Tbom">
+        <div class="bottom">
+            <div class="t1"><a href="">关于我们</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">联系我们</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">服务条款</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">隐私政策</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">抽屉新热榜工具</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">下载客户端</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">意见与反馈</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">友情链接</a></div>
+            <div class="t2">|</div>
+            <div class="t1"><a href="">公告</a></div>
+            <div class="t3"><a href=""><img src="http://dig.chouti.com/images/ct_rss.gif" alt=""></a></div>
+        </div>
+        <div class="b2"><a href=""><img src="http://dig.chouti.com/images/gozap-logo-50_15.gif" alt=""></a></div>
+        <div class="b1">旗下站点 ?2017 chouti.com</div>
+        <div class="b3"><a href="">京ICP备09053974号-3 京公网安备 110102004562</a></div>
+        <div class="b4"><a href="">违法和不良信息举报： 电话：010-58302039 邮箱：jubao@chouti.com</a></div>
+        <div class="b5">版权所有：北京格致璞科技有限公司</div>
+    </div>
+</div>
+</body>
+</html>

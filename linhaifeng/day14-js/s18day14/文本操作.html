@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="c1"><a href="">click</a></div><button>change</button>
+
+<script>
+
+
+       var ele=document.getElementsByClassName("c1")[0];
+
+       console.log(ele.innerText); // click
+       console.log(ele.innerHTML); // <a href="">click</a>
+
+       var ele_button=document.getElementsByTagName("button")[0];
+       
+       ele_button.onclick=function () {
+           //ele.innerText="egon";
+           //ele.innerHTML="<img src='juhua.jpg'>"
+           ele.innerText="<img src='juhua.jpg'>"
+       }
+
+
+</script>
+</body>
+</html>

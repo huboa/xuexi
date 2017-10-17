@@ -1,0 +1,38 @@
+/*底部区域*/
+.main .bottom{
+    width: 960px;
+    margin:0 auto;
+    padding:0 28px;
+    clear: both;
+    background-color: #fff;
+}
+.main .bottom .first-row{
+    padding-top: 15px;
+    border-top: 1px #ccdcef solid;
+    position: relative;
+    text-align: center;
+}
+
+.main .bottom .first-row a,span{
+    display: inline-block;
+}
+.main .bottom .first-row a{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #369;
+}
+.main .bottom .second-row{
+    clear: both;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+.main .bottom .second-row a{
+    color: #424242;
+}
+.main .bottom .second-row a img{
+    vertical-align: -2px;
+}
+.main .bottom .second-row p{
+    margin-top: 5px;
+}

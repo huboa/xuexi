@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+        .leftbox{
+            width: 20%;
+            height: 800px;
+            background-color: lightgray;
+            float: left;
+
+        }
+
+        .rightbox{
+            width: 80%;
+            height: 800px;
+            background-color: aquamarine;
+            float: left;
+        }
+
+        .title{
+            text-align: center;
+            background-color: coral;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="leftbox">
+    <div class="item">
+        <div class="title">菜单1</div>
+        <div class="con">
+            <div>111</div>
+            <div>111</div>
+            <div>111</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="title">菜单2</div>
+        <div class="con hide">
+            <div>222</div>
+            <div>222</div>
+            <div>222</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="title">菜单3</div>
+        <div class="con hide">
+            <div>333</div>
+            <div>333</div>
+            <div>333</div>
+        </div>
+    </div>
+</div>
+<div class="rightbox"></div>
+
+
+<script>
+    var eles_title=document.getElementsByClassName("title");
+
+    for(var i=0;i<eles_title.length;i++){
+        eles_title[i].onclick=function () {
+
+            // 显示操作
+             //console.log(this.nextElementSibling);
+             this.nextElementSibling.classList.remove("hide");
+
+            // 隐藏标签
+
+            for(var j=0;j<eles_title.length;j++){
+                 if(eles_title[j]!=this){
+                     console.log(eles_title[j]);
+                     eles_title[j].nextElementSibling.classList.add("hide")
+                 }
+            }
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

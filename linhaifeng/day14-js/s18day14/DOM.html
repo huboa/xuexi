@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+
+<body>
+     <p id="p1">P</p>
+     <div class="c1">
+        <div class="c2">123</div>
+        <div class="c2" onclick="foo(this)">
+            PPP
+            <p>111</p>
+            <p>222</p>
+        </div>
+        <div class="c2" id="p2">PPP</div>
+     </div>
+
+
+<script>
+    
+    function foo(self) {
+       console.log("self",self);
+
+
+        console.log(self);
+        console.log(self.nextElementSibling) ; //  ele.nextElementSibling： <div class="c2" id="p2">PPP</div>
+
+        console.log(" 父级标签",self.parentElement.parentElement); //  父级标签：
+        console.log(" 儿子标签",self.children); //  儿子标签：[ele,ele]
+
+        ele.nextElementSibling.style.color="red";
+    }
+
+     // 直接查找方法
+//      var ele_p=document.getElementById("p1");   // DOM对象
+//      var ele_c1=document.getElementsByClassName("c2");   // DOM对象的集合
+//      console.log(ele_c1); // [div.c2, div.c2, div.c2, div.c2];
+//
+//      var eles_p=document.getElementsByTagName("p"); // DOM对象的集合
+//      console.log(eles_p) ;// [p#p1,]
+
+
+
+
+
+
+</script>
+</body>
+</html>

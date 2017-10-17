@@ -1,0 +1,62 @@
+/*右侧区域*/
+.content-R a.report-img{
+    margin-right: 10px;
+}
+.content-R a.homepage{
+    margin-top: 12px;
+    display: block;
+}
+.content-R .top-10{
+    font-size: 14px;
+    font-weight:700;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+.content-R .top-10 span{
+    color: #c30;
+}
+.content-R .hot-top{
+    position: relative;
+}
+.content-R .hot-top .hot-top-text{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    background-color: #4767b2;
+    color: #f4f4f4;
+    text-align: center;
+}
+.content-R .hot-top .hot-top-triangle{
+    display: block;
+    border-color: #4767b2 #fff #fff;
+    border-width: 8px;
+    border-style:solid;
+    position: absolute;
+    left: 141px;
+    top: 35px;
+}
+.content-R .top-item{
+    border-bottom: 1px darkgrey dashed;
+    padding-top: 17px;
+    padding-bottom: 14px;
+}
+.content-R .top-item .top-num{
+    width: 32px;
+    height: 22px;
+    line-height: 22px;
+    display: block;
+    background-color: #f0f0f0;
+    color: #666;
+    text-align: center;
+    font-weight: 700;
+    float: left;
+}
+.content-R .top-item .top-item-text{
+    color: #333;
+    margin-left: 40px;
+    display: block;
+}
+.content-R .top-item:hover a{
+    text-decoration: none;
+    color: #396bb3;
+}

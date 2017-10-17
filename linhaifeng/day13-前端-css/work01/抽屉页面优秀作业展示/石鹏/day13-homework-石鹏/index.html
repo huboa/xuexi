@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉新热榜</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #EDEDED;
+            font: 12px Tahoma, Verdana, Arial, Helvetica, "\5b8b\4f53", sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        div {
+            background-color: white;
+        }
+        /* ##########  header ################# */
+        .header {
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 100%;
+            height: 44px;
+            background-color: #2459a2;
+            z-index: 100;
+        }
+        .header .header-content {
+            width: 1018px;
+            margin: 0 auto;
+            position: relative;
+            line-height: 44px;
+        }
+        .header-content .logo {
+            width: 121px;
+            height: 23px;
+            background: url(images/logo.png) no-repeat 0 0;
+            margin-top: 11px;
+            float: left;
+        }
+        .header-content .menu {
+            float: left;
+            margin-left: 20px;
+            font-size: 12px;
+            color: white;
+            background-color: #2459a2;
+        }
+        .menu .tab {
+            margin-left: -3px;
+            padding: 0 16px;
+            display: inline-block;
+        }
+        .active {
+            background-color: #204982;
+        }
+        .menu a:hover {
+            background-color: #396BB3;
+        }
+        .header-content .nav {
+            right: 131px;
+            position: absolute;
+            float: right;
+            height: 44px;
+            margin-top: -2px;
+            background-color: #2459a2;
+        }
+        .nav .login-btn {
+            color: white;
+            margin: 0 5px;
+            display: inline-block;
+            line-height: 40px;
+            padding: 0 20px;
+            font-size: 12px;
+        }
+        .login-btn:hover {
+            background-color: #396BB3;
+        }
+        .header-content .search {
+            float: right;
+            margin-top: 6px;
+        }
+        .search-txt {
+            padding: 2px 2px 2px 5px;
+            display: inline-block;
+            border: 1px solid #e0e0e0;
+            height: 25px;
+            width: 91px;
+            float: left;
+        }
+        .search .is {
+            border: 1px solid #e0e0e0;
+            background-color: #f4f4f4;
+            width: 30px;
+            height: 29px;
+            display: inline-block;
+            border-left: 0;
+            float: left;
+        }
+        .is span {
+            background-position: 0 -197px !important;
+            display: block;
+            height: 12px;
+            margin-left: 11px;
+            margin-top: 9px;
+            width: 9px;
+        }
+        a .ico {
+            background: url(images/icon.png) no-repeat 0 0;
+        }
+        .header-content a:hover {
+            cursor: pointer;
+        }
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* ##########  content ################# */
+        .main-content-band {
+            clear: both;
+            background-color: #ededed;
+            padding-top: 44px;
+        }
+        .main-content {
+            background-color: white;
+            margin: 0 auto;
+            width: 960px;
+            padding: 10px 28px 10px;
+            height: auto !important;
+            min-height: 713px;
+            overflow: hidden;
+        }
+        .content_left {
+            float: left;
+            width: 630px;
+        }
+        .content_right {
+            width: 300px;
+            float: right;
+        }
+        .nav-top-area {
+            overflow: hidden;
+            clear: both;
+            border-bottom: 1px solid #ccdcef;
+        }
+        .child-nav, .sort-nav {
+            float: left;
+        }
+        .child-nav .hotbtn {
+            margin-left: 3px;
+        }
+        .child-nav .active {
+            background-position: 0 -299px;
+            color: #333;
+            text-decoration: none;
+        }
+        .child-nav a {
+            display: inline-block;
+            width: 60px;
+            height: 26px;
+            line-height: 26px;
+            margin-top: 3px;
+            margin-bottom: 13px;
+            color: #369;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .icons {
+            background: url(images/tip.png?v=2.9) no-repeat 0 0;
+        }
+        .content-list {
+            position: relative;
+        }
+        .publish-btn {
+            background-color: #84a42b;
+            border: 1px solid #8aab30;
+            color: white;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 134px;
+            float: right;
+            font-size: 14px;
+        }
+        .publish-btn .n1 {
+            height: 12px;
+            width: 11px;
+            background-position: 0 -184px;
+            display: inline-block;
+        }
+        .publish-btn .n2 {
+            padding-left: 8px;
+            font-weight: 400;
+        }
+        .sort-nav {
+            margin-left: 144px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        .sort-nav .active {
+            color: #b4b4b4;
+            background-color: white;
+        }
+        .sort-nav a {
+            margin-left: 10px;
+            color: #390;
+            text-align: center;
+        }
+        .content-list {
+            position: relative;
+            z-index: 99;
+        }
+        .content-list .item {
+            clear: both;
+            padding-top: 10px;
+            border-bottom: 1px solid #dce7f4;
+            overflow: hidden;
+            position: relative;
+        }
+        .content-list .item .news-pic {
+            float: right;
+            margin-left: 10px;
+            padding-bottom: 5px;
+        }
+        .part1 {
+            line-height: 20px;
+        }
+        .show-content {
+            font-size: 14px;
+            color: #369;
+            font-weight: 700;
+        }
+        .content-list .item .content-source {
+            color: #b4b4b4;
+            margin-left: 7px;
+        }
+        .content-list .item .area-summary {
+            font-size: 12px;
+            color: #787878;
+            margin-top: 3px;
+            width: 550px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .area-summary .summary {
+            line-height: 20px;
+        }
+        .part2 {
+            padding: 8px 0 12px 0;
+        }
+        .part2 .digg-a, .part2 .discus-a, .part2 .collect-a {
+            min-width: 54px;
+        }
+        .item .part2 a.digg-a, .item .part2 a.discus-a, .item .part2 a.collect-a {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .item .part2 a.digg-a b, .item .part2 a.discus-a b {
+            font-size: 14px;
+            color: #99aecb;
+            font-weight: 700;
+            vertical-align: 4px;
+        }
+        .item .part2 a.collect-a b, .item .part2 a.user-a b {
+            font-size: 13px;
+            font-weight: 400;
+            color: #99aecb;
+            vertical-align: 4px;
+        }
+        .hand-icon {
+            background: url(images/icon_18_118.png) no-repeat 0 0;
+        }
+        .part2 .icon-digg {
+            background-position: 0 -40px !important;
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+        }
+        .part2 .digg-a:hover .icon-digg {
+            background-position: 0 -20px !important;
+        }
+        .part2 .icon-discus {
+            background-position: 0 -100px !important;
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+        }
+        .part2 .discus-a:hover .icon-discus {
+            background-position: 0 -80px !important;
+        }
+        .part2 .icon-collect {
+            background-position: 0 -160px !important;
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+        }
+        .part2 .collect-a:hover .icon-collect {
+            background-position: 0 -120px !important;
+        }
+        .item .part2 a.digg-a b:hover, .item .part2 a.discus-a b:hover, .item .part2 a.collect-a b:hover {
+            text-decoration: underline;
+        }
+        .part2 .user-a {
+            margin-left: 6px;
+        }
+        .part2 .time-into {
+            color: #ccc;
+            margin-left: 10px;
+        }
+        .part2 .time-into b {
+            font-weight: 300;
+            color: #e59373;
+            margin-left: 0;
+            vertical-align: 4px;
+        }
+        .part2 .time-into i {
+            font-weight: 400;
+            vertical-align: 4px;
+            font: 12px Tahoma, Verdana, Arial, Helvetica, "\5b8b\4f53", sans-serif
+        }
+        .part2 .share-site-to {
+            margin-left: 10px;
+            vertical-align: 4px;
+            color: #ccc;
+            visibility: visible;
+        }
+        .part2 .share-site-to i {
+            font: 12px Tahoma, Verdana, Arial, Helvetica, "\5b8b\4f53", sans-serif
+        }
+        .share-site-to .share-icon {
+            vertical-align: -2px;
+        }
+        .share-site-to .share-icon a {
+            background: url(images/share_icon.png);
+            display: inline-block;
+            opacity: 0.3;
+        }
+        .share-site-to .share-icon a.icon-sina {
+            background-position: 0 -90px;
+            width: 17px;
+            height: 14px;
+        }
+        .share-icon a.icon-douban {
+            background-position: 0 -105px;
+            width: 17px;
+            height: 14px;
+        }
+        .share-icon a.icon-qqzone {
+            background-position: 0 -120px;
+            width: 17px;
+            height: 14px;
+        }
+        .share-icon a.icon-renren {
+            background-position: 0 -151px;
+            width: 17px;
+            height: 14px;
+        }
+        .part2 .share-site-to {
+            display: none;
+        }
+        .item:hover .share-site-to {
+            display: inline-block;
+        }
+        .share-site-to .share-icon a:hover {
+            opacity: 1;
+        }
+        /* ##########分页信息############ */
+        .page-area {
+            margin-top: 9px;
+        }
+        .page-area ul {
+            list-style: none;
+        }
+        #dig_lcpage {
+            float: left;
+        }
+        #dig_lcpage li {
+            display: inline;
+        }
+        #dig_lcpage .ct_pagepw {
+            margin-right: 6px;
+            border: 0;
+        }
+        #dig_lcpage a, #dig_lcpage span {
+            float: left;
+            color: #369;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 34px;
+            border: 1px solid #e1e1e1;
+        }
+        #dig_lcpage a {
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        #dig_lcpage a:hover {
+            background-color: #336699;
+            color: white;
+        }
+        #dig_lcpage a.ct_page_edge {
+            margin-right: 9px;
+            width: 77px;
+            font-weight: 400;
+        }
+        /* ##########  footer样式 ################# */
+        .footer {
+            margin: 0 auto;
+            width: 960px;
+            font-size: 12px;
+            padding: 6px 28px 10px;
+            background-color: white;
+            overflow: hidden;
+        }
+        .footer .footer-nav {
+            padding-top: 15px;
+            text-align: center;
+            border-top: 1px solid #ccdcef;
+            position: relative;
+        }
+        .footer-nav a {
+            color: #369;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        .footer .foot-nav2 {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .footer .foot-nav3 {
+            margin-top: 6px;
+            text-align: center;
+        }
+        .footer .foot-nav4 {
+            margin-top: 6px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .foot_a {
+            color: #999
+        }
+        .foot_b {
+            color: #999;
+            font-size: 12px;
+            display: inline-block;
+            line-height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header clearfix">
+        <div class="header-content">
+            <a class="logo"></a>
+            <div class="menu">
+                <a class="tab active">全部</a>
+                <a class="tab">42区</a>
+                <a class="tab">段子</a>
+                <a class="tab">图片</a>
+                <a class="tab">挨踢1024</a>
+                <a class="tab">你问我答</a>
+            </div>
+            <div class="search">
+                <input type="text" class="search-txt">
+                <a class="is">
+                    <span class="ico"></span>
+                </a>
+            </div>
+            <div class="nav">
+                <a href="javascript:;" class="login-btn">注册</a>
+                <a href="javascript:;" class="login-btn">登录</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content-band">
+        <div class="main-content">
+            <div class="content_left">
+                <div class="nav-top-area">
+                    <div class="child-nav">
+                        <a href="#" class="hotbtn active icons">最热</a>
+                        <a href="#" class="newbtn">发现</a>
+                        <a href="#">人类发布</a>
+                    </div>
+                    <div class="sort-nav">
+                        <a href="#" class="active hotbtn">即时排序</a>
+                        <a href="#">24小时</a>
+                        <a href="#">3天</a>
+                    </div>
+                    <a href="javascript:;" class="publish-btn">
+                        <span class="ico n1"></span><span class="n2">发布</span>
+                    </a>
+                </div>
+                <div class="content-list">
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="float: left;">
+                            <div class="part1">
+                                <a href="#" class="show-content">皮尔洛宣布2017年年底与纽约城合同到期后退役</a>
+                                <span class="content-source">-sports.sina.com.cn</span>
+                            </div>
+                            <div class="area-summary">
+                                <span class="summary">　　北京时间10月8日，皮尔洛在接受《米兰体育报》采访时表示，自己将在12月与纽约城的合同结束后退役，未来或将担任孔蒂的助手。　　新浪体育稍后为您带来详细报道　　（月琦）</span>
+                            </div>
+                            <div class="part2">
+                                <a href="javascript:;" class="digg-a" title="推荐">
+                                    <span class="hand-icon icon-digg"></span>
+                                    <b>15</b>
+                                </a>
+                                <a href="javascript:;" class="discus-a">
+                                    <span class="hand-icon icon-discus"></span>
+                                    <b>70</b>
+                                </a>
+                                <a href="javascript:;" class="collect-a">
+                                    <span class="hand-icon icon-collect"></span>
+                                    <b>私藏</b>
+                                </a>
+                                <a href="javascript:;" class="user-a">
+                                    <span><img src="images/icon_xinl.jpg"></span>
+                                    <b>新浪财经</b>
+                                </a>
+                                <span class="time-into">
+                                        <a class="time-a" href="#"><b>1小时9分钟前</b></a>
+                                        <i>入热榜</i>
+                                    </span>
+
+                                <span class="share-site-to">
+                                        <i>分享到</i>
+                                        <span class="share-icon">
+                                            <a class="icon-sina" title="分享到新浪微博" href="javascript:;"></a>
+                                            <a class="icon-douban" title="分享到豆瓣" href="javascript:;"></a>
+                                            <a class="icon-qqzone" title="分享到QQ空间" href="javascript:;"></a>
+                                            <a class="icon-renren" title="分享到人人网" href="javascript:;"></a>
+                                            <a class="share-none"> </a>
+                                        </span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="news-pic">
+                            <img src="images/pic01.jpg" style="width: 60px;height: 60px;display: inline-block;">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="no-bottom"></div>
+                <div class="page-area">
+                    <div id="dig_lcpage">
+                        <ul>
+                            <li><span class="ct_pagepw">1</span></li>
+                            <li><a href="#" class="ct_pagepa">2</a></li>
+                            <li><a href="#" class="ct_pagepa">3</a></li>
+                            <li><a href="#" class="ct_pagepa">4</a></li>
+                            <li><a href="#" class="ct_pagepa">5</a></li>
+                            <li><a href="#" class="ct_pagepa">6</a></li>
+                            <li><a href="#" class="ct_pagepa">7</a></li>
+                            <li><a href="#" class="ct_pagepa">8</a></li>
+                            <li><a href="#" class="ct_pagepa">9</a></li>
+                            <li><a href="#" class="ct_pagepa">10</a></li>
+                            <li><a href="#" class="ct_page_edge">下一页</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content_right">
+                <div>
+                    <a href="#"><img src="images/r01.png" style=" width:300px;height:315px;"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="images/r02.png" style=" width:300px;height:630px;"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="images/r03.jpg" style=" width:300px;height:200px;"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-nav">
+                <a href="#" target="_blank">关于我们</a>
+                <span>|</span>
+                <a href="#" target="_blank">联系我们</a>
+                <span>|</span>
+                <a href="#" target="_blank">服务条款</a>
+                <span>|</span>
+                <a href="#" target="_blank">隐私政策</a>
+                <span>|</span>
+                <a href="#" target="_blank">抽屉新热榜工具</a>
+                <span>|</span>
+                <a href="#" target="_blank">下载客户端</a>
+                <span>|</span>
+                <a href="#" target="_blank">意见与反馈</a>
+                <span>|</span>
+                <a href="#" target="_blank">友情链接</a>
+                <span>|</span>
+                <a href="#" target="_blank">公告</a>
+                <a href="#" style="margin-left:0;vertical-align:-2px;">
+                    <img src="images/ct_rss.gif" width="36" height="14">
+                </a>
+            </div>
+            <div class="foot-nav2">
+                <a class="foot_b" target="_blank" href="#">
+                    <img src="images/footer1.gif" width="36" height="14">
+                </a>
+                <span>旗下站点</span>
+                <span class="foot_a">©2016chouti.com</span>
+                <a target="_blank" href="#" class="foot_b">京ICP备09053974号-3 京公网安备 110102004562</a>
+            </div>
+            <div class="foot-nav3">
+                <span>违法和不良信息举报：</span>
+                <span class="foot_a">电话：010-58302039  </span>
+                <span class="foot_a" style="margin-left: 15px;">邮箱：<a style="color: #369;margin-right: 10px;"
+                                                                      href="mailto:jubao@chouti.com">jubao@chouti.com</a> </span>
+            </div>
+            <div class="foot-nav4">版权所有：北京格致璞科技有限公司</div>
+        </div>
+    </div>
+    <div style="width:100%;height: 10px;"></div>
+</body>
+</html>

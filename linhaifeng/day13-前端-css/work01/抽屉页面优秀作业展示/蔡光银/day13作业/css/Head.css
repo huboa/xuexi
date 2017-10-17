@@ -1,0 +1,101 @@
+/*头部导航条*/
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style:none;
+}
+.head{
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    clear: both;
+    z-index: 1;
+}
+.head, .head_band{
+    height: 44px;
+    background-color:#2459a2;
+
+}
+.head a{
+    color: #c0cddf;
+}
+.head_band{
+    width: 1016px;
+    line-height: 44px;
+    margin:0 auto;
+    position: relative;
+    font-size: 12px;
+}
+a.logo{
+    float: left;
+    width: 121px;
+    height: 23px;
+    background: url("../images/logo.png") no-repeat;
+    margin-top: 11px;
+}
+.navigate li{
+    float: left;
+}
+.navigate a{
+    padding: 0 13px 0 16px;
+    display: inline-block;
+}
+a.tb:hover{
+    color: #fff;
+    background-color: #396bb3;;
+}
+.navigate .whole{
+    color: #fff;
+    background-color: #204982;
+    margin-left: 20px;
+}
+.head_right{
+    float: right;
+}
+.head_right a.tb{
+    display: inline-block;
+    float: left;
+    color: #fff;
+    padding:0 20px 0 20px;
+}
+.search-frame{
+    float: right;
+    width: 135px;
+    height: 31px;
+    margin-top: 6px;
+}
+.search_txt, .ico_box{
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    float: left;
+}
+.search-frame .search_txt{
+    width: 100px;
+    height: 31px;
+    color: #000;
+}
+.search-frame .ico_box{
+    width: 31px;
+    height: 31px;
+    border-left:0;
+}
+.ico{
+    background: url("../images/icon.png") no-repeat
+}
+.ico_box span.ico{
+    width: 11px;
+    height: 12px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 11px;
+    background-position: 0 -197px;
+}

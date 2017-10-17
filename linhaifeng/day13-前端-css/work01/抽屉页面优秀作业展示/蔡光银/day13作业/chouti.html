@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉新热榜-聚合每日热门资讯</title>
+    <link rel="icon" href="./images/chouti.png">
+    <link rel="stylesheet" href="css/Head.css">
+    <link rel="stylesheet" href="css/LeftContent.css">
+    <link rel="stylesheet" href="css/RightContent.css">
+    <link rel="stylesheet" href="css/Bottom.css">
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<!--header区域-->
+<div class="head">
+    <div class="head_band">
+        <a href="#" class="logo"></a>
+        <ul class="navigate">
+            <li><a href="" class="whole tb">全部</a></li>
+            <li><a href="" class="tb">42区</a></li>
+            <li><a href="" class="tb">段子</a></li>
+            <li><a href="" class="tb">图片</a></li>
+            <li><a href="" class="tb">挨踢1024</a></li>
+            <li><a href="" class="tb">你问我答</a></li>
+        </ul>
+        <div class="head_right">
+            <a href="" class="tb">注册</a>
+            <a href="" class="tb">登录</a>
+            <div class="search-frame">
+                <input type="text" class="search_txt">
+                <a href="" class="ico_box">
+                    <span class="ico"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--主内容区域-->
+<div class="main">
+    <div class="main-content clearfix">
+        <div class="content-L">
+            <!--最新最热按钮-->
+            <div class="content-L-top">
+                <div class="nav">
+                    <p href="" class="nav-btn action">最热</p>
+                    <p href="" class="nav-btn">发现</p>
+                    <p href="" class="nav-btn">人类发布</p>
+                </div>
+                <script>
+                    $(".nav .nav-btn").click(function () {
+                        $(this).siblings().removeClass('action');
+                        $(this).addClass('action');
+                    })
+                </script>
+                <div class="tags">
+                    <div class="tags-sub">
+                        <a href="" class="jishi">即时排序</a>
+                        <a href="" class="time">24小时</a>
+                        <a href="" class="time">3天</a>
+                    </div>
+                    <div class="issue">
+                        <span class="ico"></span>
+                        发布
+                    </div>
+                </div>
+            </div>
+
+            <!--黄色显示区域-->
+            <div class="yellow"><a href="">3条入热榜，点击查看</a></div>
+            <!--内容-->
+            <div class="content-list">
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="https://www.baidu.com" target="_blank" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="picture">
+                        <img src="./images/pic_1.jpg" alt="">
+                    </div>
+                    <div class="part1">
+                        <a href="" class="show-content">
+                            当地时间23日，数以百计的沙特女性首次被允许与家人一同进入位于首都利雅得的国王法赫德体育场，观看当日的国庆音乐表演和沙特历史剧。尽管她们仍被要求与单身男性分开就坐。
+                        </a>
+                        <a href="" class="content-source"><span>www.guancha.cn</span></a>
+                        <a href=""><span class="kind">42区</span></a>
+                    </div>
+                    <div class="part2">
+                        <a href="" class="thumbs-up">
+                            <span class="head-icon thumbs-up"></span>
+                            <b>11</b>
+                        </a>
+                        <a href="" class="msg">
+                            <span class="head-icon msg"></span>
+                            <b>24</b>
+                        </a>
+                        <a href="" class="collect">
+                            <span class="head-icon collect"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a href="" class="source">
+                            <img src="./images/15x15.jpg" alt="">
+                            界面新闻
+                        </a>
+                        <a href="" class="time-into">28分钟前</a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <span>
+                                <a class="share-icon sina" href="" title="分享到新浪微博"></a>
+                                <a class="share-icon douban" href="" title="分享到豆瓣"></a>
+                                <a class="share-icon qzone" href="" title="分享到QQ空间"></a>
+                                <a class="share-icon renren" href="" title="分享到人人网"></a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!--翻页-->
+            <ul class="turn-page">
+                <li><p href="#" class="page turn prev hide">上一页</p></li>
+                <li><p href="#" class="">1</p></li>
+                <li><p href="#" class="page">2</p></li>
+                <li><p href="#" class="page">3</p></li>
+                <li><p href="#" class="page">4</p></li>
+                <li><p href="#" class="page">5</p></li>
+                <li><p href="#" class="page">6</p></li>
+                <li><p href="#" class="page">7</p></li>
+                <li><p href="#" class="page">8</p></li>
+                <li><p href="#" class="page">9</p></li>
+                <li><p href="#" class="page">10</p></li>
+                <li><p href="#" class="page turn next">下一页</p></li>
+            </ul>
+            <script>
+                var $p_value = $(".turn-page li p");
+
+
+                $p_value.on('click',function () {
+
+                    $(this).removeClass('page').css("font-weight","700");
+                    $(this).parent().siblings().children('p').addClass('page').css("font-weight","200");
+
+                    if (($(this).text() == '1') && !($(this).attr('class'))){
+                        $('.prev').addClass('hide')
+                    }
+                    else{
+                        $('.prev').removeClass('hide')
+                    }
+                });
+
+            </script>
+        </div>
+
+        <div class="content-R">
+            <div>
+                <a href="" class="report-img"><img src="./images/report.png" alt=""></a>
+                <a href=""><img src="./images/report_children.png" alt=""></a>
+            </div>
+            <div style="margin-top: 10px;">
+                <a href="" style="color: #369;font-size: 14px;font-weight: 800;height: 20px;display: inline-block;background: url('./images/view.png') no-repeat left center; padding-left: 30px;">如何避免自己被封号</a>
+            </div>
+            <a href="" class="homepage">
+                <img src="./images/homepage_download.png" alt="">
+            </a>
+            <div class="top-10">
+                24小时全部
+                <span> TOP 10</span>
+            </div>
+            <div class="hot-top">
+                <span class="hot-top-text">最热榜</span>
+                <span class="hot-top-triangle"></span>
+            </div>
+            <div class="top-item">
+                <a href="" class="top-num">253</a>
+                <a href="" class="top-item-text">我说我喜欢2000年左右，因为一打开电视机就能看到这些</a>
+            </div>
+            <div class="top-item">
+                <a href="" class="top-num">123</a>
+                <a href="" class="top-item-text">
+                    金胖毕竟也是瑞士私校出来的小孩吶，语言能力和刻薄能力都算基本训练吧​(@殳俏)
+                </a>
+            </div>
+            <div class="top-item">
+                <a href="" class="top-num">321</a>
+                <a href="" class="top-item-text">
+                    今天和出租师傅聊天，他教育我说“做人要知足常乐，不能攀比，咱比上不足比下有余就行对吧？不能被别人绑架着生活，别人爱咋咋地，自己要按自己的想法活，到了这年龄都得想开。”我说：“师傅，你心态真好，羡慕你。”他说：“不行，我以前也不行，执拗，想不开，这不拆迁了吗，分了三套房，才想开。” ​​​​ （@扶南）
+                </a>
+            </div>
+            <div class="top-item">
+                <a href="" class="top-num">65</a>
+                <a href="" class="top-item-text">
+                    据科学家称：做爱消耗的卡路里相当于跑步五公里。谁他妈的能在30秒内跑完五公里？——FuckNugget
+                </a>
+            </div>
+            <div class="top-item">
+                <a href="" class="top-num">89</a>
+                <a href="" class="top-item-text">我说我喜欢2000年左右，因为一打开电视机就能看到这些</a>
+            </div>
+            <div style="margin-top: 15px;">
+                <img src="./images/CHOUTI_W300H200.jpg" alt="" width="300" height="200">
+            </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div class="bottom clearfix">
+
+        <div class="first-row">
+            <a href="">关于我们</a>
+            <span> | </span>
+            <a href="">联系我们</a>
+            <span> | </span>
+            <a href="">服务条款</a>
+            <span> | </span>
+            <a href="">隐私政策</a>
+            <span> | </span>
+            <a href="">抽屉新热榜工具</a>
+            <span> | </span>
+            <a href="">下载客户端</a>
+            <span> | </span>
+            <a href="">意见与建议</a>
+            <span> | </span>
+            <a href="">友情链接</a>
+            <span> | </span>
+            <a href="">公告</a>
+            <a href=""><img src="./images/ct_rss.gif" alt=""></a>
+        </div>
+
+        <div class="second-row">
+            <a href="">
+                <img src="./images/gozap-logo-50_15.gif" alt="">
+                &nbsp;©2017 chouti.com 京ICP备09053974号-3 京公网安备 110102004562
+            </a>
+            <p href="">
+                违法和不良信息举报： 电话：010-58302039 邮箱：jubao@chouti.com
+            </p>
+            <p>版权所有：北京格致璞科技有限公司</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

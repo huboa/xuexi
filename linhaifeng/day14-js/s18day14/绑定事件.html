@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--事件绑定方式1-->
+<!--<p class="c1" onclick="foo()">PPP</p>-->
+
+<p class="c1">PPP</p>
+
+
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+
+</ul>
+
+<script>
+    function foo() {
+         alert(1230)
+    }
+
+    // 事件绑定方式2 :   DOM对象(标签对象).onclick=function(){}
+
+    // 查找标签：
+
+    var ele=document.getElementsByClassName("c1")[0];
+
+    ele.onclick=function () {
+        console.log(this);   // 代指就是当前点击标签
+    };
+
+    // 给li绑定事件
+
+     var eles_li=document.getElementsByTagName("li");
+
+     eles_li.onclick=function () {
+         alert(123123)
+     };
+
+
+     for(var i=0;i<eles_li.length;i++){
+         console.log(eles_li[i]);
+         eles_li[i].onclick=function () {
+             console.log(this.innerHTML); // 指代当前点击标签
+         }
+     }
+
+
+
+</script>
+</body>
+</html>

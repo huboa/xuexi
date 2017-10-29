@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<p>111</p>
+<p>222</p>
+<p>333</p>
+
+
+<script src="jquery-3.1.1.js"></script>
+<script>
+
+//    $("p").css("color","red")
+
+// $,each的遍历循环方式1： $.each(obj,function)====================================
+
+//var arr=[11,2,343];
+//var obj={"name":"yuan","age":"322"};
+//
+//$.each(obj,function (i,v) {
+//    console.log(i,v)
+//});
+//
+//$.each(arr,function (i,v) {
+//    console.log(i,v)
+//})
+
+
+// $,each的遍历循环方式2：$("").each(function)
+
+$("p").each(function (i) {
+    console.log(i);
+
+    if(i==1){
+        $(this).css("color","red")
+    }
+    console.log($(this).html())
+})
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+<p>yuan</p>
+
+<button class="xianshi">显示</button>
+<button class="yincang">隐藏</button>
+<button class="qiehuan">切换</button>
+<hr>
+<h4>淡入淡出</h4>
+
+
+<img src="egon.jpg" alt="" class="egon">
+
+<p>
+    <button class="danru">淡入</button>
+    <button class="danchu">淡出</button>
+    <button class="danqie">切换</button>
+</p>
+
+
+<script src="jquery-3.1.1.js"></script>
+<script>
+
+
+
+    $(".xianshi").click(function () {
+        $("p").show(1000)
+
+    });
+
+    $(".yincang").click(function () {
+        $("p").hide(1000)
+    });
+
+    $(".qiehuan").click(function () {
+        $("p").toggle(1000)
+    })
+
+
+   $(".danru").click(function () {
+       $(".egon").fadeIn(1000)
+   });
+
+
+   $(".danchu").click(function () {
+       $(".egon").fadeOut(1000)
+   });
+
+
+
+   $(".danqie").click(function () {
+       $(".egon").fadeToggle(1000)
+   });
+
+
+</script>
+
+</body>
+</html>

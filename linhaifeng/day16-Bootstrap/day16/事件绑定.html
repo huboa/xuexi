@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="jquery-3.1.1.js"></script>
+   <script>
+
+    // juqery事件绑定方式1：  juqery对象.事件(function(){})
+
+//    $("ul li").click(function () {
+//
+//        //  $(this)  : 代指的是当前点击的标签，一个jquery对象
+//
+//         alert($(this).html())
+//
+//    });
+//
+//    $("button").click(function () {
+//        var $li=$("<li>"); //  <li></li>
+//
+//        $li.html("444");
+//
+//        $("ul").append($li)
+//    })
+
+//=================================================================================
+    //  事件绑定on方法
+
+//    $("button").click(function () {
+//        alert(123)
+//    });
+
+
+//    $("button").on("click",function () {
+//        alert(123)
+//    });
+
+    // 事件委派
+
+//        $("button").click(function () {
+//            var $li=$("<li>"); //  <li></li>
+//
+//            $li.html("444");
+//
+//            $("ul").append($li)
+//    });
+//
+//
+//    $("ul").on("click","li",function () {
+//        alert(123)
+//    });
+
+//=================================================================================
+       $(function () {
+
+            $("button").click(function () {
+                    var $li=$("<li>"); //  <li></li>
+
+                    $li.html("444");
+
+                    $("ul").append($li)
+            });
+
+
+            $("ul").on("click","li",function () {
+                alert(123)
+            });
+
+       });
+
+
+//       $(document).ready(function () {
+//
+//             // pass
+//
+//       })
+
+</script>
+</head>
+<body>
+
+
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+
+
+
+</ul>
+
+<button>add</button>
+
+
+
+</body>
+</html>

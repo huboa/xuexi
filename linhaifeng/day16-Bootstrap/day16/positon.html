@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab_outer{
+            margin: 20px auto;
+            width: 60%;
+        }
+        .menu{
+            background-color: #cccccc;
+            /*border: 1px solid red;*/
+            line-height: 40px;
+            text-align: center;
+        }
+        .menu li{
+            display: inline-block;
+            margin-left: 14px;
+            padding:5px 20px;
+
+        }
+        .menu a{
+            border-right: 1px solid red;
+            padding: 11px;
+        }
+        .content{
+            background-color: tan;
+            border: 1px solid green;
+            height: 300px;
+
+        }
+        .hide{
+            display: none;
+        }
+
+        .current{
+            background-color: #2868c8;
+            color: white;
+            border-top: solid 2px rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+      <div class="tab_outer">
+          <ul class="menu">
+              <li egon="c1" class="current">菜单一</li>
+              <li egon="c2" >菜单二</li>
+              <li egon="c3">菜单三</li>
+          </ul>
+          <div class="content">
+              <div id="c1">内容一</div>
+              <div id="c2" class="hide">内容二</div>
+              <div id="c3" class="hide">内容三</div>
+          </div>
+
+      </div>
+</body>
+
+
+<script src="jquery-3.1.1.js"></script>
+    <script>
+         $(".menu li").click(function () {
+
+             $(this).addClass("current").siblings().removeClass("current")
+
+             var index=$(this).attr("egon");
+
+             $("#"+index).removeClass("hide").siblings().addClass("hide")
+
+         })
+
+    </script>
+</html>

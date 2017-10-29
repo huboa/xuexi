@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .c1{
+            width: 200px;
+            height: 200px;
+            background-color: #2459a2;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="c1"></div>
+<button>change</button>
+<script src="jquery-3.1.1.js"></script>
+
+<script>
+
+    // offset方法的参照物是可视窗口
+    console.log($(".c1").offset());         // 偏移量对象
+    console.log($(".c1").offset().top);     // 偏移量对象
+    console.log($(".c1").offset().left);     // 偏移量对象
+    
+//    var top1=100
+    $("button").click(function () {
+        $(".c1").offset({"top":100,left:200})
+    })
+</script>
+</body>
+</html>

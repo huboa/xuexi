@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            width: 200px;
+            height: 200px;
+            background-color: #2459a2;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="outer">
+    <div class="inner">
+    </div>
+</div>
+
+
+
+<script>
+    var outer=document.getElementsByClassName("outer")[0];
+    var inner=document.getElementsByClassName("inner")[0];
+
+    outer.onclick=function (e) {
+        alert(1234)
+    };
+    inner.onclick=function (e2) {
+          alert(888);
+
+        // 阻止事件传播
+
+        e2.stopPropagation()
+    }
+</script>
+
+</body>
+</html>

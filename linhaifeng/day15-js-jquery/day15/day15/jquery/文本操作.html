@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+<body>
+
+<p class="p1">P1</p>
+<p class="p1">P2</p>
+<p class="p1">P3</p>
+<p class="p1">p4</p>
+
+<script>
+    // DOM对象转为Jquery对象  $(DOM对象)
+    $("p").click(function () {
+        console.log($(this));
+
+        // 取值操作
+        //alert($(this).html());
+        //alert($(this).text())
+
+        // 赋值操作
+        $(this).html("<a href=''>hello</a>")
+        //$(this).text("<a>hello</a>")
+    })
+
+</script>
+
+</body>
+</html>

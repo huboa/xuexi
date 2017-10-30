@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="outer">
+   <h1>hello</h1>
+
+
+</div>
+
+
+<hr>
+<button class="add">ADD</button>
+<button class="del">del</button>
+<button class="change">change</button>
+
+
+<script>
+    var ele_addBtn=document.getElementsByClassName("add")[0];
+    var ele_delBtn=document.getElementsByClassName("del")[0];
+    var ele_changeBtn=document.getElementsByClassName("change")[0];
+    var ele_outer=document.getElementsByClassName("outer")[0];
+    var ele_h1=ele_outer.getElementsByTagName("h1")[0];
+
+
+    ele_addBtn.onclick=function () {
+       // 创建节点对象
+
+        var ele_a=document.createElement("a"); //  <a></a>
+
+        ele_a.innerHTML="click";  // 文本赋值
+
+        ele_a.href="http://www.baidu.com";
+
+        console.log(ele_a);
+
+        // 添加节点对象  父节点.appendChild(添加节点)
+
+        ele_outer.appendChild(ele_a)
+
+
+    };
+
+    // 删除节点操作  父节点.removeChild(子节点)
+    
+    ele_delBtn.onclick=function () {
+
+
+        ele_outer.removeChild(ele_h1)
+
+
+    };
+
+
+    // 替换节点  父节点.replaceChild(新节点，被替换节点)
+
+    ele_changeBtn.onclick=function () {
+         // 创建新节点
+
+        var ele_img=document.createElement("img");  // <img>
+        ele_img.src="egon.jpg";
+        ele_img.width=100;
+        ele_img.height=100;
+
+
+        // 找被替换标签 ele_h1   父节点：ele_outer
+
+        ele_outer.replaceChild(ele_img,ele_h1)
+
+
+
+
+
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+<form action="" id="form">
+    <p>用户名<input type="text" name="user"></p>
+    <input type="submit">
+</form>
+
+
+<script>
+    var ele_form=document.getElementById("form");
+
+    ele_form.onsubmit=function (e) {
+       var inp=document.getElementsByName("user")[0];
+       var username=inp.value;
+       alert(username);
+       if (username.length>12 || username.length<5) {
+           // 阻止默认事件
+           //return false;
+
+            // 阻止默认事件
+
+           e.preventDefault()
+
+
+       }
+    }
+</script>
+
+
+
+</body>
+</html>

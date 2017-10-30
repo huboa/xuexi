@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<p class="c1">PPPPP</p>
+<p class="c1">PPPPP</p>
+<p class="c1">PPPPP</p>
+
+
+<input type="text" id="inp" value="123" class="c1" >
+
+
+
+<script>
+    //var ele_p=document.getElementById("d1");
+
+    // Dom对象.on事件=function(){}
+
+    var eles_p=document.getElementsByClassName("c1"); //dom集合 []
+
+    for (var i=0;i<eles_p.length;i++){
+        eles_p[i].onclick=function () {
+            //  this  当前点击标签
+
+            //this.innerHTML="hello world"
+            this.innerText="hello world"
+
+        }
+    }
+
+
+    var ele_inp=document.getElementById("inp");
+
+    ele_inp.onclick=function () {
+
+//        console.log(this.value);
+//        this.value="hello"
+
+        console.log(this.getAttribute("value"));
+        this.setAttribute("value","666");
+
+        // this.classList.add("hide");
+        // this.classList.remove("c1");
+
+        this.style.color="red";
+        this.style.border="green 1px solid"
+
+    }
+
+    var ele_select=document.getElementById("s1");
+
+
+
+</script>
+</body>
+</html>

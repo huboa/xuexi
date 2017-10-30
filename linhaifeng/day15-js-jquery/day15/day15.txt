@@ -1,0 +1,117 @@
+
+
+
+
+
+JS
+  DOM---
+    两个步骤：
+	1 查找标签 
+	   （1）直接查找
+	        document.getElementById(“idname”)          // dom对象
+			document.getElementsByTagName(“tagname”)   // dom对象的集合   [dom1,dom2,..]
+			document.getElementsByClassName(“name”)    // dom对象的集合   [dom1,dom2,..]
+	   
+	    (2) 导航查找
+		      --- 通过某一个标签定位到另一个标签
+			  
+			    parentElement           // 父节点标签元素
+
+				children                // 所有子标签
+
+				firstElementChild       // 第一个子标签元素
+
+				lastElementChild        // 最后一个子标签元素
+
+				nextElementtSibling     // 下一个兄弟标签元素
+
+				previousElementSibling  // 上一个兄弟标签元素
+		    
+		     
+	2 操作标签
+	
+	    (1) 文本操作
+		    取值操作:
+			DOM对象.innerText
+			DOM对象.innerHTML
+			
+			赋值操作：
+			 
+			DOM对象.innerHTML="hello world"
+            DOM对象.innerText="hello world"
+  
+  
+        (2) 属性操作
+			  DHTML的简洁语法：
+			  console.log(DOM对象.属性名);
+			  DOM对象.属性=值
+			  
+			  原生JS：
+			  
+			  console.log(DOM对象.getAttribute("属性名"))
+			  DOM对象.setAttribute("属性名","值")
+			  
+			  
+			  value：
+			        input，select ，textarea
+			  
+		(3) class属性操作
+		      DOM对象.classList.add("hide");
+              DOM对象.classList.remove("c1");
+			  
+			  左侧菜单实例
+			  
+		(4) css样式设置
+		      DOM对象.style.样式属性=样式值
+			  
+			  
+   
+     节点操作
+	 
+	    1 创建节点
+		  document.createElement("a");
+		
+		2 添加节点
+		  父节点.appendChild(添加节点)
+		
+		3 删除节点
+		  父节点.removeChild(子节点)
+		
+		4 替换节点
+		  父节点.replaceChild(新节点，被替换节点)
+		
+	     
+    事件
+	
+	    onclick     单击事件
+	    ondblclick  双击事件
+		
+		onload事件
+		onsubmit事件   阻止默认事件发生：return false
+		
+		onkeydown事件
+		
+		onselect事件
+		
+		onmouseover事件
+		
+		
+		
+		
+	 
+Jquery
+
+    1  查找标签 
+	
+	   选择器 实现
+	   
+	   
+	   
+	2 标签操作
+
+
+
+
+
+
+

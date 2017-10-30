@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<select name="pro" id="s1">
+    <option>请选择省份</option>
+    <option value="111">河北省</option>
+    <option value="222">河南省</option>
+    <option value="333">东北省</option>
+</select>
+
+<select name="pro" id="c1">
+    <option>请选择城市</option>
+
+</select>
+
+<textarea id="t1">
+
+</textarea>
+
+
+<script>
+    var ele_select=document.getElementById("s1");
+    ele_select.onchange=function () {
+
+      console.log(ele_select.value)
+
+    }
+</script>
+
+
+</body>
+</html>

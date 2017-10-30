@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .back{
+            height: 2000px;
+        }
+
+        .shade{
+            position: fixed;
+            top:0;
+            bottom: 0;
+            left:0;
+            right: 0;
+            background-color: darkgrey;
+            opacity: 0.4;
+        }
+
+        .model{
+            position: fixed;
+            top:100px;
+            left: 300px;
+
+            width: 400px;
+            height: 250px;
+            background-color: white;
+
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+    <script typet="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+
+<div class="back">
+    <button class="show">添加学员</button>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>班级</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+
+        <tr>
+            <td>谢文明</td>
+            <td>23</td>
+            <td>18</td>
+            <td>
+                <button class="edit">编辑</button>
+                <button class="del">删除</button>
+            </td>
+        </tr>
+        <tr class="t1">
+            <td>丫丫</td>
+            <td>18</td>
+            <td>18</td>
+            <td class="yangben">
+                <button class="edit">编辑</button>
+                <button class="del">删除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="shade hide"></div>
+
+<div class="model hide">
+    <form action="">
+        <p>姓名<input type="text" class="item"></p>
+        <p>年龄<input type="text" class="item"></p>
+        <p>班级<input type="text" class="item"></p>
+        <p>
+            <input type="button" value="提交" class="addBtn">
+            <input type="button" value="取消" class="cancel">
+        </p>
+    </form>
+</div>
+
+
+<script>
+
+    function foo() {
+         ele_shade.classList.add("hide");
+         ele_model.classList.add("hide")
+    }
+
+
+
+    // model对话框
+
+    var ele=document.getElementsByClassName("show")[0];
+    var ele_cancel=document.getElementsByClassName("cancel")[0];
+    var ele_shade=document.getElementsByClassName("shade")[0];
+    var ele_model=document.getElementsByClassName("model")[0];
+    ele.onclick=function () {
+         ele_shade.classList.remove("hide");
+         ele_model.classList.remove("hide")
+    };
+    ele_shade.onclick=function () {
+         foo()
+    };
+
+     // 删除
+
+    var eles_del=document.getElementsByClassName("del");
+    var ele_tbody=document.getElementById("tbody");
+
+    for (var i=0;i<eles_del.length;i++){
+        eles_del[i].onclick=function () {
+             // 父节点.removeChild(子节点)
+
+            console.log(this.parentElement.parentElement);
+             // 父节点 : ele_tbody
+             // 子节点 : this.parentElement.parentElement
+            ele_tbody.removeChild(this.parentElement.parentElement);
+
+        }
+
+    };
+
+    // 添加事件
+
+    var ele_add=document.getElementsByClassName("addBtn")[0];
+
+    ele_add.onclick=function () {
+
+        var eles_input=ele_model.getElementsByClassName("item");
+//        var ele_tr=document.createElement("tr");    // <tr></tr>
+//        for(var i=0;i<eles_input.length;i++){
+//            // eles_input[i].value
+//
+//            var ele_td=document.createElement("td");  // <td></td>
+//            ele_td.innerHTML=eles_input[i].value;      // <td></td>
+//
+//            ele_tr.appendChild(ele_td)
+//
+//        }
+//
+//
+//
+//        var ele_td_yangben=document.getElementsByClassName("yangben")[0].cloneNode(true)
+//        console.log(ele_td_yangben);
+//
+//        ele_tr.appendChild(ele_td_yangben);
+//         console.log(ele_tr);
+
+
+
+        // 思路2：
+            var arr=[];
+            for(var i=0;i<eles_input.length;i++){
+                arr.push(eles_input[i].value)
+            }
+
+            console.log(arr);
+
+        console.log(ele_tbody.innerHTML);
+        s='<tr class="t1"> <td>丫丫</td> <td>18</td> <td>18</td> <td class="yangben"> <button class="edit">编辑</button> <button class="del">删除</button> </td></tr>'
+
+
+         ele_tbody.appendChild(s);
+
+
+
+
+
+//        foo();// 隐藏模态对话框
+
+
+    };
+
+
+
+
+
+
+
+    
+    
+</script>
+</body>
+</html>

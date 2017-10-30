@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            width: 200px;
+            height: 200px;
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<div class="c1"></div>
+
+<script>
+
+    var ele=document.getElementsByClassName("c1")[0]
+
+    // 鼠标悬浮触发事件
+    ele.onmouseover=function () {
+        console.log(1111)
+    };
+
+    // 鼠标离开区域触发事件
+     ele.onmouseleave=function () {
+         console.log(777)
+     }
+
+</script>
+
+
+</body>
+</html>

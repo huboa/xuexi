@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+<body>
+
+
+
+<div egon="dog" alex="dog2">egon</div>
+<div egon="dog">egon</div>
+
+
+<div class="outer">
+    <div class="c2">
+        <div class="c3" id="d3">DIV</div>
+    </div>
+    <p id="d2" class="c3">PPPPPPP</p>
+</div>
+
+
+<input type="text">
+
+<div>
+    <p class="c1">p1</p>
+    <p class="c1"  id="d1">p2</p>
+    <p class="c1">p3</p>
+    <p class="c1">p4</p>
+    <p class="c1">p5</p>
+    <p class="c1" id="p6">p6</p>
+</div>
+
+<div>
+    <p>12321</p>
+</div>
+<p class="c1"> p7</p>
+<script>
+
+    // 基本选择器
+
+    //$("#d1").css("color",'red')
+    //$(".c1").css("color",'red')
+    //$("p").css("color",'green')
+    //    $("#d1,div").css("color",'green')
+
+    // 组合选择器
+
+    // $(".outer .c3").css("color",'red')
+
+    // 筛选器
+    // $(".c1:first").css("color",'red')
+    // $(".c1:last").css("color",'red')
+
+
+     // $(".c1:eq(i)").css("color",'red');
+    // $(".c1:gt(1)").css("color",'red')
+
+    // 属性选择器
+
+    // $("[egon='dog'][alex]").css("color",'red')
+
+    // 表单选择器  :只适用于表单标签
+
+    // $("[type='text']").val("hello")
+    // $(":text").val("hello")
+
+
+    // 筛选器
+    //    var i=3;
+    //    $(".c1").eq(i).css("color",'red')
+    //    console.log($("#d1").hasClass("c1"))  // true
+
+    // 查找筛选器
+
+    // 向下查找
+    //$("#d1").nextAll().css("color",'red')
+    //$("#d1").next().css("color",'red')
+    //$("#d1").nextUntil("#p6").css("color",'red')
+
+    // 向上查找
+
+    //    $("#p5").prev();
+    //    $("div").prevAll();
+    //    $("div").prevUntil()
+
+    // 查找所有的兄弟标签
+    // $("#d1").siblings().css("color",'red')
+
+    // find ：找后代      children:找儿子
+    //    console.log($(".outer").children().length) ;// 2
+    //    $(".outer").children(".c3").css("color","red")
+
+    //    console.log($(".outer").find());
+    //
+    //    $(".outer").find(".c3").css("color","red")
+
+    // 找父标签
+
+//    $("#d3").parent().parent();
+//    $("#d3").parents();
+//    $("#d3").parentsUntil(".outer")
+
+</script>
+
+
+</body>
+</html>

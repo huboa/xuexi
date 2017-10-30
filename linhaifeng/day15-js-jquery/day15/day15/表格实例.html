@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>班级</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+
+        <tr>
+            <td>谢文明</td>
+            <td>23</td>
+            <td>18</td>
+            <td>
+                <button class="edit">编辑</button>
+                <button class="del">删除</button>
+            </td>
+        </tr>
+        <tr class="t1">
+            <td>丫丫</td>
+            <td>18</td>
+            <td>18</td>
+            <td>
+                 <button class="edit">编辑</button>
+                <button class="del">删除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<script>
+    var eles_del=document.getElementsByClassName("del");
+    var ele_tbody=document.getElementById("tbody");
+
+    for (var i=0;i<eles_del.length;i++){
+        eles_del[i].onclick=function () {
+             // 父节点.removeChild(子节点)
+
+            console.log(this.parentElement.parentElement);
+             // 父节点 : ele_tbody
+             // 子节点 : this.parentElement.parentElement
+            ele_tbody.removeChild(this.parentElement.parentElement);
+
+        }
+
+    }
+</script>
+</body>
+</html>

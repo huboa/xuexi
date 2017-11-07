@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/dist/css/bootstrap.css">
+
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <a href="/add/"><button class="btn btn-primary">添加</button></a>
+            <table class="table table-hover">
+                <tr>
+                    <th>编号</th>
+                    <th>书名</th>
+                    <th>出版日期</th>
+                    <th>价格</th>
+                    <th>出版社</th>
+                    <th>操作</th>
+
+                </tr>
+
+                {% for book_obj in bookList %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ book_obj.title }}</td>
+                        <td>{{ book_obj.pubDate|date:"Y-m-d" }}</td>
+                        <td>{{ book_obj.price }}</td>
+                        <td>{{ book_obj.publish }}</td>
+                        <td>
+                            <a href="/edit/{{ book_obj.id }}"><button class="btn btn-info">编辑</button></a>
+                            <a href="/del/{{ book_obj.id }}"><button class="btn btn-danger">删除</button></a>
+
+                        </td>
+
+                    </tr>
+                {% endfor %}
+
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

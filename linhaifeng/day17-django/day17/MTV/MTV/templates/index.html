@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<h1>index</h1>
+<h3>hello {{ name }} --- {{ age|add:10 }}</h3>
+
+<p>{{ l|default:"值为空" }}</p>
+<p>{{ l|length }}</p>
+<p>{{ l.1 }}</p>
+<p>{{ d.name }}</p>
+
+
+<p>{{ date|date:"Y-m-d" }}</p>
+<p>{{ date.year }}</p>
+<p>{{ date.month }}</p>
+
+<hr>
+<p>{{ personList }}</p>
+
+{% for person_obj in personList %}
+    <p>{{ person_obj.name }} ,{{ person_obj.age }},{{ person_obj.dream }}</p>
+{% endfor %}
+
+
+<hr>
+
+<p>{{ 12312321|filesizeformat }}</p>
+<p>{{ "hello world"|slice:"2:" }}</p>
+<p>{{ "hello world asdsa asd asd asda asda asd asda dasd asd "|truncatechars:"20" }}</p>
+<p>{{ "hello world asdsa asd asd asda asda asd asda dasd asd "|truncatewords:"4" }}</p>
+
+<p>{{ a_ele|safe }}</p>
+
+
+</body>
+</html>

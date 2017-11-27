@@ -1,0 +1,166 @@
+
+
+day18:
+    
+    ORM:
+
+        1、类名------->表名
+        2、类属性----->字段类型
+        
+        3、类对象----->表记录
+
+    
+
+    数据库迁移：
+              
+
+    流程：  
+	
+             url:  http://127.0.0.1:8070/index?     GET    无请求数据	
+             
+			 # 添加
+			 url:  http://127.0.0.1:8070/add        GET    无请求数据	
+             url:  http://127.0.0.1:8070/add        post   请求数据	
+             重定向：http://127.0.0.1:8070/index/  get    无请求数据	
+			 
+			 # 删除
+			 http://127.0.0.1:8070/del/5   GET 无请求数据
+			 重定向：http://127.0.0.1:8070/index/
+			 
+			 
+			 #编辑
+			 http://127.0.0.1:8070/edit/6  GET   无请求数据
+			 http://127.0.0.1:8070/edit/6  POST   请求数据
+		     重定向：http://127.0.0.1:8070/index/
+			 
+             
+			 注意点：
+			     （1）请求方式对应不同的逻辑
+				 （2） render方法执行过程
+				 （3） 重定向
+				   
+
+表与表关系
+
+    1、   确定是什么关系
+ 	      if 一对多：
+		      关联字段放在多的一方;  
+			  foreign key dep_id reference  dep(id)
+		  if 多对多：
+              创建第三章表
+               create table student_teacher(
+			        id int primary key,
+					student_id int,
+					teacher_id int,
+					foreign key student_id reference  student(id)
+					foreign key teacher_id reference  teacher(id)	
+			   )
+			   
+			   
+		  if 一对一：
+		        foreign key ，关联字段可以放在两张表中任意一张
+				关联字段必须唯一约束
+		       
+			   
+		  
+ORM表关系：
+    1、配置： 
+	    DATABASES = {
+
+			'default': {
+
+				'ENGINE': 'django.db.backends.mysql',
+
+				'NAME': 's18day18',    #你的数据库名称
+
+				'USER': 'root',      #你的数据库用户名
+
+				'PASSWORD': '',      #你的数据库密码
+
+				'HOST': '',         #你的数据库主机，留空默认为localhost
+
+				'PORT': '3306',     #你的数据库端口
+
+			}
+		}
+		
+		
+	2、 数据库引擎更改：
+	    MYsqlDB---->pymysql
+		在应用的__init__文件中加入：
+		
+		   import pymysql
+
+			pymysql.install_as_MySQLdb()
+    
+	单表操作：
+	    # 插入数据
+			 # 插入数据方式1,create有返回值：插入的记录对象：
+				book_obj=models.Book.objects.create(title=title,pubDate=pubdate,price=price,publish=publish)
+				print(book_obj.title)
+				print(book_obj.price)
+			 # 插入数据方式2：
+				book_obj=models.Book(title=title,pubDate=pubdate,publish=publish)
+				book_obj.price=price
+				book_obj.save()
+    一对多
+	    
+		
+	
+	        
+    多对多
+    一对一
+	
+ORM查询API：
+     pass
+
+	 
+作业：
+     1 整理 博客：  自定义标签与过滤器    继承
+	 
+	 2 图书管理练习加入一对多操作，出版社表
+	 
+	 3 选做： 作者（多对多）
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+    }
+}
+	 
+	 
+	
+			 

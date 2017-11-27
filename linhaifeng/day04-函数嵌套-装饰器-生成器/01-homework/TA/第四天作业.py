@@ -337,8 +337,6 @@ def search_action(limit_res,select_l):
 
     return [fileds_l,res]
 
-
-
 if __name__ == '__main__':
     while True:
         sql=input("sql> ").strip()

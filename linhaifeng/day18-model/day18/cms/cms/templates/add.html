@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+<form action="/add/" method="post">
+    {% csrf_token %}
+    <p>书名 <input type="text" name="title"></p>
+    <p>出版日期 <input type="date" name="pubdate"></p>
+    <p>价格 <input type="text" name="price"></p>
+    <p>出版社 <input type="text" name="publish"></p>
+    <input type="submit">
+</form>
+
+{"title":"das","pubdate":"2012-12-12"}
+
+</body>
+</html>

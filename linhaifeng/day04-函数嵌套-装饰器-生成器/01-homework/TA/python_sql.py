@@ -19,7 +19,6 @@ def sql_parse(sql): #insert delete update select
     if func in parse_func:
         res=parse_func[func](sql_l)
     return res
-
 def insert_parse(sql_l):
     '''
     定义insert语句的语法结构，执行sql解析操作，返回sql_dic
@@ -27,7 +26,6 @@ def insert_parse(sql_l):
     :return:
     '''''
     pass
-
 def delete_parse(sql_l):
     '''
     定义delete语句的语法结构，执行sql解析操作，返回sql_dic
@@ -35,7 +33,6 @@ def delete_parse(sql_l):
     :return:
     '''''
     pass
-
 def update_parse(sql_l):
     '''
     定义update语句的语法结构，执行sql解析操作，返回sql_dic
@@ -43,7 +40,6 @@ def update_parse(sql_l):
     :return:
     '''''
     pass
-
 def select_parse(sql_l):
     '''
     定义select语句的语法结构，执行sql解析操作，返回sql_dic
@@ -135,10 +131,6 @@ def three_parse(exp_str):
         res.insert(1,'like')
     print('three_parse res is \033[43;1m%s\033[0m' % res)
     return res
-
-
-
-
 
 
 

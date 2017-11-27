@@ -1,0 +1,311 @@
+
+
+上周jquery
+
+
+选择器
+     基本选择器：    id  $("#id") class $(".class")  标签选择器  $("标签名称")
+     组合选择器：    后代选择器 $(".outer p")  子代选择器 $(".outer>p")     多元素选择器：$(".outer,#d1")
+	 属性选择器：    $("[属性名='值'][.....]")
+	 表单选择器：    针对表单元素   $("[type='text']")   =============   $(":text")
+	 
+	 筛选器：$("ul li").eq()   $("ul li").first()   $("ul li").last()   $("").hasclass("c1")
+
+	 导航查找方法 ：
+	             向下查找兄弟标签：   
+					 $().next()
+					 $().nextAll()
+					 $().nextUntil(".c1")
+	             向上查找兄弟标签：
+					  $().prev()
+					  $().prevAll()
+					  $().prevUntil(".c1")
+				可以查找所有兄弟标签： $().siblings()
+				
+				查找子标签： 子代查找：$().children("")   后代查找： $().find("")
+				 
+				查找父级标签：$().parent()   $().parentUntil("")
+				 
+属性操作
+     文本操作：  取值：$().html()       $().text()  赋值：$().html(“”)       $().text(“”)
+	                   $().val()
+     
+	 属性操作：   DOM:    ele.属性名=值     ele.setAttribute("属性名","值")
+	 
+	              juqery：取值： $().attr("属性名")    赋值：$().attr("属性名"，"值")
+				                
+	                             $().prop("checxked")    $().prop("selected")
+								 
+     class属性操作： $().addClass("c1")    $().removeClass("c1")
+	 左侧菜单： jquery支持链式操作   $(this).html("hello").next().css("color","red")
+	 
+	 
+	 
+    节点操作：
+	
+	       创建节点 ： $("<标签名>")
+		   
+		   添加节点：
+		          父节点.append(子节点)
+				  子节点.appendto(父节点)
+				  
+
+    css操作：
+	        
+
+Bootstrap
+
+
+
+"put|67612|a.png"
+
+
+    关于http协议：
+	    
+	    基于TCP协议
+		请求协议：（浏览器发送给服务器）
+		    请求首行        GET  url http 1.1
+			请求头          Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+							Accept-Encoding:gzip, deflate, br
+							Accept-Language:zh-CN,zh;q=0.8
+							Cache-Control:max-age=0
+							Connection:keep-alive
+							Content-Length:17
+		    空行
+            请求体          a=1
+			                b=2
+							
+			注意：GET请求不会把请求数据放在请求体中，会放在url后面，比如http://www.cnblogs.com/wupeiqi/articles/5237672.html?a=1&b=2
+
+        响应协议：（服务器发送给浏览器的）
+		     响应首行    HTTP协议版本号， 状态码， 状态消息 
+		     响应头
+			 空行
+			 响应正文    html页面
+		
+		
+		
+    url： http://www.baidu.com
+	      http://www.cnblogs.com/wupeiqi/articles/5237672.html?a=1&b=2
+		  
+		  协议：http
+		  域名：www.cnblog.com
+		  路径：/wupeiqi/articles/5237672.html
+		  get请求数据：?a=1&b=2
+
+    get请求：
+	       （1） 地址栏输入url
+		   （2） <a href="请求url">点击</a>
+		   （3） <form action="请求url" method="get"></form>
+
+    post请求：
+	         <form action="请求url" method="post"></form>
+
+
+Django
+
+    MTV：
+		   URL： url的路径与视图函数的映射关系
+		   
+		         http://jd.com/caidian/            caidian-----foo()
+                 http://jd.com/car/                car---------bar()
+                 http://jd.com/login/              login---------login()
+
+           views:
+		        逻辑处理
+				
+		   models：与数据库相关的操作
+
+		   template(模板): 与html文件相关的操作
+
+
+
+
+
+创建项目命令：django-admin startprject 项目名
+
+		   
+创建应用命令：python manage.py  startapp appname
+	
+启动项目：    python manage.py  runserver IP PROT
+
+mysite
+    manage.py  操作Django项目
+
+    mysite：
+         settings：配置
+		 urls：    路径与视图的映射关系
+		 wsgi：    创建socket（解析，封装数据的过程）
+		 
+	app01:
+        views: 存放视图函数
+        models：处理数据库		
+		 
+		 
+	
+浏览器   urls：http://jd.com/caidian/ 
+        
+         urls.py:
+		 
+
+		 1、 http://127.0.0.1:8000/timer    GET  无请求数据
+            		
+		 2、 url：url(r'^timer/', views.showtime),
+		 
+		 3、 views.py: showtime(request)
+		 
+		 4、响应 时间字符串
+		 
+		 
+		 
+		 
+		 1、http://127.0.0.1:8000/login/    GET   无请求数据
+		 
+		 2、url(r'^login/', views.login),
+		 
+		 3、views.py: login(request)
+		 
+		 4、响应 :login.html
+		 
+		 
+		 
+		 
+		 1、http://127.0.0.1:8000/valide/   POST   {"user":"yuan","pwd":"123"}
+		 
+		 2、url(r'^valide/', views.valide),  
+		 
+		 3、views：valide(request) 
+		 
+		 4、if 成功: 响应字符串,验证成功
+	     
+		 
+		
+url系统：
+
+        url的路径与视图函数的映射关系
+
+
+视图函数：
+
+         request（请求对象）：
+		        request.GET       {}     get请求数据
+		        request.POST      {}     post请求数据
+				      request.POST.getlist()
+		        request.method           请求方式
+		        request.path             请求路径
+		        request.get_full_path()  请求全路径
+				
+		         
+		 response（响应对象）：
+		 
+		        Httpresponse()
+				
+				render(request,template_name,context)
+				
+				      template:模板
+					  context：上下文对象
+				
+				redirect(跳转，重定向)
+				
+				    redirect("/路径/")
+					
+					模拟用户点击submit请求：
+					
+					请求url：http://127.0.0.1:8000/login/
+					
+						（1）请求url：/login/   POST
+						（2）url(r'^login/', app01_views.login,name="LOGIN"),
+						（3）login(request): 验证 ，   if 成功： redirect("/index/")
+				   
+				    重定向请求：
+					    请求路径：http://127.0.0.1:8000/index/
+						（1） /index/    get  
+						（2） url(r'^index/', app01_views.index,name="index")
+						（3） index(request) :  取出数据库数据，渲染到index.html页面
+				
+		            用户看到的是：渲染的index.html页面
+					
+				redirect与render的区别： redirect两次请求  render一次请求
+				
+		
+
+		
+tempalte（模板层）：
+        
+	    功能： 为了更有逻辑的将数据库中的数据渲染到模板中
+		
+		模板语法     
+      		变量  {{ }}
+			
+			       深度查询： 句点符 .
+				   过滤器： {{var|filter_name:参数}}   
+				   
+            标签  {% url %}  
+                
+                  {% for i in obj %}	{% endfor %}
+
+                  {% if %}		{%endif%}
+
+                  {% with %}
+                  {% csrf_token%}	
+
+				  
+            自定义过滤器与标签：
+			    定义流程：
+				   1、在settings中的INSTALLED_APPS配置当前app，不然django无法找到自定义的simple_tag.
+				   2、在app中创建templatetags模块(模块名只能是templatetags)
+				   3、创建任意 .py 文件，如：my_tags.py：
+				             from django import template
+							from django.utils.safestring import mark_safe
+
+							register = template.Library()  # register的名字是固定的,不可改变
+
+							@register.filter      # 定义过滤器
+							def multi(x,y):
+
+								return x*y
+
+
+							@register.simple_tag   # 定义标签
+							def multi_tag(x,y,z):
+								return x*y*z
+											   
+			       4、在使用自定义simple_tag和filter的html文件中导入之前创建的 my_tags.py
+
+							{% load my_tags %}　
+				  
+                   5、使用simple_tag和filter（如何调用）
+				   
+				   总结区别：
+				         1、自定义filter只能接受两个参数
+						 2、自定义simple_tag不能与if使用
+				          
+            继承:
+			         创建base.html 
+					 {%block content%}{%endblock%}
+					 
+model:
+     
+	 
+	 python manage.py makemigrations
+	 python manage.py migrate
+	
+
+
+
+作业1 ：
+ 
+    表格的增删改查
+
+
+作业2：
+    
+    /index/
+    /add/
+    /del/3
+    /edit/4	
+		
+		 
+		 
+		 
+		 

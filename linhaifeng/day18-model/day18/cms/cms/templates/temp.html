@@ -1,0 +1,59 @@
+{% load Mytag %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<h3>TEMP</h3>
+
+{% if n > 20 %}
+   <p>大于20</p>
+{% else %}
+    <p>小于20</p>
+{% endif %}
+
+<hr>
+
+
+
+{#{% with book_obj.publish.name="name" %}#}
+{#    <p>{{ name }}</p>#}
+{#{% endwith %}#}
+
+<hr>
+
+<form action="/temp/" method="post">
+    {% csrf_token %}
+
+    <p>
+        <input type="text" name="user">
+    </p>
+
+    <input type="submit">
+</form>
+
+
+<hr>
+
+<p>{{ n|add:12}}</p>
+<p>{{ n|multi:12 }}</p>
+
+
+<p>{% multi_tag n 5 2 %}</p>
+
+
+{% if n|multi:10 > 100 %}
+   <p>大于100</p>
+{% else %}
+    <p>小于等于100</p>
+{% endif %}
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+       <form action="/add/" method="post">
+                {% csrf_token %}
+              <div class="form-group">
+                <label for="title">书名</label>
+                <input type="text" class="form-control" id="title" placeholder="书名" name="title">
+              </div>
+
+              <div class="form-group">
+                <label for="price">价格</label>
+                <input type="text" class="form-control" id="price" placeholder="价格" name="price">
+              </div>
+
+              <div class="form-group">
+                <label for="publish_date">出版日期</label>
+                <input type="date" class="form-control" id="publish_date" placeholder="publish_date" name="pubdate">
+              </div>
+
+              <div class="form-group">
+                <label for="publish">出版社</label>
+                <input type="text" class="form-control" id="publish" placeholder="publish" name="publish">
+              </div>
+
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+{% endblock content%}
+
+{% block leftMenu %}
+{% endblock leftMenu %}

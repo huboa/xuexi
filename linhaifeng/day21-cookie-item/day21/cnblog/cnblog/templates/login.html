@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="/static/dist/css/bootstrap.css">
+     <script src="/static/dist/js/jquery-3.2.1.js"></script>
+     <script src="/static/dist/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <form class="col-md-6 col-md-offset-2">
+              <div class="form-group">
+                <label for="user">用户名</label>
+                <input type="text" class="form-control" id="user" placeholder="user">
+              </div>
+              <div class="form-group">
+                <label for="pwd">密码</label>
+                <input type="password" class="form-control" id="pwd" >
+              </div>
+              <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="valid">验证码</label>
+                    <input type="text" class="form-control" id="valid">
+                  </div>
+                  
+                  <div class="col-md-6">
+                      <img class="valid_img" src="/get_valid_img/" alt="" width="200" height="40">
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <input type="button"value="submit" class="btn btn-primary loginBtn"><span class="error"></span>
+                  </div>
+              </div>
+        </form>
+    </div>
+
+</div>
+
+
+<script>
+    $(".valid_img").click(function () {
+        $(this)[0].src+="?"
+    });
+
+
+    $(".loginBtn").click(function () {
+
+        $.ajax({
+            url:"/login/",
+            data:{
+                username:$("#user").val(),
+                password:$("#pwd").val(),
+                valid:$("#valid").val()
+            },
+            success:function (data) {
+                console.log(data);
+                var data=JSON.parse(data);
+                if (data["user"]){
+                    location.href="/index/"
+                }
+                else {
+                    $(".error").html(data.error_msg).css("color","red")
+                    setTimeout(function () {
+                         $(".error").html("")
+                    },2000)
+                }
+            }
+
+        })
+    })
+</script>
+
+
+</body>
+</html>

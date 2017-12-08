@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<button class="ajax_send">send</button>
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js "></script>
+<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script>
+
+    $(".ajax_send").click(function () {
+
+        // 发送ajax
+
+        $.ajax({
+            url:"/ajax_send/",
+            type:"post",
+            headers:{"X-CSRFToken":$.cookie('csrftoken')},
+            contentType:"application/json",
+            data:JSON.stringify({
+                name:"yuan",
+                pwd:"123"
+                //csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                //csrfmiddlewaretoken:$.cookie("csrftoken")
+
+            }),
+            success:function (data) {
+                console.log(111);
+                console.log(data)
+            },
+            error:function (jqXHR, textStatus, err) {
+                console.log(222);
+                console.log(err)
+            }
+        })
+
+
+
+    })
+
+</script>
+
+</body>
+</html>

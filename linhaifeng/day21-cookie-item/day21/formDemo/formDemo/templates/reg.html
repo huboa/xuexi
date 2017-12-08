@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<form action="/reg/" method="post">
+    {% csrf_token %}
+    <p>姓名{{ regForm.username }} <span class="error">{{ regForm.errors.username.0 }}</span></p>
+    <p>密码{{ regForm.password }} <span class="error">{{ regForm.errors.password.0 }}</span></p>
+    <p>确认密码{{ regForm.repeat_password }}<span class="error">{{ regForm.errors.repeat_password.0 }}</span></p>
+    <p>邮箱{{ regForm.email }}<span class="error">{{ regForm.errors.email.0 }}</span></p>
+    <input type="submit">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

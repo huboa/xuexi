@@ -1,4 +1,4 @@
-"""formDemo URL Configuration
+"""cnblog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -13,16 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
-from app01 import views
+from blog import views
+from django.views.static import serve
+from cnblog import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', views.index),
-    url(r'^back/', views.back),
     url(r'^login/', views.login),
     url(r'^reg/', views.reg),
-    url(r'^ajax_send/', views.ajax_send),
-    url(r'^zsc/', views.zsc),
+    url(r'^logout/', views.logout),
+    url(r'^get_valid_img/', views.get_valid_img),
+    url(r'^index/', views.index),
+    # app 分发映射
+    url(r'^blog/', include('blog.urls')),
+    # media 配置
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+
 ]

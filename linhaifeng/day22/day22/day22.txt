@@ -1,0 +1,39 @@
+
+
+知识点：
+    
+	1、文件上传： 
+	
+	      form表单 
+ 		  ajax（formData）
+		  
+		  
+    2 博客系统注册页面的头像上传
+	      media路径配置
+		  
+		  avatar = models.FileField( upload_to='avatarDir/', default="avatar/default.png")
+      
+          配置：MEDIA_ROOT=os.path.join(BASE_DIR,"blog","media")
+		  
+		         MEDIA_ROOT+avatarDir/+a.png
+			 
+		  配置：
+		       MEDIA_URL="/media/"
+               url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),			   
+		  
+		  <img src='/media/avatarDir/a.png'>
+
+
+    3、 博客系统之系统首页的文章渲染
+    
+    4、  个人站点完成文章归档（分类归档，标签归档，日期归档） （**********）
+         跳转---url
+		 
+	5、文章详细页：实现了点赞功能：不能重复点赞；事务 	（**********） 
+	
+	今日作业：
+	    
+		1、 实现评论提交和存储
+		2、 客户端可以看到评论样式
+		
+    		 

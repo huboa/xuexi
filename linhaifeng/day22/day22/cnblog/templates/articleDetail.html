@@ -1,0 +1,53 @@
+{% extends 'homeSite.html' %}
+
+{% block con %}
+    <div class="article_con">
+        <div class="article_title text-center"><h3>{{ article_obj }}</h3></div>
+       <div class="content">
+           {{ article_obj.articledetail.content|safe }}
+       </div>
+    </div>
+
+    <div class="poll">
+       <div class="diggit pull-right">
+           <span class="diggnum" id="digg_count">{{ article_obj.up_count }}</span>
+       </div>
+
+    </div>
+   <div class="row">
+       <div class="pull-right">
+            <span class="error"></span>
+       </div>
+   </div>
+
+    <div class="info" article_id="{{ article_obj.nid }}"></div>
+    {% csrf_token %}
+<script>
+    $(".diggit").click(function () {
+
+
+
+        $.ajax({
+            url:"/blog/diggit/",
+            data:{
+                article_id:$(".info").attr("article_id"),
+                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+            },
+            type:"POST",
+            success:function (data) {
+               if(data.state){
+                    console.log(data);
+                    var val=parseInt($(".diggnum").html())+1;
+                    $(".diggnum").html(val)
+               }
+               else {
+                    $(".error").html("已经点赞过").css("color","red");
+                    setTimeout(function () {
+                        $(".error").html("");
+                    },2000)
+               }
+            }
+        })
+    })
+</script>
+{% endblock %}

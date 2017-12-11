@@ -42,12 +42,12 @@ def login(request):
             return obj
 
     return render(request,"login.html")
+def zsc(request):
+    print("这个是测试页面")
+    return render(request,"zsc.html")
 
 
 from app01 import forms
-
-
-
 def reg(request):
 
     if request.method=="POST":
@@ -70,3 +70,4 @@ def reg(request):
 
     regForm = forms.RegForm()
     return render(request,"reg.html",{"regForm":regForm})
+

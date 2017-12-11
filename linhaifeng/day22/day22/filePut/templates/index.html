@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js "></script>
+</head>
+<body>
+
+
+<form action="/index/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p><input type="text" name="user" id="user"></p>
+    <p><input type="file" name="myFile" id="file"></p>
+    <input type="submit">
+</form>
+
+<button>ajaxSend</button>
+
+
+<script>
+      $("button").click(function () {
+
+          var formdata=new FormData();
+          formdata.append("username",$("#user").val());
+          formdata.append("imgFile",$("#file")[0].files[0]);
+          formdata.append("csrfmiddlewaretoken",$("[name='csrfmiddlewaretoken']").val());
+
+          $.ajax({
+              url:"/index/",
+              type:"POST",
+              data:{"a":1,"b":2},    //
+              processData:false,
+              contentType:false,
+              success:function (data) {
+                  console.log(data)
+              }
+          })
+      })
+</script>
+
+</body>
+</html>

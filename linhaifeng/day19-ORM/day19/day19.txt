@@ -1,0 +1,281 @@
+
+class Book(models.Model):
+    title=models.CharField(max_length=32)
+	
+    # 书籍与出版社： 一对多
+    publisher=models.ForeignKey(to="Publish",to_field="id")  # 与这本书关联的出版社对象，因为是一对多的关系，所以，出版社对象只能有一个。
+    # 书籍与作者： 多对多
+	authors=models.ManyToManyField("Author")
+	
+class Publish(models.Model):
+    name=models.CharField(max_length=32)
+	
+class Author(models.Model):
+    name=models.CharField(max_length=32)
+    age=models.IntegerField()
+    tel=models.CharField(max_length=32)
+  
+单表操作：
+    1、添加
+	    (1) 表.objects.create(**kwargs)
+	    (2) obj=表(**kwargs)
+		
+		    obj.save()
+
+
+
+1 模板语法：
+   
+     （1） 自定义过滤器和标签
+	 
+	 
+	 （2） 模板继承 :   
+	            base.html    {% block %} {%end block%}
+				index(继承母版)： extend "base.html"      {% block %} {%end block%}
+				
+
+2   ORM跨表添加
+        ORM一对多的添加
+
+			1、
+				publish_obj=Publish.objects.get(id=2)
+				表.objects.create(title="python",publisher=publish_obj)
+			
+			2、 
+				表.objects.create(title="python",publisher_id=2)
+	    ORM多对多的添加
+	 
+	        authors=models.ManyToManyField("Author") # 与这本书关联的作者对象集合
+			
+			绑定关系
+			    book_obj.authors.add(obj,obj2,...)
+			    book_obj.authors.add(*[])
+			解除关系
+			    book_obj.authors.remove(obj,obj2,...)
+			    book_obj.authors.remove(*[])
+				book_obj.authors.clear()
+			
+			
+	
+3 ORM跨表查询（1 基于对象 2 基于双下划线）
+    
+	#####基于对象的跨表查询
+
+					###########################################一对多查询########################
+
+					# 正向查询： 按字段
+
+					# 查询 python这本书的出版社的名称和地址
+
+					# book_python=models.Book.objects.filter(title="python").first()
+					#
+					# print(book_python.title)
+					# print(book_python.price)
+					#
+					# print(book_python.publisher) # Publish object : 与这本书关联的出版社的对象
+					# print(book_python.publisher.name)
+					# print(book_python.publisher.addr)
+
+					# 反向查询：按关联的表名（小写）_set
+
+					# 查询人民出版社出版过的所有书籍名称及价格
+
+					# pub_obj=models.Publish.objects.get(name="renmin")
+					# book_list=pub_obj.book_set.all()   # QuerySet 与这个出版社关联的所有书籍对象
+					#
+					# for obj in book_list:
+					#     print(obj.title,obj.price)
+
+
+					###########################################一对一查询########################
+
+					# 正向查询： 按字段
+
+					# 查询addr在沙河的作者
+					authorDetail=models.AuthorDetail.objects.get(addr="shahe")
+					print(authorDetail.author.name) # alex
+
+
+					# 反向查询：按 表名（小写）
+
+					# 查询 alex混迹在哪里
+
+					alex=models.Author.objects.get(name="alex")
+					print(alex.authordetail.addr) # shahe
+
+					###########################################多对多查询########################
+
+
+					# 多对多的正向 查询： 按字段
+
+					# 查询 python这本书的所有作者的姓名和年龄
+
+					# book_python=models.Book.objects.get(title="python")
+					# author_list=book_python.authors.all()
+					# for obj in author_list:
+					#     print(obj.name,obj.age)
+					#
+					# book_pythons = models.Book.objects.filter(title="python")
+					# for book_python in book_pythons:
+					#     author_list = book_python.authors.all()
+					#     for obj in author_list:
+					#         print(obj.name, obj.age)
+
+
+					# 多对多的反向查询  按关联的表名（小写）_set
+
+					# alex出版过的所有书籍的明显名称
+
+					# alex=models.Author.objects.get(name="alex")
+					# book_list=alex.book_set.all()
+					# for i in book_list:
+					#     print(i.title,i.price)
+						 
+    #####基于双下划线的跨表查询
+	
+	        JS：
+			    var eles_p=document.getElementByTagName("p");    [p1,p2,p3,p4,p5]
+				for(var i=0;i<eles_p.length;i++){
+				   eles_p[i].style.color="red"
+				}
+			jquery:
+			
+			    $("p").css("color","red")
+	  
+	         
+			正向查询：按字段  
+			反向查询：按表明 
+			
+			
+			# 查询 python这本书的价格
+			ret=models.Book.objects.filter(title="python").values("price","title")
+			print(ret) # <QuerySet [{'price': Decimal('122.00')}]>
+
+
+			#查询python这本书的出版社的名称和地址
+
+			# 正向查询  按字段    基于book表
+			# ret2=models.Book.objects.filter(title="python").values_list("publisher__name")
+			# print(ret2)
+			#
+			# # 反向查询 按表名  if 设置了related_name: 按设置值
+			# ret3=models.Publish.objects.filter(bookList__price=333).values_list("name","addr").distinct()
+			# print(ret3)
+
+			# 查询人民出版社出版过的所有书籍名称及价格
+
+			# ret4=models.Book.objects.filter(publisher__name="renmin").values("title","price")
+			# print(ret4.count())
+
+			# ret5=models.Publish.objects.filter(name="renmin").values("bookList__title","bookList__price")
+			# print(ret5.count())
+
+			#查询egon出过的所有书籍的名字(多对多)
+
+			# ret6=models.Author.objects.filter(name="egon").values_list("book__title")
+			# print(ret6)
+
+			# ret7=models.Book.objects.filter(authors__name__contains="eg").values("title")
+			# print(ret7)
+
+			# 地址以沙河开头的的作者出版过的所有书籍名称以及出版社名称
+			# ret8=models.Book.objects.filter(authors__authordetail__addr__startswith="sha").values("title","publisher__name")
+			# print(ret8)
+	
+
+
+		sql与ORM：
+
+			  SELECT `app01_publish`.`name` 
+			  FROM `app01_book` 
+			  INNER JOIN `app01_publish` 
+			  ON (`app01_book`.`publisher_id` = `app01_publish`.`id`) 
+			  WHERE `app01_book`.`title` = 'python' 
+			  LIMIT 21; 
+
+			  SELECT `app01_publish`.`name` 
+			  FROM `app01_publish` INNER JOIN `app01_book` 
+			  ON (`app01_publish`.`id` = `app01_book`.`publisher_id`) 
+			  WHERE `app01_book`.`title` = 'python' 
+			  LIMIT 21;
+	  
+	  
+4 回顾聚合与分组
+         
+		1 聚合函数 SUM AVG MIN MAX COUNT
+		2 聚合函数可以单独使用，不一定要和分组配合使用；只不过聚合函数与group by 搭配
+		
+		3  统计每一个部门有多少人：  select COUNT(name) from emp group by dep_id
+		
+		select book.id ,book.title,count(1) from book join bookAuthor on book.id=bookAuthor.book_id  group by book.id,book.title,
+		
+		
+		 # 单纯聚合函数
+		 # 计算所有图书的平均价格
+		 # ret=models.Book.objects.all().aggregate(priceSum=Sum("price"))
+		 # print(ret)  # {'priceSum': Decimal('2158.00')}
+
+		 # 统计每一本书的作者个数
+
+		 # ret2=models.Book.objects.all().annotate(authors_num=Count("authors"))  # QuerySet
+		 # print(ret2)   # [book_obj1,book_obj2,book_obj3,book_obj4,....]
+		 #
+		 # for obj in ret2:
+		 #     print(obj.nid,obj.title,obj.authors_num)
+
+
+		 # 查询每一个出版社出版过的所有书籍的总价格
+
+		  #方式1：
+		 # ret3=models.Publish.objects.all().annotate(priceSum=Sum("bookList__price"))
+		 #
+		 # for obj in ret3:
+		 #     print(obj.id,obj.name,obj.priceSum)
+         
+		 # ret4 = models.Publish.objects.all().annotate(priceSum=Sum("bookList__price")).values("name","priceSum")
+		 # print(ret4)
+		 
+		 # 方式2：
+		 # ret5=models.Book.objects.all().values("publisher__name").annotate(priceSum=Sum("price")).values("publisher__name","priceSum")
+		 # print(ret5)
+
+		
+5  F与Q查询
+
+         
+============================================
+
+
+
+ORM修改
+       1 obj.name="egon"  obj.save()  效率低  
+	   2 表.objects.all().update(name="") 推荐
+	   
+	   注意点：update方法是QuerySet数据类型的方法。model对象不能调用。
+	   
+ORM删除	   
+	   表.objects.filter().delete()
+	   
+	   注意事项：
+	       1 、 delete()是QuerySet数据类型的方法
+		   2 、 级联删除
+		   
+
+
+今日作业：
+        
+    1、整理博客    
+            
+    2、增删编辑
+
+    3、添加分页  http://www.cnblogs.com/yuanchenqi/articles/7652353.html#_label0	
+
+下周课程：
+     1 ajax
+	 2 分页
+	 3 COOKKIE SESSION
+	 
+
+	 
+	 
+	         

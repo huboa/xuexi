@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+     <link rel="stylesheet" href="/static/dist/css/bootstrap.css">
+    <script src="/static/dist/js/jquery-3.2.1.js"></script>
+    <script src="/static/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/css/homeSite.css">
+    <link rel="stylesheet" href="/static/css/articleDetail.css">
+</head>
+<body>
+<div class="header">
+    <div class="title">{{ username }}的个人博客</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 left">
+                  <div class="panel panel-success">
+                      <div class="panel-heading">公告</div>
+                      <div class="panel-body">
+                        <p>昵称：{{ user.username }}</p>
+                        <p>园龄：{{ user.create_time|date:'Y-m-d' }}</p>
+                        <p>头像：<img src="/media/{{ user.avatar }}" alt="" width="60" height="60"></p>
+                      </div>
+                   </div>
+                   <div class="panel panel-warning">
+                      <div class="panel-heading">分类归档</div>
+                      <div class="panel-body">
+                        {% for cate in cateList %}
+                           <p><a href="/blog/{{ user.username }}/category/{{ cate.title }}">{{ cate.title }}({{ cate.article_set.all.count }})</a></p>
+                        {% endfor %}
+
+                      </div>
+                   </div>
+                   <div class="panel panel-info">
+                      <div class="panel-heading">标签归档</div>
+                      <div class="panel-body">
+                        {% for tag in tagList %}
+                        <p><a href="/blog/{{ user.username }}/tag/{{ tag.title }}">{{ tag.title }}({{ tag.article_set.all.count }})</a></p>
+                        {% endfor %}
+
+                      </div>
+                   </div>
+
+                   <div class="panel panel-danger">
+                      <div class="panel-heading">日期归档</div>
+                      <div class="panel-body">
+                        {% for date in dateList %}
+                           <p><a href="/blog/{{ user.username }}/date/{{ date.0 }}">{{ date.0 }}({{ date.1 }})</a></p>
+                        {% endfor %}
+
+                      </div>
+                   </div>
+        </div>
+        <div class="col-md-9 right">
+               {% block con %}
+                 <div class="articleList">
+                    {% for article in article_list %}
+                     <div class="article_item">
+                         <div><a href="/blog/{{ article.user.username }}/articles/{{ article.nid }}">{{ article.title }}</a></div>
+                         <div class="text">
+                                {{ article.desc }}
+                         </div>
+                         <div class="icon">
+                             <a href="">{{ article.user.username }}</a>
+                             <span>&nbsp;&nbsp;发布于&nbsp;&nbsp;{{ article.create_time|date:'Y-m-d H:i' }}</span>&nbsp;&nbsp;
+                             <a href=""><span class="glyphicon glyphicon-thumbs-up"></span><span>点赞数({{ article.up_count }})</span></a>&nbsp;&nbsp;
+                             <a href=""><span class="glyphicon glyphicon-comment"></span><span>评论数({{ article.comment_count }})</span></a>
+                         </div>
+                         <hr>
+                     </div>
+                    {% endfor %}
+               </div>
+               {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

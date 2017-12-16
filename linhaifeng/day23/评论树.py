@@ -11,7 +11,13 @@ commentList=[
 for comment_dict in commentList:
     comment_dict["childrenList"]=[]
 
-    if comment_dict["pid"] == comment_dict["nid"]:
+    print(comment_dict["nid"])
+    print(comment_dict["pid"])
 
-        print(comment_dict["nid"])
-        print(comment_dict["pid"])
+    if comment_dict["pid"]==None:
+
+        print(comment_dict)
+    else:
+        comment_dict["childrenList"].appent
+#    if comment_dict["pid"] == comment_dict["nid"]:
+

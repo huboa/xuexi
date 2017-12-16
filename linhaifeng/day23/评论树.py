@@ -17,7 +17,10 @@ for comment_dict in commentList:
     if comment_dict["pid"]==None:
 
         print(comment_dict)
-    else:
+
+for comment in commentList:
+
+    if comment_dict["pid"] == comment_dict["nid"]:
         comment_dict["childrenList"].appent
-#    if comment_dict["pid"] == comment_dict["nid"]:
+
 

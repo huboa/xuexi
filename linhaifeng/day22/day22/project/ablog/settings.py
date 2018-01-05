@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -24,7 +24,6 @@ SECRET_KEY = 'c*9uz7xmp_bss0wp8dpq0@0dpk#9q)=e*^mjdc$whqf5n4-*8g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -106,13 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Asia/Shanghai'
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -124,5 +119,9 @@ STATICFLIES_DIRS=[
     os.path.join(BASE_DIR,"blog","static"),
 ]
 
-
+###继承数据库
 AUTH_USER_MODEL = "blog.UserInfo"
+
+####静态文件
+MEDIA_ROOT=os.path.join(BASE_DIR,"blog","media")
+MEDIA_URL="/media/"

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .pg-header{
+            height: 48px;
+            background-color: cadetblue;
+        }
+    </style>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <div class="pg-header">菜单</div>
+
+    {% block body %}{% endblock %}
+
+
+    <script></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

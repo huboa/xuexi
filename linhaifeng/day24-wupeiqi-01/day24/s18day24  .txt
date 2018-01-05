@@ -1,0 +1,32 @@
+s18day24  
+
+今日内容：
+	1. 中间件
+	2. 自定义分页
+	3. ModelForm
+	
+	4. 序列化
+	5. 缓存
+	6. 信号
+	
+内容详细：
+	主机管理系统
+	1. 用户登录
+		- Form验证
+		- 密码不能是明文
+		- form.add_error('字段名','错误信息')
+	
+	2. 装饰器实现用户认证
+	
+	3. 中间件实现用户认证
+		- process_request
+			- 返回值
+		- process_response
+			- 必须有返回值
+		- process_view
+		- process_exception
+		- process_template_response
+		
+		
+		
+			

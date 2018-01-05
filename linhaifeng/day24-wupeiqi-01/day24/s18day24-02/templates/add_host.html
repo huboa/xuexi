@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>添加</h1>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+            <p>{{ field.label }}:{{ field }} {{ field.errors.0 }}</p>
+        {% endfor %}
+
+        <!--
+        <p>{{ form.hostname.label }}:{{ form.hostname }} {{ form.hostname.errors.0 }}</p>
+        <p>{{ form.ip.label }}:{{ form.ip }} {{ form.ip.errors.0 }}</p>
+        <p>{{ form.port.label }}:{{ form.port }} {{ form.port.errors.0 }}</p>
+        <p>{{ form.user.label }}:{{ form.user }} {{ form.user.errors.0 }}</p>
+        <p>{{ form.dp.label }}:{{ form.dp }} {{ form.dp.errors.0 }}</p>
+        -->
+
+        <input type="submit" value="提交">
+    </form>
+
+{% endblock %}

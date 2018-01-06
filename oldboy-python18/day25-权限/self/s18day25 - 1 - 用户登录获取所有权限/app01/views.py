@@ -36,6 +36,8 @@ def login(request):
                 }
             }
             """
+
+            
             return HttpResponse('....')
         else:
             return render(request, 'login.html')

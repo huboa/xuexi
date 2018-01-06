@@ -55,7 +55,7 @@ def init_permission(user,request):
             'menu__name':item['permissions__group__menu__name'],
         }
         permission_memu_list.append(val)
-        print(item)
+    print(permission_memu_list)
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_memu_list
 
 
@@ -71,7 +71,7 @@ def init_permission(user,request):
             permission_dict[group_id]['codes'].append(code)
         else:
             permission_dict[group_id] = {'urls': [url, ], 'codes': [code, ]}
-        print(permission)
+    print(permission_dict)
     request.session[settings.PERMISSION_DICT_SESSION_KEY] = permission_dict
 
 

@@ -23,4 +23,11 @@ current_url = "/users/del/1/"
 menu_list=[]
 for menu in permission_menu_list:
     print(menu["url"])
+    if menu["pid"] == None:
+        menu["active"]=True
+        menu_list.append(menu)
+
+print(menu_list)
+
+
 

@@ -23,5 +23,6 @@ menu_list2={
 }
 
 
-for n in menu_list.values():
-    print(menu_list[n])
+for key in menu_list:
+    print(menu_list[key]["menu_id"])
+

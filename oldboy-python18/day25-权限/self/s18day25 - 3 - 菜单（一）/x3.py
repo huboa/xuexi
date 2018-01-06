@@ -26,6 +26,6 @@ menu_dic_list={}
 for key in menu_list:
     print(menu_list[key]["menu_id"])
     if not menu_list[key]["menu_id"] in menu_dic_list:
-        
+        menu_dic_list[menu_list[key]["menu_id"]]="111"
         print(menu_dic_list)
 

@@ -71,6 +71,7 @@ class Permission(models.Model):
     group = models.ForeignKey(verbose_name='所属权限组',to="PermissionGroup")
 
 
-
+class test1():
+    print("test1")
 
 

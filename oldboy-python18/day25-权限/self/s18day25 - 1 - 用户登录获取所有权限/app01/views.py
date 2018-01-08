@@ -37,7 +37,7 @@ def login(request):
             }
             """
 
-            permission[permissions__group_id]
+            #permission[permissions__group_id]
             return HttpResponse('....')
         else:
             return render(request, 'login.html')

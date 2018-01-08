@@ -15,15 +15,15 @@ def login(request):
             # 登录成功
             print('登录成功',user)
 
-            permission_list = user.roles.filter(permissions__id__isnull=False).values(
-                'permissions__title',
-                'permissions__url',
-                'permissions__code',
-                'permissions__group_id',
-            ).distinct()
-
-            for permission in permission_list:
-                print(permission)
+            # permission_list = user.roles.filter(permissions__id__isnull=False).values(
+            #     'permissions__title',
+            #     'permissions__url',
+            #     'permissions__code',
+            #     'permissions__group_id',
+            # ).distinct()
+            #
+            # for permission in permission_list:
+            #     print(permission)
             """
             {
                 1: {

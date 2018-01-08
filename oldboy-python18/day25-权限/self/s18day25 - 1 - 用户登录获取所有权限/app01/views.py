@@ -12,7 +12,7 @@ def login(request):
         pwd = request.POST.get('pwd')
 
         #user = models.UserInfo.objects.filter(username=user,password=pwd).first()
-        user = models.UserInfo.objects.filter(username=user, password=pwd)
+        user = models.UserInfo.objects.filter(username=user, password=pwd).all()
         print(user)
         if user:
         #     # 登录成功

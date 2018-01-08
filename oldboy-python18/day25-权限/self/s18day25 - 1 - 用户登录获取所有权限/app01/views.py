@@ -10,12 +10,14 @@ def login(request):
     else:
         user = request.POST.get('user')
         pwd = request.POST.get('pwd')
-        user = models.UserInfo.objects.filter(username=user,password=pwd).first()
+
+        #user = models.UserInfo.objects.filter(username=user,password=pwd).first()
+        user = models.UserInfo.objects.filter(username=user, password=pwd).all()
         print(user)
         if user:
-            # 登录成功
-            print('登录成功',user)
-            permission_list = user.roles.filter(permissions__id__isnull=False)
+        #     # 登录成功
+        #     print('登录成功',user)
+        #     permission_list = user.roles.filter(permissions__id__isnull=False)
             # permission_list = user.roles.filter(permissions__id__isnull=False).values(
             #     'permissions__title',
             #     'permissions__url',
@@ -23,20 +25,20 @@ def login(request):
             #     'permissions__group_id',
             # ).distinct()
 
-            for permission in permission_list:
-                print(permission)
-            """
-            {
-                1: {
-                    urls: [/users/,/users/add/ ,/users/del/(\d+)/],
-                    codes: [list,add,del]
-                },
-                2: {
-                    urls: [/hosts/,/hosts/add/ ,/hosts/del/(\d+)/],
-                    codes: [list,add,del]
-                }
-            }
-            """
+            # for permission in permission_list:
+            #     print(permission)
+            # """
+            # {
+            #     1: {
+            #         urls: [/users/,/users/add/ ,/users/del/(\d+)/],
+            #         codes: [list,add,del]
+            #     },
+            #     2: {
+            #         urls: [/hosts/,/hosts/add/ ,/hosts/del/(\d+)/],
+            #         codes: [list,add,del]
+            #     }
+            # }
+            # """
 
             #permission[permissions__group_id]
             return HttpResponse('....')

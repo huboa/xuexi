@@ -11,6 +11,7 @@ def login(request):
         user = request.POST.get('user')
         pwd = request.POST.get('pwd')
         user = models.UserInfo.objects.filter(username=user,password=pwd).first()
+        print(user)
         if user:
             # 登录成功
             print('登录成功',user)

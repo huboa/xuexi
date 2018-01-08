@@ -28,6 +28,7 @@ class Role(models.Model):
 
     def __str__(self):
         return self.title
+
 class PermissionGroup(models.Model):
     """
     权限组

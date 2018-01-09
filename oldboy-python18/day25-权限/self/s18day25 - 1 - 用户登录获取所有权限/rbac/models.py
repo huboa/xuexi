@@ -36,7 +36,6 @@ class PermissionGroup(models.Model):
     """
     caption = models.CharField(max_length=32)
 
-
 class Permission(models.Model):
     """
     权限表

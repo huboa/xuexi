@@ -10,6 +10,8 @@ def login(request):
     else:
         user = request.POST.get('user')
         pwd = request.POST.get('pwd')
+        print(user,pwd)
+
         user = models.UserInfo.objects.filter(username=user,password=pwd).first()
         if user:
             # 登录成功
@@ -37,8 +39,8 @@ def login(request):
             }
             """
 
-            permission[permissions__group_id]
-            return HttpResponse('....')
+            #permission[permissions__group_id]
+            return HttpResponse('welcome')
         else:
             return render(request, 'login.html')
 

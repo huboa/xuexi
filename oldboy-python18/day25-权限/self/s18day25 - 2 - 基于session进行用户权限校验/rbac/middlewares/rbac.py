@@ -28,6 +28,8 @@ class RbacMiddleware(MiddlewareMixin):
 
         # 当前用户的所有权限
         permission_dict = request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
+
+
         if not permission_dict:
             return HttpResponse('当前用户无权限信息')
 

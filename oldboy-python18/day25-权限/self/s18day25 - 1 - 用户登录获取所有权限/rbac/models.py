@@ -70,6 +70,7 @@ class Permission(models.Model):
 
 
 
-
+class test1():
+    print("test1")
 
 

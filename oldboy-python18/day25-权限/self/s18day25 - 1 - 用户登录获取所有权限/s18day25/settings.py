@@ -136,3 +136,7 @@ CACHES = {
         'LOCATION': r'C:\Users\Administrator\PycharmProjects\s18day25',
     }
 }
+
+#####权限相关配置############
+
+PERMISSIONS_DICT_SESSION_KEY = "user_permission_dict_key"

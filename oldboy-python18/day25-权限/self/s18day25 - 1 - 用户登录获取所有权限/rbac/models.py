@@ -10,7 +10,6 @@ class UserInfo(models.Model):
     """
     username = models.CharField(verbose_name='用户名',max_length=32)
     password = models.CharField(verbose_name='密码',max_length=64)
-
     roles = models.ManyToManyField(verbose_name='拥有角色',to="Role")
 
 class Role(models.Model):
@@ -23,11 +22,11 @@ class Role(models.Model):
         5    销售员
     """
     title = models.CharField(verbose_name='角色名称',max_length=32)
-
     permissions = models.ManyToManyField(verbose_name='拥有权限',to="Permission")
 
     def __str__(self):
         return self.title
+
 class PermissionGroup(models.Model):
     """
     权限组
@@ -67,6 +66,8 @@ class Permission(models.Model):
     url = models.CharField(verbose_name='含正则的URL',max_length=255)
     code = models.CharField(verbose_name="权限代码",max_length=32)
     group = models.ForeignKey(verbose_name='所属权限组',to="PermissionGroup")
+    groupid = models.SmallIntegerField(verbose_name="所属权限组id",default=1)
+
 
 
 

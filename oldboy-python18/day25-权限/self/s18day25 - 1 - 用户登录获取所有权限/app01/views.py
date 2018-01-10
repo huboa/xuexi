@@ -4,6 +4,9 @@ from django.views.decorators.cache import cache_page
 
 from rbac import models
 
+from rbac.service.init_permissions import init_permission
+
+
 def login(request):
     if request.method == "GET":
         return render(request,'login.html')
@@ -15,44 +18,20 @@ def login(request):
         user = models.UserInfo.objects.filter(username=user,password=pwd).first()
         if user:
             # 登录成功
-            print('登录成功',user)
+            print('登录成功',user ,type(user))
+            # role_list = user.roles.all()
+            # print("rolelist",type(role_list),role_list)
 
-            permission_list = user.roles.filter(permissions__id__isnull=False).values(
-                'permissions__title',
-                'permissions__url',
-                'permissions__code',
-                'permissions__group_id',
-            ).distinct()
+            init_permission(user,request)
 
-            for permission in permission_list:
-                print(permission)
-            """
-            {
-                1: {
-                    urls: [/users/,/users/add/ ,/users/del/(\d+)/],
-                    codes: [list,add,del]
-                },
-                2: {
-                    urls: [/hosts/,/hosts/add/ ,/hosts/del/(\d+)/],
-                    codes: [list,add,del]
-                }
-            }
-            """
-
-            #permission[permissions__group_id]
             return HttpResponse('welcome')
         else:
             return render(request, 'login.html')
 
+def user(request):
+    user_list=models.UserInfo.objects.all()
 
-
-
-
-
-
-
-
-
+    return render(request,"users.html",{'user_list':user_list})
 
 
 

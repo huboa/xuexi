@@ -33,7 +33,7 @@ def login(request):
             return render(request, 'login.html')
 
 def users(request):
-    print(request.permission_codes)
+    #print(request.permission_codes)
     users_list=models.UserInfo.objects.all()
 
     return render(request,"users.html",{'users_list':users_list})

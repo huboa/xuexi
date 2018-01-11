@@ -23,7 +23,7 @@ class RbacMiddleware(MiddlewareMixin):
         current_url = request.path_info
         print(current_url,"rbac.py")
         if current_url == '/login/':
-            return None
+            return HttpResponse('当前用户无权限信息')
         #当前用户的所有权限
         permision_dic = request.seesion.get(settings.PERMISSIONS_DICT_SESSION_KEY)
         # print(permision_dic)
@@ -44,4 +44,4 @@ class RbacMiddleware(MiddlewareMixin):
 
         if not tag:
             return  HttpResponse('当前用户无权限信息')
-        ##用户权限和当前URl 进行匹配
+

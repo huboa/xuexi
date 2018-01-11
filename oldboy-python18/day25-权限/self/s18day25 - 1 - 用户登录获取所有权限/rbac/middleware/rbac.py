@@ -32,11 +32,11 @@ class RbacMiddleware(MiddlewareMixin):
         for item in permision_dic:
             print(item["urls"])
             urls = item["urls"]
-            code = item["codes"]
+            codes = item["codes"]
             for rex in urls:
                 if re.match(rex,current_url):
                     tag = True
-                    request.permission_codes = code
+                    request.permission_codes = codes
                     break
             if tag:
                 break

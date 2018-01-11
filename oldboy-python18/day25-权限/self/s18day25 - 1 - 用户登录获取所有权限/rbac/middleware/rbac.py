@@ -30,9 +30,9 @@ class RbacMiddleware(MiddlewareMixin):
         # print(current_url)
         tag=False
         for item in permision_dic:
-            print(item["urls"])
             urls = item["urls"]
             codes = item["codes"]
+            print(urls)
             for rex in urls:
                 if re.match(rex,current_url):
                     tag = True

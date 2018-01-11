@@ -18,7 +18,7 @@ class MiddlewareMixin(object):
         return response
 
 class RbacMiddleware(MiddlewareMixin):
-    def proceess_request(self,request):
+    def process_request(self,request):
         #当前访问的URL
         print(request.path_info)
         # current_url = request.path_info
@@ -46,3 +46,9 @@ class RbacMiddleware(MiddlewareMixin):
         # if not tag:
         #     return  HttpResponse('当前用户无权限信息')
 
+class Row1(MiddlewareMixin):
+    def process_request(self,request):
+        print("中间件1请求")
+    def process_response(self,request,response):
+        print("中间件1返回")
+        return response

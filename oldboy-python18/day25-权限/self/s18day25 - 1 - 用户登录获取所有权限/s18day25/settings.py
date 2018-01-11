@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'rbac.middleware.rbac.RbacMiddleware',
+    'rbac.middleware.rbac.Row1',
     # 'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 

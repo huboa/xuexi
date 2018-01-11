@@ -36,7 +36,8 @@ class RbacMiddleware(MiddlewareMixin):
             for rex in urls:
                 if re.match(rex,current_url):
                     tag = True
-                break
+                    request.permission_codes = code
+                    break
             if tag:
                 break
 

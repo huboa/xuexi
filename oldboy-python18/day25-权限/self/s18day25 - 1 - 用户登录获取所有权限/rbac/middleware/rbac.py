@@ -29,4 +29,4 @@ class RbacMiddleware(MiddlewareMixin):
 
         if not permision_dic:
             return  HttpResponse('当前用户无权限信息')
-        ##用户权限
+        ##用户权限和当前URl 进行匹配

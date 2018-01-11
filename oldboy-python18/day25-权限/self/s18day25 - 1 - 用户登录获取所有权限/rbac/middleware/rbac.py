@@ -1,3 +1,4 @@
+import re
 from django.conf import settings
 from django.shortcuts import HttpResponse
 
@@ -20,6 +21,7 @@ class RbacMiddleware(MiddlewareMixin):
     def proceess_request(self,request):
         #当前访问的URL
         current_url = request.path_info
+        print(current_url,"rbac.py")
         if current_url == '/login/':
             return None
         #当前用户的所有权限
@@ -27,9 +29,12 @@ class RbacMiddleware(MiddlewareMixin):
         # print(permision_dic)
         # print(current_url)
 
-        # for item in permision_dic:
-        #     print(item["urls"])
-
+        for item in permision_dic:
+            print(item["urls"])
+            urls = item["urls"]
+            code = item["codes"]
+            for url in urls:
+                re.match(urls,current_url)
 
         if not permision_dic:
             return  HttpResponse('当前用户无权限信息')

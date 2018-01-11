@@ -50,6 +50,6 @@ def init_permission(user,request):
         permission_dic[dict_id]["urls"].append(dict_url)
         permission_dic[dict_id]["codes"].append(dict_code)
 
-    print(permission_dic)
+    print("init_permissions",permission_dic)
 
     request.session[settings.PERMISSIONS_DICT_SESSION_KEY] = permission_dic

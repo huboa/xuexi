@@ -24,8 +24,12 @@ class RbacMiddleware(MiddlewareMixin):
             return None
         #当前用户的所有权限
         permision_dic = request.seesion.get(settings.PERMISSIONS_DICT_SESSION_KEY)
-        print(permision_dic)
-        print(current_url)
+        # print(permision_dic)
+        # print(current_url)
+
+        for item in permision_dic:
+            print(item["urls"])
+
 
         if not permision_dic:
             return  HttpResponse('当前用户无权限信息')

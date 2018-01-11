@@ -13,11 +13,17 @@ def login(request):
     else:
         user = request.POST.get('user')
         pwd = request.POST.get('pwd')
+<<<<<<< HEAD
         print(user,pwd)
+=======
+>>>>>>> 895ccca56cdb4136ea39437e4c5c399b441561cd
 
         user = models.UserInfo.objects.filter(username=user,password=pwd).first()
+        # user = models.UserInfo.objects.filter(username=user, password=pwd).all()
+        print(user)
         if user:
             # 登录成功
+<<<<<<< HEAD
             print('登录成功',user ,type(user))
             # role_list = user.roles.all()
             # print("rolelist",type(role_list),role_list)
@@ -25,6 +31,34 @@ def login(request):
             init_permission(user,request)
 
             return HttpResponse('welcome')
+=======
+            print('登录成功',user)
+            # permission_list = user.roles.filter(permissions__id__isnull=False)
+            permission_list = user.roles.filter(permissions__id__isnull=False).values(
+                'permissions__title',
+                'permissions__url',
+                'permissions__code',
+                'permissions__group_id',
+            ).distinct()
+
+            for permission in permission_list:
+                print(permission)
+            # """
+            # {
+            #     1: {
+            #         urls: [/users/,/users/add/ ,/users/del/(\d+)/],
+            #         codes: [list,add,del]
+            #     },
+            #     2: {
+            #         urls: [/hosts/,/hosts/add/ ,/hosts/del/(\d+)/],
+            #         codes: [list,add,del]
+            #     }
+            # }
+            # """
+
+            #permission[permissions__group_id]
+            return HttpResponse('....')
+>>>>>>> 895ccca56cdb4136ea39437e4c5c399b441561cd
         else:
             return render(request, 'login.html')
 

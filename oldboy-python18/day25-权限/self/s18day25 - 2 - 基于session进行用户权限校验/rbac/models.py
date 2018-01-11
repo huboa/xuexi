@@ -28,6 +28,7 @@ class Role(models.Model):
 
     def __str__(self):
         return self.title
+
 class PermissionGroup(models.Model):
     """
     权限组
@@ -35,7 +36,6 @@ class PermissionGroup(models.Model):
         2    主机权限组
     """
     caption = models.CharField(max_length=32)
-
 
 class Permission(models.Model):
     """

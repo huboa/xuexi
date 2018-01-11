@@ -27,8 +27,8 @@ class RbacMiddleware(MiddlewareMixin):
         # print(permision_dic)
         # print(current_url)
 
-        for item in permision_dic:
-            print(item["urls"])
+        # for item in permision_dic:
+        #     print(item["urls"])
 
 
         if not permision_dic:

@@ -69,10 +69,6 @@ class Permission(models.Model):
     groupid = models.SmallIntegerField(verbose_name="所属权限组id",default=1)
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 895ccca56cdb4136ea39437e4c5c399b441561cd
 class test1():
     print("test1")
 

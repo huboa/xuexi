@@ -28,14 +28,15 @@ class RbacMiddleware(MiddlewareMixin):
         permision_dic = request.seesion.get(settings.PERMISSIONS_DICT_SESSION_KEY)
         # print(permision_dic)
         # print(current_url)
-
+        tag=False
         for item in permision_dic:
             print(item["urls"])
             urls = item["urls"]
             code = item["codes"]
-            for url in urls:
-                re.match(urls,current_url)
+            for rex in urls:
+                re.match(rex,current_url)
+                break
 
-        if not permision_dic:
+        if not tag:
             return  HttpResponse('当前用户无权限信息')
         ##用户权限和当前URl 进行匹配

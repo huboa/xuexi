@@ -34,8 +34,12 @@ class RbacMiddleware(MiddlewareMixin):
             urls = item["urls"]
             code = item["codes"]
             for rex in urls:
-                re.match(rex,current_url)
+                if re.match(rex,current_url):
+                    tag = True
                 break
+            if tag:
+                break
+
 
         if not tag:
             return  HttpResponse('当前用户无权限信息')

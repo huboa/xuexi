@@ -18,5 +18,13 @@ class MiddlewareMixin(object):
 
 class RbacMiddleware(MiddlewareMixin):
     def proceess_request(self,request):
+        #当前访问的URL
+        current_url = request.path_info
+
+        #当前用户的所有权限
         permision_dic = request.seesion.get(settings.PERMISSIONS_DICT_SESSION_KEY)
         print(permision_dic)
+        print(current_url)
+
+        if not permision_dic:
+            return  HttpR

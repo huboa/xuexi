@@ -23,7 +23,7 @@ class StarkSite(object):
         for model_class,config_obj in self._registry.items():
             app_label = model_class._meta.app_label
             model_name = model_class._meta.model_name
-            temp = url(r'^%s/%s/' %(app_label,model_name),self.login)
+            temp = url(r'^%s/%s/' %(app_label,model_name),(config_obj.url,None,None))
             pts.append(temp)
 
         return pts,None,None

@@ -17,7 +17,6 @@ class StarkConfig(object):
 
     def changelist_view(self,request):
         return HttpResponse('列表页面')
-
     def add_view(self,request):
         return HttpResponse('添加页面')
     def change_view(self,request):

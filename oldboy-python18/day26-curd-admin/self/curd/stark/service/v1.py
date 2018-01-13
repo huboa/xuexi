@@ -1,8 +1,30 @@
 from  django.shortcuts import HttpResponse
+from django.conf.urls import url
 
 class StarkConfig(object):
     def __init__(self,mcls):
         self.mcls = mcls
+    @property
+    def urls(self):
+        patterns=[
+            url(r'^$',self.chagelist_view),
+            url(r'^add/$', self.add_view),
+            url(r'^(\d+)/change/$', self.change_view),
+            url(r'^(\d+)/delete/$', self.delete_view),
+
+        ]
+        return patterns
+
+    def changelist_view(self,request):
+        return HttpResponse('列表页面')
+
+    def add_view(self,request):
+        return HttpResponse('添加页面')
+    def change_view(self,request):
+        return HttpResponse('修改页面')
+    def delete_view(self,request):
+        return HttpResponse('删除页面')
+
 
 
 class StarkSite(object):

@@ -143,3 +143,8 @@ CACHES = {
 #####权限相关配置############
 
 PERMISSIONS_DICT_SESSION_KEY = "user_permission_dict_key"
+REX_FORMAT = "%s$"
+VALID_LIST=[
+    '/login/',
+    '/admin/.*',
+]

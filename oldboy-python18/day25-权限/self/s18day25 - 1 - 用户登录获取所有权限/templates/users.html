@@ -7,14 +7,24 @@
 </head>
 <body>
     <h1>用户列表</h1>
+    {% if 'add' in request.permission_codes %}
     <a>添加</a>
-<table bouder="1">
+    {% endif %}
+<table border="2">
     {% for row in user_list%}
-        <tr>
-        <td>{{ row.id }}</td>
-         <td>{{ row.username }}</td>
-         <td><a>编辑</a></td>
-         <td><a>删除</a></td>
+        <tr >
+            <td>{{ row.id }}</td>
+            <td>{{ row.username }}</td>
+         {% if 'edit' in request.permission_codes %}
+            <td><a>编辑</a> </td>
+         {% endif %}
+
+         {% if 'del' in request.permission_codes %}
+            <td><a>删除</a> </td>
+         {% endif %}
+
+
+
 
 
         </tr>

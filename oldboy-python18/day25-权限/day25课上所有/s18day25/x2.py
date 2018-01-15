@@ -25,6 +25,7 @@ current_url和url通过正则匹配，如果匹配成功：
 
 per_dict = {}
 for item in permission_menu_list:
+    print(not item['pid'])
     if not item['pid']:
         per_dict[item['id']] = item
 """
@@ -35,6 +36,7 @@ for item in permission_menu_list:
 """
 
 for item in permission_menu_list:
+    print(item)
     if not re.match(item['url'],current_url):
         continue
     # 匹配成功

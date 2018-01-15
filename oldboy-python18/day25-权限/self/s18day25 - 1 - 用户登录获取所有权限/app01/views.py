@@ -33,12 +33,13 @@ def login(request):
             return render(request, 'login.html')
 
 def users(request):
-    #print(request.permission_codes)
-    users_list=models.UserInfo.objects.all()
+    print(request.permission_codes)
+    user_list=models.UserInfo.objects.all()
+    print( user_list.values())
+    return render(request,'users.html',{"user_list":user_list})
 
-    return render(request,"users.html",{'users_list':users_list})
-
-
+def users_add(request):
+    return HttpResponse('添加页面')
 
 
 #

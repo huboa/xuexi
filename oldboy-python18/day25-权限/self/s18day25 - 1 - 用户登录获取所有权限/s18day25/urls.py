@@ -18,8 +18,9 @@ from django.contrib import admin
 from app01 import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^login/', views.login),
-    url(r'^users/', views.users),
+    url(r'^login/$', views.login),
+    url(r'^users/$', views.users),
+    url(r'^users/add/$', views.users_add),
 ]
 
 

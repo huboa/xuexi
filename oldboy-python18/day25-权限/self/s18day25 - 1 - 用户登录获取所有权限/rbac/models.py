@@ -27,6 +27,19 @@ class Role(models.Model):
     def __str__(self):
         return self.title
 
+class Menu(models.Model):
+    """
+    菜单表
+        菜单1:
+            用户组
+                用户列表
+            主机组
+                主机列表
+    """
+    name = models.CharField(max_length=32,default=None)
+
+
+
 class PermissionGroup(models.Model):
     """
     权限组
@@ -34,19 +47,20 @@ class PermissionGroup(models.Model):
         2    主机权限组
     """
     caption = models.CharField(max_length=32)
+    menu = models.ForeignKey(verbose_name='所属菜单',to='Menu',default='1')
 
 class Permission(models.Model):
     """
-    权限表
-        1     用户列表      /users/                 list               1
-        2     添加用户      /users/add/             add                1
-        3     删除用户      /users/del/(\d+)/       del                1
-        4     修改用户      /users/edit/(\d+)/      edit               1
+    权限表                                                                       组内菜单
+        1     用户列表      /users/                 list               1           null
+        2     添加用户      /users/add/             add                1            1
+        3     删除用户      /users/del/(\d+)/       del                1            1
+        4     修改用户      /users/edit/(\d+)/      edit               1            1
 
-        1     主机列表      /hosts/                 list               2
-        2     添加主机      /hosts/add/             add                2
-        3     删除主机      /hosts/del/(\d+)/       del                2
-        4     修改主机      /hosts/edit/(\d+)/      edit               2
+        5    主机列表      /hosts/                 list               2           null
+        6     添加主机      /hosts/add/             add                2            5
+        7     删除主机      /hosts/del/(\d+)/       del                2            5
+        8     修改主机      /hosts/edit/(\d+)/      edit               2             5
 
     以后获取当前用户权限后，数据结构化处理，并放入session
     {
@@ -66,10 +80,7 @@ class Permission(models.Model):
     url = models.CharField(verbose_name='含正则的URL',max_length=255)
     code = models.CharField(verbose_name="权限代码",max_length=32)
     group = models.ForeignKey(verbose_name='所属权限组',to="PermissionGroup")
-    groupid = models.SmallIntegerField(verbose_name="所属权限组id",default=1)
+    group_menu = models.ForeignKey(verbose_name='组内菜单',to='Permission',null=True,blank=True,related_name='xxx')
 
-
-class test1():
-    print("test1")
 
 

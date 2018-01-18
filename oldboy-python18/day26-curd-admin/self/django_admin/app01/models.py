@@ -21,9 +21,15 @@ class UserInfo(models.Model):
     name = models.CharField(max_length=32)
     email = models.CharField(max_length=32)
     dep = models.ForeignKey(to="Department")
+
+    def __str__(self):
+        return self.title
 class Role(models.Model):
     """
     角色表
     """
     title = models.CharField(max_length=32)
     users = models.ManyToManyField(to="UserInfo")
+
+    def __str__(self):
+        return self.title

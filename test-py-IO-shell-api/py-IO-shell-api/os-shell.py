@@ -13,5 +13,5 @@ print(out_bytes.decode(encoding="utf-8"))
 
 
 
-
+####捕获执行
 pexpect.spawn

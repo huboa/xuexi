@@ -7,6 +7,8 @@ subprocess.call(["ls","-l"])
 
 subprocess.call(["ssh","root@192.168.56.202","ip","a"],)
 print("================")
-subprocess.getoutput(["ssh","root@192.168.56.202","ip","a"],)
-txt=subprocess.getstatusoutput(["ssh","root@192.168.56.202","ip","a"],)
-print(txt)
+subprocess.call(["ssh","root@192.168.56.202","ip","a"],)
+subprocess.call(["ip","a"],)
+
+# (status,output)=subprocess.getstatusoutput(["ssh","root@192.168.56.202","ip","a"],)
+# print(status,output)

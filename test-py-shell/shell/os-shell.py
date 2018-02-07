@@ -9,7 +9,7 @@ subprocess.call(["ssh","root@192.168.56.202","ip","a"],)
 print("================")
 subprocess.call(["ssh","root@192.168.56.202","ip","a"],)
 out_bytes = subprocess.check_output(["ssh","root@192.168.56.202",'ip','a'])
-print(out_bytes)
+print(out_bytes.decode(encoding="utf-8"))
 
 
 

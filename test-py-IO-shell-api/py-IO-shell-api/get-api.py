@@ -6,3 +6,4 @@ print("Status code:",r.status_code,)
 response_dic =r.json()
 
 print(response_dic.keys())
+print(response_dic["total_count"])

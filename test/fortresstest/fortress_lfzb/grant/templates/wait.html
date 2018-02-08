@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    {% load pagination_tags %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>服务器登录权限申请</title>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/static/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="/static/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/static/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">服务器登录权限申请</a>
+		
+            </div>
+            <!-- /.navbar-header -->
+		<div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+
+
+			<li>
+                            <a href="/grant/"><i class="fa fa-edit fa-fw"></i> 申请</a>
+                        </li>
+
+                        <li>
+                            <a href="/query/"><i class="fa fa-edit fa-fw"></i> 查询</a>
+                        </li>
+
+			<li>
+                            <a href="/wait/"><i class="fa fa-edit fa-fw"></i> 待授权</a>
+                        </li>
+
+			<li>
+                            <a href="/flow/"><i class="fa fa-edit fa-fw"></i> 登入流程说明</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            
+
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+
+
+                    <h1 class="page-header">服务器登录权限申请列表</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+			{% if error %}
+                                <h4> <span style="color:red"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp错误： {{ error }}</span></h4>
+                        {% endif %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel ">
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">  
+
+				<form role="form" action="/query/" method="post">
+
+
+                                <table class="table table-striped table-bordered table-hover" >
+                                    <thead>
+                                        <tr>
+                                            <th>申请人</th>
+                                            <th>系统登录帐号</th>
+                                            <th>服务器主机名</th>
+					    <th>截止时间</th>
+					    <th>Job ID</th>
+					    <th>申请理由</th>
+					    <th>保垒机地址</th>
+					    <th>申请时间</th>
+				 	    <th>状态</th>
+					    <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+					{% autopaginate result 15  %}
+					{% for sqlr in result %}
+
+                                        <tr class="odd gradeX">
+                                            <td class="center"> {{ sqlr.0 }} </td>
+                                            <td class="center"> {{ sqlr.1 }} </td>
+                                            <td class="center"> {{ sqlr.2 }} </td>
+                                            <td class="center"> {{sqlr.3|date:"Y-m-d"}} </td>
+					    <td class="center"> {{ sqlr.6}} </td>
+					    <td class="center"> {{ sqlr.7}} </td>
+					    <td class="center"> {% if sqlr.8 == 'jx' %} 10.10.11.5 {% elif sqlr.8 == 'dbpre' %} 210.14.159.241  {% else %} 10.10.130.211 {% endif %}</td>
+					    <td class="center"> {{ sqlr.9|date:"Y-m-d H:i:s"}} </td>
+					    <td class="center"> {% if sqlr.5 == 1 %} <div class="btn btn-success btn-xs">已授权</div> {% elif sqlr.5 == 2 %} <div class="btn btn-danger btn-xs">已退回</div> {% elif sqlr.5 == 9 %} <div class="btn btn-danger btn-xs">失败</div> {% else %}<div class="btn btn-primary btn-xs">待授权</div> {% endif %} </td>
+					    <td class="center">
+					    <button type="submit" name="o_id" value="{{ sqlr.4 }}" class="btn btn-primary btn-xs">授权 </button> &nbsp
+                                            <button type="submit" name="r_id" value="{{ sqlr.4 }}" class="btn btn-danger btn-xs">退回 </button>
+					    </td>
+                                        </tr>
+                                        
+					{% endfor %}
+                                    </tbody>
+                                </table>
+					<span class="pull-right text-muted">{% paginate %}</span>
+				<form>
+                            </div>  
+                            <!-- /.table-responsive -->
+                            
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/static/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="/static/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/static/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    </script>
+
+    <SCRIPT>
+  	  function isHidden(oDiv){
+	         var vDiv = document.getElementById(oDiv);
+     		 vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
+   	 }
+    </SCRIPT>
+
+    <script type="text/javascript">
+    function display(id){
+        var traget=document.getElementById(id);
+         if(traget.style.display=="none"){
+                 traget.style.display="";
+         }else{
+                 traget.style.display="none";
+       }
+    }
+</script>
+
+</body>
+
+</html>

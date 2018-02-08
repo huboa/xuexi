@@ -1,0 +1,64 @@
+#!/bin/bash
+
+basedir="/home/mtime/fortress_cd"
+
+#check basedir
+
+if test -z "$basedir"
+then
+	basedir=/home/mtime/fortress_cd
+else
+	basedir="$basedir"
+fi
+
+arg=$1
+reception_process=` ps -ef|grep 8083|grep -v "grep"|wc -l`
+case "$arg" in
+	'status')
+	  if [ $reception_process -eq "2" ];then
+		echo "reception server is running..."
+	  else
+		echo "reception server is not run!"
+	  fi
+	;;
+
+	'start')
+	  if [ $reception_process -eq "2" ];then
+		echo "reception server is already run!"
+	  else
+		cd $basedir && nohup python manage.py runserver 0.0.0.0:8083 & > /dev/null 2>&1
+		sleep 3
+		reception_process=` ps -ef|grep 8083|grep -v "grep"|wc -l`
+		if [ $reception_process -eq "2" ];then
+			echo "reception server start success!"
+		else
+			echo "reception server start fail!"
+		fi
+	  fi
+
+	;;
+
+	'stop')
+	  if [ $reception_process -ne "2" ];then
+		echo "recepion server is not running!"
+	  else
+		ps -ef|grep 8083|grep -v "grep"|awk '{print $2}'|while read line;do kill $line; echo "reception process id $line been stop"; done
+	  fi
+
+	;;
+
+	'help')
+	  echo "reception help:"
+	  echo "========================================================================================================================"
+	  echo "start         Start recepton server;Command: reception start"
+	  echo "stop          Stop reception server;Command: reception stop"
+	  echo "status        Check reception server run status;Command: reception status"
+
+	;;
+	*)
+	  echo "Please input    --help to read the help info."
+	;;
+
+esac
+
+exit 0

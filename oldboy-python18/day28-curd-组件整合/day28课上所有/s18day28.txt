@@ -1,0 +1,365 @@
+s18day28
+
+内容回顾：
+	1. 面向对象
+		- 封装：分页；
+		- 继承：self到底是谁？
+		
+	2. 迭代器、生成器和可迭代对象
+		生成器，函数中有yield：对数据进行二次处理。
+		
+			def get_new_data(data):
+				for item in data:
+					item['hostname'] = 'bj' + item['hostname']
+					yield item
+
+			def hosts(request):
+				data_list = [
+					{'id':1,'hostname':'c1.com'},
+					{'id':2,'hostname':'c2.com'},
+					{'id':3,'hostname':'c3.com'},
+					{'id':4,'hostname':'c4.com'},
+				]
+				# 传递到模板中的是生成器
+				new_data = get_new_data(data_list)
+
+				return render(request,'hosts.html',{'new_data':new_data})
+		可迭代对象，组合搜索
+		
+			class Foo:
+				def __iter__(self):
+					返回生成器或迭代器
+	3. request.GET
+		QueryDict对象
+			- _mutable=True
+			- 方法
+			- urlencode()
+			
+	4. 中间件，对所有请求统一处理。
+	
+	
+	5. 模板中自定义方法
+		- filter,     {{ "sdf"|upper }}
+		- simple_tag， {% 函数名 参数1 参数2 ... %}，函数返回什么页面上就看到什么。
+		- inclusion_tag，{% 函数名 参数1 参数2 ... %}，函数值+模板渲染之后，显示到页面。
+
+今日内容：
+	1. 组件拆分
+	
+	2. crm示例，应用权限+CURD组件
+	
+	3. 爬虫
+	
+内容详细：
+	
+	1. 组件拆分
+	
+		a. 微型程序，参考 static_menu.zip
+		
+		b. 小型程序，参考 config_menu.zip 
+		
+		c. 大型程序，自己基于rbac的app来使用；参考 devops.zip
+		
+		知识点：
+			- models类的继承
+				rabc
+					class Group(models.Model):
+						title = models.CharField(max_length=32)
+
+
+					class UserInfo(models.Model):
+						username = models.CharField(max_length=32)
+						password = models.CharField(max_length=32)
+						gp = models.ForeignKey(to=Group)
+
+						class Meta:
+							abstract = True # 设置为“特殊类”，不再去数据库生成表。奉献精神，
+				app01
+					from django.db import models
+					from rbac import models as rbac_models
+					# 方式二
+					class User(rbac_models.UserInfo):
+						email = models.CharField(max_length=32)
+			- 特殊类中如有Fk、M2M，不加引号。
+				gp = models.ForeignKey(to=Group)
+	
+	2. crm示例
+		a. 创建project
+		b. 拷贝 最新 rbac组件
+		c. crm业务app中，继承rbac中的用户表
+		
+		
+			class UserInfo(rbac_model.User): # 在这里编写
+				"""
+				用户表
+				"""
+				nickname = models.CharField(verbose_name='昵称', max_length=32)
+				email = models.CharField(max_length=32)
+				gender_choices = ((1, '男'), (2, '女'))
+				gender = models.SmallIntegerField(verbose_name='性别', choices=gender_choices)
+				depart = models.ForeignKey(verbose_name='部门', to="Department",default=1)
+				
+				
+			其他表
+			...
+			
+		d. 用户登录业务
+			# 设置session_key
+            # 权限信息放入session
+            # 菜单信息放入session
+			
+			PS: 使用
+				PERMISSION_SESSION_KEY = 'Fefc8776DF'
+				MENU_LIST_SESSION_KEY = 'FJsdfuqkd8676123f'
+		
+	
+	
+	
+		e. 加入权限限制，添加中间件
+		
+			'rbac.middlewares.rbac.RbacMiddleware'
+	
+	
+		f. 引入stark组件
+		
+	3. 权限控制 
+	
+	
+			session相关：
+			# 获取当前用户session_key
+			request.session.session_key
+			
+			request.session.delete('session_key，空表示自己')
+	
+	内容梳理：
+		1. 拷贝两个app+业务app
+		
+		2. 业务用户表继承rbac用户表
+		
+		3. 表做增删改查
+			在业务app下创建stark.py
+				from stark.service import v1
+				from crm.permission import BasePermission
+
+
+				class StudentConfig(BasePermission,v1.StarkConfig):
+					list_display = ['id','username','emergency_contract']
+					
+					# extra可以定制
+					
+					# urls可以直接覆盖
+					
+				v1.site.register(models.Student,student.StudentConfig)
+				
+		4. templates目录创建 layout.html 
+		
+		
+		5. 配置 
+			- app注册
+			- 中间件
+			- 权限放入session中的Key
+			- 菜单放入session中的Key
+			- 白名单
+			
+		6. 录入权限 
+		
+		
+			
+			
+		=====》 开发任务 《======
+		- 注册
+		- 配置
+		
+	4. 公司开发
+		a. 一个后台管理模板+登录
+		
+		b. 小型程序，参考 config_menu.zip 
+		
+		c. 普通增删改查（stark组件）
+		
+		d. 权限组件 
+		
+		e. （stark组件）
+		
+	
+	5. 爬虫
+		a. 爬汽车之家的数据
+		
+		   下载页面：pip3 install requests 
+			
+				response = requests.get(url="xxxxxx")
+				response.text
+				response.content
+				response.status_code
+				response.encoding
+				
+			结构化处理：pip3 install BeautifulSoup4
+			
+				from bs4 import BeautifulSoup
+				
+				soup = BeautifulSoup('HTML格式的内容...','html.parser') # lxml
+				
+				# 找到匹配成功的第一个标签：标签对象
+				tag = soup.find()
+				
+				tag.text 
+				tag.attrs
+				tag.get('属性key')
+				
+				# 找到匹配成功的所有标签，[标签对象，标签对象]
+				soup.find_all()
+				
+		b. 自动登录抽屉新热榜，任意找新闻点赞。
+		
+			- 思路：
+				请求，获取未授权的cookie。
+				登录，携带原来的cookie+用户名密码。
+				访问其他页面，带着cookie。
+		
+				requests.get(
+					url='',
+					headers={},
+					cookies={}
+				)
+				
+				requests.post(
+					url='',
+					data={},
+					headers={},
+					cookies={}
+				)
+				
+		c. github
+		
+			
+		d. 博客园
+				用户名 
+				密码加密
+			加密规则一定在js中
+		
+		
+		
+		e. 知乎
+			- 数据库：
+					md5值       sedt
+					md5值       sedt
+					md5值       sedt
+			- api (pillow模块)
+			
+		f. 路飞学城
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+				
+				
+				
+				
+				
+			
+				
+				
+			
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

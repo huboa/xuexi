@@ -35,7 +35,8 @@ def ssh_cmd(ip,user,passwd,cmd):
     # child = pexpect.spawn('ssh -l %s %s %s'%(user,"192.168.56.202",'ls'))
 
     child = pexpect.spawn(login)
-    child.setecho(False)
+    e=child.expect("password: ")
+    print(e,type(e))
     child.logfile = open('Log.log', 'w+')
 
 

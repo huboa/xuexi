@@ -4,9 +4,9 @@
 
 import pexpect
 
-def ssh_cmd(ip, passwd, cmd):
+def ssh_cmd(ip,user,passwd,cmd):
     ret = -1
-    ssh = pexpect.spawn('ssh root@%s "%s"' % (ip, cmd))
+    ssh = pexpect.spawn('ssh s%@%s "%s"' %(ip,user,cmd))
     try:
         i = ssh.expect(['password:', 'continue connecting (yes/no)?'], timeout=5)
         if i == 0 :
@@ -29,4 +29,4 @@ def ssh_cmd(ip, passwd, cmd):
         ret = -2
     return ret
 
-ssh_cmd("192.168.56.202","123456","ifconfig")
+ssh_cmd("192.168.56.202","test","123456","ifconfig")

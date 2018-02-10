@@ -5,28 +5,29 @@
 import pexpect
 
 def ssh_cmd(ip,user,passwd,cmd):
-    ret = -1
-    ssh = pexpect.spawn('ssh s%@%s "%s"' %(ip,user,cmd))
-    try:
-        i = ssh.expect(['password:', 'continue connecting (yes/no)?'], timeout=5)
-        if i == 0 :
-            ssh.sendline(passwd)
-        elif i == 1:
-            ssh.sendline('yes\n')
-            ssh.expect('password: ')
-            ssh.sendline(passwd)
-        ssh.sendline(cmd)
-        r = ssh.read()
-        print(r)
-        ret = 0
-    except pexpect.EOF:
-        print("EOF")
-        ssh.close()
-        ret = -1
-    except pexpect.TIMEOUT:
-        print("TIMEOUT")
-        ssh.close()
-        ret = -2
-    return ret
+    # ret = -1
+    # ssh = pexpect.spawn('ssh s%@%s "%s"' %(user,ip,cmd))
+    # try:
+    # i = ssh.expect(['password:', 'continue connecting (yes/no)?'], timeout=5)
+    #     if i == 0 :
+    #         ssh.sendline(passwd)
+    #     elif i == 1:
+    #         ssh.sendline('yes\n')
+    #         ssh.expect('password: ')
+    #         ssh.sendline(passwd)
+    #     ssh.sendline(cmd)
+    #     r = ssh.read()
+    #     print(r)
+    #     ret = 0
+    # except pexpect.EOF:
+    #     print("EOF")
+    #     ssh.close()
+    #     ret = -1
+    # except pexpect.TIMEOUT:
+    #     print("TIMEOUT")
+    #     ssh.close()
+    #     ret = -2
+    # return ret
+    pexpect.spawn('ssh s%@%s "%s"' % (user, ip, cmd))
 
 ssh_cmd("192.168.56.202","test","123456","ifconfig")

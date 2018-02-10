@@ -29,4 +29,4 @@ def ssh_cmd(ip, passwd, cmd):
         ret = -2
     return ret
 
-ssh_cmd()
+ssh_cmd("192.168.56.202","123456","ifconfig")

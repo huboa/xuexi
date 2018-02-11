@@ -34,13 +34,13 @@ def ssh_cmd(ip,user,passwd,cmd):
     # child = pexpect.spawn('/usr/bin/ssh', ['test@192.168.56.202'])
     # child = pexpect.spawn('ssh -l %s %s %s'%(user,"192.168.56.202",'ls'))
 
-    child = pexpect.spawn(login)
-    e=child.expect("password: ")
-    print(e,type(e))
-    child.logfile = open('Log.log', 'w+')
+    child = pexpect.run(login)
+    # e=child.expect("password: ")
+    # print(e,type(e))
+    # child.logfile = open('Log.log', 'w+')
+    print(child)
 
-
-ssh_cmd("192.168.56.202","test","123456","ifconfig")
+ssh_cmd("10.199.104.63","test","123456","ifconfig")
 
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+####ssh 可以直接用paramiko
 # -*- coding: utf-8 -*-
 
 import pexpect

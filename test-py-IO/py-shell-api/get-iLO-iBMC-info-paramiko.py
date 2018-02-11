@@ -34,11 +34,10 @@ ssh = paramiko.SSHClient()
 # 允许连接不在know_hosts文件中的主机
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 # 连接服务器
-ssh.connect(hostname='10.199.106.154', port=22, username='admin', password='1r')
-
+ssh.connect(hostname='10.199.104.63', port=22, username='admin', password='')
 # 执行命令
-stdin, stdout, stderr = ssh.exec_command('show /map1/enetport1/lanendpt1/ipendpt1')
-
+#stdin, stdout, stderr = ssh.exec_command('show /map1/enetport1/lanendpt1/ipendpt1')
+stdin, stdout, stderr = ssh.exec_command('show ')
 
 # # 获取命令结果
 result = stdout.read()

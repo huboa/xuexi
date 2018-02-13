@@ -6,26 +6,29 @@ import time
 server_name='lf-zb-rundeck.wandafilm.com'
 job_id='21274346-3898-40a4-bb0a-c3ef257bae9f'
 api_token='N7TbMjcsoP5UTxcdb8UVaLYTTuDpKtFG'
-projects = 'projects'
 
+###rundeck执行函数
 def rundeck_request(url=None,method=None,data=None):
-
-
+    '''
+    :param url: get rundeck url
+    :param method: post or get
+    :param data: json data
+    :return:   返回字典
+    '''
+    print(url)
     if method == "get":
         headers = {"Accept":"application/json"}
-        print(url)
         try :
             req=requests.get(url=url,headers=headers)
             req_dict=json.loads(req.text)
+            return req_dict
         except:
             return "get 错误"
     elif method == "post":
         headers = {"Content-type": "application/json","Accept":"application/json"}
-
         try:
             print(data,type(data))
             req = requests.post(url=url,headers=headers,data=data)
-
             req_dict = json.loads(req.text)
             return req_dict
         except:
@@ -33,11 +36,22 @@ def rundeck_request(url=None,method=None,data=None):
 
 
     else:
-        return
+        return   "其它错误"
 
-
+###check rundeck api
 def rundeck(server=None,version=None,item=None,job_id=None,job_ex=None,api_token=None,method=None,data=None,**kwargs):
-
+    '''
+    :param server: rundeck server
+    :param version: api version
+    :param item:    资源定位
+    :param job_id:  可以为空-执行job 时用
+    :param job_ex:   执行job 动作
+    :param api_token:   认证用token
+    :param method:        post or get
+    :param data:         json data
+    :param kwargs:        其它
+    :return:             返回字典
+    '''
     if server == None:
         return "server can not null"
     if version == None:
@@ -66,17 +80,20 @@ def rundeck(server=None,version=None,item=None,job_id=None,job_ex=None,api_token
     return rundeck_request(url=url,method=method,data=data)
 
 
-# ##查看token信息 ##可以在ｗｅｂ界面查看
-# req=rundeck(server=server_name,version=version,item='tokens',api_token=api_token,)
-# print(req)
+# ##查看token信息,在ｗｅｂ界面查看token信息
 
-##查看系统信息
-# req=rundeck(server=server_name,version=version,item='system/info',api_token=api_token,)
-# print(req)
+req=rundeck(server=server_name,version='18',item='tokens',api_token=api_token,method='get')
+print(req)
 
+
+#查看系统信息
+'''
+req=rundeck(server=server_name,version=version,item='system/info',api_token=api_token,)
+print(req)
+'''
 
 ##查看项目信息,list-所有job
-# req=rundeck(server=server_name,version=version,item='projects',api_token=api_token,)
+'''# req=rundeck(server=server_name,version=version,item='projects',api_token=api_token,)
 # # print(req)
 # for n in req:
 #     print(n['name'],n['url'],n['description'])
@@ -84,38 +101,41 @@ def rundeck(server=None,version=None,item=None,job_id=None,job_ex=None,api_token
 #     req=rundeck(server=server_name,version=version,item=item,api_token=api_token,)
 #     for n in req:
 #         print(n['id'],n['href'],n['permalink'],n['name'],)
+'''
 
 
+##查看单个job 信息,
+'''
+req=rundeck(server=server_name,version="18",item='job',job_id=job_id,job_ex='info',api_token=api_token,method="get")
+print(req,'=================>',type(req))
+
+# for k,v in req.items():
+#     print(k,v)
+print(req['id'])
+'''
 
 
-
-##查看单个job 信息,运行job
-
+# 运行job 并查看运行结果excutison
+'''
 data={
     "options": {
         "op1":"value4",
     }
 }
-
 data_json = json.dumps(data)
-
 req=rundeck(server=server_name,version="18",item='job',job_id=job_id,job_ex='run',api_token=api_token,method="post",data=data_json)
-# print(req,req['project'])
-# print(req['system']['timestamp'])
 print(req['id'],req['href'])
-# for n in req:
-#     print(n)
-# item='execution/'+str(req['id'])
-time.sleep(5)
-# execution=rundeck(server=server_name,version='18',item=item,api_token=api_token,method='get')
-# print(execution)
+execution_id=str(req['id'])
+for n in range(5):
+    item='execution/'+execution_id+'/state'
+    time.sleep(1)
+    execution_result_dic=rundeck(server=server_name,version='18',item=item,api_token=api_token,method='get')
+    print(execution_result_dic['executionState'])
 
-# req=rundeck(server=server_name,version=version,item='job',job_id=job_id,job_ex='run',api_token=api_token)
-# print(req)
+    if execution_result_dic['executionState'] == 'SUCCEEDED':
+        print('job-执行成功')
+        break
+'''
 
 
-####测试execution
-url= req['href']+'/state?authtoken='+api_token
-print(url)
-req=requests.get(url)
-print(req.text)
+

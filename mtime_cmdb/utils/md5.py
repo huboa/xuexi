@@ -7,6 +7,6 @@ def md5(text):
 
 
 if __name__ == '__main__':
-    text = "123"
+    text = "alex"
     v = md5(text)
     print(v)

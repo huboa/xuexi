@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middlwares.md.M1',
+    # 'middlwares.md.M2',
 ]
 
 ROOT_URLCONF = 'mtime_cmdb.urls'

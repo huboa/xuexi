@@ -37,11 +37,6 @@ class M1(MiddlewareMixin):
             return redirect('/login/')
 
         # 已登陆
-
-
-
-
-
     def process_response(self, request, response):
         print('m1.process_response')
         return response

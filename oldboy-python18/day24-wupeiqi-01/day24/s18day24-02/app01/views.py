@@ -31,6 +31,7 @@ def login(request):
             # models.UserInfo.objects.filter(username=form.cleaned_data['user'],password=form.cleaned_data['pwd'])
             # models.UserInfo.objects.filter(**{'username':'alex','password':123})
             form.cleaned_data['password'] = md5(form.cleaned_data['password'])
+            print(form.cleaned_data)
             user = models.UserInfo.objects.filter(**form.cleaned_data).first()
             if user:
                 # 将用户信息放置到session中

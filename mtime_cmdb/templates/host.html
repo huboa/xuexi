@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <style>
+        .pager a{
+            display: inline-block;
+            padding: 3px 5px;
+            margin: 0 3px;
+            border: 1px solid #dddddd;
+        }
+        .pager a.active{
+            background-color: cadetblue;
+            color: white;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    <div>
+        <a href="/add_host/">添加</a>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>主机名</th>
+                <th>IP</th>
+                <th>端口</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in host_list %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.hostname }}</td>
+                    <td>{{ row.ip }}</td>
+                    <td>{{ row.port }}</td>
+                    <td>
+                        <a href="/edit_host/{{ row.id }}/">编辑</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pager">
+        {{ page_html|safe}}
+    </div>
+
+
+
+{% endblock %}
+

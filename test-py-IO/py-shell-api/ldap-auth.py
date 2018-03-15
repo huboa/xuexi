@@ -1,5 +1,5 @@
 
-import ldap
+import ldap3
 ldapServer = 'LDAP://localhost'
 domain = 'mtime'
 userName = 'shengchong.zhao'

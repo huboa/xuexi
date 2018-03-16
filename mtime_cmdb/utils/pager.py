@@ -1,122 +1,128 @@
-"""
-分页组件：
-    使用方法：
-        视图函数：
-            from utils.pager import Pagination
-            def host(request):
-                all_count = models.Host.objects.all().count()
-                # page_obj = Pagination(request.GET.get('page'),all_count,'/host/')
-                page_obj = Pagination(request.GET.get('page'),all_count,request.path_info)
-                host_list = models.Host.objects.all()[page_obj.start:page_obj.end]
-                return render(request,'host.html',{'host_list':host_list,'page_html':  page_obj.page_html()})
-        HTML：
-            <style>
-                .pager a{
-                    display: inline-block;
-                    padding: 3px 5px;
-                    margin: 0 3px;
-                    border: 1px solid #dddddd;
-                }
-                .pager a.active{
-                    background-color: cadetblue;
-                    color: white;
-                }
 
-            </style>
-
-            <div class="pager">
-                {{ page_html}}
-            </div>
-
-
-
-
-"""
-
-
-from django.utils.safestring import mark_safe
 class Pagination(object):
-    def __init__(self,current_page,total_count,base_url, per_page_count=10,max_pager_num=11):
+    def __init__(self,item_total_count,per_page_item_count=10,request_current_page=1,per_group_page_count=10,request_url=''):
         """
-        :param current_page: 用户请求的当前页
-        :param per_page_count: 每页显示的数据条数
-        :param total_count:  数据库中查询到的数据总条数
-        :param max_pager_num: 页面上最多显示的页码
+        :param item_total_count: 查询数据库总条数
+        :param per_page_item_count: 每页显示item数
+        :param request_current_page: 请求当前页码
+        :param per_group_page_count: 最大页码数－每个ｈｔｍｌ页面显示几页
         """
-        self.base_url = base_url
-        total_page_count, div = divmod(total_count, per_page_count)
-        if div:
-            total_page_count += 1
+        ###初始化页码变量
+        self.request_url=request_url
 
-        self.total_page_count = total_page_count
+        # print("check url info ",self.request_url)
+        self.item_total_count = item_total_count
+        self.per_page_item_count = per_page_item_count
+
+
+        page_total_count,item_remainder = divmod(item_total_count, per_page_item_count)
+        # print("check item 总数",item_total_count,"每页码显示item 个数",per_page_item_count)
+        # print("check page 总页数" ,page_total_count,"item 余数",item_remainder)
+        if  item_remainder:
+            page_total_count += 1
+        self.page_total_count = page_total_count   ####总页数
         try:
-            current_page = int(current_page)
+            request_current_page = int(request_current_page)
         except Exception as e:
-            current_page = 1
-        if current_page > total_page_count:
-            current_page = total_page_count
+            request_current_page = 1
+        if request_current_page > page_total_count:
+            request_current_page = page_total_count
+        if request_current_page < 1:
+            request_current_page = 1
+            
+        self.request_current_page = request_current_page   ##请求页码
 
-        self.current_page = current_page
-        self.per_page_count = per_page_count
-        self.total_count = total_count
-        self.max_pager_num = max_pager_num
-        self.half_max_pager_num = int(max_pager_num/2)
 
+        ###初始化页码组
+        all_page_group_count, page_remainder = divmod(page_total_count,per_group_page_count)
+        # print("check group 总组数",all_page_group_count,"每组页数",per_group_page_count,"最后一组页数",page_remainder)
+        if  page_remainder:
+            all_page_group_count += 1
+
+        self.all_page_group_count = all_page_group_count   #页码组数
+        self.per_group_page_count = per_group_page_count   #每组页码数
+        self.current_page_group_id = int((request_current_page - 1) // per_group_page_count + 1)  ##页码组id
+        self.current_page_group_start = (self.current_page_group_id - 1) * per_group_page_count + 1  ##页码组开始页
+
+        ##页码组开结束页
+        if  self.current_page_group_id >= all_page_group_count:
+            self.current_page_group_end = page_total_count
+        else:
+            self.current_page_group_end = self.current_page_group_start + per_group_page_count - 1
+
+        # print("页码总组数", self.all_page_group_count, "当前页码组id", self.current_page_group_id, "开始页", self.current_page_group_start, "组结束页",self.current_page_group_end, )
+
+    ##当前页码项目分片1
     @property
-    def start(self):
-        return (self.current_page - 1) * self.per_page_count
+    def current_page_start_item(self):
+        return (self.request_current_page - 1) * self.per_page_item_count
 
+    ##当前页码项目分片2
     @property
-    def end(self):
-        return self.current_page * self.per_page_count
+    def current_page_end_item(self):
 
+        if self.request_current_page >= self.page_total_count:
+            req = self.item_total_count
+        else:
+            req = (self.request_current_page) * self.per_page_item_count
+        print("check current", req)
+        return req
+
+
+### 生成html 返回
     def page_html(self):
-        page_html_list = []
 
-        if self.current_page <= 1:
-            prev = "<a href='#'>上一页</a>"
-        else:
-            prev = "<a href='%s?page=%s'>上一页</a>" % (self.base_url,self.current_page - 1,)
-        page_html_list.append(prev)
-
-        max_pager_num = 11
-        half_max_pager_num = int(max_pager_num / 2)
-
-        # 数据总页数 < 页面上最大显示的页码个数
-        if self.total_page_count <= max_pager_num:
-            page_start = 1
-            page_end = self.total_page_count
-        else:
-            # 数据比较多，已经超过11个页码
-            # 如果当前页 <=5,显示 1-11
-            if self.current_page <= half_max_pager_num:
-                page_start = 1
-                page_end = max_pager_num
+        page_html = ''
+        for i in range(self.current_page_group_start,  self.current_page_group_end + 1):
+            if i == self.request_current_page:
+                temp = '<a class="active" href="%s?page=%s">%s</a>' % (self.request_url,i, i)
             else:
-                # 当前页 >=6
-                if (self.current_page + 5) > self.total_page_count:
-                    page_end = self.total_page_count
-                    # page_start = current_page - 5
-                    page_start = self.total_page_count - max_pager_num + 1
-                else:
-                    page_start = self.current_page - half_max_pager_num  # 当前页 - 5
-                    page_end = self.current_page + half_max_pager_num  # 当前页 + 5
+                temp = '<a href=%s?page=%s>%s</a>' % (self.request_url,i, i,)
+            page_html += temp
 
-        for i in range(page_start, page_end + 1):
-            if self.current_page == i:
-                tag = "<a class='active' href='%s?page=%s'>%s</a>" % (self.base_url,i, i,)
-            else:
-                tag = "<a href='%s?page=%s'>%s</a>" % (self.base_url,i, i,)
-            page_html_list.append(tag)
 
-        # 下一页
-        if self.current_page >= self.total_page_count:
-            nex = "<a href='#'>下一夜</a>"
+            ###单页
+        if self.request_current_page > 1:
+            pre_page = self.request_current_page - 1
+            pre_page_html = '<a href=%s?page=%s><</a>' % (self.request_url,pre_page)
         else:
-            nex = "<a href='%s?page=%s'>下一夜</a>" % (self.base_url,self.current_page + 1,)
-        page_html_list.append(nex)
+            # pre_page = current_page
+            # pre_page_html = '<a href=/host/?page=%s><</a>' % (pre_page)
+            pre_page_html = ""
+        if self.request_current_page <  self.page_total_count :
+            next_page = self.request_current_page + 1
+            next_page_html = '<a href=%s?page=%s>></a>' % (self.request_url,next_page)
+        else:
+            # next_page = current_page
+            # next_page_html = '<a href=/host/?page=%s>></a>' % (next_page)
+            next_page_html = ""
 
+            ####页码组
 
+        if self.current_page_group_id > 1:
+            pre_group_page_id = self.request_current_page - self.per_group_page_count
+            pre_page_group_html = '<a href=%s?page=%s><<</a>' % (self.request_url,pre_group_page_id)
 
+        else:
+            pre_page_group_html = ""
+            # pre_group_page_id = current_page
+            # pre_page_group_html = '<a href=/host/?page=%s><<</a>' % (pre_group_page_id)
 
-        return mark_safe("".join(page_html_list))
+        if self.current_page_group_id >= self.all_page_group_count:
+            # next_group_page_id = current_page
+            # next_page_group_html = '<a href=/host/?page=%s>>></a>' % ( next_group_page_id)
+            next_page_group_html = ""
+        else:
+            next_group_page_id =  self.request_current_page  + self.per_group_page_count
+            next_page_group_html = '<a href=%s?page=%s>>></a>' % (self.request_url,next_group_page_id)
+
+            ##首页尾页
+        one_page_html = '<a href=%s?page=%s>首页</a>' % (self.request_url,1)
+        end_page_html = '<a href=%s?page=%s>末页</a>' % (self.request_url,self.page_total_count )
+        ###共 多少页
+        all_page_html = "  共%s页" % (self.page_total_count )
+        # select_page_html='<form action="">page: <input type="text" name="page"><input type="submit" value="提交"></form>'
+        select_page_html = '  到  <input type="text" name="page"  size="1" > 页 <input type="submit" value="确定"></form>'
+        page_html = "<form >" + one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html
+
+        return  page_html

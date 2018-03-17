@@ -94,7 +94,7 @@ class Pagination(object):
             next_page_html = '<a href=%s?page=%s>></a>' % (self.request_url,next_page)
         else:
             next_page = self.request_current_page
-            next_page_html = '<a href=$s?page=%s>></a>'  % (self.request_url,next_page)
+            next_page_html = '<a href=%s?page=%s>></a>'  % (self.request_url,next_page)
             # next_page_html = ""
 
             ####页码组
@@ -110,7 +110,7 @@ class Pagination(object):
 
         if self.current_page_group_id >= self.all_page_group_count:
             next_group_page_id =  self.request_current_page
-            next_page_group_html = '<a href=%s?page=%s>>></a>' %  (self.request_url,pre_group_page_id)
+            next_page_group_html = '<a href=%s?page=%s>>></a>' %  (self.request_url,next_group_page_id)
             # next_page_group_html = ""
         else:
             next_group_page_id =  self.request_current_page  + self.per_group_page_count
@@ -124,5 +124,4 @@ class Pagination(object):
         # select_page_html='<form action="">page: <input type="text" name="page"><input type="submit" value="提交"></form>'
         select_page_html = '  到  <input type="text" name="page"  size="1" > 页 <input type="submit" value="确定"></form>'
         page_html = "<form >" + one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html
-
         return  page_html

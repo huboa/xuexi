@@ -54,7 +54,13 @@ def host(request):
 
 
     all_count = models.Host.objects.all().order_by('-id').count()
-    per_page_count = 10
+    per_page_count = request.GET.get('items')
+    if not per_page_count:
+        per_page_count = 20
+        print("check per_page_count ", per_page_count)
+    else:
+        per_page_count = int(per_page_count)
+        print(per_page_count,type(per_page_count))
     # page_obj = Pagination(request.GET.get('page'),all_count,'/host/')
     page_obj = Pagination(all_count,per_page_count,request.GET.get('page'),request_url=request.path_info)
     host_list = models.Host.objects.all().order_by('-id')[page_obj.current_page_start_item:page_obj.current_page_end_item]

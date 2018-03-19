@@ -75,53 +75,53 @@ class Pagination(object):
         page_html = ''
         for i in range(self.current_page_group_start,  self.current_page_group_end + 1):
             if i == self.request_current_page:
-                temp = '<a class="active" href="%s?page=%s">%s</a>' % (self.request_url,i, i)
+                temp = '<a class="active" href="%s?page=%s&items=%s">%s</a>' % (self.request_url,i,self.per_page_item_count, i)
             else:
-                temp = '<a href=%s?page=%s>%s</a>' % (self.request_url,i, i,)
+                temp = '<a href=%s?page=%s&items=%s>%s</a>' % (self.request_url,i,self.per_page_item_count ,i,)
             page_html += temp
 
 
             ###单页
         if self.request_current_page > 1:
             pre_page = self.request_current_page - 1
-            pre_page_html = '<a href=%s?page=%s><</a>' % (self.request_url,pre_page)
+            pre_page_html = '<a href=%s?page=%s&items=%s><</a>' % (self.request_url,pre_page,self.per_page_item_count)
         else:
             pre_page = self.request_current_page
-            pre_page_html = '<a href=%s?page=%s><</a>' % (self.request_url,pre_page)
+            pre_page_html = '<a href=%s?page=%s&items=%s><</a>' % (self.request_url,pre_page,self.per_page_item_count,)
             # pre_page_html = ""
         if self.request_current_page <  self.page_total_count :
             next_page = self.request_current_page + 1
-            next_page_html = '<a href=%s?page=%s>></a>' % (self.request_url,next_page)
+            next_page_html = '<a href=%s?page=%s&items=%s>></a>' % (self.request_url,next_page,self.per_page_item_count,)
         else:
             next_page = self.request_current_page
-            next_page_html = '<a href=%s?page=%s>></a>'  % (self.request_url,next_page)
+            next_page_html = '<a href=%s?page=%s&items=%s>></a>'  % (self.request_url,next_page,self.per_page_item_count,)
             # next_page_html = ""
 
             ####页码组
 
         if self.current_page_group_id > 1:
             pre_group_page_id = self.request_current_page - self.per_group_page_count
-            pre_page_group_html = '<a href=%s?page=%s><<</a>' % (self.request_url,pre_group_page_id)
+            pre_page_group_html = '<a href=%s?page=%s&items=%s><<</a>' % (self.request_url,pre_group_page_id,self.per_page_item_count,)
 
         else:
             # pre_page_group_html = ""
             pre_group_page_id = self.request_current_page
-            pre_page_group_html = '<a href=%s?page=%s><<</a>' % (self.request_url,pre_group_page_id)
+            pre_page_group_html = '<a href=%s?page=%s&items=%s><<</a>' % (self.request_url,pre_group_page_id,self.per_page_item_count,)
 
         if self.current_page_group_id >= self.all_page_group_count:
             next_group_page_id =  self.request_current_page
-            next_page_group_html = '<a href=%s?page=%s>>></a>' %  (self.request_url,next_group_page_id)
+            next_page_group_html = '<a href=%s?page=%s&items=%s>>></a>' %  (self.request_url,next_group_page_id,self.per_page_item_count,)
             # next_page_group_html = ""
         else:
             next_group_page_id =  self.request_current_page  + self.per_group_page_count
-            next_page_group_html = '<a href=%s?page=%s>>></a>' % (self.request_url,next_group_page_id)
+            next_page_group_html = '<a href=%s?page=%s&items=%s>>></a>' % (self.request_url,next_group_page_id,self.per_page_item_count,)
 
             ##首页尾页
-        one_page_html = '<a href=%s?page=%s>首页</a>' % (self.request_url,1)
-        end_page_html = '<a href=%s?page=%s>末页</a>' % (self.request_url,self.page_total_count)
+        one_page_html = '<a href=%s?page=%s&items=%s>首页</a>' % (self.request_url,1,self.per_page_item_count,)
+        end_page_html = '<a href=%s?page=%s&items=%s>末页</a>' % (self.request_url,self.page_total_count,self.per_page_item_count,)
         ###共 多少页
-        all_page_html = "  共%s页" % (self.page_total_count )
+        all_page_html = ' 页<select name="items"> <option value="20">默认</option><option value="5">5</option><option value="10">10</option> <option value="20">20</option> <option value="50">50</option> <option value="100">100</option></select>行  共%s页' % (self.page_total_count )
         # select_page_html='<form action="">page: <input type="text" name="page"><input type="submit" value="提交"></form>'
-        select_page_html = '  到  <input type="text" name="page"  size="1" > 页 <input type="submit" value="确定"></form>'
+        select_page_html = '  到  <input type="text" name="page"  size="1" > 页  <input type="submit" value="确定"></form>'
         page_html = "<form >" + one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html
         return  page_html

@@ -120,7 +120,7 @@ class Pagination(object):
         one_page_html = '<a href=%s?page=%s&items=%s>首页</a>' % (self.request_url,1,self.per_page_item_count,)
         end_page_html = '<a href=%s?page=%s&items=%s>末页</a>' % (self.request_url,self.page_total_count,self.per_page_item_count,)
         ###共 多少页
-        all_page_html = ' 页<select name="items"> <option value="20">默认</option><option value="5">5</option><option value="10">10</option> <option value="20">20</option> <option value="50">50</option> <option value="100">100</option></select>行  共%s页' % (self.page_total_count )
+        all_page_html = '共%s行 %s行/页 变更<select name="items"> <option value="20"></option><option value="5">5</option><option value="10">10</option> <option value="20">20</option> <option value="50">50</option> <option value="100">100</option></select>  共%s页' % (self.item_total_count,self.per_page_item_count,self.page_total_count )
         # select_page_html='<form action="">page: <input type="text" name="page"><input type="submit" value="提交"></form>'
         select_page_html = '  到  <input type="text" name="page"  size="1" > 页  <input type="submit" value="确定"></form>'
         page_html = "<form >" + one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html

@@ -1,4 +1,5 @@
 from django.forms import Form
+from django.forms import ModelForm
 from django.forms import fields
 from django.forms import widgets
 
@@ -19,3 +20,16 @@ class LoginForm(Form):
         },
         widget=widgets.PasswordInput(attrs={'class':'form-control'})
     )
+
+from app01 import models
+class HostModelForm(ModelForm):
+    class Meta:
+        model = models.Host
+        fields = "__all__"
+        labels = {
+            'hostname':'主机名',
+            'ip':'IP',
+            'port':'端口',
+            "user":"用户",
+            'dp':'部门',
+        }

@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.shortcuts import redirect
-from app01.forms import LoginForm
+from app01.forms import LoginForm,HostModelForm
 from  app01 import models
 from django.conf import settings
 from utils.md5 import  md5
@@ -65,3 +65,8 @@ def host(request):
     page_obj = Pagination(all_count,per_page_count,request.GET.get('page'),request_url=request.path_info)
     host_list = models.Host.objects.all().order_by('-id')[page_obj.current_page_start_item:page_obj.current_page_end_item]
     return render(request, 'host.html', {'host_list': host_list, 'page_html': page_obj.page_html})
+
+def add_host(request):
+    if request.method == "GET":
+        form = HostModelForm()
+        return render(request,"add_host.html",{'form':form})

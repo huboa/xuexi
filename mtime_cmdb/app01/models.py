@@ -8,10 +8,13 @@ class UserInfo(models.Model):
         return self.username
 
 class Host(models.Model):
+    idc = models.CharField(max_length=32,default="廊坊")
+    sn = models.CharField(max_length=32,default='000')
+    remoteip = models.GenericIPAddressField(protocol='ipv4',default='0.0.0.0.')
     hostname = models.CharField(verbose_name="主机",max_length=32)
     # ip = models.GenericIPAddressField(protocol='ipv4')
     ip = models.CharField(max_length=32)
-    port = models.IntegerField()
+
     user = models.ForeignKey(to='UserInfo',default=1)
     dp = models.ManyToManyField(to='Department')
 

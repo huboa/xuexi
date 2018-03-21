@@ -27,9 +27,21 @@ class HostModelForm(ModelForm):
         model = models.Host
         fields = "__all__"
         labels = {
+            "sn": "主机SN号",
+            "remoteip": "带外管理IP",
             'hostname':'主机名',
-            'ip':'IP',
-            'port':'端口',
+            'ip':'主机IP',
             "user":"用户",
             'dp':'部门',
+        }
+        error_messages ={
+            "idc": {
+                "required": "不能为空"
+            },
+            "sn":{
+                "required":"不能为空"
+            },
+            "remoteip": {
+                "required": "不能为空"
+            }
         }

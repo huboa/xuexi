@@ -79,8 +79,11 @@ def add_host(request):
             return redirect('/host/')
         return render(request, 'add_host.html', {'form': form})
 
-def edit_host(request,nid):
-    obj = models.Host.objects.filter(id=nid).first()
+
+def edit_host(request,eid):
+    print(request,eid)
+    obj = models.Host.objects.filter(id=eid).first()
+
     if not obj:
         return HttpResponse('数据不存在')
 

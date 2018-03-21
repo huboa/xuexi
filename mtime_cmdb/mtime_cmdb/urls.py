@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^index/$', views.index),
     url(r'^host/$', views.host),
     url(r'^add_host/$', views.add_host),
+    url(r'^edit_host/(\d+)/$', views.edit_host),
 ]

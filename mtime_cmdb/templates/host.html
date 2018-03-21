@@ -26,9 +26,11 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>idc机房</th>
+                <th>SN</th>
+                <th>远程管理IP</th>
                 <th>主机名</th>
-                <th>IP</th>
-                <th>端口</th>
+                <th>主机ip</th>
                 <th>操作</th>
             </tr>
         </thead>
@@ -36,12 +38,12 @@
             {% for row in host_list %}
                 <tr>
                     <td>{{ row.id }}</td>
+                    <td>{{ row.idc }}</td>
+                    <td>{{ row.sn }}</td>
+                    <td>{{ row.remoteip }}</td>
                     <td>{{ row.hostname }}</td>
                     <td>{{ row.ip }}</td>
-                    <td>{{ row.port }}</td>
-                    <td>
-                        <a href="/edit_host/{{ row.id }}/">编辑</a>
-                    </td>
+                    <td><a href="/edit_host/{{ row.id }}/">编辑</a></td>
                 </tr>
             {% endfor %}
         </tbody>

@@ -70,3 +70,25 @@ def add_host(request):
     if request.method == "GET":
         form = HostModelForm()
         return render(request,"add_host.html",{'form':form})
+    else:
+        form =HostModelForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            form.save()
+            return redirect("/host/")
+        return render(request, "add_host.html", {'form': form})
+
+def edit_host(request,nid):
+
+    obj = models.Host.objects.filter(id=nid).first()
+    if not obj:
+        return HttpResponse('数据不存在')
+    if request.method == "GET":
+        form = HostModelForm(instance=obj)
+        return  render(request,'edit_host.html',{"form":form})
+    else:
+        form = HostModelForm(data=request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect('/host/')
+        return render(request, 'edit_host.html', {'form': form})

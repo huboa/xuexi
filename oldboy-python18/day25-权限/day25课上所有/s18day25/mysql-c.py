@@ -13,7 +13,7 @@ cursor.execute(sql) ###总数
 # res=cursor.execute(sql) ###总数
 rows=cursor.fetchall()   ###查询到的内容
 for n in rows:
-    print(n[1],type(n)) ## 打印内容
+    print(n[0],n[1],type(n)) ## 打印内容
 
 cursor.close()  #关闭数据
 conn.close()##关闭连接

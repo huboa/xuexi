@@ -102,74 +102,11 @@ def edit_host(request,nid):
             return redirect('/host/')
         return render(request, 'edit_host.html', {'form': form})
 
-
+from rbac.service.init_permisions import init_permissions
 def users(request):
     users = UserInfo.objects.filter(username="zsc")
     print(users,type(users),"#########")
 
-    """
-                [
-                    {'permissions__title': '用户列表', 'permissions__url': '/users/', 'permissions__code': 'list', 'permissions__group_id': 1}
-                    {'permissions__title': '添加用户', 'permissions__url': '/users/add/', 'permissions__code': 'add', 'permissions__group_id': 1}
-                    {'permissions__title': '删除用户', 'permissions__url': '/users/del/(\\d+)/', 'permissions__code': 'del', 'permissions__group_id': 1}
-                    {'permissions__title': '修改用户', 'permissions__url': '/users/edit/(\\d+)/', 'permissions__code': 'edit', 'permissions__group_id': 1}
-                    {'permissions__title': '主机列表', 'permissions__url': '/hosts/', 'permissions__code': 'list', 'permissions__group_id': 2}
-                    {'permissions__title': '添加主机', 'permissions__url': '/hosts/add/', 'permissions__code': 'add', 'permissions__group_id': 2}
-                    {'permissions__title': '删除主机', 'permissions__url': '/hosts/del/(\\d+)/', 'permissions__code': 'del', 'permissions__group_id': 2}
-                    {'permissions__title': '修改主机', 'permissions__url': '/hosts/edit/(\\d+)/', 'permissions__code': 'edit', 'permissions__group_id': 2}
-                ]
+    print(init_permissions("root"))
 
-                {
-                    1(权限组ID): {
-                        urls: [/u sers/,/users/add/ ,/users/del/(\d+)/],
-                        codes: [list,add,del]
-                    },
-                    2: {
-                        urls: [/hosts/,/hosts/add/ ,/hosts/del/(\d+)/],
-                        codes: [list,add,del]
-                    }
-                }
-
-                """
-    # permission_list = UserInfo.roles.all(permissions__id__isnull=False).values(
-    #     'permissions__title',
-    #     'permissions__url',
-    #     'permissions__code',
-    #     'permissions__group_id',
-    # ).distinct()
-    # permission_list = UserInfo.roles.all()
-    permission_list = UserInfo.objects.get(username='root').roles.all().values('permisions__id','permisions__url','permisions__code','permisions__code','permisions__group_id').distinct()
-
-    # print(t,"$$$$$$ttttttt$$$$$",type(t))
-    # permission_list = t.roles.all().values('permisions__id','permisions__url','permisions__code','permisions__code','permisions__group_id')
-
-
-    # print("permission",type(permission_list),permission_list)
-    permission_dict = {}
-    for permission in permission_list:
-        permisions__group_id = permission["permisions__group_id"]
-        permission_dict[permisions__group_id]={}
-        print(permission_dict)
-        if permisions__group_id in permission_dict:
-            print("in ex")
-
-        else:
-           print("####")
-
-
-    print(permission_dict)
-
-    #
-    #         """           pass
-    #
-    #
-    #
-    #             {
-    #                 1: {
-    #                     urls: ['/users/', ],
-    #                     codes: ['list',]
-    #                 }
-    #             }
-    #         '''
-    #
     return render(request, "user.html")

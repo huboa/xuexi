@@ -49,8 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'middlwares.md.M1',
+    #'middlwares.md.M1',
     # 'middlwares.md.M2',
+    'rbac.middlewares.rbac.RbacMiddleware',
 ]
 
 ROOT_URLCONF = 'mtime_cmdb.urls'
@@ -126,3 +127,14 @@ STATIC_URL = '/static/'
 
 ####自定义setting#################
 USER_SESSION_KEY='user_info'
+
+
+# #################### 权限相关配置 #############################
+PERMISSION_DICT_SESSION_KEY = "user_permission_dict_key"
+
+REX_FORMAT = "^%s$"
+
+VALID_LIST = [
+    '/login/',
+    '^/admin/.*',
+]

@@ -45,3 +45,22 @@ class HostModelForm(ModelForm):
                 "required": "不能为空"
             }
         }
+
+from rbac import models
+class UserModelForm(ModelForm):
+    class Meta:
+        model = models.UserInfo
+        fields = "__all__"
+        labels = {
+            'id':"ID",
+            'usernanme':'用户',
+
+        },
+        error_messages ={
+            "usernanme": {
+                "required": "不能为空"
+            },
+        },
+
+
+

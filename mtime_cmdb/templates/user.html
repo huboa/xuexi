@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>user</title>
-</head>
-<body>
-user
-</body>
-</html>
+{#{% load cache %}#}
+{% extends 'layout.html' %}
+
+
+
+{% block css %}
+    <style>
+        .pager a{
+            display: inline-block;
+            padding: 3px 5px;
+            margin: 0 3px;
+            border: 1px solid #dddddd;
+        }
+        .pager a.active{
+            background-color: cadetblue;
+            color: white;
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>用户列表</h1>
+    {% if 'add' in request.permission_codes %}
+         <a href="/user/add/">添加用户</a>
+    {% endif %}
+    <table border="1">
+        {% for row in user_list %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.username }}</td>
+
+                {% if 'edit' in request.permission_codes %}
+                    <td><a href="/user/edit/{{ row.id }}/">编辑</a></td>
+                {% endif %}
+
+
+                {% if 'del' in request.permission_codes %}
+
+                       <td><a href="/user/del/{{ row.id }}/">删除</a></td>
+                {% endif %}
+
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+ <div class="pager">
+        {{ page_html|safe}}
+    </div>
+
+  {% endblock %}

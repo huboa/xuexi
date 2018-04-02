@@ -6,7 +6,7 @@ from django.db import models
 # Create your models here.
 class UserInfo(models.Model):
     username = models.CharField(verbose_name='用户名',max_length=32)
-    password = models.CharField(verbose_name="密码",max_length=64)
+    password = models.CharField(verbose_name="密码",max_length=64,)
     roles = models.ManyToManyField(verbose_name="角色名",to="Roles")
     def __str__(self):
         return self.username
@@ -15,6 +15,9 @@ class Roles(models.Model):
     """角色表"""
     title =models.CharField(verbose_name="角色名称",max_length=32)
     permisions = models.ManyToManyField(verbose_name="权限",max_length=32,to="Permissions")
+    def __str__(self):
+        return self.title
+
 
 class Permissions(models.Model):
     """权限表"""

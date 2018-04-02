@@ -16,12 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from app01 import views
+from rbac import views as rbac_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$',views.login),
     url(r'^index/$', views.index),
     url(r'^host/$', views.host),
-    url(r'^add_host/$', views.add_host),
-    url(r'^edit_host/(\d+)/$', views.edit_host),
-    url(r'^users/$', views.users),
+    url(r'^host/add/$', views.add_host),
+    url(r'^host/edit/(\d+)/$', views.edit_host),
+    url(r'^user/$', rbac_views.user),
+    url(r'^user/add/$', rbac_views.add_user),
+    url(r'^user/edit/(\d+)/$', rbac_views.edit_user),
 ]

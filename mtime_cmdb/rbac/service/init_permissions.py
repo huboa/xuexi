@@ -2,7 +2,7 @@ from  rbac.models import UserInfo
 from django.conf import settings
 from django.shortcuts import render,HttpResponse
 
-def init_permissions(user):
+def init_permissions(user,request):
 
     #把权限列表转换成字典格式
     """
@@ -28,29 +28,10 @@ def init_permissions(user):
                        }
                    }
 
-                   """
-    # permission_list = UserInfo.roles.all(permissions__id__isnull=False).values(
-    #     'permissions__title',
-    #     'permissions__url',
-    #     'permissions__code',
-    #     'permissions__group_id',
-    # ).distinct()
-    # permission_list = UserInfo.roles.all()
 
 
-    #
-    #         """           pass
-    #
-    #
-    #
-    #             {
-    #                 1: {
-    #                     urls: ['/users/', ],
-    #                     codes: ['list',]
-    #                 }
-    #             }
-    #         '''
-    #
+   """
+
 
     permission_list = UserInfo.objects.get(username=user).roles.all().values('permisions__id',
                                                                              'permisions__url',
@@ -61,8 +42,6 @@ def init_permissions(user):
 
     # print(t,"$$$$$$ttttttt$$$$$",type(t))
     # permission_list = t.roles.all().values('permisions__id','permisions__url','permisions__code','permisions__code','permisions__group_id')
-
-
     # print("permission",type(permission_list),permission_list)
     permission_dict = {}
     for permission in permission_list:
@@ -70,12 +49,12 @@ def init_permissions(user):
         url = permission["permisions__url"]
         code = permission["permisions__code"]
         if group_id in permission_dict:
-            permission_dict[group_id]['url'].append(url)
-            permission_dict[group_id]['code'].append(code)
+            permission_dict[group_id]['urls'].append(url)
+            permission_dict[group_id]['codes'].append(code)
 
         else:
-            permission_dict[group_id] = {'url': [], 'code': []}
-            permission_dict[group_id]['url'].append(url)
-            permission_dict[group_id]['code'].append(code)
+            permission_dict[group_id] = {'urls': [], 'codes': []}
+            permission_dict[group_id]['urls'].append(url)
+            permission_dict[group_id]['codes'].append(code)
 
-    return permission_dict
+    request.session[settings.PERMISSION_DICT_SESSION_KEY] = permission_dict

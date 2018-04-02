@@ -1,10 +1,11 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.shortcuts import redirect
-from app01.forms import LoginForm,HostModelForm
+from app01.forms import LoginForm,HostModelForm,UserModelForm
 from  app01 import models
 from  rbac.models import UserInfo
 from django.conf import settings
 from utils.md5 import  md5
+
 # Create your views here.
 
 ###装饰圈
@@ -18,7 +19,7 @@ from utils.md5 import  md5
 #     return inner
 #
 
-
+from rbac.service.init_permissions import init_permissions
 def login(request):
     if request.method == 'GET':
         form = LoginForm()
@@ -36,11 +37,11 @@ def login(request):
                 ###将用户信息方session
                 # permissions_list = user.role.
                 #  print(permissions_list, "###################")
-                 request.session[settings.USER_SESSION_KEY] ={'id':user.pk,'username':user.username}
-                 # permissions_list= user.role.fiter(permission__id__isnull=False).values().distinct()
-
-
-                 return redirect('/index/')
+                #request.session[settings.USER_SESSION_KEY] ={'id':user.pk,'username':user.username}
+                # permissions_list= user.role.fiter(permission__id__isnull=False).values().distinct()
+                # 当前用户的所有权限
+                init_permissions(user,request)
+                return redirect('/user/')
             else:
                 form.add_error("password","用户名或密码错误")
 
@@ -78,7 +79,8 @@ def host(request):
 def add_host(request):
     if request.method == "GET":
         form = HostModelForm()
-        return render(request,"add_host.html",{'form':form})
+        # return render(request,"add_host.html",{'form':form})
+        return render(request, "add_host.html", {'form': form})
     else:
         form =HostModelForm(request.POST)
         if form.is_valid():
@@ -102,11 +104,3 @@ def edit_host(request,nid):
             return redirect('/host/')
         return render(request, 'edit_host.html', {'form': form})
 
-from rbac.service.init_permisions import init_permissions
-def users(request):
-    users = UserInfo.objects.filter(username="zsc")
-    print(users,type(users),"#########")
-
-    print(init_permissions("root"))
-
-    return render(request, "user.html")

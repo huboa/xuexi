@@ -24,7 +24,13 @@ urlpatterns = [
     url(r'^host/$', views.host),
     url(r'^host/add/$', views.add_host),
     url(r'^host/edit/(\d+)/$', views.edit_host),
+    url(r'^host/del/(\d+)/$', views.del_host),
     url(r'^user/$', rbac_views.user),
     url(r'^user/add/$', rbac_views.add_user),
     url(r'^user/edit/(\d+)/$', rbac_views.edit_user),
+    url(r'^user/del/(\d+)/$', rbac_views.del_user),
+    #url(r'^role/$', rbac_views.role),
+    # url(r'^user/add/$', rbac_views.add_user),
+    # url(r'^user/edit/(\d+)/$', rbac_views.edit_user),
+    # url(r'^user/del/(\d+)/$', rbac_views.del_user),
 ]

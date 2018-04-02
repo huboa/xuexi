@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
-{% block body %} <h1>编辑主机</h1>
+{% block body %}
+    <h1>编辑</h1>
     <form method="post" novalidate>
         {% csrf_token %}
         {% for field in form %}

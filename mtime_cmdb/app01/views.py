@@ -104,3 +104,10 @@ def edit_host(request,nid):
             return redirect('/host/')
         return render(request, 'edit_host.html', {'form': form})
 
+def del_host(request,nid):
+    obj = models.Host.objects.filter(id=nid).first()
+    if not obj:
+        return HttpResponse('数据不存在')
+    else:
+        models.Host.objects.filter(id=nid).delete()
+        return redirect('/host/')

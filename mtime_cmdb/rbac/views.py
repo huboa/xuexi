@@ -70,3 +70,51 @@ def del_user(request,nid):
         UserInfo.objects.filter(id=nid).delete()
         return redirect('/user/')
 
+def role(request):
+    all_count = Role.objects.all().order_by('-id').count()
+    per_page_count = request.GET.get('items')
+    if not per_page_count:
+        per_page_count = 20
+        # print("check per_page_count ", per_page_count)
+    else:
+        per_page_count = int(per_page_count)
+        # print(per_page_count,type(per_page_count))
+
+    page_obj = Pagination(all_count,per_page_count,request.GET.get('page'),request_url=request.path_info)
+    role_list = Role.objects.all().order_by('-id')[page_obj.current_page_start_item:page_obj.current_page_end_item]
+
+    return render(request, 'role.html', {'role_list': role_list, 'page_html': page_obj.page_html})
+
+def add_role(request):
+    if request.method == "GET":
+        add_role_form = RoleModelForm()
+        return render(request,"add_role.html", {'add_role_form': add_role_form})
+    else:
+        add_role_form = RoleModelForm(request.POST)
+        if add_role_form.is_valid():
+            add_role_form.save()
+            return redirect("/role/")
+        return render(request, "add_role.html", {'add_role_form': add_role_form})
+
+
+def edit_role(request,nid):
+    obj = Role.objects.filter(id=nid).first()
+    if not obj:
+        return HttpResponse('数据不存在')
+    if request.method == "GET":
+        form = RoleModelForm(instance=obj)
+        return  render(request,'edit_role.html',{"form":form})
+    else:
+        form = RoleModelForm(data=request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect('/role/')
+        return render(request, 'edit_role.html', {'form': form})
+
+def del_role(request,nid):
+    obj = Role.objects.filter(id=nid).first()
+    if not obj:
+        return HttpResponse('数据不存在')
+    else:
+        Role.objects.filter(id=nid).delete()
+        return redirect('/user/')

@@ -21,7 +21,6 @@ class UserModelForm(ModelForm):
         },
         widgets = {
             'password': widgets.PasswordInput(attrs={'class':'form-control'}),
-            # 'tp':wd.TextInput(attrs={'class':'form-control'})
         }
 class RoleModelForm(ModelForm):
     class Meta:
@@ -30,10 +29,9 @@ class RoleModelForm(ModelForm):
         labels = {
             'id':"ID",
             'title':'角色',
-
         },
         error_messages ={
-            "usernanme": {
+            "title": {
                 "required": "不能为空"
             },
         },

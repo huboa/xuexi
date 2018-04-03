@@ -29,8 +29,8 @@ urlpatterns = [
     url(r'^user/add/$', rbac_views.add_user),
     url(r'^user/edit/(\d+)/$', rbac_views.edit_user),
     url(r'^user/del/(\d+)/$', rbac_views.del_user),
-    #url(r'^role/$', rbac_views.role),
-    # url(r'^user/add/$', rbac_views.add_user),
-    # url(r'^user/edit/(\d+)/$', rbac_views.edit_user),
-    # url(r'^user/del/(\d+)/$', rbac_views.del_user),
+    url(r'^role/$', rbac_views.role),
+    url(r'^role/add/$', rbac_views.add_role),
+    url(r'^role/edit/(\d+)/$', rbac_views.edit_role),
+    url(r'^role/del/(\d+)/$', rbac_views.del_role),
 ]

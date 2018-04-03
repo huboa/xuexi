@@ -25,7 +25,8 @@ class Permissions(models.Model):
     url = models.CharField(verbose_name="含正则url",max_length=255)
     code = models.CharField(verbose_name="权限代码", max_length=32,)
     group = models.ForeignKey(verbose_name="权限组",to="PermissionGroup",)
-
+    def __str__(self):
+        return self.title
 
 class PermissionGroup(models.Model):
 #     """

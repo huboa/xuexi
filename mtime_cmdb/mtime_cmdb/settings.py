@@ -131,10 +131,12 @@ USER_SESSION_KEY='user_info'
 
 # #################### 权限相关配置 #############################
 PERMISSION_DICT_SESSION_KEY = "user_permission_dict_key"
-
+PERMISSION_MENU_SESSION_KEY = "user_permission_menu_key"
 REX_FORMAT = "^%s$"
 
 VALID_LIST = [
     '/login/',
     '^/admin/.*',
+    '^/user/.*',
+    '^/host/.*',
 ]

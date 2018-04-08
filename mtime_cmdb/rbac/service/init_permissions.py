@@ -31,23 +31,41 @@ def init_permissions(user,request):
 
 
    """
+    roles=UserInfo.objects.get(username=user).roles.all()
+
+    permission_list = roles.values('permissions__id', ##权限id
+                                   'permissions__title',  ##权限名称
+                                   'permissions__url',  ##权限 url
+                                   'permissions__code', ##权限码
+                                   'permissions__group_id', ###权限组id
+                                   'permissions__memu_id',###权限菜单id
+                                   'permissions__group__menu__id',##top menu id
+                                   'permissions__group__menu__name', ##top menu name
+
+                                   ).distinct()
 
 
-    permission_list = UserInfo.objects.get(username=user).roles.all().values('permisions__id',
-                                                                             'permisions__url',
-                                                                             'permisions__code',
-                                                                             'permisions__code',
-                                                                               'permisions__group_id',
-                                                                             ).distinct()
 
-    # print(t,"$$$$$$ttttttt$$$$$",type(t))
-    # permission_list = t.roles.all().values('permisions__id','permisions__url','permisions__code','permisions__code','permisions__group_id')
-    # print("permission",type(permission_list),permission_list)
+    permission_menu_list=[]
+    for item in  permission_list:
+        var={
+            'id':item['permissions__id'],
+            'title': item['permissions__title'],
+            'url': item['permissions__url'],
+            'gid': item['permissions__memu_id'],
+            'menu_id': item['permissions__group__menu__id'],
+            'menu_name': item['permissions__group__menu__name']
+        }
+        permission_menu_list.append(var)
+    request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session
+
+
+
     permission_dict = {}
     for permission in permission_list:
-        group_id = permission["permisions__group_id"]
-        url = permission["permisions__url"]
-        code = permission["permisions__code"]
+        group_id = permission["permissions__group_id"]
+        url = permission["permissions__url"]
+        code = permission["permissions__code"]
         if group_id in permission_dict:
             permission_dict[group_id]['urls'].append(url)
             permission_dict[group_id]['codes'].append(code)

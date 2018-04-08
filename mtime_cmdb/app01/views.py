@@ -53,13 +53,14 @@ def index(request):
 
 from utils.pager import Pagination
 def host(request):
-    ##创建主机
+    ##创建主机测试数据
     # for i in range(302):
     #     dic ={'hostname':'c%s.com' %(i,),"ip":'1.1.1.1','port':80}
     #     models.Host.objects.create(**dic)
     #
     # # return render(request,'host.html')
     # return HttpResponse("创建成功")
+
 
 
 
@@ -74,6 +75,9 @@ def host(request):
     # page_obj = Pagination(request.GET.get('page'),all_count,'/host/')
     page_obj = Pagination(all_count,per_page_count,request.GET.get('page'),request_url=request.path_info)
     host_list = models.Host.objects.all().order_by('-id')[page_obj.current_page_start_item:page_obj.current_page_end_item]
+
+
+
     return render(request, 'host.html', {'host_list': host_list, 'page_html': page_obj.page_html})
 
 def add_host(request):

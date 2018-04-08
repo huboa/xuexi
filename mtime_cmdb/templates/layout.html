@@ -11,6 +11,26 @@
             height: 48px;
             background-color: cadetblue;
         }
+        .pg-content .menu{
+            width: 230px;
+            background-color: lavender;
+            position: absolute;
+            left: 0;
+            top:48px;
+            bottom: 0;
+
+        }
+
+        .pg-content .content{
+            position: absolute;
+            left: 230px;
+            right: 0;
+            top: 48px;
+            bottom: 0;
+            overflow: auto;
+{#            overflow: scroll;#}
+        }
+
     </style>
     {% block css %}{% endblock %}
 </head>
@@ -18,12 +38,18 @@
 
 
 <body>
-    <div class="pg-header">菜单1</div>
-
-    {% block body %} {% endblock %}
-
-
-    <script></script>
+    <div class="pg-header">
+        头部菜单
+    </div>
+    <div class="pg-content">
+        <div class="menu">
+            菜单
+        </div>
+        <div class="content">
+            {% block body %} {% endblock %}
+        </div>
+{#        <script></script>#}
+    </div>
     {% block js %}{% endblock %}
 </body>
 </html>

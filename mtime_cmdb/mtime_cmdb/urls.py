@@ -19,9 +19,8 @@ from app01 import views
 from rbac import views as rbac_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
     url(r'^login/$',views.login),
-    url(r'^index/$', views.index),
+    url(r'^/', views.index),
     url(r'^host/$', views.host),
     url(r'^host/add/$', views.add_host),
     url(r'^host/edit/(\d+)/$', views.edit_host),
@@ -34,20 +33,4 @@ urlpatterns = [
     url(r'^role/add/$', rbac_views.add_role),
     url(r'^role/edit/(\d+)/$', rbac_views.edit_role),
     url(r'^role/del/(\d+)/$', rbac_views.del_role),
-=======
-    url(r'^login/',views.login),
-    # url(r'^index/$', views.index),
-    # url(r'^host/$', views.host),
-    # url(r'^host/add/$', views.add_host),
-    # url(r'^host/edit/(\d+)/$', views.edit_host),
-    # url(r'^host/del/(\d+)/$', views.del_host),
-    url('^user/', rbac_views.user),
-    # url(r'^user/add/$', rbac_views.add_user),
-    # url(r'^user/edit/(\d+)/$', rbac_views.edit_user),
-    # url(r'^user/del/(\d+)/$', rbac_views.del_user),
-    #url(r'^role/$', rbac_views.role),
-    # url(r'^user/add/$', rbac_views.add_user),
-    # url(r'^user/edit/(\d+)/$', rbac_views.edit_user),
-    # url(r'^user/del/(\d+)/$', rbac_views.del_user),
->>>>>>> 83bde8805fe9a1d42eefb0cf87baa2c7a160e967
 ]

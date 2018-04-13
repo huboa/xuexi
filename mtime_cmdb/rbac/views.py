@@ -37,20 +37,19 @@ def user(request):
 
 
 
-    # all_count = UserInfo.objects.all().order_by('-id').count() ####查到的总数
-    # per_page_count = request.GET.get('items')  ###每页显示条数
-    # if not per_page_count:
-    #     per_page_count = 20     ##默认显示条数
-    #     print("check per_page_count ", per_page_count)
-    # else:
-    #     per_page_count = int(per_page_count)
-    #     print(per_page_count,type(per_page_count))
-    #
-    # page_obj = Pagination(all_count,per_page_count,request.GET.get('page'),request_url=request.path_info)
-    # user_list = UserInfo.objects.all().order_by('-id')[page_obj.current_page_start_item:page_obj.current_page_end_item]
-    #
-    #
-    # return render(request, 'user.html', {'user_list': user_list, 'page_html': page_obj.page_html})
+    all_count = UserInfo.objects.all().order_by('-id').count() ####查到的总数
+    per_page_count = request.GET.get('items')  ###每页显示条数
+    get_page = request.GET.get('page')
+    get_url = request.path_info
+    if not per_page_count:
+        per_page_count = 20  ##默认显示条数
+    else:
+        per_page_count = int(per_page_count)
+    page_obj = Pagination(all_count,per_page_count,get_page,request_url=get_url)
+    user_list = UserInfo.objects.all().order_by('-id')[page_obj.current_page_start_item:page_obj.current_page_end_item]
+
+
+    return render(request, 'user.html', {'user_list': user_list, 'page_html': page_obj.page_html})
     return render(request, 'user.html')
 
 def add_user(request):

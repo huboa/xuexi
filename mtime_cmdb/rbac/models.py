@@ -30,12 +30,9 @@ class Permissions(models.Model):
     url = models.CharField(verbose_name="含正则url",max_length=255)
     code = models.CharField(verbose_name="权限代码", max_length=32,)
     group = models.ForeignKey(verbose_name="权限组",to="PermissionGroup",)
-<<<<<<< HEAD
     def __str__(self):
         return self.title
-=======
     memu = models.ForeignKey(verbose_name="组内菜单",to='self',null=True,blank=True,related_name='xxx')
->>>>>>> 83bde8805fe9a1d42eefb0cf87baa2c7a160e967
 
 class PermissionGroup(models.Model):
 #     """

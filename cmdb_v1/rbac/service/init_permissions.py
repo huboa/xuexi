@@ -38,12 +38,11 @@ def init_permissions(user,request):
                                    'permissions__url',  ##权限 url
                                    'permissions__code', ##权限码
                                    'permissions__group_id', ###权限组id
-                                   'permissions__memu_id',###权限菜单id
+                                   'permissions__gmid_id',  ###组内菜单
                                    'permissions__group__menu__id',##top menu id
                                    'permissions__group__menu__name', ##top menu name
 
-                                   )
-
+                                   ).distinct()
 
 #####初始化登陆权限
     permission_dict = {}
@@ -62,17 +61,23 @@ def init_permissions(user,request):
     # print(permission_dict)
     request.session[settings.PERMISSION_DICT_SESSION_KEY] = permission_dict
 
+
+
+
+
 ###初始化菜单显示哪些菜单
     permission_menu_list=[]
     for item in  permission_list:
         var={
-            'pid':item['permissions__id'],
+            'id':item['permissions__id'],
             'title': item['permissions__title'],
             'url': item['permissions__url'],
-            'mid': item['permissions__memu_id'],
+            'gid': item['permissions__group_id'],
+            'gmid': item['permissions__gmid_id'],
             'menu_id': item['permissions__group__menu__id'],
             'menu_name': item['permissions__group__menu__name']
         }
+
         permission_menu_list.append(var)
-        print(item)
+
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session

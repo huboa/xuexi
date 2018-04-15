@@ -27,7 +27,7 @@ class Permissions(models.Model):
     group = models.ForeignKey(verbose_name="权限组",to="PermissionGroup",)
     def __str__(self):
         return self.title
-    memu = models.ForeignKey(verbose_name="组内菜单",to='self',null=True,blank=True,related_name='xxx')
+    gmid = models.ForeignKey(verbose_name="组内菜单",to='self',null=True,blank=True,related_name='xxx')
 
 class PermissionGroup(models.Model):
 #     """

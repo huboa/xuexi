@@ -46,10 +46,11 @@ def user(request):
         per_page_count = int(per_page_count)
     page_obj = Pagination(all_count,per_page_count,get_page,request_url=get_url)
     user_list = UserInfo.objects.all().order_by('-id')[page_obj.current_page_start_item:page_obj.current_page_end_item]
-    permission_menu_list = request.session.get(settings.PERMISSION_MENU_SESSION_KEY)
-    print(permission_menu_list)
 
-    return render(request, 'user.html', {'user_list': user_list, 'page_html': page_obj.page_html})
+    # return render(request, 'user.html', {'user_list': user_list, 'page_html': page_obj.page_html})
+
+
+    return render(request, 'user.html')
 
 
 def add_user(request):

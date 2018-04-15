@@ -13,9 +13,10 @@ def menu(request):
     current_url = request.path_info
     # 获取session中菜单信息，自动生成二级菜单【默认选中，默认展开】
     permission_menu_list = request.session.get(settings.PERMISSION_MENU_SESSION_KEY)
+
     per_dict = {}
     for item in permission_menu_list:
-        if not item['pid']:
+        if item['id'] == item['gmid']:
             per_dict[item['id']] = item
 
     for item in permission_menu_list:
@@ -23,12 +24,25 @@ def menu(request):
         if not re.match(reg, current_url):
             continue
         # 匹配成功
-        if item['pid']:
-            per_dict[item['pid']]['active'] = True
+        if item['id']:
+            per_dict[item['gid']]['active'] = True
         else:
             item['active'] = True
 
     """
+    获取数据
+    [
+        {'mid': 1, 'url': '/user/', 'menu_id': 1, 'pid': 1, 'menu_name': '菜单组', 'title': '用户列表'},
+        {'mid': 1, 'url': '/user/add/', 'menu_id': 1, 'pid': 2, 'menu_name': '菜单组', 'title': '添加用户'},
+        {'mid': 1, 'url': '/user/del/(\\d+)', 'menu_id': 1, 'pid': 3, 'menu_name': '菜单组', 'title': '删除用户'},
+        {'mid': 1, 'url': '/user/edit/(d+)', 'menu_id': 1, 'pid': 4, 'menu_name': '菜单组', 'title': '编辑用户'},
+        {'mid': 1, 'url': '/user/', 'menu_id': 1, 'pid': 1, 'menu_name': '菜单组', 'title': '用户列表'},
+        {'mid': 1, 'url': '/user/add/', 'menu_id': 1, 'pid': 2, 'menu_name': '菜单组', 'title': '添加用户'},
+        {'mid': 1, 'url': '/user/del/(\\d+)', 'menu_id': 1, 'pid': 3, 'menu_name': '菜单组', 'title': '删除用户'},
+        {'mid': 1, 'url': '/user/edit/(d+)', 'menu_id': 1, 'pid': 4, 'menu_name': '菜单组', 'title': '编辑用户'}
+    ]
+
+
     {
         1: {'id': 1, 'title': '用户列表', 'url': '/users/', 'pid': None, 'menu_id': 1, 'menu__name': '菜单1', 'active': True}, 
         5: {'id': 5, 'title': '主机列表', 'url': '/hosts/', 'pid': None, 'menu_id': 1, 'menu__name': '菜单1'}
@@ -57,6 +71,8 @@ def menu(request):
     menu_result = {}
     for item in per_dict.values():
         menu_id = item['menu_id']
+
+        print(menu_id,item['menu_id'])
         if menu_id in menu_result:
             temp = {'id': item['id'], 'title': item['title'], 'url': item['url'], 'active': item.get('active', False)}
             menu_result[menu_id]['children'].append(temp)
@@ -64,10 +80,11 @@ def menu(request):
                 menu_result[menu_id]['active'] = item.get('active', False)
         else:
             menu_result[menu_id] = {
-                'menu__name': item['menu__name'],
+                'menu__name': item['menu_name'],
                 'active': item.get('active', False),
                 'children': [
                     {'id': item['id'], 'title': item['title'], 'url': item['url'], 'active': item.get('active', False)}
                 ]
             }
+
     return {'menu_result':menu_result}

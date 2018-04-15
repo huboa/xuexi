@@ -1,11 +1,11 @@
 {% for menu in menu_result.values %}
     <div class="menu-item">
         <div class="menu-title">{{ menu.menu__name }}</div>
-{#                    {% if menu.active %}#}
-{#                        <div class="menu-content">#}
-{#                    {% else %}#}
-{#                        <div class="menu-content hide">#}
-{#                    {% endif %}#}
+                    {% if menu.active %}
+                        <div class="menu-content">
+                    {% else %}
+                        <div class="menu-content hide">
+                    {% endif %}
         <div class="menu-content">
             {% for per in menu.children %}
                 {% if per.active %}

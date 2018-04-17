@@ -58,7 +58,7 @@ def init_permissions(user,request):
             permission_dict[gpid] = {'urls': [], 'codes': []}
             permission_dict[gpid]['urls'].append(url)
             permission_dict[gpid]['codes'].append(code)
-    # print(permission_dict)
+
     request.session[settings.PERMISSION_DICT_SESSION_KEY] = permission_dict
 
 

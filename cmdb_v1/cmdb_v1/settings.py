@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rbac.middlewares.rbac.RbacMiddleware',
 ]
 
 ROOT_URLCONF = 'cmdb_v1.urls'
@@ -125,3 +126,7 @@ STATIC_URL = '/static/'
 PERMISSION_DICT_SESSION_KEY = "user_permission_dict_key"
 PERMISSION_MENU_SESSION_KEY = "user_permission_menu_key"
 REX_FORMAT = "^%s$"
+VALID_LIST=[
+    '/login/',
+    '/admin/.*',
+]

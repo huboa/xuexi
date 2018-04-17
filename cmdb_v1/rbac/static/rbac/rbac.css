@@ -1,12 +1,14 @@
+
 .menu-item .menu-title{
     height: 30px;
-    background-color: cornflowerblue;
+    /*background-color: cornflowerblue;*/
 }
 .menu-item .menu-content{
     margin-left: 20px;
+
 }
 .menu-item .menu-content a{
-    display: block;
+    display: block
 }
 .menu-item .menu-content a.active{
     color: red;
@@ -14,3 +16,6 @@
 .hide{
     display: none;
 }
+
+
+

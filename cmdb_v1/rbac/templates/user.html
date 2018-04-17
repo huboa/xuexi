@@ -1,23 +1,34 @@
 {#{% load cache %}#}
-{#{% extends 'layout.html' %}#}
+{% extends 'layout.html' %}
 
-{% block css %}
-    <style>
-        .pager a{
-            display: inline-block;
-            padding: 3px 5px;
-            margin: 0 3px;
-            border: 1px solid #dddddd;
-        }
-        .pager a.active{
-            background-color: cadetblue;
-            color: white;
-        }
 
-    </style>
-{% endblock %}
 
-{% block body %}
+
+{#{% block left_menu %}#}
+{#    {% for menu in menu_result.values %}#}
+{#        <div class="menu-item">#}
+{#            <div class="menu-title">{{ menu.menu__name }}</div>#}
+{#                 {% if menu.active %}#}
+{#                     <div class="menu-content">#}
+{#                 {% else %}#}
+{#                     <div class="menu-content hide">#}
+{#                  {% endif %}#}
+{##}
+{#                <div class="menu-content">#}
+{#                    {% for per in menu.children %}#}
+{#                        {% if per.active %}#}
+{#                            <a href="{{ per.url }}" class="active">{{ per.title }}</a>#}
+{#                        {% else %}#}
+{#                            <a href="{{ per.url }}">{{ per.title }}</a>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#{% endblock %}#}
+
+{% block content %}
     <h1>用户列表</h1>
     {% if 'add' in request.permission_codes %}
          <a href="/user/add/">添加用户</a>
@@ -42,11 +53,9 @@
         {% endfor %}
     </table>
 
-
-
-
- <div class="pager">
+     <div class="pager">
         {{ page_html|safe}}
     </div>
-
+   </div>
+       </div>
   {% endblock %}

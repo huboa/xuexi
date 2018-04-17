@@ -1,20 +1,30 @@
 
+
+
+
 class Pagination(object):
-    def __init__(self,item_total_count,per_page_item_count=10,request_current_page=1,per_group_page_count=10,request_url=''):
+    def __init__(self,request,obj):
         """
-        :param item_total_count: 查询数据库总条数
-        :param per_page_item_count: 每页显示item数
-        :param request_current_page: 请求当前页码
-        :param per_group_page_count: 最大页码数－每个ｈｔｍｌ页面显示几页
+        obj-表名
+        :param request:
+        :param obj:
         """
         ###初始化页码变量
-        self.request_url=request_url
+        self.obj=obj
+        item_total_count = obj.objects.all().order_by('-id').count()  ###总数
+        self.item_total_count = item_total_count  ####总数
+        per_page_item_count = request.GET.get('items')  ###每页显示条数
+        request_current_page = request.GET.get('page')  ###当前页码
+        per_group_page_count = 10     ###显示10个页码
 
-        # print("check url info ",self.request_url)
-        self.item_total_count = item_total_count
+        if not per_page_item_count:  ##每页默认显示数据条数
+            per_page_item_count = 20
+        else:
+            per_page_item_count = int(per_page_item_count)
         self.per_page_item_count = per_page_item_count
+        self.request_url=request.path_info   ###请求路径
 
-
+        ####每页显示项目计算
         page_total_count,item_remainder = divmod(item_total_count, per_page_item_count)
         # print("check item 总数",item_total_count,"每页码显示item 个数",per_page_item_count)
         # print("check page 总页数" ,page_total_count,"item 余数",item_remainder)
@@ -50,7 +60,7 @@ class Pagination(object):
         else:
             self.current_page_group_end = self.current_page_group_start + per_group_page_count - 1
 
-        print("页码总组数", self.all_page_group_count, "当前页码组id", self.current_page_group_id, "开始页", self.current_page_group_start, "组结束页",self.current_page_group_end, )
+        # print("页码总组数", self.all_page_group_count, "当前页码组id", self.current_page_group_id, "开始页", self.current_page_group_start, "组结束页",self.current_page_group_end, )
 
     ##当前页码项目分片1
     @property
@@ -65,7 +75,7 @@ class Pagination(object):
             req = self.item_total_count
         else:
             req = (self.request_current_page) * self.per_page_item_count
-        print("check current", req)
+        # print("check current", req)
         return req
 
 
@@ -125,3 +135,8 @@ class Pagination(object):
         select_page_html = '  到  <input type="text" name="page"  size="1" > 页  <input type="submit" value="确定"></form>'
         page_html = "<form >" + one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html
         return  page_html
+
+####list
+    def obj_list_html(self):
+        obj_list = self.obj.objects.all().order_by('-id')[self.current_page_start_item:self.current_page_end_item]
+        return obj_list

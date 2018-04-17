@@ -1,58 +1,94 @@
-{% load rbac %}
+{% load left_menu %}
+{#{% load tag_test %}#}
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
-        <link rel="stylesheet" href="/rbac/static/rbac/rbac.css" />
+        <title>layout</title>
+{#        <link rel="stylesheet" href="../static/rbac/rbac.css" />#}
         <style>
-            body{
-                margin: 0;
-            }
-            .pg-header{
-                height: 48px;
-                background-color: darkcyan;
-            }
-            .pg-content .menu{
-                width: 230px;
-                background-color: #dddddd;
-                position: absolute;
-                left: 0;
-                top: 48px;
-                bottom: 0;
-            }
-            .pg-content  .content{
-                position: absolute;
-                left: 230px;
-                right: 0;
-                top: 48px;
-                bottom: 0;
-                /* overflow: scroll;*/
-                overflow: auto;
-            }
+        .pager a{
+            display: inline-block;
+            padding: 3px 5px;
+            margin: 0 3px;
+            border: 1px solid #dddddd;
+        }
+        .pager a.active{
+            background-color: cadetblue;
+            color: white;
+        }
+
+        body{
+            margin: 0;
+        }
+        .pg-header{
+            height: 48px;
+            background-color: darkcyan;
+        }
 
 
+         .pg-content .menu{
+            width: 230px;
+            background-color: #dddddd;
+            position: absolute;
+            left: 0;
+             right: 230px;
+            top: 48px;
+            bottom: 0;
+        }
+
+        .pg-content .content{
+            background-color: antiquewhite;
+            position: absolute;
+            left: 230px;
+
+            right: 0px;
+            top: 48px;
+            bottom: 0;
+{#            overflow: scroll;#}
+            overflow: auto;
+        }
+        .menu-item .menu-title{
+            height: 30px;
+            background-color: cornflowerblue;
+        }
+
+       .menu-item .menu-content{
+           margin-left: 10px;
+        }
+       .menu-content a{
+           display: block;
+       }
+       .menu-content a.active{
+            color: red;
+        }
+      .hide{
+            display: none;
+        }
         </style>
+
         {% block css %} {% endblock %}
     </head>
 
 
     <body>
         <div class="pg-header">
-            头部菜单
+            头部菜单--------------------
+            ok-ok-ok
         </div>
 
-        <div class="pg-content">
+       <div class="pg-content">
+
             <div class="menu">
-                {% menu request %}
-            </div>
-            <div class="content">
-                {% block content %} {% endblock %}
-            </div>
-        </div>
 
+                {%  menu request %}
+            </div>
+             <div class="content ">
+                {% block content %}{% endblock %}
+             </div>
+           </div>
         {% block js %} {% endblock %}
-    </body>
 
+    </body>
 </html>

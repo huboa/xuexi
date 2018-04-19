@@ -2,6 +2,7 @@
 class BlSite(object):
     def __init__(self):
         self.registry = {}
+        self.registry = {'k0':1}
 
     def add(self,k,v):
         self.registry[k] = v
@@ -9,4 +10,4 @@ class BlSite(object):
 
 # 实例化对象
 site = BlSite()
-#print(site.add("k1","v1"))
+# print(site.add("k1","v1"))

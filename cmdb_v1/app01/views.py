@@ -9,6 +9,7 @@ from  app01 import models
 from django.conf import settings
 from utils.md5 import  md5
 
+
 # Create your views here.
 
 ###装饰圈
@@ -24,6 +25,8 @@ from utils.md5 import  md5
 
 from rbac.service.init_permissions import init_permissions
 def login(request):
+
+
     if request.method == 'GET':
         form = LoginForm()
         return render(request,'login.html',{'form':form})

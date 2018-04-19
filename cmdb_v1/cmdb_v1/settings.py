@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app01',
-    'rbac',
+    'app01.apps.App01Config',
+    'rbac.apps.RbacConfig',
+    'stark.apps.StarkConfig',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +129,7 @@ PERMISSION_MENU_SESSION_KEY = "user_permission_menu_key"
 REX_FORMAT = "^%s$"
 VALID_LIST=[
     '/login/',
+    '/stark/.*',
     '/admin/.*',
+    '/login.*',
 ]

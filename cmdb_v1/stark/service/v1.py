@@ -7,6 +7,26 @@ class StarkConfig(object):
     def __init__(self,model_class):
         self.model_class = model_class
 
+    @property
+    def urls(self):
+        patterns=[
+            url(r'^$' ,self.changelist_view ),
+            url(r'^add/$',self.add_view),
+            url(r'^(\d+)/change/$',self.change_view),
+            url(r'^(\d+)/delete/$',self.delete_view),
+        ]
+        return patterns
+    def changelist_view(self,request):
+        result_list=self.model_class.objects.all()
+        return render(request,"chagelist.html",{"result_list":result_list})
+        # return HttpResponse('列表页面')
+    def add_view(self,request):
+        return HttpResponse('增加页面')
+    def change_view(self,request,nid):
+        return HttpResponse('编辑页面')
+    def delete_view(self,request,nid):
+        return HttpResponse('删除页面')
+
 
 class StarkSite(object):
     def __init__(self):
@@ -32,7 +52,7 @@ class StarkSite(object):
             app_label = model_class._meta.app_label
             model_name = model_class._meta.model_name
             print(app_label, model_name, "###############")
-            temp = url(r'^%s/%s/' % (app_label, model_name),self.login )
+            temp = url(r'^%s/%s/' % (app_label, model_name),(config_obj.urls,None,None) )
             pts.append(temp)
         return pts
 

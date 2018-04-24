@@ -7,3 +7,5 @@ class Host(models.Model):
     remoteip = models.GenericIPAddressField(protocol='ipv4',default='0.0.0.0.')
     hostname = models.CharField(verbose_name="主机",max_length=32)
     ip = models.CharField(max_length=32)
+    def __str__(self):
+        return self.hostname

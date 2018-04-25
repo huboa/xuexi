@@ -9,15 +9,31 @@ class StarkConfig(object):
 
     @property
     def urls(self):
+        # self = StarkConfig(models.UserInfo) # obj.mcls = models.UserInfo
+        # StarkConfig(models.Role),# # obj.model_class = models.Role
         patterns=[
             url(r'^$' ,self.changelist_view ),
             url(r'^add/$',self.add_view),
             url(r'^(\d+)/change/$',self.change_view),
             url(r'^(\d+)/delete/$',self.delete_view),
         ]
+        patterns.extend(self.extra_url())
+
         return patterns
+
+    def extra_url(self):
+        """
+        ##钩子函数
+        :return:
+        """
+
+        return []
+
     def changelist_view(self,request):
         result_list=self.model_class.objects.all()
+        # list_display=["name","email"]
+        # for row in result_list:
+
         return render(request,"chagelist.html",{"result_list":result_list})
         # return HttpResponse('列表页面')
     def add_view(self,request):
@@ -31,8 +47,10 @@ class StarkConfig(object):
 class StarkSite(object):
     def __init__(self):
         self._registry={}
-    def registry(self,model_class):
-        self._registry[model_class] = StarkConfig(model_class)
+    def registry(self,model_class,config_cls=None):
+        if not  config_cls:
+            config_cls = StarkConfig       ###默认是StarkConfi
+        self._registry[model_class] = config_cls(model_class)
         # print(self._registry,"打印字典k") ###打印注册到字典 _registry的类
         # print(self._registry.items(),"打印字典v")
 

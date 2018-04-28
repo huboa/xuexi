@@ -123,6 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static'),
+)
+
 
 PERMISSION_DICT_SESSION_KEY = "user_permission_dict_key"
 PERMISSION_MENU_SESSION_KEY = "user_permission_menu_key"

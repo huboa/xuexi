@@ -2,20 +2,153 @@ from django.conf.urls import url
 from django.shortcuts import HttpResponse,render,redirect
 from django.urls import reverse
 from django.forms import ModelForm
+from types import FunctionType
+from django.utils.safestring import mark_safe
+
+
+# class ChangeList(object):
+#     """
+#     用于对列表页面的功能做拆分
+#     """
+#     def __init__(self,config,result_list):
+#         """
+#         :param config: 处理每个表增伤改查功能的对象
+#         :param result_list: 从数据库查询到的数据
+#         """
+#         self.config = config
+#         self.result_list = result_list
+#
+#     def header_list(self):
+#         """
+#         处理页面表头的内容
+#         :return:
+#         """
+#         result = []
+#         # ['id', 'name', 'email',display_edit,display_del]
+#         # ['ID', '用户名', '邮箱','临时表头',临时表头]
+#
+#         for n in self.config.get_list_display():
+#             if isinstance(n, FunctionType):
+#                 # 执行list_display中的函数
+#                 val = n(self.config, is_header=True)
+#             else:
+#                 val = self.config.mcls._meta.get_field(n).verbose_name
+#             result.append(val)
+#
+#         return result
+#
+#     def body_list(self):
+#         """
+#         处理页面表内容
+#         :return:
+#         """
+#         result = []
+#         """
+#         [
+#             obj,
+#             obj,
+#             obj,
+#         ]
+#         # ['id', 'name', 'email',display_edit,display_del]
+#         [
+#             [1, '天了','123@liv.com'],
+#             [2, '天1了','123@liv.com'],
+#             [3, '天了123','123@liv.com'],
+#         ]
+#         """
+#         for row in self.result_list:
+#             temp = []
+#             for n in self.config.get_list_display():
+#                 if isinstance(n, FunctionType):
+#                     val = n(self.config, row=row)
+#                 else:
+#                     val = getattr(row, n)
+#                 temp.append(val)
+#             result.append(temp)
+#         return result
+#
+#     def add_url(self):
+#         """
+#         生成添加按钮
+#         :return:
+#         """
+#         # 处理添加按钮的URL
+#         # self.mcls
+#         app_model_name = (self.config.mcls._meta.app_label, self.config.mcls._meta.model_name,)
+#         name = "stark:%s_%s_add" % app_model_name
+#         add_url = reverse(name)
+#         return add_url
+
 
 class StarkConfig(object):
+    """
+    用于封装  单独数据库操作类
+    """
+    #按钮级别的 url
+    def display_checkbox(self, is_header=False, row=None):
+        if is_header:
+            return '选择'
+        return mark_safe("<input type='checkbox' name='pk' value='%s' />" % (row.id,))
+    def display_edit(self,is_header=False,row=None):
+        if is_header:
+            return "编辑"
+
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        name = "stark:%s_%s_change" % app_model_name
+        url_path = reverse(name, args=(row.id,))
+        return mark_safe('<a href=%s>编辑</a>'%(url_path))
+    def display_delete(self,is_header=False,row=None):
+        if is_header:
+            return '删除'
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        name = "stark:%s_%s_change" % app_model_name
+        url_path = reverse(name, args=(row.id,))
+        return mark_safe('<a href=%s>删除</a>' % (url_path))
+
+    list_display = []
+
+    ###整合stark 字符串 和 函数 display 方法
+    def get_list_display(self):
+        result = []
+        if self.list_display:
+            result.extend(self.list_display)
+            result.insert(0,StarkConfig.display_checkbox)
+            result.append(StarkConfig.display_edit)
+            result.append(StarkConfig.display_delete)
+
+        return result
+
+
+
+    model_form_cls = None   ###表单类
+
+
     def __init__(self,model_class):
         self.model_class = model_class
+
+    def get_model_form_cls(self):
+        if self.model_form_cls:
+            return self.model_form_cls
+
+        class TempModelForm(ModelForm):
+            class Meta:
+                model = self.model_class
+                fields = "__all__"
+
+        return TempModelForm
+
 
     @property
     def urls(self):
         # self = StarkConfig(models.UserInfo) # obj.mcls = models.UserInfo
         # StarkConfig(models.Role),# # obj.model_class = models.Role
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)   ###反向生成 url 用
+
         patterns=[
-            url(r'^$' ,self.changelist_view ),
-            url(r'^add/$',self.add_view),
-            url(r'^(\d+)/change/$',self.change_view),
-            url(r'^(\d+)/delete/$',self.delete_view),
+            url(r'^$' ,self.changelist_view ,name='%s_%s_changelist' %app_model_name),
+            url(r'^add/$',self.add_view,name='%s_%s_add'  %app_model_name),
+            url(r'^(\d+)/change/$',self.change_view,name="%s_%s_change"  %app_model_name),
+            url(r'^(\d+)/delete/$',self.delete_view,name="%s_%s_delete"  %app_model_name),
         ]
         patterns.extend(self.extra_url())
 
@@ -26,18 +159,84 @@ class StarkConfig(object):
         ##钩子函数
         :return:
         """
-
         return []
-
+    def get_edit_url(self,pk):
+        """
+        /stark/app01/userinfo/1/
+        :param pk:
+        :return:
+        """
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        name = "%s_%s_change"  %app_model_name
+        url_path =reverse(name,args=(pk,))
+        return url_path
+    def get_delete_url(self, pk):
+        """
+        /stark/app01/userinfo/1/
+        :param pk:
+        :return:
+        """
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        name = "%s_%s_delete" % app_model_name
+        url_path = reverse(name, args=(pk,))
+        return url_path
     def changelist_view(self,request):
         result_list=self.model_class.objects.all()
         # list_display=["name","email"]
         # for row in result_list:
 
-        return render(request,"chagelist.html",{"result_list":result_list})
-        # return HttpResponse('列表页面')
+        # 处理表头
+        header_list = []
+        for n in self.get_list_display():#####1111122222
+            if isinstance(n,FunctionType):
+                print(n,type(n),"header_list$$$$$")
+                val = n(self,is_header=True)    ###执行函数
+            else:
+                val = self.model_class._meta.get_field(n).verbose_name   ###去model 取数据
+            header_list.append(val)
+        print(header_list,"header_list#####")
+        # 处理表内容
+        body_list = []
+        for row in result_list:
+            temp = []
+            for n in self.get_list_display():
+                if isinstance(n, FunctionType):
+                    val = n(self,row=row)
+                else:
+                    val = getattr(row, n)
+                temp.append(val)
+            body_list.append(temp)
+        print(body_list,"bodylist###")
+
+        # 处理添加按钮的URL
+        # self.model_class
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        name = "stark:%s_%s_add" % app_model_name
+        add_url = reverse(name)
+
+        # return render(request, 'changelist.html', {'body_list': body_list, 'header_list': header_list,})
+        return render(request, 'changelist.html', {'body_list': body_list, 'header_list': header_list, 'add_url': add_url})
     def add_view(self,request):
-        return HttpResponse('增加页面')
+        # self.mcls # models.UserInfo
+        # self.mcls # models.Role
+        # self.mcls # models.Group
+
+        model_form_class = self.get_model_form_cls()
+
+        if request.method == "GET":
+            form = model_form_class()
+            return render(request, 'add_view.html', {'form': form})
+        else:
+            form = model_form_class(request.POST)
+            if form.is_valid():
+                form.save()
+                # 跳转到列表页面
+                app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+                name = "stark:%s_%s_changelist" % app_model_name
+                list_url = reverse(name)
+                return redirect(list_url)
+
+            return render(request, 'add_view.html', {'form': form})
     def change_view(self,request,nid):
         return HttpResponse('编辑页面')
     def delete_view(self,request,nid):

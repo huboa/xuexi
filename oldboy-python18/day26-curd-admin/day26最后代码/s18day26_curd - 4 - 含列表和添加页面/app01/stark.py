@@ -57,7 +57,7 @@ class UserInfoConfig(v1.StarkConfig):
 
     model_form_cls = UserInfoModelForm
 
-    def extra_url(self):
+    def extra_url(self):    #######钩子函数配了 会劫持
         patterns = [
             url(r'^xxxxxx/$', self.xxxxxx),
         ]

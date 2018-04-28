@@ -7,7 +7,7 @@ from types import FunctionType
 
 class ChangeList(object):
     """
-    用于对列表页面的功能做拆分
+    用于对列表页面的功能做拆分 粒度更细
     """
     def __init__(self,config,result_list):
         """

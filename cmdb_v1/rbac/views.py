@@ -185,7 +185,6 @@ def add_role(request):
             return redirect("/role/")
         return render(request, "add_role.html", {'add_role_form': add_role_form})
 
-
 def edit_role(request,nid):
     obj = Role.objects.filter(id=nid).first()
     if not obj:

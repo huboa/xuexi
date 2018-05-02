@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+        <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
 </head>
 <body>
-    <form method="post" novalidate>
-        {% csrf_token %}
-        {% for field in form %}
-        <p>{{ field.label }}: {{ field }} {{ field.errors.0 }}</p>
-        {% endfor %}
-        <input type="submit" value="提交">
-    </form>
+<body>
+    <div class="container">
+        <h1>添加页面</h1>
+        {% include 'include/form.html' %}
+    </div>
+</body>
 </body>
 </html>

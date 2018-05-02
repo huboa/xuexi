@@ -11,18 +11,18 @@
     <div class="container">
         <h1>列表页面</h1>
         <div>
-            <a href="{{ add_url }}" class="btn btn-success">添加</a>
+            <a href="{{ cl.add_url }}" class="btn btn-success">添加</a>
         </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    {% for item in header_list %}
+                    {% for item in cl.header_list %}
                         <th>{{ item }}</th>
                     {% endfor%}
                 </tr>
             </thead>
             <tbody>
-                {% for row in body_list %}
+                {% for row in cl.body_list %}
                 <tr>
                     {% for col in row %}
                         <td>{{ col }}</td>

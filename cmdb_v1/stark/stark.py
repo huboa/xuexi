@@ -65,10 +65,29 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
     def test(self,is_header=False,row=None):   ###添加显示字段
         if is_header:
             return '表头test'
-        return  ('<a href=/stark/rbac/userinfo/%s/change/>编辑</a>  <a href=/stark/rbac/userinfo/%s/delete/>删除</a>'%(row.id,row.id))
+        return  mark_safe('<a href=/stark/rbac/userinfo/%s/change/>编辑</a>  <a href=/stark/rbac/userinfo/%s/delete/>删除</a>'%(row.id,row.id))
+
+    def display_gender(self, is_header=False, row=None):
+        if is_header:
+            return '性别'
+        # if row.gender == 1:
+        #     return '男'
+        # else:
+        #     return '女'
+        return row.get_gender_display()
+
+    def display_status(self, is_header=False, row=None):
+        if is_header:
+            return '状态'
+        return row.get_status_display()
+
+    def display_dp(self, is_header=False, row=None):
+        if is_header:
+            return '部门'
+        return row.dp.title
 
 ####显示列表可以添加函数数据库字段和
-    list_display = ['id', 'username',test]
+    list_display = ['id', 'username',display_gender,display_status,display_dp]
     # def changelist_view(self,request):
     #     print("劫持页面")
     #     return HttpResponse("特殊页面劫持")

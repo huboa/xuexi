@@ -88,6 +88,7 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
 
 ####显示列表可以添加函数数据库字段和
     list_display = ['id', 'username',display_gender,display_status,display_dp]
+
     # def changelist_view(self,request):
     #     print("劫持页面")
     #     return HttpResponse("特殊页面劫持")
@@ -110,10 +111,10 @@ class RoleConfig(v1.StarkConfig):
     list_display = ['id', 'title']
 ####主机配置类
 class HostConfig(v1.StarkConfig):
-    list_display = ['id', 'idc','sn','remoteip' ]
+    list_display = ['id', 'idc','sn','remoteip']
 ###权限类
 class Permissions(v1.StarkConfig):
-  list_display = ['id','title','url','code','group','gmid']
+    list_display = ['id','title','url','code','group','gmid']
 
 class PermissionGroup(v1.StarkConfig):
     list_display = ['id','title','menu']

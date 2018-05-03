@@ -1,6 +1,5 @@
 print("加载stark文件")
 
-
 from stark.service import v1
 from rbac import models
 from app01 import models as amodels
@@ -111,7 +110,17 @@ class RoleConfig(v1.StarkConfig):
     list_display = ['id', 'title']
 ####主机配置类
 class HostConfig(v1.StarkConfig):
+    ####其它功能函数视图
+    def pk_test(self, request, action):
+        pk_list = request.POST.getlist("pk")
+        print(pk_list, "测试")
+
+    def pk_test1(self, request, action):
+        pk_list = request.POST.getlist("pk")
+        print(pk_list, "测试2")
     list_display = ['id', 'idc','sn','remoteip']
+    search_list = ["sn__contains", 'remoteip__contains']
+    action_list = [{"name":"测试1","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]
 ###权限类
 class Permissions(v1.StarkConfig):
     list_display = ['id','title','url','code','group','gmid']

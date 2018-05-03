@@ -1,3 +1,5 @@
+import  copy
+
 
 """
 应用举例子
@@ -21,6 +23,10 @@ class Pagination(object):
         ###初始化页码变量
         self.result_list=result_list
         self.item_total_count = result_list.count()  ####总数
+
+        ###请求参数
+        self.params = copy.deepcopy(request.GET)
+        self.params._mutable =True
 
         per_page_item_count = request.GET.get('items')  ###每页显示条数
         request_current_page = request.GET.get('page')  ###当前页码
@@ -148,66 +154,59 @@ class Pagination(object):
         page_html = ''
         for i in range(self.current_page_group_start, self.current_page_group_end + 1):
             if i == self.request_current_page:
-                temp = '<li class="active"> <a href="%s?page=%s&items=%s">%s</a></li>' % (
-                self.request_url, i, self.per_page_item_count, i)
+                self.params["page"] = i
+                temp = '<li class="active"> <a href="%s?%s">%s</a></li>' % (self.request_url,self.params.urlencode(), i)
             else:
-                temp = '<li><a href=%s?page=%s&items=%s>%s</a></li>' % (self.request_url, i, self.per_page_item_count, i,)
+                self.params["page"] = i
+                temp = '<li><a href=%s?%s>%s</a></li>' % (self.request_url,self.params.urlencode(), i,)
             page_html += temp
 
 
-            ###单页
+            ###前一页
         if self.request_current_page > 1:
-            pre_page = self.request_current_page - 1
-            pre_page_html = '<li><a href=%s?page=%s&items=%s><</a></li>' % (self.request_url, pre_page, self.per_page_item_count)
+            self.params["page"] = self.request_current_page - 1
+            pre_page_html = '<li><a href=%s?%s><</a></li>' % (self.request_url,self.params.urlencode(),)
         else:
-            pre_page = self.request_current_page
-            pre_page_html = '<li><a href=%s?page=%s&items=%s><</a></li>' % (
-            self.request_url, pre_page, self.per_page_item_count,)
+            self.params["page"] = self.request_current_page
+            pre_page_html = '<li><a href=%s?%s><</a></li>' % (self.request_url,self.params.urlencode(),)
             # pre_page_html = ""
         if self.request_current_page < self.page_total_count:
-            next_page = self.request_current_page + 1
-            next_page_html = '<li><a href=%s?page=%s&items=%s>></a></li>' % (
-            self.request_url, next_page, self.per_page_item_count,)
+            self.params["page"] = self.request_current_page + 1
+            next_page_html = '<li><a href=%s?%s>></a></li>' % (self.request_url,self.params.urlencode())
         else:
-            next_page = self.request_current_page
-            next_page_html = '<li><a href=%s?page=%s&items=%s>></a></li>' % (
-            self.request_url, next_page, self.per_page_item_count,)
+            self.params["page"] = self.request_current_page
+            next_page_html = '<li><a href=%s?%s>></a></li>' % (self.request_url,self.params.urlencode())
             # next_page_html = ""
 
-            ####页码组
-
-        if self.current_page_group_id > 1:
-            pre_group_page_id = self.request_current_page - self.per_group_page_count
-            pre_page_group_html = '<li><a href=%s?page=%s&items=%s><<</a></li>' % (
-            self.request_url, pre_group_page_id, self.per_page_item_count,)
+            ####翻组前一页码组或后一页码组
+        if  self.current_page_group_id > 1:
+            self.params["page"] = self.request_current_page - self.per_group_page_count
+            pre_page_group_html = '<li><a href=%s?%s><<</a></li>' % (self.request_url, self.params.urlencode())
         else:
-            # pre_page_group_html = ""
-            pre_group_page_id = self.request_current_page
-            pre_page_group_html = '<li><a href=%s?page=%s&items=%s><<</a></li>' % (
-            self.request_url, pre_group_page_id, self.per_page_item_count,)
+            self.params["page"] = self.request_current_page
+            pre_page_group_html = '<li><a href=%s?%s><<</a></li>' % (self.request_url, self.params.urlencode())
 
         if self.current_page_group_id >= self.all_page_group_count:
-            next_group_page_id = self.request_current_page
-            next_page_group_html = '<li><a href=%s?page=%s&items=%s>>></a></li>' % (
-            self.request_url, next_group_page_id, self.per_page_item_count,)
-            # next_page_group_html = ""
+            self.params["page"] = self.request_current_page
+            next_page_group_html = '<li><a href=%s?%s>>></a></li>' % (self.request_url, self.params.urlencode())
         else:
-            next_group_page_id = self.request_current_page + self.per_group_page_count
-            next_page_group_html = '<li><a href=%s?page=%s&items=%s>>></a></li>' % (
-            self.request_url, next_group_page_id, self.per_page_item_count,)
+            self.params["page"] = self.request_current_page + self.per_group_page_count
+            next_page_group_html = '<li><a href=%s?%s>>></a></li>' % (self.request_url, self.params.urlencode())
 
             ##首页尾页
 
-
-        one_page_html = '<li><a href=%s?page=%s&items=%s>首页</a></li>' % (self.request_url, 1, self.per_page_item_count,)
-        end_page_html = '<li><a href=%s?page=%s&items=%s>末页</a></li>' % (
-        self.request_url, self.page_total_count, self.per_page_item_count,)
+        self.params["page"] = 1
+        one_page_html = '<li><a href=%s?%s>首页</a></li>' % (self.request_url,self.params.urlencode())
+        self.params["page"] = self.page_total_count
+        end_page_html = '<li><a href=%s?%s>末页</a></li>' % (self.request_url,self.params.urlencode())
         ###共 多少页
-        all_page_html = '<li>共%s行 %s行/页 变更<select  name="items"> <option value="20"></option><option value="5">5</option><option value="10">10</option> <option value="20">20</option> <option value="50">50</option> <option value="100">100</option></select>  共%s页 </li>' % (
-        self.item_total_count, self.per_page_item_count, self.page_total_count)
+        all_page_html = all_page_html = '<li><a>总数%s 每页%s 共%s页 </a></li>' % (self.item_total_count, self.per_page_item_count, self.page_total_count)
+        # all_page_html = '<li>共%s行 %s行/页 变更<select  name="items"> <option value="20"></option><option value="5">5</option><option value="10">10</option> <option value="20">20</option> <option value="50">50</option> <option value="100">100</option></select>  共%s页 </li>' % (
+        # self.item_total_count, self.per_page_item_count, self.page_total_count)
         # select_page_html='<form action="">page: <input type="text" name="page"><input type="submit" value="提交"></form>'
-        select_page_html = '<li>  到  <input type="text" name="page"  size="1" > 页  <input type="submit" value="确定">  </li>'
-        page_html =  one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html
+        # select_page_html = '<li>  到  <input type="text" name="page"  size="1" > 页  <input type="submit" value="确定">  </li>'
+        # page_html = one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html
+        page_html =  one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html +all_page_html
         print(page_html)
         return page_html
 

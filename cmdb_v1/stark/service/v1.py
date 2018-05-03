@@ -4,76 +4,12 @@ from django.urls import reverse
 from django.forms import ModelForm
 from types import FunctionType
 from django.utils.safestring import mark_safe
-
 from utils.pager import Pagination
-
-# <<<<<<< HEAD
-# class ChangeList(object):
-#     """
-#     用于对列表页面的功能做拆分
-#     """
-#     def __init__(self,config,result_list):
-#         """
-#         :param config: 处理每个表增伤改查功能的对象
-#         :param result_list: 从数据库查询到的数据
-#         """
-#         self.config = config
-#         self.result_list = result_list
-#
-#     # 处理表头
-#     def header_list(self):
-#         """
-#                处理页面表头的内容
-#                :return:
-#                """
-#         result = []
-#         for n in self.config.get_list_display():#####1111122222
-#             if isinstance(n,FunctionType):
-#                 print(n,type(n),"header_list$$$$$")
-#                 val = n(self,is_header=True)    ###执行函数
-#             else:
-#                 val = self.config.model_class._meta.get_field(n).verbose_name   ###去model 取数据
-#             result.append(val)
-#         print(result,"header_list#####")
-#         return result
-#
-#     # 处理表内容
-#     def body_list(self):
-#         """
-#         处理页面表内容
-#         :return:
-#         """
-#         result = []
-#         for row in self.result_list:
-#             print("row=",row,type(row))
-#             temp = []
-#             for n in self.config.get_list_display():
-#                 if isinstance(n, FunctionType):
-#                     val = n(self.config,row=row)
-#                 else:
-#                     val = getattr(row, n)
-#                 temp.append(val)
-#             result.append(temp)
-#         return result
-#
-#     # 处理添加按钮的URL
-#     def add_url(self):
-#         """
-#                生成添加按钮
-#                :return:
-#                """
-#         app_model_name = (self.config.model_class._meta.app_label, self.config.model_class._meta.model_name,)
-#         name = "stark:%s_%s_add" % app_model_name
-#         add_url = reverse(name)
-#         return add_url
-# =======
-# >>>>>>> 4dcc1d9b1c975aa27c0af1e30f556f03da6f59e7
 
 class GetListView(object):
     """
     用于对列表页面的功能做拆分
     """
-
     def __init__(self,config,result_list,request):
         """
         :param config: 处理每个表增伤改查功能的对象
@@ -82,11 +18,9 @@ class GetListView(object):
         self.config = config
         self.result_list = result_list
 
-
         page_obj=Pagination(request,self.result_list)  ##实例化页码对象
         self.page_list = page_obj.page_obj_list()    ##每页的 20对象
         self.page_html=mark_safe(page_obj.bootstrap_page_html())  ##实例化页码导航
-
     def header_list(self):
         """
         处理页面表头的内容
@@ -103,7 +37,6 @@ class GetListView(object):
             else:
                 val = self.config.model_class._meta.get_field(n).verbose_name
             result.append(val)
-
         return result
     def body_list(self):
         """
@@ -124,8 +57,6 @@ class GetListView(object):
             [3, '天了123','123@liv.com'],
         ]
         """
-        print(result,self.page_list, "check getlist")
-
         for row in self.page_list:
             temp = []
             for n in self.config.get_list_display():
@@ -136,7 +67,6 @@ class GetListView(object):
                 temp.append(val)
             result.append(temp)
         return result
-
     def add_url(self):
         """
         返回添加按钮的URL
@@ -184,16 +114,20 @@ class StarkConfig(object):
         """
         return []
 
-
 ############ 获取反向生成的URL---开始 ##################
-    def get_list_url(self):
-        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
-        name = "stark:%s_%s_get_list" % app_model_name
-        url_path = reverse(name)
-        return url_path
-    def get_delete_url(self,pk):
+    def get_change_url(self, pk):
         """
-        /stark/app01/userinfo/1/delete/
+        /stark/app01/userinfo/1/
+        :param pk:
+        :return:
+        """
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        name = "stark:%s_%s_change" % app_model_name
+        url_path = reverse(name, args=(pk,))
+        return url_path
+    def get_delete_url(self, pk):
+        """
+        /stark/app01/userinfo/1/
         :param pk:
         :return:
         """
@@ -201,10 +135,12 @@ class StarkConfig(object):
         name = "stark:%s_%s_delete" % app_model_name
         url_path = reverse(name, args=(pk,))
         return url_path
-    def get_changlist_url(self,pk):
+    def get_list_url(self):
+        # /stark/app01/userinfo/1/delete/
+        # /stark/app02/role/1/delete/
         app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
-        name = "stark:%s_%s_change"  % app_model_name
-        url_path = reverse(name,pk)
+        name = "stark:%s_%s_get_list" % app_model_name
+        url_path = reverse(name)
         return url_path
     def get_add_url(self):
         app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
@@ -212,10 +148,14 @@ class StarkConfig(object):
         url_path = reverse(name)
         return url_path
 
-
 #####增删改查页面视图####
     def get_list_view(self,request):
-        result_list = self.model_class.objects.all()
+
+        ##备份
+        """
+        result_list=self.model_class.objects.all()
+        # list_display=["name","email"]
+        # for row in result_list:
 
         # 处理表头
         header_list = []
@@ -231,7 +171,7 @@ class StarkConfig(object):
         body_list = []
         for row in result_list:
             temp = []
-            for n in self.get_list_display:
+            for n in self.get_list_display():
                 if isinstance(n, FunctionType):
                     val = n(self,row=row)
                 else:
@@ -240,14 +180,19 @@ class StarkConfig(object):
             body_list.append(temp)
         print(body_list,"bodylist###")
 
+        # 处理添加按钮的URL
+        # self.model_class
+        app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        name = "stark:%s_%s_add" % app_model_name
+        add_url = reverse(name)
 
-        # result_list = self.model_class.objects.all()
-        # cl = GetListView(self,result_list,request)
-        # print(cl.body_list(),"cl-check")
+        # return render(request, 'get_list_view.html', {'body_list': body_list, 'header_list': header_list,})
+        return render(request, 'get_list_view.html', {'body_list': body_list, 'header_list': header_list, 'add_url': add_url})
+        """
 
-
-        return render(request, "get_list_view.html",{"body_list":body_list,"header_list":header_list})
-
+        result_list = self.model_class.objects.all()
+        cl = GetListView(self,result_list,request)
+        return render(request, "get_list_view.html", {"cl":cl})
     def add_view(self,request):
         # self.mcls # models.UserInfo
         # self.mcls # models.Role
@@ -263,15 +208,8 @@ class StarkConfig(object):
                 form.save()
                 # 跳转到列表页面
                 return redirect(self.get_list_url())
-
             return render(request, 'add_view.html', {'form': form})
     def change_view(self,request,nid):
-        """
-               编辑页面
-               :param request:
-               :param nid:
-               :return:
-               """
 
         obj = self.model_class.objects.filter(pk=nid).first()
         if not obj:
@@ -285,11 +223,11 @@ class StarkConfig(object):
             form = model_form_cls(instance=obj, data=request.POST)
             if form.is_valid():
                 form.save()
+                return redirect(self.get_list_url())
             return render(request, 'change_view.html', {'form': form})
     def delete_view(self,request,nid):
         self.model_class.objects.filter(id=nid).delete()
         return redirect(self.get_list_url())
-
 
 #处理按钮的 url
     def display_checkbox(self, is_header=False, row=None):
@@ -299,7 +237,7 @@ class StarkConfig(object):
     def display_change(self,is_header=False,row=None):
         if is_header:
             return "编辑"
-        url_path = self.get_changlist_url(pk=row.id)
+        url_path = self.get_change_url(pk=row.id)
         return mark_safe('<a href=%s>编辑</a>'%(url_path))
     def display_delete(self,is_header=False,row=None):
         if is_header:
@@ -308,7 +246,6 @@ class StarkConfig(object):
         return mark_safe('<a href=%s>删除</a>' % (url_path))
 
 # 控制显示列表  整合stark 字符串 和 函数 display 方法
-
     list_display = []
     def get_list_display(self):
         result = []
@@ -318,6 +255,7 @@ class StarkConfig(object):
             result.append(StarkConfig.display_change)
             result.append(StarkConfig.display_delete)
         return result
+
 class StarkSite(object):
     """
     注册所有表的 url

@@ -6,6 +6,52 @@ from types import FunctionType
 from django.utils.safestring import mark_safe
 from utils.pager import Pagination
 from django.db.models import Q
+import copy
+class FilterRow(object):
+
+    def __init__(self,queryset,name,request_get,changelist_url,is_choice=False):
+        """
+        :param data: queryset类型
+        :param name: 字段名称
+        :param request_get: get穿过来的参数 gender=1&dp=2&status=1
+        :param changelist_url: 当前列表页面的url
+        """
+        self.queryset = queryset
+        self.is_choice = is_choice
+        self.name = name
+        self.changelist_url = changelist_url
+        self.params = copy.deepcopy(request_get)
+        self.params._mutable = True
+
+
+    def __iter__(self):
+        # self.params, QueryDict,   urlencode = > dp=2&status=1
+
+        if self.name in self.params:
+            oldval = self.params.get(self.name)
+            self.params.pop(self.name)
+            yield mark_safe(
+                "<a href='{0}?{1}'>全部</a>".format(self.changelist_url, self.params.urlencode()))
+        else:
+            oldval = None
+            yield mark_safe("<a class='active' href='{0}?{1}'>全部</a>".format(self.changelist_url,self.params.urlencode()))
+
+        for obj in self.queryset:
+            if self.is_choice:
+                nid = str(obj[0])
+                text = obj[1]
+            else:
+                nid = str(obj.pk)
+                text = str(obj)
+            self.params[self.name] = nid
+
+            if oldval == nid:
+                yield mark_safe("<a class='active' href='{0}?{1}'>{2}</a>".format(self.changelist_url,self.params.urlencode(),text))
+            else:
+                yield mark_safe(
+                    "<a href='{0}?{1}'>{2}</a>".format(self.changelist_url, self.params.urlencode(),
+                                                                      text))
+
 
 class GetListView(object):
     """
@@ -25,6 +71,10 @@ class GetListView(object):
         page_obj=Pagination(request,self.result_list)  ##实例化页码对象
         self.page_list = page_obj.page_obj_list()    ##每页的 20对象
         self.page_html=mark_safe(page_obj.bootstrap_page_html())  ##实例化页码导航
+
+        # self.comb_filter = config.comb_filter
+        # self.show_add_btn = config.get_show_add_btn()
+
     def header_list(self):
         """
         处理页面表头的内容
@@ -76,7 +126,19 @@ class GetListView(object):
         返回添加按钮的URL
         """
         return self.config.get_add_url()
-
+    # def show_comb_search(self):
+    #     # self.comb_filter # ['gender','status','dp']
+    #     # "gender"，找类中的gender字段对象，并将其对象中的choice获取
+    #     # "status"，找类中的status字段对象，并将其对象中的choice获取
+    #     # "dp"，找类中的dp字段对象，并将其关联的表中的所有数据获取到
+    #     from django.db.models.fields.related import ForeignKey
+    #     for name in self.comb_filter:
+    #         _field = self.config.mcls._meta.get_field(name)
+    #         changelist_url = self.config.get_changlist_url()
+    #         if type(_field) == ForeignKey:
+    #             yield FilterRow(_field.rel.to.objects.all(),name,self.request.GET,changelist_url)
+    #         else:
+    #             yield FilterRow(_field.choices,name,self.request.GET,changelist_url,is_choice=True)
 class StarkConfig(object):
     """
     初始化类数据

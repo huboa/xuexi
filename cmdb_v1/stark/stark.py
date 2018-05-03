@@ -121,6 +121,9 @@ class HostConfig(v1.StarkConfig):
     list_display = ['id', 'idc','sn','remoteip']
     search_list = ["sn__contains", 'remoteip__contains']
     action_list = [{"name":"测试1","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]
+
+
+
 ###权限类
 class Permissions(v1.StarkConfig):
     list_display = ['id','title','url','code','group','gmid']

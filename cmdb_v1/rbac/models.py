@@ -11,6 +11,9 @@ class DepartMent(models.Model):
     """
     title = models.CharField(max_length=32)
 
+    def __str__(self):
+        return self.title
+
 class UserInfo(models.Model):
     username = models.CharField(verbose_name='用户名',max_length=32,unique=True)
     password = models.CharField(verbose_name="密码",max_length=64,)
@@ -18,6 +21,7 @@ class UserInfo(models.Model):
     gender_choice = (
         (1, '男'),
         (2, '女'),
+        (3, '中'),
     )
     gender = models.IntegerField(verbose_name='性别', choices=gender_choice, default=1)
 
@@ -32,15 +36,12 @@ class UserInfo(models.Model):
     def __str__(self):
         return self.username
 
-
-
 class Role(models.Model):
     """角色表"""
     title =models.CharField(verbose_name="角色名称",max_length=32,unique=True)
     permissions = models.ManyToManyField(verbose_name="权限",max_length=32,to="Permissions")
     def __str__(self):
         return self.title
-
 
 class Permissions(models.Model):
     """权限表"""
@@ -51,8 +52,6 @@ class Permissions(models.Model):
     gmid = models.ForeignKey(verbose_name="组内菜单",to='self',null=True,blank=True,related_name='xxx')
     def __str__(self):
         return self.title
-
-
 
 class PermissionGroup(models.Model):
 #     """
@@ -67,7 +66,6 @@ class PermissionGroup(models.Model):
 
     def __str__(self):
         return self.title
-
 
 class menu(models.Model):
     '''

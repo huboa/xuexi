@@ -7,28 +7,47 @@
 
 </head>
 
+{% block css %}
+    <style>
+        .comb-search .item{
+            margin: 5px 0;
+        }
+        .comb-search .item a{
+            border: 1px solid #dddddd;
+            display: inline-block;
+            padding: 3px 8px;
+        }
+        .comb-search .item a.active{
+            background-color: #337ab7;
+            color: white;
+        }
+    </style>
+
+{% endblock %}
+
 
 <body>
     <div class="container">
         <h1>列表页面</h1>
 
     <!-- 组合搜索开始 -->
-{#        <div class="comb-search">#}
-{#            {% for row in cl.show_comb_search %}#}
-{##}
-{#                <div class="item">#}
-{#                    {% for item in row %}#}
-{##}
-{#                        {{ item }}#}
-{#                    {% endfor %}#}
-{##}
-{#                </div>#}
-{#            {% endfor %}#}
-{##}
-{#        </div>#}
+
+        <div class="comb-search" >
+            {% for row in cl.show_comb_search %}
+
+                <div class="item">
+                    {% for item in row %}
+                       {{ item }}
+                    {% endfor %}
+
+                </div>
+            {% endfor %}
+
+        </div>
+
 
         <!-- 组合搜索结束 -->
-{#   搜索页面#}
+  <!--搜索页面-->
         <div style="float: right">
              {% if cl.search_list %}
             <form class="form-inline" method="get">
@@ -41,7 +60,7 @@
             </form>
         {% endif %}
         </div>
-{#添加按钮#}
+<!--添加按钮-->
         <div style="margin: 5px 0">
             <a href="{{ cl.add_url }}" class="btn btn-success">添加</a>
         </div>
@@ -70,16 +89,18 @@
 
                 </tbody>
             </table>
-{#   批量操作按钮#}
+<!-- 批量操作按钮-->
             {% if cl.action_list %}
             <div  class="btn">
             {% for act in cl.action_list %}
-{#                <button type="submit" name="action" value="item.massenable" class="btn-alt" confirm="Enable selected items?">Enable</button>#}
-{#                <button type="submit" name="action" value="item.massdisable" class="btn-alt" confirm="Disable selected items?">Disable</button>#}
-{#                <button type="submit" name="action" value="item.massclearhistory" class="btn-alt" confirm="Delete history of selected items?">Clear history</button>#}
-{#                <button type="submit" name="action" value="item.masscopyto" class="btn-alt">Copy</button>#}
-{#                <button type="submit" name="action" value="item.massupdateform" class="btn-alt">Mass update</button>#}
-{#                <button type="submit" name="action" value="item.massdelete" class="btn-alt" confirm="Delete selected items?">Delete</button>#}
+                <!--
+                <button type="submit" name="action" value="item.massenable" class="btn-alt" confirm="Enable selected items?">Enable</button>
+                <button type="submit" name="action" value="item.massdisable" class="btn-alt" confirm="Disable selected items?">Disable</button>
+                <button type="submit" name="action" value="item.massclearhistory" class="btn-alt" confirm="Delete history of selected items?">Clear history</button>
+                <button type="submit" name="action" value="item.masscopyto" class="btn-alt">Copy</button>
+                <button type="submit" name="action" value="item.massupdateform" class="btn-alt">Mass update</button>
+                <button type="submit" name="action" value="item.massdelete" class="btn-alt" confirm="Delete selected items?">Delete</button>
+                -->
                 <button type="submit" name="action" value="{{ act.func_name }}" class="btn btn-primary" confirm="ext  selected" >{{ act.name }}</button>
             {% endfor %}
             </div>

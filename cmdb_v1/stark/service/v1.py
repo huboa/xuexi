@@ -7,6 +7,43 @@ from django.utils.safestring import mark_safe
 from utils.pager import Pagination
 from django.db.models import Q
 import copy
+from rbac import models
+from django.db.models.fields.related import ForeignKey
+from django.http import QueryDict
+
+class Foo(object):
+    def __init__(self,_field,name,request,get_list_url,is_choice=False):
+        self.request = request
+        self._field = _field
+        self.is_choince = is_choice
+        self.name = name
+        self.params = copy.deepcopy( self.request.GET)
+        self.params._mutable = True
+        self.get_list_url=get_list_url
+
+
+
+    def __iter__(self):
+        if self.name in self.params:
+            self.params.pop(self.name)
+            yield mark_safe("<a href={0}?{1}>全部</a>>".format(self.get_list_url,self.params.urlencode())) ##等同下面
+             # yield mark_safe("<a href=%s?%s>全部</a>" % (self.get_list_url,self.params.urlencode()))  ##等同予 %s
+        else:
+            yield mark_safe("<a class='active' href={0}?{1}>全部</a>".format(self.get_list_url, self.params.urlencode()))
+        for obj in self._field:
+            if self.is_choince:
+                #obj 是元组
+                nid = obj[0]
+                text = obj[1]
+            else:
+                nid = obj.pk
+                text = str(obj)
+            self.params[self.name]=nid
+            if self.params.get(self.name)== nid:
+                yield mark_safe("<a href={0}?{1} >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
+            else:
+                yield mark_safe("<a class='active' href={0}?{1} >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
+
 class FilterRow(object):
 
     def __init__(self,queryset,name,request_get,changelist_url,is_choice=False):
@@ -63,18 +100,20 @@ class GetListView(object):
         :param result_list: 从数据库查询到的数据
         """
         self.config = config
+        self.model_class = config.model_class
+        self.request = request
         self.result_list = result_list
         self.search_list = config.search_list
-        self.search_value =request.GET.get("key","")
+        self.search_value = self.request.GET.get("key","")
         self.action_list = config.action_list
+        self.comb_filter  = config.comb_filter
 
-        page_obj=Pagination(request,self.result_list)  ##实例化页码对象
+        page_obj=Pagination(self.request,self.result_list)  ##实例化页码对象
         self.page_list = page_obj.page_obj_list()    ##每页的 20对象
         self.page_html=mark_safe(page_obj.bootstrap_page_html())  ##实例化页码导航
 
         # self.comb_filter = config.comb_filter
         # self.show_add_btn = config.get_show_add_btn()
-
     def header_list(self):
         """
         处理页面表头的内容
@@ -126,26 +165,36 @@ class GetListView(object):
         返回添加按钮的URL
         """
         return self.config.get_add_url()
-    # def show_comb_search(self):
-    #     # self.comb_filter # ['gender','status','dp']
-    #     # "gender"，找类中的gender字段对象，并将其对象中的choice获取
-    #     # "status"，找类中的status字段对象，并将其对象中的choice获取
-    #     # "dp"，找类中的dp字段对象，并将其关联的表中的所有数据获取到
-    #     from django.db.models.fields.related import ForeignKey
-    #     for name in self.comb_filter:
-    #         _field = self.config.mcls._meta.get_field(name)
-    #         changelist_url = self.config.get_changlist_url()
-    #         if type(_field) == ForeignKey:
-    #             yield FilterRow(_field.rel.to.objects.all(),name,self.request.GET,changelist_url)
-    #         else:
-    #             yield FilterRow(_field.choices,name,self.request.GET,changelist_url,is_choice=True)
+    def show_comb_search(self):
+        """#self.comb_filter  # ['gender','status','dp']
+        "gender"，找类中的gender字段对象，并将其对象中的choice获取
+        "status"，找类中的status字段对象，并将其对象中的choice获取
+        "dp"，找类中的dp字段对象，并将其关联的表中的所有数据获取到
+        yield Foo(models.Role.objects.all())
+        yield Foo(models.Role.objects.all())
+        yield Foo(models.Role.objects.all())
+        """
+
+        ###yield  返回到前端
+        for name in self.comb_filter:
+            _field = self.model_class._meta.get_field(name)
+            print(_field,type(_field))
+            get_list_url = self.config.get_list_url()
+            print(get_list_url)
+            if type(_field) == ForeignKey:
+                yield Foo(_field.rel.to.objects.all(),name,self.request,get_list_url)
+
+            else:
+            #     yield FilterRow(_field.choices,name,self.request.GET,changelist_url,is_choice=True)
+                yield Foo(_field.choices,name,self.request,get_list_url,is_choice=True,)
+
+
 class StarkConfig(object):
     """
     初始化类数据
     """
     def __init__(self, model_class):
         self.model_class = model_class
-
 
     model_form_cls = None   ###表单类
     def get_model_form_cls(self):
@@ -293,6 +342,7 @@ class StarkConfig(object):
     search_list = []
     action_list = []
     list_display = []
+    comb_filter = []
     def get_list_display(self):
         result = []
         if self.list_display:

@@ -1,5 +1,5 @@
 import  copy
-
+from django.utils.safestring import mark_safe
 
 """
 应用举例子
@@ -200,14 +200,12 @@ class Pagination(object):
         self.params["page"] = self.page_total_count
         end_page_html = '<li><a href=%s?%s>末页</a></li>' % (self.request_url,self.params.urlencode())
         ###共 多少页
-        all_page_html = all_page_html = '<li><a>总数%s 每页%s 共%s页 </a></li>' % (self.item_total_count, self.per_page_item_count, self.page_total_count)
-        # all_page_html = '<li>共%s行 %s行/页 变更<select  name="items"> <option value="20"></option><option value="5">5</option><option value="10">10</option> <option value="20">20</option> <option value="50">50</option> <option value="100">100</option></select>  共%s页 </li>' % (
-        # self.item_total_count, self.per_page_item_count, self.page_total_count)
-        # select_page_html='<form action="">page: <input type="text" name="page"><input type="submit" value="提交"></form>'
-        # select_page_html = '<li>  到  <input type="text" name="page"  size="1" > 页  <input type="submit" value="确定">  </li>'
-        # page_html = one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html + all_page_html + select_page_html
-        page_html =  one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html +all_page_html
-        print(page_html)
+        all_page = '<li><a>总数%s 每页%s 共%s页  </a></li>' % ( self.item_total_count,self.per_page_item_count,self.page_total_count, )
+        # go_page = '<li><input type = "text" size="1" name="page" border: none placeholder="" value=""></li>'
+
+        # item_per_page = '<li><a > <select  name="items"> <option value="20"></option><option value="10">10</option><option value="50">50</option><option value="100">100</option></select><a></li>'
+        page_html =  one_page_html + pre_page_group_html + pre_page_html + page_html + next_page_html + next_page_group_html + end_page_html +  all_page
+
         return page_html
 
 ####list要显示每页内容

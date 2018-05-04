@@ -87,6 +87,8 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
 
 ####显示列表可以添加函数数据库字段和
     list_display = ['id', 'username',display_gender,display_status,display_dp]
+    search_list = ["username__contains",]
+    comb_filter = ['gender','status','dp']
 
     # def changelist_view(self,request):
     #     print("劫持页面")
@@ -122,18 +124,17 @@ class HostConfig(v1.StarkConfig):
     search_list = ["sn__contains", 'remoteip__contains']
     action_list = [{"name":"测试1","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]
 
-
-
 ###权限类
-class Permissions(v1.StarkConfig):
+class PermissionsConfig(v1.StarkConfig):
     list_display = ['id','title','url','code','group','gmid']
-
-class PermissionGroup(v1.StarkConfig):
+class PermissionGroupConfig(v1.StarkConfig):
     list_display = ['id','title','menu']
-# #注册mode表 待生成url
+
+
+ #注册mode表 待生成url
 v1.site.registry(models.UserInfo,UserInfoConfig)
 v1.site.registry(models.Role,RoleConfig)
 v1.site.registry(amodels.Host,HostConfig)
-v1.site.registry(models.Permissions,Permissions)
-v1.site.registry(models.PermissionGroup,PermissionGroup)
+v1.site.registry(models.Permissions,PermissionsConfig)
+v1.site.registry(models.PermissionGroup,PermissionGroupConfig)
 

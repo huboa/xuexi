@@ -31,62 +31,6 @@ class FilterRow(object):
         self.get_list_url=get_list_url
     def __iter__(self):
         if self.name in self.params:
-<<<<<<< HEAD
-            ori_nid = self.params[self.name]
-            print(ori_nid,"nid")
-            self.params.pop(self.name)
-            yield mark_safe("<a href={0}?{1}>全部</a>".format(self.get_list_url,self.params.urlencode())) ##等同下面
-             # yield mark_safe("<a href=%s?%s>全部</a>" % (self.get_list_url,self.params.urlencode()))  ##等同予 %s
-        else:
-            ori_nid =None
-            yield mark_safe("<a class='active' href={0}?{1}>全部</a>".format(self.get_list_url, self.params.urlencode()))
-        for obj in self._field:
-            if self.is_choince:
-                #obj 是元组
-                nid = str(obj[0])
-                text = obj[1]
-            else:
-                nid = str(obj.pk)
-                text = str(obj)
-            print(nid, "nid")
-            self.params[self.name] = nid
-            if ori_nid == nid:
-                yield mark_safe("<a class='active' href={0}?{1} >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
-            else:
-                yield mark_safe("<a  href={0}?{1} >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
-
-class FilterRow(object):
-
-    def __init__(self,queryset,name,request_get,changelist_url,is_choice=False):
-        """
-        :param data: queryset类型
-        :param name: 字段名称
-        :param request_get: get穿过来的参数 gender=1&dp=2&status=1
-        :param changelist_url: 当前列表页面的url
-        """
-        self.queryset = queryset
-        self.is_choice = is_choice
-        self.name = name
-        self.changelist_url = changelist_url
-        self.params = copy.deepcopy(request_get)
-        self.params._mutable = True
-
-
-    def __iter__(self):
-        # self.params, QueryDict,   urlencode = > dp=2&status=1
-
-        if self.name in self.params:
-            oldval = self.params.get(self.name)
-            self.params.pop(self.name)
-            yield mark_safe(
-                "<a href='{0}?{1}'>全部</a>".format(self.changelist_url, self.params.urlencode()))
-        else:
-            oldval = None
-            yield mark_safe("<a class='active' href='{0}?{1}'>全部</a>".format(self.changelist_url,self.params.urlencode()))
-
-        for obj in self.queryset:
-            if self.is_choice:
-=======
             ori_nid = self.params.get(self.name)
             self.params.pop(self.name)
             yield mark_safe("<a href='{0}?{1}'>全部</a>".format(self.get_list_url,self.params.urlencode())) ##等同下面
@@ -97,7 +41,6 @@ class FilterRow(object):
         for obj in self._field:
             if self.is_choince:
                 #obj 是元组
->>>>>>> 3209dbabd6101bec3fcac4d57a6d88d1a546625c
                 nid = str(obj[0])
                 text = str(obj[1])
             else:
@@ -107,13 +50,7 @@ class FilterRow(object):
             if  nid == ori_nid:
                 yield mark_safe("<a class='active' href='{0}?{1}'>{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
             else:
-<<<<<<< HEAD
-                yield mark_safe(
-                    "<a href='{0}?{1}'>{2}</a>".format(self.changelist_url, self.params.urlencode(), text))
-
-=======
                 yield mark_safe("<a href='{0}?{1}' >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
->>>>>>> 3209dbabd6101bec3fcac4d57a6d88d1a546625c
 
 ###列表页面类
 class GetListView(object):

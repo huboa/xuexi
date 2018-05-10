@@ -42,7 +42,7 @@ def login(request):
             if user:
                 ###将用户信息方session
                 init_permissions(user,request)
-                return redirect('/user/')
+                return redirect('/index/')
             else:
                 form.add_error("password","用户名或密码错误")
 
@@ -61,11 +61,15 @@ def host(request):
     #     models.Host.objects.create(**dic)
     # return HttpResponse("创建成功")
 
-    print(request.permission_codes)
-    page_obj = Pagination(request,models.Host)
+    # print(request.permission_codes)
+    # page_obj = Pagination(request,models.Host)
 
-    return render(request, 'host.html', {'host_list': page_obj.obj_list_html, 'page_html': page_obj.page_html})
+    # return render(request, 'host.html', {'host_list': page_obj.obj_list_html, 'page_html': page_obj.page_html})
     # return render(request,'host.html', {'host_list': page_obj.obj_list_html,})
+    return render(request, 'host.html')
+
+
+
 def add_host(request):
     if request.method == "GET":
         form = HostModelForm()
@@ -78,6 +82,7 @@ def add_host(request):
             form.save()
             return redirect("/host/")
         return render(request, "add_host.html", {'form': form})
+
 
 def edit_host(request,nid):
 

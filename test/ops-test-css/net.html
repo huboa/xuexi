@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>网络组</title> 
+  <link href="css/bootstrap.min.css" rel="stylesheet" /> 
+  <link href="css/style.css" rel="stylesheet" /> 
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]--> 
+ </head> 
+ <body>
+  <h2 align="center">网络组</h2>  
+  <div class="container"> 
+   <div class="panel panel-default"> 
+    <ul class="nav nav-pills nav-justified"> 
+     <li class="active"><a href="http://ops.inc-mtime.com/public.html">公共信息</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/fe.html">前端组</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/db.html">数据库</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/bd.html">大数据</a></li> 	 
+     <li class="active"><a href="http://ops.inc-mtime.com/index.html">返回欢迎页</a></li>  
+    </ul>
+    <br /> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t01" data-parent=".container">
+      网络监控 
+    </div> 
+    <ul class="list-group collapse wrap_list collapse in" id="t01"> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>办公网-网络监控</b>
+      </div></li>
+     <li class="list-group-item"><a href="http://192.168.10.20/" target="_blank">时光-办公网出口监控</a></li>	  
+     <li class="list-group-item"><a href="http://192.168.0.15:8081/charts?id=14284&amp;graph_type=h" target="_blank">酒仙-ping-公司办公网</a></li> 
+     <li class="list-group-item"><a href="http://10.10.130.7:8081/charts?id=383887&amp;graph_type=h" target="_blank">数北-ping-公司办公网</a></li> 
+     <li class="list-group-item"><a href="http://10.10.220.22:8081/charts?id=373986&amp;graph_type=h" target="_blank">大族-ping-公司办公网</a></li> 
+     <li class="list-group-item"><a href="http://cd-mon-dashboard.inc-mtime.com/charts?id=408158&amp;graph_type=h" target="_blank">成都-ping-公司办公网</a></li> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>机房-网络监控</b>
+      </div></li>
+     <li class="list-group-item"><a href="https://my.aryaka.com" target="_blank">Aws专线监控平台</a></li>	  
+     <li class="list-group-item"><a href="https://21t.21vianet.com/graph_view.php" target="_blank">酒仙-IDC监控</a></li> 
+     <li class="list-group-item"><a href="http://cd-cacti.inc-mtime.com/cacti" target="_blank">成都-Cacti交换机监控</a></li> 
+     <li class="list-group-item"><a href="http://cd-mon-dashboard.inc-mtime.com/screen/69" target="_blank">成都-机房流量监控</a></li> 
+     <li class="list-group-item"><a href="http://10.10.220.22:8081/screen/974" target="_blank">大族-机房流量监控</a></li> 
+     <li class="list-group-item"><a href="http://192.168.0.15:8081/screen/31" target="_blank">酒仙-机房流量监控</a></li> 
+     <li class="list-group-item"><a href="http://10.10.130.7:8081/screen/991" target="_blank">数北-机房流量监控</a></li> 
+     <li class="list-group-item"><a href="http://192.168.20.249/cacti/" target="_blank">酒仙,数北-Cacti网络监控</a></li>
+     <li class="list-group-item"><a href="http://cd-smokeping.inc-mtime.com/smokeping" target="_blank">成都-smokeping-ping廊坊专线</a></li>	 
+     <li class="list-group-item"><a href="http://cd-mon-dashboard.inc-mtime.com/charts?id=411294&amp;graph_type=h" target="_blank">成都-ping-廊坊机房</a></li> 
+    </ul> 
+   </div>
+   
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t02" data-parent=".container">
+      安全设备 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t02">
+     <li class="list-group-item"><a href="https://172.24.73.1/" target="_blank">办公网3F-山石</a></li>
+     <li class="list-group-item"><a href="https://172.25.74.1/" target="_blank">办公网25F-山石</a></li>		 
+     <li class="list-group-item"><a href="https://59.151.32.4/" target="_blank">酒仙-山石</a></li> 
+     <li class="list-group-item"><a href="https://117.79.237.62/" target="_blank">数北-山石</a></li>	
+     <li class="list-group-item"><a href="https://123.59.183.254/" target="_blank">大族-山石</a></li>
+     <li class="list-group-item"><a href="http://59.151.32.125:16010/ConfigCenter/ConfigCenter" target="_blank">酒仙-傲盾</a></li> 	 
+
+    </ul> 
+   </div>    
+   
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t03" data-parent=".container">
+      云服务 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t03">
+     <li class="list-group-item"><a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:sort=desc:securityGroupNames" target="_blank">AWS</a></li> 	
+     <li class="list-group-item"><a href="https://home.console.aliyun.com/" target="_blank">阿里云</a></li>
+     <li class="list-group-item"><a href="http://uc.baishancloud.com/html/#/login" target="_blank">白山云</a></li> 	 
+     <li class="list-group-item"><a href="https://www.freecloudy.com/product/index" target="_blank">数据家-混合云</a></li> 
+     <li class="list-group-item"><a href="http://www.qiniu.com/" target="_blank">七牛云</a></li> 
+    </ul> 
+   </div> 
+   <script src="js/jquery-1.11.1.min.js"></script> 
+   <script src="js/bootstrap.min.js"></script>   
+  </div>
+ </body>
+</html>

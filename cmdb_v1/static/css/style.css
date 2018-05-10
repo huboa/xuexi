@@ -1,0 +1,14 @@
+/**标题列表优化**/
+.container{
+	margin-top:40px;
+}
+.container .btn{
+	width:100%;
+	border:0;
+}
+.wrap_list{
+	margin-bottom:0;
+}
+.container .wrap_list li{
+	border-width: 1px 0 0 !important;
+}

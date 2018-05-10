@@ -24,9 +24,10 @@ print("测试url",v1.site.urls,)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/', views.login),
+    url(r'^index/', views.index),
     # url(r'^user/$', rbac_views.user),
     # url(r'^role/$', rbac_views.role),
-    # url(r'^host/$', views.host),
+    url(r'^host/$', views.host),
     url(r'^stark/', v1.site.urls),
 ]
 

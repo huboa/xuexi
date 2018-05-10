@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>运维首页</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-default">
+              <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t01" data-parent=".container" >
+                     常用
+              </div>
+              <ul class="list-group collapse wrap_list collapse in" id="t01">
+                  <li class="list-group-item"><a href="http://www.mtime.com" target="_blank">时光网</a></li>
+                  <li class="list-group-item"><a href="http://192.168.0.21:10000/mvp2/index2.php" target="_blank">发布</a></li>
+                  <li class="list-group-item"><a href="http://192.168.1.3/" target="_blank">内网</a></li>
+                  <li class="list-group-item"><a href="http://192.168.50.20/zentaopms/www/index.php" target="_blank">禅道</a></li>
+                  <li class="list-group-item"><a href="http://192.168.0.7:8080/cynthia" target="_blank">流程管理</a></li>
+                  <li class="list-group-item"><a href="http://192.168.20.100:8080/cgi-bin/" target="_blank">SHARE</a></li>
+                  <li class="list-group-item"><a href="http://service-monitor.inc-mtime.com/" target="_blank">服务监控</a></li>
+                  <li class="list-group-item"><a href="http://reception.inc-mtime.com:8081/login/" target="_blank">服务台</a></li>
+                  <li class="list-group-item"><a href="http://jx-backup00.host-mtime.com/BackupPC_Admin" target="_blank">备份系统</a></li>
+                  
+              </ul>
+        </div>
+        <div class="panel panel-default">
+              <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t02" data-parent=".container" >
+                     大数据监控
+              </div>
+              <ul class="list-group collapse wrap_list" id="t02">
+                  <li class="list-group-item"><a href="http://10.10.110.7/ganglia/" target="_blank">Ganglia</a></li>
+              </ul>
+        </div>
+        <div class="panel panel-default">
+              <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t03" data-parent=".container" >
+                     云服务
+              </div>
+              <ul class="list-group collapse wrap_list" id="t03">
+                  <li class="list-group-item"><a href="https://home.console.aliyun.com/" target="_blank">阿里云</a></li>
+                  <li class="list-group-item"><a href="http://www.qiniu.com/" target="_blank">七牛云</a></li>
+                  <li class="list-group-item"><a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:sort=desc:securityGroupNames" target="_blank">EC2 VPS</a></li>
+                  <li class="list-group-item"><a href="http://tools.cloudxns.net/index.php/Index/index" target="_blank">DNS检测工具</a></li>
+              </ul>
+        </div>
+        <div class="panel panel-default">
+              <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t04" data-parent=".container" >
+                     数据库
+              </div>
+              <ul class="list-group collapse wrap_list" id="t04">
+                  <li class="list-group-item"><a href="http://10.10.30.109/phpMyAdmin/index.php" target="_blank">Mysql查询</a></li>
+                  <li class="list-group-item"><a href="http://192.168.53.2:8080/login/" ptarget="_blank">数据库上线</a></li>
+                  <li class="list-group-item"><a href="http://10.10.30.109/rockmongo/index.php" target="_blank">Mongo读写</a></li>
+                  <li class="list-group-item"><a href="http://10.10.110.7/dbmonitor/index.php/login?return_url=http://10.10.110.7/dbmonitor/index.php" target="_blank">数据库监控</a></li>
+                  <li class="list-group-item"><a href="http://192.168.0.7:8098/redis/clusters/" target="_blank">Redis监控</a></li>
+              </ul>
+        </div>
+        <div class="panel panel-default">
+              <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t05" data-parent=".container" >
+                     资产管理
+              </div>
+              <ul class="list-group collapse wrap_list" id="t05">
+                  <li class="list-group-item"><a href="http://192.168.0.7:8000/cmdb/index/" target="_blank">CMDB</a></li>
+                  <li class="list-group-item"><a href="http://192.168.50.31:88/mediawiki/index.php/%E9%A6%96%E9%A1%B5" target="_blank">Wiki</a></li>
+                  <li class="list-group-item"><a href="https://192.168.10.18/" target="_blank">内网网管</a></li>
+              </ul>
+        </div>
+        <div class="panel panel-default">
+              <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t06" data-parent=".container" >
+                     监控系统
+              </div>
+              <ul class="list-group collapse wrap_list" id="t06">
+                  <li class="list-group-item"><a href="http://op-monitor.inc-mtime.com/" target="_blank">曲线图</a></li>
+                  <li class="list-group-item"><a href="http://10.10.130.201:4440/" target="_blank">Rundeck</a></li>
+                  <li class="list-group-item"><a href="http://10.10.130.7/zabbix/dashboard.php" target="_blank">DB zabbix</a></li>
+                  <li class="list-group-item"><a href="http://192.168.0.15/zabbix/dashboard.php" target="_blank">JX zabbix</a></li>
+                  <li class="list-group-item"><a href="http://10.10.130.7:1234" target="_blank">DB_open-falcon_monitor</a></li>
+                  <li class="list-group-item"><a href="http://192.168.0.15:1234" target="_blank">JX_open-falcon_monitor</a></li>
+                  <li class="list-group-item"><a href="https://21t.21vianet.com/graph_view.php" target="_blank">JX IDC监控</a></li>
+                  <li class="list-group-item"><a href="http://210.14.156.19:8080/login.htm" target="_blank">数据家</a></li>
+                  <li class="list-group-item"><a href="http://192.168.0.213:9999/service/status.msi" target="_blank">模块服务监控</a></li>
+                  <li class="list-group-item"><a href="http://db-debug-gng00.host-mtime.com/status" target="_blank">DB nginx</a></li>
+                  <li class="list-group-item"><a href="http://jx-debug-gng00.host-mtime.com/status" target="_blank">JX nginx</a></li>
+                  <li class="list-group-item"><a href="http://59.151.32.125:16010/ConfigCenter/ConfigCenter" target="_blank">傲盾</a></li>
+                  <li class="list-group-item"><a href="https://59.151.32.4/" target="_blank">山石</a></li>
+                  <li class="list-group-item"><a href="http://10.10.130.220/" target="_blank">xetplorer 在线编辑</a></li>
+                  <li class="list-group-item"><a href="http://goaccess.inc-mtime.com/" target="_blank">七层日志统计</a></li>
+                  <li class="list-group-item"><a href="http://logtask.inc-mtime.com/list/" target="_blank">日志平台</a></li>
+                  <li class="list-group-item"><a href="http://db-mon01.host-mtime.com/mydnsconfig/index.php" target="_blank">域名管理</a></li>
+              </ul>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

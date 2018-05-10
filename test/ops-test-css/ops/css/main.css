@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* CSS Document */
+body{ background:#f0f0f0;}
+a{ color: #22a8ca;}
+.mh_top{ background:#22a8ca; height:60px; position:relative; zoom:1;}
+.mh_top strong{ background:#65c2e5; width:200px; height:42px; position:absolute; left:50%; margin-left:-499px; bottom:0; color:#fff; font-size:18px; line-height:42px; text-align:center; font-weight:normal;}
+/*CONT*/
+.mh_cont{ width:1000px; margin:0 auto; position:relative; zoom:1; padding-bottom:100px;}
+/*导航*/
+.mh_sider{ background:#fff; width:180px; border:1px solid #dfdfdf; border-top:none; float:left; display:inline; padding:10px; }
+.mh_sider dl{ padding-top:10px;}
+.mh_sider dd{ font-size:13px; line-height:40px;}
+.mh_sider dd.cur{ background: #65c2e5;}
+.mh_sider dd a{ display:block; padding-left:15px; color:#333;}
+.mh_sider dd a:hover{ color:#65c2e5; text-decoration:none;}
+.mh_sider dd.cur a{ color: #fff;}
+.mh_sider dd.cur a:hover{ color: #fff;}
+/*右侧内容 */
+.mh_main{ width:770px; float:right; padding-top:10px; font-size:14px; line-height:1.5em;}
+.mh_main h2{ font-size:20px; line-height:1em; border-bottom:1px solid #d8d8d8; padding:12px 6px; margin-bottom:15px;}
+.mh_title{ background: #fff; border-left:3px solid #22a8ca;padding:10px; margin-top: 15px;}
+.mh_title i{ float: right;}
+.mh_main h3{ font-size: 16px;}
+.mh_main dl{ padding-left: 15px; padding-bottom: 30px;}
+.mh_main dt{ padding-top:15px; padding-left:6px; color: #22a8ca;}
+.mh_main dd{ padding:6px 0 6px 2.5em; position: relative; }
+.mh_main dd:before{content: "•"; position: absolute; left: 1em; top: 0; font-weight: bold; font-size: 20px; line-height: 1.8em;}
+.mh_main dd.ndot{ padding-left:1.4em;}
+.mh_main dd.ndot:before{ display: none;}
+.mh_main dd b{ font-weight: bold;}
+/*table*/
+.table{width: 100%;}
+.table,.table td,.table th{ border:1px solid #ccc; border-collapse: collapse; padding: 8px 15px; text-indent: 0;}
+.table th{background:#22a8ca; color: #fff;}
+
+@media (max-width: 768px){
+    body{ min-width: 320px; background: #fff;}
+    .mh_top{ background:#22a8ca; height:44px; position:relative; zoom:1; text-align: center;}
+    .gohome{ display: block; position: absolute;width: 44px; height: 42px; left: 0; top: 0; padding-top: 3px;}
+    .gohome span{ background: #fff; height: 3px; width:26px; margin: 7px 9px 0; display: block; border-radius: 4px;}
+    .mh_top strong{ background: none;  height:44px; position:inherit; left:0; margin-left:0; bottom:0; color:#fff; font-size:18px; line-height:44px; }
+    .mh_cont{ width:200px; padding-bottom:15px;}
+    /*导航*/
+    .mh_sider{ border:none; width: auto; float: none; display: block; padding-top:0  }
+    .mh_sider dd{ font-size:13px; line-height:45px; margin-left: 0px;}
+    .mh_sider dd:last-child{ border-bottom: none;}
+    .mh_sider dd.cur{ background: #65c2e5;}
+    .mh_sider dd a{ display:block; padding-left:15px; color:#333;}
+    .mh_sider dd a:hover{ color:#65c2e5; text-decoration:none;}
+    .mh_sider dd.cur a{ color: #fff;}
+    .mh_sider dd.cur a:hover{ color: #fff;}
+    .mh_cont .mh_sider{display: none;}
+    /*右侧内容 */
+    .mh_main{ width:100%; float:none; padding-top:0; font-size:14px; line-height:1.5em;}
+    .mh_main h2{ font-size:20px; line-height:1em; border-bottom:1px solid #d8d8d8; padding:12px 6px; margin-bottom:15px;}
+    .mh_title{ background: #fff; border-left:3px solid #22a8ca;padding:10px; margin-top: 15px;}
+    .mh_title i{ float: right;}
+    .mh_main h3{ font-size: 16px;}
+    .mh_main dl{ padding-left: 15px; padding-bottom: 30px; padding-right: 25px;}
+    .mh_main dt{ padding-top:15px; padding-left:6px; color: #22a8ca;}
+    .mh_main dd{ padding:6px 0 6px 2.5em; position: relative; text-align: justify; }
+    .mh_main dd:before{content: "•"; position: absolute; left: 1em; top: 0; font-weight: bold; font-size: 20px; line-height: 1.8em;}
+    .mh_main dd.ndot{ padding-left:1.4em;}
+    .mh_main dd.ndot:before{ display: none;}
+    .mh_main dd b{ font-weight: bold;}
+    /*table*/
+    .table{width: 100%;}
+    .table,.table td,.table th{ border:1px solid #ccc; border-collapse: collapse; padding: 8px 15px; text-indent: 0;}
+    .table th{background:#22a8ca; color: #fff;}
+}
+
+
+
+
+
+

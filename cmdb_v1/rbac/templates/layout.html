@@ -7,6 +7,10 @@
         <meta charset="UTF-8">
         <title>layout</title>
 {#        <link rel="stylesheet" href="../static/rbac/rbac.css" />#}
+         <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+
+    </head>
+    <!--
         <style>
         .pager a{
             display: inline-block;
@@ -68,27 +72,113 @@
         }
         </style>
 
-        {% block css %} {% endblock %}
+{#        {% block css %} {% endblock %}#}
     </head>
 
 
-    <body>
-        <div class="pg-header">
-            头部菜单--------------------
-            ok-ok-ok
-        </div>
+        <body>
+
+    <div>
+
+<div class="row">
+  <div class="col-md-12">
+
+      <ul class="nav nav-pills ">
+             <li role="presentation" class="active"><a href="#">Home</a></li>
+             <li role="presentation"><a href="#">Profile</a></li>
+             <li role="presentation"><a href="#">Messages</a></li>
+             <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+
+      <ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-4">
+
+
+
+
+
 
        <div class="pg-content">
 
             <div class="menu">
+{#                {%  menu request %}#}
+            </div>
 
+       </div>
+
+</div>
+             <div class="content ">
+{#                {% block content %}{% endblock %}#}
+             </div>
+           </div>
+{#        {% block js %} {% endblock %}#}
+
+       <script src="/static/js/jquery-1.11.1.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+
+
+    </body>
+   -->
+
+    <body>
+
+    <div>
+
+<div class="row">
+  <div class="col-md-12">
+
+
+      <div class="jumbotron">
+         <h1>Hello, world!</h1>
+         <p>...</p>
+           <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+           </div>
+          <ul class="nav nav-pills ">
+                 <li role="presentation" class="active"><a href="#">Home</a></li>
+                 <li role="presentation"><a href="#">Profile</a></li>
+                 <li role="presentation"><a href="#">Messages</a></li>
+                 <li role="presentation"><a href="#">Messages</a></li>
+          </ul>
+          <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-4">
+
+
+
+       <div class="pg-content">
+
+            <div class="menu">
                 {%  menu request %}
             </div>
+
+       </div>
+
+</div>
+
              <div class="content ">
                 {% block content %}{% endblock %}
              </div>
            </div>
         {% block js %} {% endblock %}
+
+       <script src="/static/js/jquery-1.11.1.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+
 
     </body>
 </html>

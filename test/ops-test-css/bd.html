@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>大数据</title> 
+  <link href="css/bootstrap.min.css" rel="stylesheet" /> 
+  <link href="css/style.css" rel="stylesheet" /> 
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]--> 
+ </head> 
+ <body>
+  <h2 align="center">大数据</h2>  
+  <div class="container"> 
+   <div class="panel panel-default"> 
+    <ul class="nav nav-pills nav-justified">  
+     <li class="active"><a href="http://ops.inc-mtime.com/net.html">网络组</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/public.html">公共信息</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/fe.html">前端组</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/db.html">数据库</a></li> 	 
+     <li class="active"><a href="http://ops.inc-mtime.com/">返回欢迎页</a></li> 
+    </ul>
+    <br /> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t01" data-parent=".container">
+      大数据调度系统jenkins
+    </div> 
+    <ul class="list-group collapse wrap_list collapse in" id="t01"> 
+      <li class="list-group-item"><a href="http://10.10.110.126:8090/jenkins/" target="_blank">数北-jenkins</a></li> 
+      <li class="list-group-item"><a href="http://cd-bigdata-jenkins.inc-mtime.com/jenkins" target="_blank">成都-CMC项目jenkns</a></li> 
+      <li class="list-group-item"><a href="http://mxtchadoop-jenkins.inc-mtime.com" target="_blank">成都-TC、MX项目jenkins</a></li> 
+    </ul> 
+   </div>
+   
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t02" data-parent=".container">
+      Hadoop 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t02"> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>数北-Hadoop监控</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://db-namenode00.host-mtime.com:50070" target="_blank">数北namenode-master</a></li> 
+      <li class="list-group-item"><a href="http://db-namenode01.host-mtime.com:50070" target="_blank">数北namenode-standby</a></li> 
+      <li class="list-group-item"><a href="http://db-namenode00.host-mtime.com:16010" target="_blank">数北hbase-master</a></li> 
+      <li class="list-group-item"><a href="http://db-namenode01.host-mtime.com:16010" target="_blank">数北hbase-backup</a></li> 
+      <li class="list-group-item"><a href="http://db-namenode01.host-mtime.com:8088" target="_blank">数北resourcemanager</a></li> 
+      <li class="list-group-item"><a href="http://db-namenode00.host-mtime.com:8088" target="_blank">数北resouceanager-standby</a></li> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>成都TC、MX-Hadoop监控</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://cmc-namenode00.inc-mtime.com" target="_blank">成都TC、MX项目namenode00</a></li> 
+      <li class="list-group-item"><a href="http://cmc-yarn00.inc-mtime.com" target="_blank">成都TC、MX项目yarn00</a></li> 
+      <li class="list-group-item"><a href="http://cmc-hbase00.inc-mtime.com" target="_blank">成都TC、MX项目hbase00</a></li> 
+      <li class="list-group-item"><a href="http://cmc-namenode01.inc-mtime.com" target="_blank">成都TC、MX项目namenode01</a></li> 
+      <li class="list-group-item"><a href="http://cmc-yarn01.inc-mtime.com" target="_blank">成都TC、MX项目yarn01</a></li> 
+      <li class="list-group-item"><a href="http://cmc-hbase01.inc-mtime.com" target="_blank">成都TC、MX项目hbase01</a></li> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>成都CMC-Hadoop监控</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://cd-namenode00.inc-mtime.com" target="_blank">成都CMC项目namenode00</a></li> 
+      <li class="list-group-item"><a href="http://cd-namenode01.inc-mtime.com" target="_blank">成都CMC项目namenode01</a></li> 
+      <li class="list-group-item"><a href="http://cd-spark.inc-mtime.com" target="_blank">成都CMC项目spark</a></li> 
+      <li class="list-group-item"><a href="http://cd-yarn00.inc-mtime.com" target="_blank">成都CMC项目yarn00</a></li> 
+      <li class="list-group-item"><a href="http://cd-yarn01.inc-mtime.com" target="_blank">成都CMC项目yarn01</a></li> 
+      <li class="list-group-item"><a href="http://cd-hbase00.inc-mtime.com" target="_blank">成都CMC项目hbase00</a></li> 
+      <li class="list-group-item"><a href="http://cd-hbase01.inc-mtime.com" target="_blank">成都CMC项目hbase01</a></li>
+     <li class="list-group-item">
+      <div align="center">
+       <b>大族Hadoop监控</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.10.220.56:50070" target="_blank">大族namenode-master</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.57:50070" target="_blank">大族namenode-standby</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.56:16010" target="_blank">大族hbase-master</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.57:16010" target="_blank">大族hbase-backup</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.57:8088" target="_blank">大族resourcemanager</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.56:8088" target="_blank">大族resouceanager-standby</a></li>   
+    </ul> 
+   </div>
+   
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t03" data-parent=".container">
+      docker 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t03"> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>Mesos</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.10.131.78:5050/" target="_blank">数北-Mesos</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.69:5050/" target="_blank">大族-Mesos</a></li> 
+      <li class="list-group-item"><a href="http://cmc-etcd00.host-mtime.com:5050" target="_blank">成都-Mesos</a></li>
+      <li class="list-group-item"><a href="http://cd-app-mesos-master00.host-mtime.com:5050" target="_blank">成都-app-Mesos</a></li>	  
+      <li class="list-group-item"><a href="http://lf-zb-mesos.wandafilm.com" target="_blank">廊坊总部-Mesos</a></li>  	  
+      <li class="list-group-item"><a href="http://10.0.0.54:5050" target="_blank">混合云-Mesos</a></li>
+      <li class="list-group-item"><a href="http://10.0.0.25:5050" target="_blank">混合云万达测试环境mesos</a></li>  	  
+     <li class="list-group-item">
+      <div align="center">
+       <b>Marathon</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.10.131.78:7070/" target="_blank">数北-Marathon</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.69:7070/" target="_blank">大族-Marathon</a></li> 
+      <li class="list-group-item"><a href="http://cmc-marathon.inc-mtime.com/" target="_blank">成都-Marathon</a></li>
+      <li class="list-group-item"><a href="http://cd-app-mesos-master00.host-mtime.com:8080" target="_blank">成都-app-Marathon</a></li>	  
+      <li class="list-group-item"><a href="http://lf-dq-marathon.wandafilm.com" target="_blank">廊坊电渠-Marathon</a></li>
+	  <li class="list-group-item"><a href="http://lf-zb-marathon.wandafilm.com" target="_blank">廊坊总部-Marathon</a></li>
+      <li class="list-group-item"><a href="http://10.0.0.54:8080" target="_blank">混合云-Marathon</a></li>
+      <li class="list-group-item"><a href="http://10.0.0.25:8080" target="_blank">混合云万达测试环境marathon</a></li>	  
+     <li class="list-group-item">
+      <div align="center">
+       <b>Marathon-lb</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.214.233.120:9090/haproxy?stats" target="_blank">成都nginx代理-IP233.120</a></li> 
+      <li class="list-group-item"><a href="http://10.214.233.121:9090/haproxy?stats" target="_blank">成都nginx代理-IP233.121</a></li>
+      <li class="list-group-item"><a href="http://10.214.233.122:9090/haproxy?stats" target="_blank">成都nginx代理-IP233.122</a></li>
+      <li class="list-group-item"><a href="http://lf-dq-marathon-lb-ip131.wandafilm.com/haproxy?stats" target="_blank">廊坊nginx代理-IP3.131</a></li>
+      <li class="list-group-item"><a href="http://lf-dq-marathon-lb-ip132.wandafilm.com/haproxy?stats" target="_blank">廊坊nginx代理-IP3.132</a></li>	  
+      <li class="list-group-item"><a href="http://lf-zb-marathon-lb-ip175.wandafilm.com/haproxy?stats" target="_blank">廊坊总部nginx代理-IP-175</a></li>
+      <li class="list-group-item"><a href="http://lf-zb-marathon-lb-ip176.wandafilm.com/haproxy?stats" target="_blank">廊坊总部nginx代理-IP-176</a></li>	  
+      <li class="list-group-item"><a href="http://lf-zb-marathon-lb-ip177.wandafilm.com/haproxy?stats" target="_blank">廊坊总部nginx代理-IP-177</a></li>
+      <li class="list-group-item"><a href="http://10.0.0.28:9090/haproxy?stats" target="_blank">混合云万达测试环境marathon-lb</a></li>	 	  
+     <li class="list-group-item">
+      <div align="center">
+       <b>registry仓库</b>
+      </div></li> 
+      <li class="list-group-item"><a href="https://jx-registry.inc-mtime.com" target="_blank">酒仙-registry</a></li> 
+      <li class="list-group-item"><a href="https://db-registry.inc-mtime.com" target="_blank">数北-registry</a></li> 
+      <li class="list-group-item"><a href="https://cd-registry.inc-mtime.com" target="_blank">成都-registry</a></li>
+      <li class="list-group-item"><a href="https://dz-registry.inc-mtime.com" target="_blank">大族-registry</a></li>  	  
+    </ul> 
+   </div> 
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t04" data-parent=".container">
+      Elasticsearch 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t04"> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>ES-日志集群</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.10.131.151:9210/_plugin/head/" target="_blank">数北-日志es集群(docker日志,nginx日志)</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.63:9230/_plugin/head/" target="_blank">大族-日志es集群(docker日志,nginx日志</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.66:9240/_plugin/head/" target="_blank">大族-推荐系统es集群</a></li>  
+      <li class="list-group-item"><a href="http://log-es.inc-mtime.com/_plugin/head/" target="_blank">成都-业务日志es集群</a></li> 
+      <li class="list-group-item"><a href="http://cd-elasticsearch.inc-mtime.com/_plugin/head/" target="_blank">成都tc-七层与业务es集群</a></li> 
+      <li class="list-group-item"><a href="http://cmc-stg-elasticsearch.inc-mtime.com/_plugin/head/" target="_blank">成都cmc-stg环境es集群</a></li> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>ES-cmc业务集群</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://cmc-es-goods.inc-mtime.com/_plugin/head/" target="_blank">成都cmc-卖品es集群</a></li> 
+      <li class="list-group-item"><a href="http://cmc-es-member.inc-mtime.com/_plugin/head/" target="_blank">成都cmc-会员es集群</a></li> 
+      <li class="list-group-item"><a href="http://cmc-es-kequn.inc-mtime.com/_plugin/head/" target="_blank">成都cmc-客群es集群</a></li> 
+      <li class="list-group-item"><a href="http://cmc-es-voucher-card.inc-mtime.com/_plugin/head/" target="_blank">成都cmc-卡券es集群</a></li>  
+    </ul> 
+   </div> 
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t05" data-parent=".container">
+      kibana 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t05"> 
+      <li class="list-group-item"><a href="http://10.10.131.150:5610/" target="_blank">数北-kibana(docker日志,nginx日志)</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.63:5630/" target="_blank">大族-kibana(docker日志,nginx日志)</a></li> 
+      <li class="list-group-item"><a href="http://cd-kibana.inc-mtime.com" target="_blank">成都-kibana(nginx日志,tc业务)</a></li> 
+      <li class="list-group-item"><a href="http://cd-log-kibana.inc-mtime.com" target="_blank">成都-日志kibana(docker日志,业务日志)</a></li> 
+    </ul> 
+   </div>
+
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t06" data-parent=".container">
+      Kafka 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t06"> 
+     <li class="list-group-item"><a href="http://cd-kafka-manager.inc-mtime.com" target="_blank">成都-Kafka Manager</a></li>
+    </ul> 
+   </div>
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t07" data-parent=".container">
+      Grafana 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t07"> 
+	<li class="list-group-item"><a href="http://192.168.50.108:3000/dashboard/db/online-analytics?from=now-6h&amp;to=now&amp;editorTab=General%5C" target="_blank">Grafana（urlquery）监控 (已停用孙维维搭建)</a></li>
+    </ul> 
+   </div>    
+   
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t09" data-parent=".container">
+      日志平台
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t09"> 
+     <li class="list-group-item"><a href="http://cd-logstash-web.inc-mtime.com/xadmin/" target="_blank">成都-日志管理运维平台</a></li> 
+     <li class="list-group-item"><a href="http://goaccess.inc-mtime.com/" target="_blank">酒仙,数北-七层日志统计</a></li> 
+     <li class="list-group-item"><a href="http://logtask.inc-mtime.com/list/" target="_blank">酒仙,数北-日志平台</a></li> 
+     <li class="list-group-item"><a href="http://cd-rtlogtrans.inc-mtime.com/index/" target="_blank">成都-日志实时存储web</a></li> 
+     <li class="list-group-item"><a href="http://cd-logstash-web.inc-mtime.com/index/" target="_blank">成都-logstash实时收集web(打不开)</a> </li>
+    </ul> 
+   </div> 
+   <script src="js/jquery-1.11.1.min.js"></script> 
+   <script src="js/bootstrap.min.js"></script>   
+  </div>
+ </body>
+</html>

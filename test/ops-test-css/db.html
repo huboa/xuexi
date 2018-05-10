@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>数据库</title> 
+  <link href="css/bootstrap.min.css" rel="stylesheet" /> 
+  <link href="css/style.css" rel="stylesheet" /> 
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]--> 
+ </head> 
+ <body>
+  <h2 align="center">数据库</h2>  
+  <div class="container"> 
+   <div class="panel panel-default"> 
+    <ul class="nav nav-pills nav-justified">  
+     <li class="active"><a href="http://ops.inc-mtime.com/bd.html">大数据</a></li> 
+     <li class="active"><a href="http://ops.inc-mtime.com/net.html">网络组</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/public.html">公共信息</a></li>
+     <li class="active"><a href="http://ops.inc-mtime.com/fe.html">前端组</a></li>	 
+     <li class="active"><a href="http://ops.inc-mtime.com/index.html">返回欢迎页</a></li> 
+    </ul>
+    <br /> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t01" data-parent=".container">
+      数据库上线 
+    </div> 
+    <ul class="list-group collapse wrap_list collapse in" id="t01"> 
+     <li class="list-group-item"><a href="http://192.168.51.109:8000/xadmin" target="_blank">数据库自动化平台</a></li>
+     <li class="list-group-item"><a href="http://192.168.51.123:8889/login/" target="_blank">DEV,QA-数据库上线</a></li> 	 
+     <li class="list-group-item"><a href="http://cd-inception.inc-mtime.com/login/" target="_blank">成都-数据库上线</a></li> 
+     <li class="list-group-item"><a href="http://192.168.51.182:8080/login/" target="_blank">大族-数据库上线</a></li> 
+     <li class="list-group-item"><a href="http://mtimedb.inc-mtime.com:8080/login/" target="_blank">酒仙,数北-数据库上线</a></li> 
+     <li class="list-group-item"><a href="https://10.199.117.24:7802/em/faces/logon/core-uifwk-console-login?_adf.ctrl-state=15dngaxiwt_4&amp;_afrLoop=37507276153520579&amp;_afrWindowMode=0&amp;_afrWindowId=null#!%40%40%3F_afrWindowMode%3D0%26_afrWindowId%3Dnull%26_afrLoop%3D37507276153520579%26_adf.ctrl-state%3D17kpqlrxee_4" target="_blank">廊坊-oracle管理页面</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t02" data-parent=".container">
+      数据库查询 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t02"> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>Mysql-慢查询</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://cd-anemometer.inc-mtime.com/anemometer/" target="_blank">成都-Mysql慢查询</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.23/anemometer" target="_blank">酒仙,数北,大族-Mysql慢查询</a></li> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>Redis-查询</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.10.110.7:8085" target="_blank">酒仙,数北-Redis查询</a></li> 
+      <li class="list-group-item"><a href="http://cd-pyredis.inc-mtime.com" target="_blank">成都-Redis查询</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.23:8085/" target="_blank">大族-Redis查询</a></li> 
+     <li class="list-group-item">
+      <div align="center">
+       <b>Mongo-查询</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.10.30.109/rockmongo/index.php" target="_blank">酒仙,数北-Mongo查询</a></li> 
+      <li class="list-group-item"><a href="http://cd-rockmongo.inc-mtime.com/rockmongo" target="_blank">成都-Mongo查询</a></li> 
+      <li class="list-group-item"><a href="http://10.10.220.23/rockmongo/index.php" target="_blank">大族-Mongo查询</a></li>  
+     <li class="list-group-item">
+      <div align="center">
+       <b>Mysql-查询</b>
+      </div></li> 
+      <li class="list-group-item"><a href="http://10.10.30.109/phpMyAdmin/index.php" target="_blank">酒仙,数北-Mysql8806查询</a></li> 
+      <li class="list-group-item"><a href="http://10.10.230.50:8021/index.php" target="_blank">酒仙,数北-Mysql8807查询</a></li> 
+      <li class="list-group-item"><a href="http://cmc-phpmyadmin.inc-mtime.com/" target="_blank">成都-Mysql7806查询</a></li> 
+      <li class="list-group-item"><a href="http://cd-phpmyadmin.inc-mtime.com" target="_blank">成都-Mysql8806查询</a></li> 
+      <li class="list-group-item"><a href="http://10.10.230.50:8020/" target="_blank">大族-Mysql查询</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel panel-default"> 
+    <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t03" data-parent=".container">
+      数据库监控 
+    </div> 
+    <ul class="list-group collapse wrap_list" id="t03"> 
+     <li class="list-group-item"><a href="http://cd-lepus.inc-mtime.com/lepus" target="_blank">成都-天兔监控</a></li> 
+     <li class="list-group-item"><a href="http://10.10.220.23/dbmonitor/index.php/" target="_blank">大族-天兔监控</a></li>  
+    </ul> 
+   </div> 
+   <script src="js/jquery-1.11.1.min.js"></script> 
+   <script src="js/bootstrap.min.js"></script>   
+  </div>
+ </body>
+</html>

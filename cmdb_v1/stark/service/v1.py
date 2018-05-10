@@ -25,24 +25,28 @@ class Foo(object):
 
     def __iter__(self):
         if self.name in self.params:
+            ori_nid = self.params[self.name]
+            print(ori_nid,"nid")
             self.params.pop(self.name)
-            yield mark_safe("<a href={0}?{1}>全部</a>>".format(self.get_list_url,self.params.urlencode())) ##等同下面
+            yield mark_safe("<a href={0}?{1}>全部</a>".format(self.get_list_url,self.params.urlencode())) ##等同下面
              # yield mark_safe("<a href=%s?%s>全部</a>" % (self.get_list_url,self.params.urlencode()))  ##等同予 %s
         else:
+            ori_nid =None
             yield mark_safe("<a class='active' href={0}?{1}>全部</a>".format(self.get_list_url, self.params.urlencode()))
         for obj in self._field:
             if self.is_choince:
                 #obj 是元组
-                nid = obj[0]
+                nid = str(obj[0])
                 text = obj[1]
             else:
-                nid = obj.pk
+                nid = str(obj.pk)
                 text = str(obj)
-            self.params[self.name]=nid
-            if self.params.get(self.name)== nid:
-                yield mark_safe("<a href={0}?{1} >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
-            else:
+            print(nid, "nid")
+            self.params[self.name] = nid
+            if ori_nid == nid:
                 yield mark_safe("<a class='active' href={0}?{1} >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
+            else:
+                yield mark_safe("<a  href={0}?{1} >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
 
 class FilterRow(object):
 
@@ -86,8 +90,7 @@ class FilterRow(object):
                 yield mark_safe("<a class='active' href='{0}?{1}'>{2}</a>".format(self.changelist_url,self.params.urlencode(),text))
             else:
                 yield mark_safe(
-                    "<a href='{0}?{1}'>{2}</a>".format(self.changelist_url, self.params.urlencode(),
-                                                                      text))
+                    "<a href='{0}?{1}'>{2}</a>".format(self.changelist_url, self.params.urlencode(), text))
 
 
 class GetListView(object):
@@ -317,7 +320,6 @@ class StarkConfig(object):
                 return redirect(self.get_list_url())
             return render(request, 'add_view.html', {'form': form})
     def change_view(self,request,nid):
-
         obj = self.model_class.objects.filter(pk=nid).first()
         if not obj:
             return HttpResponse('别闹')
@@ -332,7 +334,7 @@ class StarkConfig(object):
                 form.save()
                 return redirect(self.get_list_url())
             return render(request, 'change_view.html', {'form': form})
-    def delete_view(self,nid):
+    def delete_view(self,request,nid):
         self.model_class.objects.filter(id=nid).delete()
         return redirect(self.get_list_url())
 

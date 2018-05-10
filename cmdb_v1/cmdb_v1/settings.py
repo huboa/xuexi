@@ -136,4 +136,5 @@ VALID_LIST=[
     '/stark/.*',
     '/admin/.*',
     '/login.*',
+    '/index.*',
 ]

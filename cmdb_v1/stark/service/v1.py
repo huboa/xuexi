@@ -303,6 +303,7 @@ class StarkConfig(object):
         result_list = self.model_class.objects.filter(con)
         cl = GetListView(self,result_list,request)
         return render(request, "get_list_view.html", {"cl":cl})
+
     def add_view(self,request):
         # self.mcls # models.UserInfo
         # self.mcls # models.Role

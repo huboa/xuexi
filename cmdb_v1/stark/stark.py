@@ -112,7 +112,7 @@ class RoleConfig(v1.StarkConfig):
     list_display = ['id', 'title']
 ####主机配置类
 class HostConfig(v1.StarkConfig):
-    ####其它功能函数视图
+    ####批量执行功能函数视图
     def pk_test(self, request, action):
         pk_list = request.POST.getlist("pk")
         print(pk_list, "测试")
@@ -120,6 +120,7 @@ class HostConfig(v1.StarkConfig):
     def pk_test1(self, request, action):
         pk_list = request.POST.getlist("pk")
         print(pk_list, "测试2")
+
     list_display = ['id', 'idc','sn','remoteip']
     search_list = ["sn__contains", 'remoteip__contains']
     action_list = [{"name":"测试1","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]

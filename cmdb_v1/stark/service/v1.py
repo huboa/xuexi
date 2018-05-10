@@ -11,8 +11,17 @@ from rbac import models
 from django.db.models.fields.related import ForeignKey
 from django.http import QueryDict
 
-class Foo(object):
+####组合搜索类
+class FilterRow(object):
     def __init__(self,_field,name,request,get_list_url,is_choice=False):
+        '''
+
+        :param _field: queryset类型 取字段
+        :param name: 字段名称
+        :param request: 请求
+        :param get_list_url: 获取当前url
+        :param is_choice: 是不是从数据取
+        '''
         self.request = request
         self._field = _field
         self.is_choince = is_choice
@@ -20,11 +29,9 @@ class Foo(object):
         self.params = copy.deepcopy( self.request.GET)
         self.params._mutable = True
         self.get_list_url=get_list_url
-
-
-
     def __iter__(self):
         if self.name in self.params:
+<<<<<<< HEAD
             ori_nid = self.params[self.name]
             print(ori_nid,"nid")
             self.params.pop(self.name)
@@ -79,20 +86,36 @@ class FilterRow(object):
 
         for obj in self.queryset:
             if self.is_choice:
+=======
+            ori_nid = self.params.get(self.name)
+            self.params.pop(self.name)
+            yield mark_safe("<a href='{0}?{1}'>全部</a>".format(self.get_list_url,self.params.urlencode())) ##等同下面
+            # yield mark_safe("<a href=%s?%s>全部</a>" % (self.get_list_url,self.params.urlencode()))  ##等同予 %s
+        else:
+            ori_nid =None
+            yield mark_safe("<a class='active' href='{0}?{1}'>全部</a>".format(self.get_list_url, self.params.urlencode()))
+        for obj in self._field:
+            if self.is_choince:
+                #obj 是元组
+>>>>>>> 3209dbabd6101bec3fcac4d57a6d88d1a546625c
                 nid = str(obj[0])
-                text = obj[1]
+                text = str(obj[1])
             else:
                 nid = str(obj.pk)
                 text = str(obj)
             self.params[self.name] = nid
-
-            if oldval == nid:
-                yield mark_safe("<a class='active' href='{0}?{1}'>{2}</a>".format(self.changelist_url,self.params.urlencode(),text))
+            if  nid == ori_nid:
+                yield mark_safe("<a class='active' href='{0}?{1}'>{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
             else:
+<<<<<<< HEAD
                 yield mark_safe(
                     "<a href='{0}?{1}'>{2}</a>".format(self.changelist_url, self.params.urlencode(), text))
 
+=======
+                yield mark_safe("<a href='{0}?{1}' >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
+>>>>>>> 3209dbabd6101bec3fcac4d57a6d88d1a546625c
 
+###列表页面类
 class GetListView(object):
     """
     用于对列表页面的功能做拆分
@@ -185,13 +208,11 @@ class GetListView(object):
             get_list_url = self.config.get_list_url()
             print(get_list_url)
             if type(_field) == ForeignKey:
-                yield Foo(_field.rel.to.objects.all(),name,self.request,get_list_url)
-
+                yield FilterRow(_field.rel.to.objects.all(),name,self.request,get_list_url)
             else:
-            #     yield FilterRow(_field.choices,name,self.request.GET,changelist_url,is_choice=True)
-                yield Foo(_field.choices,name,self.request,get_list_url,is_choice=True,)
+                yield FilterRow(_field.choices,name,self.request,get_list_url,is_choice=True,)
 
-
+######配置类
 class StarkConfig(object):
     """
     初始化类数据
@@ -283,24 +304,37 @@ class StarkConfig(object):
         url_path = self.get_delete_url(pk=row.id)
         return mark_safe('<a href=%s>删除</a>' % (url_path))
 
+####搜索框关键字搜索 和 组合搜索 函数
+    def get_key_search_condtion(self, request):
+        key = request.GET.get('key')  # 小偷 -> 构造or条件
+        con = Q()
+        con.connector = 'OR'
+        if key:  ###不为空则添加过滤条件
+            for name in self.search_list:
+                con.children.append((name, key,))
+        return con
+    def get_comb_filter_condition(self, request):
+        comb_condition = {}
+        for name in self.comb_filter:
+            val = request.GET.get(name)
+            if not val:
+                continue
+            comb_condition[name] = val
+        return comb_condition
+
 #####增删改查页面视图##########
     def get_list_view(self,request):
-
+        ###批量执行某一功能
         if request.method == "POST":
             action = request.POST.get('action')
-            print(action)
+            print(action,"action")
             func_name = getattr(self,action,None)
             if func_name:
                 response = func_name(request,action)
                 if response:
                     return response
-        key = request.GET.get("key")
-        con = Q()
-        con.connector = 'OR'
-        if key:     ###不为空则添加过滤条件
-            for name in self.search_list:
-                con.children.append((name,key))
-        result_list = self.model_class.objects.filter(con)
+
+        result_list = self.model_class.objects.filter(self.get_key_search_condtion(request)).filter(**self.get_comb_filter_condition(request))
         cl = GetListView(self,result_list,request)
         return render(request, "get_list_view.html", {"cl":cl})
 
@@ -339,8 +373,6 @@ class StarkConfig(object):
         self.model_class.objects.filter(id=nid).delete()
         return redirect(self.get_list_url())
 
-
-
 ####### 控制显示列表  整合stark 字符串 和 函数 display 方法##########
     search_list = []
     action_list = []
@@ -355,6 +387,7 @@ class StarkConfig(object):
             result.append(StarkConfig.display_delete)
         return result
 
+###注册数据库url
 class StarkSite(object):
     """
     注册所有表的 url

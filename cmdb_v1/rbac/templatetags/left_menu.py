@@ -81,6 +81,7 @@ def menu(request):
                 menu_result[menu_id]['active'] = item.get('active', False)
         else:
             menu_result[menu_id] = {
+                'menu_id': menu_id,
                 'menu__name': item['menu_name'],
                 'active': item.get('active', False),
                 'children': [
@@ -88,4 +89,5 @@ def menu(request):
                 ]
             }
 
+    print(menu_result)
     return {'menu_result':menu_result}

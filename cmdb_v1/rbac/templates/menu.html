@@ -1,19 +1,22 @@
 {% for menu in menu_result.values %}
-    <div class="menu-item">
-        <div class="menu-title">{{ menu.menu__name }}</div>
+    <div class="panel panel-default">
+{#        <div class="panel-heading btn btn-default" data-toggle="collapse" data-target="#t0{{ menu.menu_id }}" data-parent=".container"> {{ menu.menu__name }}</div>#}
+    <div class="panel-heading btn btn-default"  data-target="#t0{{ menu.menu_id }}" data-parent=".container"> {{ menu.menu__name }}</div>
 {#                    {% if menu.active %}#}
 {#                        <div class="menu-content">#}
 {#                    {% else %}#}
 {#                        <div class="menu-content hide">#}
 {#                    {% endif %}#}
-        <div class="menu-content">
+        <ul class="list-group wrap_list collapse" id="t0{{ menu.menu_id }}" style="height: 0px;">
             {% for per in menu.children %}
-                {% if per.active %}
-                    <a href="{{ per.url }}" class="active">{{ per.title }}</a>
-                {% else %}
-                    <a href="{{ per.url }}">{{ per.title }}</a>
-                {% endif %}
+                <li class="list-group-item">
+                    {% if per.active %}
+                        <a href="{{ per.url }}" class="active" target="_blank" >{{ per.title }}</a>
+                    {% else %}
+                        <a href="{{ per.url }}">{{ per.title }}</a>
+                    {% endif %}
+                </li>
             {% endfor %}
+        </ul>
         </div>
-    </div>
 {% endfor %}

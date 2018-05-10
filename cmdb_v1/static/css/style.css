@@ -3,7 +3,7 @@
 	margin-top:40px;
 }
 .container .btn{
-	width:100%;
+	width:30%;
 	border:0;
 }
 .wrap_list{
@@ -12,3 +12,4 @@
 .container .wrap_list li{
 	border-width: 1px 0 0 !important;
 }
+

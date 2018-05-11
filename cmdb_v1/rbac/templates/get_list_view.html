@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-        <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+{#    <head>#}
+{#        <meta charset="UTF-8">#}
+{#        <title>Title</title>#}
+{#        <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">#}
+{##}
+{#    </head>#}
+{##}
 
-    </head>
 
-    {% block css %}
+{% extends 'layout.html' %}
+
+<div class="container">
+  {% block css %}
         <style>
             .comb-search .item{
                 margin: 5px 0;
@@ -23,10 +28,10 @@
             }
         </style>
     {% endblock %}
-
-
-    <body>
-        <div class="container">
+  </div>
+{% block content %}
+{#    <body>#}
+{#        <div class="container">#}
             <h1>列表页面</h1>
 
             <!-- 组合搜索开始 -->
@@ -112,8 +117,8 @@
             <ul class="pagination">
                  {{ cl.page_html  }}
             </ul>
-        </div>
-    </body>
-
+{#        </div>#}
+{#    </body>#}
+{% endblock %}
 
 </html>

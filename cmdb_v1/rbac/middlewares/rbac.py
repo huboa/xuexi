@@ -30,8 +30,10 @@ class RbacMiddleware(MiddlewareMixin):
 
         permission_dict = request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
 
+
         if not permission_dict:
-            return HttpResponse('当前用户无权限目录信息')
+            return redirect('/login/')
+            # return HttpResponse('当前用户无权限目录信息')
             # return  HttpResponse('login.html')
 
 
@@ -52,4 +54,5 @@ class RbacMiddleware(MiddlewareMixin):
                 break
 
         if not flag:
-            return HttpResponse('无权限访问')
+            return redirect('/login/')
+            # return redirect('无权限访问')

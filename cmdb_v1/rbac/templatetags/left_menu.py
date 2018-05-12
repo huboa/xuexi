@@ -2,7 +2,7 @@ import re
 from django.template import Library
 from django.conf import settings
 register = Library()
-
+from django.shortcuts import render,HttpResponse,redirect
 
 """
 {% menu request %}
@@ -54,6 +54,8 @@ def menu(request):
     current_url = request.path_info
     # 获取session中菜单信息，自动生成二级菜单【默认选中，默认展开】
     permission_menu_list = request.session.get(settings.PERMISSION_MENU_SESSION_KEY)
+    # if not permission_menu_list:
+    #     return redirect('login.html',)
     per_dict = {}
     for item in permission_menu_list:
         if item['id'] == item['gmid']:

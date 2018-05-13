@@ -133,5 +133,6 @@ PERMISSION_MENU_SESSION_KEY = "user_permission_menu_key"
 REX_FORMAT = "^%s$"
 VALID_LIST=[
     '/login/',
+    '/index/',
     '/admin/.*',
 ]

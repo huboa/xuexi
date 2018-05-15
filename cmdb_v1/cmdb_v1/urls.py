@@ -20,7 +20,6 @@ from rbac import views as rbac_views
 from stark.service import v1
 
 
-print("测试url",v1.site.urls,)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/', views.login),

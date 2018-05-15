@@ -32,6 +32,7 @@ class UserInfo(models.Model):
     status = models.IntegerField(verbose_name='状态', choices=status_choice, default=1)
 
     dp = models.ForeignKey(to='DepartMent', default=1)###部门
+    session_key = models.CharField(verbose_name='当前登录用户的session_key', max_length=40, null=True, blank=True)
 
     def __str__(self):
         return self.username
@@ -60,14 +61,14 @@ class PermissionGroup(models.Model):
 #     2 主机管理组
 #     3 其它组
 #     """
-    title = models.CharField(verbose_name='权限组名称',max_length=32,unique=True)
-    menu = models.ForeignKey(verbose_name="一级菜单",to='menu')
+    title = models.CharField(verbose_name='表名称',max_length=32,unique=True)
+    menu = models.ForeignKey(verbose_name="一级菜单",to='Menu')
 
 
     def __str__(self):
         return self.title
 
-class menu(models.Model):
+class Menu(models.Model):
     '''
     一级菜单左侧展示
     '''

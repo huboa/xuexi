@@ -50,7 +50,7 @@ class FilterRow(object):
             if  nid == ori_nid:
                 yield mark_safe("<a class='active' href='{0}?{1}'>{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
             else:
-                yield mark_safe("<a href='{0}?{1}' >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
+                yield mark_safe("<a  href='{0}?{1}' >{2}</a>" .format(self.get_list_url,self.params.urlencode(),text))
 
 ###列表页面类
 class GetListView(object):
@@ -83,7 +83,7 @@ class GetListView(object):
         :return:
         """
         result = []
-        # ['id', 'name', 'email',display_change,display_del]
+        # ['id', 'name', 'email',display_edit,display_del]
         # ['ID', '用户名', '邮箱','临时表头',临时表头]
 
         for n in self.config.get_list_display():
@@ -106,7 +106,7 @@ class GetListView(object):
             obj,
             obj,
         ]
-        # ['id', 'name', 'email',display_change,display_del]
+        # ['id', 'name', 'email',display_edit,display_del]
         [
             [1, '天了','123@liv.com'],
             [2, '天1了','123@liv.com'],
@@ -178,7 +178,7 @@ class StarkConfig(object):
         patterns = [
             url(r'^$', self.get_list_view, name='%s_%s_get_list' % app_model_name),
             url(r'^add/$', self.add_view, name='%s_%s_add' % app_model_name),
-            url(r'^(\d+)/change/$', self.change_view, name="%s_%s_change" % app_model_name),
+            url(r'^(\d+)/edit/$', self.edit_view, name="%s_%s_edit" % app_model_name),
             url(r'^(\d+)/delete/$', self.delete_view, name="%s_%s_delete" % app_model_name),
         ]
         patterns.extend(self.extra_url())
@@ -207,14 +207,14 @@ class StarkConfig(object):
         name = "stark:%s_%s_delete" % app_model_name
         url_path = reverse(name, args=(pk,))
         return url_path
-    def get_change_url(self, pk):
+    def get_edit_url(self, pk):
         """
         /stark/app01/userinfo/1/
         :param pk:
         :return:
         """
         app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
-        name = "stark:%s_%s_change" % app_model_name
+        name = "stark:%s_%s_edit" % app_model_name
         url_path = reverse(name, args=(pk,))
         return url_path
     def get_list_url(self):
@@ -230,10 +230,10 @@ class StarkConfig(object):
         if is_header:
             return '选择'
         return mark_safe("<input type='checkbox' name='pk' value='%s' />" % (row.id,))
-    def display_change(self, is_header=False, row=None):
+    def display_edit(self, is_header=False, row=None):
         if is_header:
             return "编辑"
-        url_path = self.get_change_url(pk=row.id)
+        url_path = self.get_edit_url(pk=row.id)
         return mark_safe('<a href=%s>编辑</a>' % (url_path))
     def display_delete(self, is_header=False, row=None):
         if is_header:
@@ -274,7 +274,6 @@ class StarkConfig(object):
         result_list = self.model_class.objects.filter(self.get_key_search_condtion(request)).filter(**self.get_comb_filter_condition(request))
         cl = GetListView(self,result_list,request)
         return render(request, "get_list_view.html", {"cl":cl})
-
     def add_view(self,request):
         # self.mcls # models.UserInfo
         # self.mcls # models.Role
@@ -291,7 +290,7 @@ class StarkConfig(object):
                 # 跳转到列表页面
                 return redirect(self.get_list_url())
             return render(request, 'add_view.html', {'form': form})
-    def change_view(self,request,nid):
+    def edit_view(self,request,nid):
         obj = self.model_class.objects.filter(pk=nid).first()
         if not obj:
             return HttpResponse('别闹')
@@ -299,13 +298,13 @@ class StarkConfig(object):
         model_form_cls = self.get_model_form_cls()
         if request.method == "GET":
             form = model_form_cls(instance=obj)
-            return render(request, 'change_view.html', {'form': form})
+            return render(request, 'edit_view.html', {'form': form})
         else:
             form = model_form_cls(instance=obj, data=request.POST)
             if form.is_valid():
                 form.save()
                 return redirect(self.get_list_url())
-            return render(request, 'change_view.html', {'form': form})
+            return render(request, 'edit_view.html', {'form': form})
     def delete_view(self,request,nid):
         self.model_class.objects.filter(id=nid).delete()
         return redirect(self.get_list_url())
@@ -320,7 +319,7 @@ class StarkConfig(object):
         if self.list_display:
             result.extend(self.list_display)
             result.insert(0, StarkConfig.display_checkbox)
-            result.append(StarkConfig.display_change)
+            result.append(StarkConfig.display_edit)
             result.append(StarkConfig.display_delete)
         return result
 
@@ -331,12 +330,15 @@ class StarkSite(object):
     """
     def __init__(self):
         self._registry={}
+
     def registry(self,model_class,config_cls=None):
         if not  config_cls:
-            config_cls = StarkConfig       ###默认是StarkConfi
+            config_cls = StarkConfig       ###默认是StarkConfig
         self._registry[model_class] = config_cls(model_class)
         # print(self._registry,"打印字典k") ###打印注册到字典 _registry的类
         # print(self._registry.items(),"打印字典v")
+    def update_db(self):
+        print("#########")
 
     def get_urls(self):
         """
@@ -372,7 +374,7 @@ class StarkSite(object):
 
         # /admin//app01/userinfo/           查看列表页面
         # /admin/app01/userinfo/add/        添加页面
-        # /admin/app01/userinfo/1/change/   修改页面
+        # /admin/app01/userinfo/1/edit/   修改页面
         # /admin/app01/userinfo/1/delete/   删除页面
 
 
@@ -381,14 +383,14 @@ class StarkSite(object):
                             /app01/userinfo/  --> ([
                                                         /                    查看列表
                                                         add/                 添加
-                                                        (\d+)/change/        修改
+                                                        (\d+)/edit/        修改
                                                         (\d+)/delete/        删除
                                                     ])
                             /app01/role/
                                                 --> ([
                                                         /                   查看列表
                                                         add/                添加
-                                                        (\d+)/change/        修改
+                                                        (\d+)/edit/        修改
                                                         (\d+)/delete/        删除
                                                     ])
                         ])
@@ -401,4 +403,5 @@ class StarkSite(object):
 
 ###单例模式只生成一次
 site = StarkSite()
+
 

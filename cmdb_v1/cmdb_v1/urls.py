@@ -23,7 +23,7 @@ from stark.service import v1
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/', views.login),
-    url(r'^index/', views.index),
+    url(r'^index/$', views.index),
     # url(r'^user/$', rbac_views.user),
     # url(r'^role/$', rbac_views.role),
     # url(r'^host/$', views.host),

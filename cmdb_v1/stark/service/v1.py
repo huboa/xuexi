@@ -10,6 +10,7 @@ import copy
 from rbac import models
 from django.db.models.fields.related import ForeignKey
 from django.http import QueryDict
+from django.conf import settings
 
 ####组合搜索类
 class FilterRow(object):
@@ -71,12 +72,16 @@ class GetListView(object):
         self.action_list = config.action_list
         self.comb_filter  = config.comb_filter
 
+
         page_obj=Pagination(self.request,self.result_list)  ##实例化页码对象
         self.page_list = page_obj.page_obj_list()    ##每页的 20对象
         self.page_html=mark_safe(page_obj.bootstrap_page_html())  ##实例化页码导航
 
         # self.comb_filter = config.comb_filter
         # self.show_add_btn = config.get_show_add_btn()
+    def user_online_state(self):
+        state=self.request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
+        return state
     def header_list(self):
         """
         处理页面表头的内容
@@ -128,6 +133,7 @@ class GetListView(object):
         返回添加按钮的URL
         """
         return self.config.get_add_url()
+
     def show_comb_search(self):
         """#self.comb_filter  # ['gender','status','dp']
         "gender"，找类中的gender字段对象，并将其对象中的choice获取
@@ -273,6 +279,7 @@ class StarkConfig(object):
 
         result_list = self.model_class.objects.filter(self.get_key_search_condtion(request)).filter(**self.get_comb_filter_condition(request))
         cl = GetListView(self,result_list,request)
+        print(bool(cl.user_online_state),"状态####")
         return render(request, "get_list_view.html", {"cl":cl})
     def add_view(self,request):
         # self.mcls # models.UserInfo

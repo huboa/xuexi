@@ -25,10 +25,10 @@ from utils.md5 import  md5
 
 from rbac.service.init_permissions import init_permissions
 def login(request):
-
+    request_host = (request.get_host())
     if request.method == 'GET':
         form = LoginForm()
-        return render(request,'login.html',{'form':form})
+        return render(request,'login.html',{'form':form,'request_host':request_host})
     else:
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -49,7 +49,10 @@ def login(request):
 
 
 def index(request):
-    return render(request,'index.html')
+    request_host=(request.get_host())
+    user_online_status=request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
+
+    return render(request,'index.html',{'request_host':request_host,"user_online_status":user_online_status})
 
 
 

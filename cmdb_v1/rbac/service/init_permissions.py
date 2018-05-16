@@ -79,10 +79,8 @@ def init_permissions(user,request):
         }
 
         permission_menu_list.append(var)
-    print(permission_menu_list,"菜单####")
+    # print(permission_menu_list,"菜单####")
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session
-
-
 
     # 获取当前用户的session_key,并保存到用户表
     user.session_key = request.session.session_key

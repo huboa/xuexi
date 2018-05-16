@@ -54,5 +54,5 @@ class RbacMiddleware(MiddlewareMixin):
                 break
 
         if not flag:
-            # return redirect('/login/')
-            return HttpResponse('无权限访问')
+            return redirect('/index/')
+            # return HttpResponse('无权限访问')

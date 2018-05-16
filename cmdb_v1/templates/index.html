@@ -1,9 +1,24 @@
+
+
 {% extends 'layout.html' %}
+{% load left_menu %}
+
+ <!-- 左侧菜单根据用户登陆状态现实是赤登录-->
+{% block left_menu_list %}
+
+       <div class="col-md-2">
+           <div class="panel-group table-responsive" role="tablist">
+                {%  menu request %}
+           </div>
+       </div>
+
+{% endblock %}
+<!-- body 左侧菜单 -->
 
 {% block content %}
- <div class="jumbotron">
-                 <h1>运维管理中心首页</h1>
-<h1>左侧菜单选择功能</h1>
+    <div class="container">
+           <h1>运维管理中心首页</h1>
+           <h1>{{ request_host }}</h1>
 
-</div>
+    </div>
 {% endblock %}

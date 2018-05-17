@@ -18,13 +18,12 @@
 
 
     <!-- 二级菜单 循环开始开始 -->
-                     {% if menu.active %}
+                {% if menu.active %}
                         <div id="collapseListGroup{{ menu.menu_id }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading{{ menu.menu_id }}">
-
-                    {% else %}
+                {% else %}
                         <div id="collapseListGroup{{ menu.menu_id }}" class="panel-collapse collapse " role="tabpanel" aria-labelledby="collapseListGroupHeading{{ menu.menu_id }}">
           
-                    {% endif %}
+                 {% endif %}
 {#        <div id="collapseListGroup{{ menu.menu_id }}" class="panel-collapse collapse " role="tabpanel" aria-labelledby="collapseListGroupHeading{{ menu.menu_id }}">#}
             <ul class="list-group">
                 {% for per in menu.children %}

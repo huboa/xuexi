@@ -13,22 +13,6 @@
 {#{% extends 'head.html' %}#}
 {% extends 'layout.html' %}
 
-{% load left_menu %}
-
-
- <!-- 左侧菜单根据用户登陆状态现实是赤登录-->
-{% block left_menu_list %}
-
-       <div class="col-md-2">
-           <div class="panel-group table-responsive" role="tablist">
-                {%  menu request %}
-           </div>
-       </div>
-
-{% endblock %}
-<!-- body 左侧菜单 -->
-
-
 {% block content %}
      <div class="col-md-9">
 {#            <h1>列表页面</h1>#}

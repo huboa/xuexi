@@ -1,8 +1,28 @@
  <!-- 加载头模板-->
 {%  include 'head.html' %}
+
+{% load head_layout %}
+
+ <!-- 加载左侧菜单数据-->
+{% load left_menu %}
+
+ <!-- 导航条-->
+{% block navbar %}
+    {% head_layout%}
+{% endblock %}
+
  <!-- 左侧菜单-->
-{% block left_menu_list %}{% endblock %}
- <!-- 内容-->
+{% block left_menu_list %}
+
+       <div class="col-md-2">
+           <div class="panel-group table-responsive" role="tablist">
+                {%  menu request %}
+           </div>
+       </div>
+
+{% endblock %}
+<!-- body 左侧菜单 -->
+<!-- 内容-->
 {% block  content%}{% endblock %}
 {#{% load tag_test %}#}
 

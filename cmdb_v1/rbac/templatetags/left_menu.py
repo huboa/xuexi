@@ -91,5 +91,5 @@ def menu(request):
                 ]
             }
 
-    print(menu_result)
+    # print(menu_result)
     return {'menu_result':menu_result}

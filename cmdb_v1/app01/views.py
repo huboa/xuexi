@@ -8,6 +8,7 @@ from rbac.models import  UserInfo
 from  app01 import models
 from django.conf import settings
 from utils.md5 import  md5
+from rbac.service.init_permissions import user_state
 
 
 # Create your views here.
@@ -25,10 +26,10 @@ from utils.md5 import  md5
 
 from rbac.service.init_permissions import init_permissions
 def login(request):
-
+    request_host = (request.get_host())
     if request.method == 'GET':
         form = LoginForm()
-        return render(request,'login.html',{'form':form})
+        return render(request,'login.html',{'form':form,'request_host':request_host})
     else:
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -49,7 +50,11 @@ def login(request):
 
 
 def index(request):
-    return render(request,'index.html')
+    request_host=(request.get_host())
+
+    print(user_state(request))
+    print(user_state(request),request_host)
+    return render(request,'index.html',{'request_host':request_host,"login_state":user_state(request)})
 
 
 

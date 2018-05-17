@@ -28,8 +28,6 @@ def init_permissions(user,request):
                        }
                    }
 
-
-
    """
     #roles =UserInfo.objects.get(username=user).roles.all()
     roles = user.roles.filter(permissions__id__isnull=False)
@@ -43,6 +41,8 @@ def init_permissions(user,request):
                                    'permissions__group__menu__name', ##top menu name
 
                                    ).distinct()
+
+
 
 #####初始化登陆权限
     permission_dict = {}
@@ -79,5 +79,25 @@ def init_permissions(user,request):
         }
 
         permission_menu_list.append(var)
-    print(permission_menu_list,"菜单####")
+    # print(permission_menu_list,"菜单####")
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session
+
+    # 获取当前用户的session_key,并保存到用户表
+    user.session_key = request.session.session_key
+    user.save()
+
+
+def reset_permission(session_key, request):
+    """
+    根据session_key，删除session中保存的信息，以此来设置修改权限后需要重新登录。
+    :param session_key: 被修改权限的用户session_key
+    :return:
+    """
+    request.session.delete(session_key)
+
+def user_state(request):
+    session_dict = request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
+    if session_dict:
+        return True
+    else:
+        return False

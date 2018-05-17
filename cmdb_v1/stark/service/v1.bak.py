@@ -298,13 +298,13 @@ class StarkConfig(object):
         model_form_cls = self.get_model_form_cls()
         if request.method == "GET":
             form = model_form_cls(instance=obj)
-            return render(request, 'change_view.html', {'form': form})
+            return render(request, 'edit_view.html', {'form': form})
         else:
             form = model_form_cls(instance=obj, data=request.POST)
             if form.is_valid():
                 form.save()
                 return redirect(self.get_list_url())
-            return render(request, 'change_view.html', {'form': form})
+            return render(request, 'edit_view.html', {'form': form})
     def delete_view(self,nid):
         self.model_class.objects.filter(id=nid).delete()
         return redirect(self.get_list_url())

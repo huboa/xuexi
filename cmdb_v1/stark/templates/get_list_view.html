@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
 {#    <head>#}
 {#        <meta charset="UTF-8">#}
 {#        <title>Title</title>#}
@@ -8,32 +8,30 @@
 {#    </head>#}
 {##}
 
+ <!-- 加载头菜单-->
 
+{#{% extends 'head.html' %}#}
 {% extends 'layout.html' %}
 
-<div class="container">
-  {% block css %}
-        <style>
-            .comb-search .item{
-                margin: 5px 0;
-            }
-            .comb-search .item a{
-                border: 1px solid #dddddd;
-                display: inline-block;
-                padding: 3px 8px;
-            }
-            .comb-search .item a.active{
-                background-color: #337ab7;
-                color: white;
-            }
-        </style>
-    {% endblock %}
-  </div>
-{% block content %}
-{#    <body>#}
-{#        <div class="container">#}
-            <h1>列表页面</h1>
+{% load left_menu %}
 
+
+ <!-- 左侧菜单根据用户登陆状态现实是赤登录-->
+{% block left_menu_list %}
+
+       <div class="col-md-2">
+           <div class="panel-group table-responsive" role="tablist">
+                {%  menu request %}
+           </div>
+       </div>
+
+{% endblock %}
+<!-- body 左侧菜单 -->
+
+
+{% block content %}
+     <div class="col-md-9">
+{#            <h1>列表页面</h1>#}
             <!-- 组合搜索开始 -->
             <div class="comb-search" >
                 {% for row in cl.show_comb_search %}
@@ -117,8 +115,6 @@
             <ul class="pagination">
                  {{ cl.page_html  }}
             </ul>
-{#        </div>#}
-{#    </body>#}
+      </div>
 {% endblock %}
-
-</html>
+{#</html>#}

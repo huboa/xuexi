@@ -3,12 +3,14 @@ print("加载stark文件")
 from stark.service import v1
 from rbac import models
 from app01 import models as amodels
-from django.shortcuts import HttpResponse,render
+from django.shortcuts import HttpResponse,render,redirect
 from django.conf.urls import url
 from django.forms import ModelForm
 from django.forms import fields
 from django.utils.safestring import mark_safe
 from django.urls import reverse
+from rbac.service.init_permissions import reset_permission
+
 ##注册说明
 # 将models中的UserInfo类注册到【某个地方】
 """
@@ -61,10 +63,10 @@ class UserInfoModelForm(ModelForm):
 
 class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数据 只要添加
 
-    def test(self,is_header=False,row=None):   ###添加显示字段
+    def logout_html(self,is_header=False,row=None):   ###添加显示字段
         if is_header:
-            return '表头test'
-        return  mark_safe('<a href=/stark/rbac/userinfo/%s/change/>编辑</a>  <a href=/stark/rbac/userinfo/%s/delete/>删除</a>'%(row.id,row.id))
+            return '注销'
+        return  mark_safe('<a href=/stark/rbac/userinfo/%s/logout/>注销</a> '%(row.id))
 
     def display_gender(self, is_header=False, row=None):
         if is_header:
@@ -86,7 +88,7 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
         return row.dp.title
 
 ####显示列表可以添加函数数据库字段和
-    list_display = ['id', 'username',display_gender,display_status,display_dp]
+    list_display = ['id', 'username',display_gender,display_status,display_dp,logout_html]
     search_list = ["username__contains",]
     comb_filter = ['gender','status','dp']
 
@@ -96,11 +98,18 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
     def extra_url(self):  #######钩子函数配了 会劫持 扩展url 用
         patterns=[
             url(r'^xx$', self.xx),
-            url(r'^xxxx/$', self.xxxx),
+            url(r'^(\d+)/logout/$', self.logout),
         ]
         return patterns
-    def xxxx(self,request):
-        return HttpResponse("xxxx劫持或添加")
+
+    ####注销函数
+    def logout(self,request,pk):
+        print(pk,self,request,"###注销函数")
+        obj = self.model_class.objects.filter(id=pk).first()
+        if obj.session_key:
+            reset_permission(obj.session_key,request)
+        return redirect(self.get_list_url())
+
     def xx(self,request):
         return HttpResponse("xx劫持或添加")
 
@@ -131,11 +140,18 @@ class PermissionsConfig(v1.StarkConfig):
 class PermissionGroupConfig(v1.StarkConfig):
     list_display = ['id','title','menu']
 
+###菜单
+class MenuConfig(v1.StarkConfig):
+    list_display = ['id','name']
 
  #注册mode表 待生成url
+
 v1.site.registry(models.UserInfo,UserInfoConfig)
 v1.site.registry(models.Role,RoleConfig)
-v1.site.registry(amodels.Host,HostConfig)
+
 v1.site.registry(models.Permissions,PermissionsConfig)
 v1.site.registry(models.PermissionGroup,PermissionGroupConfig)
+v1.site.registry(models.Menu,MenuConfig)
+
+v1.site.registry(amodels.Host,HostConfig)
 

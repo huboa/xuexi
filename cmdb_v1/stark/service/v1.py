@@ -11,7 +11,7 @@ from rbac import models
 from django.db.models.fields.related import ForeignKey
 from django.http import QueryDict
 from django.conf import settings
-from rbac.service.init_permissions import user_state
+# from rbac.service.init_permissions import user_state
 
 ####组合搜索类
 class FilterRow(object):
@@ -280,7 +280,7 @@ class StarkConfig(object):
 
         result_list = self.model_class.objects.filter(self.get_key_search_condtion(request)).filter(**self.get_comb_filter_condition(request))
         cl = GetListView(self,result_list,request)
-        print((cl.login_state()),"状态####")
+        # print((cl.login_state()),"状态####")
         return render(request, "get_list_view.html", {"cl":cl})
     def add_view(self,request):
         # self.mcls # models.UserInfo

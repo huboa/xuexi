@@ -94,3 +94,10 @@ def reset_permission(session_key, request):
     :return:
     """
     request.session.delete(session_key)
+
+def user_state(request):
+    session_dict = request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
+    if session_dict:
+        return True
+    else:
+        return False

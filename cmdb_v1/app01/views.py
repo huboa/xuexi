@@ -8,6 +8,7 @@ from rbac.models import  UserInfo
 from  app01 import models
 from django.conf import settings
 from utils.md5 import  md5
+from rbac.service.init_permissions import user_state
 
 
 # Create your views here.
@@ -50,9 +51,10 @@ def login(request):
 
 def index(request):
     request_host=(request.get_host())
-    user_online_status=request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
 
-    return render(request,'index.html',{'request_host':request_host,"user_online_status":user_online_status})
+    print(user_state(request))
+    print(user_state(request),request_host)
+    return render(request,'index.html',{'request_host':request_host,"login_state":user_state(request)})
 
 
 

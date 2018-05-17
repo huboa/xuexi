@@ -8,7 +8,9 @@
 
        <div class="col-md-2">
            <div class="panel-group table-responsive" role="tablist">
-                {%  menu request %}
+               {% if session_dict %}
+                    {%  menu request %}
+               {% endif %}
            </div>
        </div>
 

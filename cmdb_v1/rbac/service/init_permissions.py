@@ -64,7 +64,6 @@ def init_permissions(user,request):
 
 
 
-
 ###初始化菜单显示哪些菜单
     permission_menu_list=[]
     for item in  permission_list:
@@ -82,21 +81,26 @@ def init_permissions(user,request):
     # print(permission_menu_list,"菜单####")
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session
 
-    # 获取当前用户的session_key,并保存到用户表
-    user.session_key = request.session.session_key
+   # 获取当前用户的session_key,并保存到用户表
+   #  user.session_key = request.session.session_key
+    print("key-init_permission",request.session.session_key)
     user.save()
 
 
+###注销用户
 def reset_permission(session_key, request):
     """
     根据session_key，删除session中保存的信息，以此来设置修改权限后需要重新登录。
     :param session_key: 被修改权限的用户session_key
     :return:
     """
+
     request.session.delete(session_key)
 
+####用户在线状态
 def user_state(request):
     session_dict = request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
+    # session_dict = request.session.session_key
     if session_dict:
         return True
     else:

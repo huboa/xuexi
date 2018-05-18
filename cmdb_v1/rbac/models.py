@@ -37,6 +37,10 @@ class UserInfo(models.Model):
     def __str__(self):
         return self.username
 
+    ###如需别的类生成表
+    # class Meta:
+    #     abstract =True
+
 class Role(models.Model):
     """角色表"""
     title =models.CharField(verbose_name="角色名称",max_length=32,unique=True)

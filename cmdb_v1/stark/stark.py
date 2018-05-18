@@ -104,10 +104,11 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
 
     ####注销函数
     def logout(self,request,pk):
-        print(pk,self,request,"###注销函数")
+        print("###注销函数",pk,self,request,)
         obj = self.model_class.objects.filter(id=pk).first()
         if obj.session_key:
             reset_permission(obj.session_key,request)
+            print(obj.session_key)
         return redirect(self.get_list_url())
 
     def xx(self,request):

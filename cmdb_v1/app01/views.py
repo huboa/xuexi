@@ -9,6 +9,7 @@ from  app01 import models
 from django.conf import settings
 from utils.md5 import  md5
 from rbac.service.init_permissions import user_state
+from rbac.service.init_permissions import reset_permission
 
 
 # Create your views here.
@@ -26,10 +27,9 @@ from rbac.service.init_permissions import user_state
 
 from rbac.service.init_permissions import init_permissions
 def login(request):
-    request_host = (request.get_host())
     if request.method == 'GET':
         form = LoginForm()
-        return render(request,'login.html',{'form':form,'request_host':request_host})
+        return render(request,'login.html',{'form':form})
     else:
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -42,12 +42,20 @@ def login(request):
             if user:
                 ###将用户信息方session
                 init_permissions(user,request)
+                user.session_key=request.session.session_key
+                print("key", request.session.session_key)
+                user.save()
                 return redirect('/index/')
             else:
                 form.add_error("password","用户名或密码错误")
 
         return render(request,'login.html',{'form':form})
 
+def logout(request):
+    session_key=request.session.session_key
+    reset_permission(session_key,request)
+    print("删除session",session_key)
+    return redirect('/index/')
 
 def index(request):
     request_host=(request.get_host())

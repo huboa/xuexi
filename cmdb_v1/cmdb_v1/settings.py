@@ -134,6 +134,7 @@ REX_FORMAT = "^%s$"
 VALID_LIST=[
     '/login/',
     '/index/',
-    '/stack/.*',
+    '/logout',
+    # '/stack/.*',
     '/admin/.*',
 ]

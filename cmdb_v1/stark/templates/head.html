@@ -27,20 +27,15 @@
 
     <!-- body 开始  -->
     <body>
-    {% block navbar %}
-    {% endblock %}
+         <!-- 导航栏 开始  -->
+        {% block navbar %}{% endblock %}
+        <!-- 导航栏结束  -->
 
+        <!-- body 内容 开始 -->
+         {% block body %}{% endblock %}
+          <!-- body 内容 结束 -->
 
-
-       <!-- body 开始 -->
-         <div class="container-fluid">
-            <div class="row">
-                    {% block body %}
-                    {% endblock %}
-            </div>
-        </div>
-
-        <!-- body 结束 -->
+          <!-- JS开始 -->
          <script>
               $(function(){
                   $(".panel-heading").click(function(e){
@@ -50,5 +45,7 @@
                   });
               });
          </script>
-        </body>
+        <!-- JS 结束 -->
+    </body>
+    <!-- body 内容 结束 -->
 </html>

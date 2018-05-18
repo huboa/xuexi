@@ -186,7 +186,7 @@ class StarkConfig(object):
             url(r'^$', self.get_list_view, name='%s_%s_get_list' % app_model_name),
             url(r'^add/$', self.add_view, name='%s_%s_add' % app_model_name),
             url(r'^(\d+)/edit/$', self.edit_view, name="%s_%s_edit" % app_model_name),
-            url(r'^(\d+)/delete/$', self.delete_view, name="%s_%s_delete" % app_model_name),
+            url(r'^(\d+)/del/$', self.delete_view, name="%s_%s_delete" % app_model_name),
         ]
         patterns.extend(self.extra_url())
 
@@ -225,8 +225,8 @@ class StarkConfig(object):
         url_path = reverse(name, args=(pk,))
         return url_path
     def get_list_url(self):
-        # /stark/app01/userinfo/1/delete/
-        # /stark/app02/role/1/delete/
+        # /stark/app01/userinfo/1/del/
+        # /stark/app02/role/1/del/
         app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)
         name = "stark:%s_%s_get_list" % app_model_name
         url_path = reverse(name)
@@ -382,7 +382,7 @@ class StarkSite(object):
         # /admin//app01/userinfo/           查看列表页面
         # /admin/app01/userinfo/add/        添加页面
         # /admin/app01/userinfo/1/edit/   修改页面
-        # /admin/app01/userinfo/1/delete/   删除页面
+        # /admin/app01/userinfo/1/del/   删除页面
 
 
         /stark/   ->  ([
@@ -391,14 +391,14 @@ class StarkSite(object):
                                                         /                    查看列表
                                                         add/                 添加
                                                         (\d+)/edit/        修改
-                                                        (\d+)/delete/        删除
+                                                        (\d+)/del/        删除
                                                     ])
                             /app01/role/
                                                 --> ([
                                                         /                   查看列表
                                                         add/                添加
                                                         (\d+)/edit/        修改
-                                                        (\d+)/delete/        删除
+                                                        (\d+)/del/        删除
                                                     ])
                         ])
 

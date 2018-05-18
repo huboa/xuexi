@@ -8,6 +8,7 @@ from rbac.models import  UserInfo
 from  app01 import models
 from django.conf import settings
 from utils.md5 import  md5
+from rbac.service.init_permissions import init_permissions
 from rbac.service.init_permissions import user_state
 from rbac.service.init_permissions import reset_permission
 
@@ -25,7 +26,7 @@ from rbac.service.init_permissions import reset_permission
 #     return inner
 #
 
-from rbac.service.init_permissions import init_permissions
+
 def login(request):
     if request.method == 'GET':
         form = LoginForm()
@@ -42,8 +43,13 @@ def login(request):
             if user:
                 ###将用户信息方session
                 init_permissions(user,request)
+
+                print('login sessinkiey',request.session.session_key)
                 user.session_key=request.session.session_key
-                print("key", request.session.session_key)
+                print(request.session.session_key)
+                print(request.session.keys())
+                print(request.session.values())
+                print(request.session.items())
                 user.save()
                 return redirect('/index/')
             else:
@@ -59,7 +65,7 @@ def logout(request):
 
 def index(request):
     request_host=(request.get_host())
-
+    print("/index/",request.session.session_key)
     print(user_state(request))
     print(user_state(request),request_host)
     return render(request,'index.html',{'request_host':request_host,"login_state":user_state(request)})

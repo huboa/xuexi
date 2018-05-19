@@ -54,7 +54,7 @@ _registry = {
 """
 
 
-####劫持用户配置类
+####form 表单
 class UserInfoModelForm(ModelForm):
     xx = fields.CharField()
     class Meta:
@@ -104,17 +104,20 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
 
     ####注销函数
     def logout(self,request,pk):
-        print("###注销函数",pk,self,request,)
-        obj = self.model_class.objects.filter(id=pk).first()
-        if obj.session_key:
-            reset_permission(obj.session_key,request)
-            print(obj.session_key)
+        user_obj = self.model_class.objects.filter(id=pk).first()
+        if user_obj.session_key:
+            reset_permission(user_obj,request)
+        else:
+            user_obj.session_key = None
+            user_obj.status = 2
+            user_obj.save()
         return redirect(self.get_list_url())
 
     def xx(self,request):
         return HttpResponse("xx劫持或添加")
 
-    # model_form_cls = UserInfoModelForm  ####劫持form 表单
+
+    model_form_cls = UserInfoModelForm  ####劫持form 表单
 
 
 ####劫持角色配置类

@@ -22,6 +22,8 @@ def login(request):
             # 设置session_key
             # 权限信息放入session
             # 菜单信息放入session
+
+            permission(request.session.session_key)
             permission.init_permission(user, request)
             return redirect('/depart/')
 

@@ -11,7 +11,7 @@ from rbac import models
 from django.db.models.fields.related import ForeignKey
 from django.http import QueryDict
 from django.conf import settings
-
+from utils.md5 import  md5
 
 ####组合搜索类
 class FilterRow(object):

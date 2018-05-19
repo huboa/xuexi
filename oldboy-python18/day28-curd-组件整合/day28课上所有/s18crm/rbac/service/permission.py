@@ -81,6 +81,7 @@ def init_permission(user, request):
 
     # 获取当前用户的session_key,并保存到用户表
     user.session_key = request.session.session_key
+    print(user.session_key)
     user.save()
 
 

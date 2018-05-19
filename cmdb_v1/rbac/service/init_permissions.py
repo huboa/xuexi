@@ -43,7 +43,7 @@ def init_permissions(user,request):
                                    ).distinct()
 
 
-
+    print(permission_list)
 #####初始化登陆权限
     permission_dict = {}
     for permission in permission_list:
@@ -80,27 +80,35 @@ def init_permissions(user,request):
         permission_menu_list.append(var)
     # print(permission_menu_list,"菜单####")
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session
+    print(request.session.get(settings.PERMISSION_MENU_SESSION_KEY))
 
-   # 获取当前用户的session_key,并保存到用户表
-   #  user.session_key = request.session.session_key
-    print("key-init_permission",request.session.session_key)
+    #用户名保存到session
+    request.session["user_name"] = user.username
+    print(request.session.get("user_name"))
+    # # 获取当前用户的session_key,并保存数据库用户表
+    if not request.session.session_key:
+        request.session.save()
+    user.session_key = request.session.session_key
+    user.status = 1
     user.save()
 
 
 ###注销用户
-def reset_permission(session_key, request):
+def reset_permission(user_obj,request,):
     """
     根据session_key，删除session中保存的信息，以此来设置修改权限后需要重新登录。
     :param session_key: 被修改权限的用户session_key
     :return:
     """
-
-    request.session.delete(session_key)
+    print(user_obj.username,"注销用户")
+    request.session.delete(user_obj.session_key)
+    user_obj.session_key = None
+    user_obj.status=2
+    user_obj.save()
 
 ####用户在线状态
 def user_state(request):
     session_dict = request.session.get(settings.PERMISSION_DICT_SESSION_KEY)
-    # session_dict = request.session.session_key
     if session_dict:
         return True
     else:

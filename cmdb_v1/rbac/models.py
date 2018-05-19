@@ -66,7 +66,7 @@ class PermissionGroup(models.Model):
 #     3 其它组
 #     """
     title = models.CharField(verbose_name='表名称',max_length=32,unique=True)
-    menu = models.ForeignKey(verbose_name="一级菜单",to='Menu')
+    menu = models.ForeignKey(verbose_name="一级菜单",to='Menu',default=1)
 
 
     def __str__(self):

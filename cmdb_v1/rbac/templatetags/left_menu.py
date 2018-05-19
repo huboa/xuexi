@@ -77,7 +77,7 @@ def menu(request):
     for item in per_dict.values():
         menu_id = item['menu_id']
         if menu_id in menu_result:
-            temp = {'id': item['id'], 'title': item['title'], 'url': item['url'], 'active': item.get('active', False)}
+            temp = {'id': item['id'], 'title': item['app_name'], 'url': item['url'], 'active': item.get('active', False)}
             menu_result[menu_id]['children'].append(temp)
             if item.get('active', False):
                 menu_result[menu_id]['active'] = item.get('active', False)
@@ -87,9 +87,9 @@ def menu(request):
                 'menu__name': item['menu_name'],
                 'active': item.get('active', False),
                 'children': [
-                    {'id': item['id'], 'title': item['title'], 'url': item['url'], 'active': item.get('active', False)}
+                    {'id': item['id'], 'title': item['app_name'], 'url': item['url'], 'active': item.get('active', False)}
                 ]
             }
 
-    # print(menu_result)
+    print(menu_result)
     return {'menu_result':menu_result}

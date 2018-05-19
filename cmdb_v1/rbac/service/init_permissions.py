@@ -36,6 +36,7 @@ def init_permissions(user,request):
                                    'permissions__url',  ##权限 url
                                    'permissions__code', ##权限码
                                    'permissions__group_id', ###权限组id
+                                   'permissions__group__name',  ###应用名
                                    'permissions__gmid_id',  ###组内菜单
                                    'permissions__group__menu__id',##top menu id
                                    'permissions__group__menu__name', ##top menu name
@@ -43,7 +44,7 @@ def init_permissions(user,request):
                                    ).distinct()
 
 
-    print(permission_list)
+    print(permission_list,"获取所有字段")
 #####初始化登陆权限
     permission_dict = {}
     for permission in permission_list:
@@ -72,6 +73,7 @@ def init_permissions(user,request):
             'title': item['permissions__title'],
             'url': item['permissions__url'],
             'gid': item['permissions__group_id'],
+            'app_name': item['permissions__group__name'],
             'gmid': item['permissions__gmid_id'],
             'menu_id': item['permissions__group__menu__id'],
             'menu_name': item['permissions__group__menu__name']
@@ -80,7 +82,7 @@ def init_permissions(user,request):
         permission_menu_list.append(var)
     # print(permission_menu_list,"菜单####")
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session
-    print(request.session.get(settings.PERMISSION_MENU_SESSION_KEY))
+
 
     #用户名保存到session
     request.session["user_name"] = user.username

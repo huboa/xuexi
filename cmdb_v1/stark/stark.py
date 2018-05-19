@@ -142,7 +142,7 @@ class HostConfig(v1.StarkConfig):
 class PermissionsConfig(v1.StarkConfig):
     list_display = ['id','title','url','code','group','gmid']
 class PermissionGroupConfig(v1.StarkConfig):
-    list_display = ['id','title','menu']
+    list_display = ['id','name','menu']
 
 ###菜单
 class MenuConfig(v1.StarkConfig):

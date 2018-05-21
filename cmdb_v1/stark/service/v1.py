@@ -235,7 +235,7 @@ class StarkConfig(object):
 #######处理生成((选择编辑删除)按钮的 url#########
     def display_checkbox(self, is_header=False, row=None):
         if is_header:
-            return '选择'
+            return mark_safe('<input type="checkbox" name="checkAll" id="checkAll" value="">全选')
         return mark_safe("<input type='checkbox' name='pk' value='%s' />" % (row.id,))
     def display_edit(self, is_header=False, row=None):
         if is_header:

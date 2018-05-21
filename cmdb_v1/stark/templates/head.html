@@ -44,7 +44,20 @@
                       $(this).find("span").toggleClass("glyphicon-chevron-up");
                   });
               });
+
+
          </script>
+
+         <script>
+                $("#checkAll").click(function() {
+                        if (this.checked)
+                            {$("input[name='pk']").prop("checked","true");}
+                        else
+                            {$("input[name='pk']").removeProp("checked");}
+
+            })
+</script>
+
         <!-- JS 结束 -->
     </body>
     <!-- body 内容 结束 -->

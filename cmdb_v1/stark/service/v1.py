@@ -236,7 +236,7 @@ class StarkConfig(object):
     def display_checkbox(self, is_header=False, row=None):
         if is_header:
             return '选择'
-        return mark_safe("<input type='checkbox' name='pk' value='%s' />" % (row.id,))
+        return mark_safe("<input type='checkbox' name='pk' value='%s'  />" % (row.id,))
     def display_edit(self, is_header=False, row=None):
         if is_header:
             return "编辑"

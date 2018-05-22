@@ -44,7 +44,7 @@ def init_permissions(user,request):
                                    ).distinct()
 
 
-    print(permission_list,"获取所有字段")
+    # print(permission_list,"获取所有权限")
 #####初始化登陆权限
     permission_dict = {}
     for permission in permission_list:
@@ -59,13 +59,27 @@ def init_permissions(user,request):
             permission_dict[gpid] = {'urls': [], 'codes': []}
             permission_dict[gpid]['urls'].append(url)
             permission_dict[gpid]['codes'].append(code)
-
+    # print(permission_dict,"权限字典")
     request.session[settings.PERMISSION_DICT_SESSION_KEY] = permission_dict
 
 
 
 
 ###初始化菜单显示哪些菜单
+
+    '''
+    生成菜单数据
+ [
+     {'mid': 1, 'url': '/user/', 'menu_id': 1, 'pid': 1, 'menu_name': '菜单组', 'title': '用户列表'},
+     {'mid': 1, 'url': '/user/add/', 'menu_id': 1, 'pid': 2, 'menu_name': '菜单组', 'title': '添加用户'},
+     {'mid': 1, 'url': '/user/del/(\\d+)', 'menu_id': 1, 'pid': 3, 'menu_name': '菜单组', 'title': '删除用户'},
+     {'mid': 1, 'url': '/user/edit/(d+)', 'menu_id': 1, 'pid': 4, 'menu_name': '菜单组', 'title': '编辑用户'},
+     {'mid': 1, 'url': '/user/', 'menu_id': 1, 'pid': 1, 'menu_name': '菜单组', 'title': '用户列表'},
+     {'mid': 1, 'url': '/user/add/', 'menu_id': 1, 'pid': 2, 'menu_name': '菜单组', 'title': '添加用户'},
+     {'mid': 1, 'url': '/user/del/(\\d+)', 'menu_id': 1, 'pid': 3, 'menu_name': '菜单组', 'title': '删除用户'},
+     {'mid': 1, 'url': '/user/edit/(d+)', 'menu_id': 1, 'pid': 4, 'menu_name': '菜单组', 'title': '编辑用户'}
+ ]
+    '''
     permission_menu_list=[]
     for item in  permission_list:
         var={
@@ -80,13 +94,13 @@ def init_permissions(user,request):
         }
 
         permission_menu_list.append(var)
-    # print(permission_menu_list,"菜单####")
+    # print(permission_menu_list,"菜单权限列表####")
     request.session[settings.PERMISSION_MENU_SESSION_KEY] = permission_menu_list  ###将菜单信息放入session
 
 
     #用户名保存到session
     request.session["user_name"] = user.username
-    print(request.session.get("user_name"))
+    # print(request.session.get("user_name"))
     # # 获取当前用户的session_key,并保存数据库用户表
     if not request.session.session_key:
         request.session.save()

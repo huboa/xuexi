@@ -7,5 +7,52 @@
            <h1>运维管理中心首页</h1>
            <h1>{{ request_host }}</h1>
 
-    </div>
+<div/>
+
+
+<script type="text/javascript">
+    $(function(){
+        //实现全选与反选
+        $("#allAndNotAll").click(function() {
+            if (this.checked){
+                $("input[name='items']:checkbox").each(function(){
+                      $(this).attr("checked", true);
+                });
+            } else {
+                $("input[name='items']:checkbox").each(function() {
+                      $(this).attr("checked", false);
+                });
+            }
+        });
+
+        //获取被选中的id
+        var ids=[];
+        $('#getAllSelectedId').click(function(){
+            $("input[name='items']:checked").each(function(){
+                  ids.push($(this).attr("id"));
+            });
+
+            var delIds=ids.join(",");
+            console.log(delIds);
+
+            //可以将delIds通过jquery ajax传到后台了,在后台采用String接收这个delIds参数,然后采用split(",")分隔得到一个
+            //String[]的id数组。可以参考我的博客：http://blog.csdn.net/u013871100/article/details/52740061
+
+        });
+    });
+</script>
+</head>
+<body>
+
+    员工列表:<br><br>
+    <input type="checkbox" name=items id="001"/>刘德华 <br>
+    <input type="checkbox" name=items id="002"/>张学友 <br>
+    <input type="checkbox" name=items id="003"/>黎明 <br>
+    <input type="checkbox" name=items id="004"/>郭富城 <br>
+
+    <br><br>
+    <input type="checkbox" id="allAndNotAll" />全选/反选<br><br>
+    <input type="button" id="getAllSelectedId" value="获取被选中的id"/><br>
+
+
 {% endblock %}

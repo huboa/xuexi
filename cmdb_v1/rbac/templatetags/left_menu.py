@@ -52,8 +52,9 @@ from django.shortcuts import render,HttpResponse,redirect
 @register.inclusion_tag('menu.html')
 def menu(request):
     current_url = request.path_info
-    # 获取session中菜单信息，自动生成二级菜单【默认选中，默认展开】
     permission_menu_list = request.session.get(settings.PERMISSION_MENU_SESSION_KEY)
+    # 获取session中菜单信息，自动生成二级菜单【默认选中，默认展开】
+    # print("获取菜单列表",permission_menu_list)
     if not permission_menu_list:
         return {}
     per_dict = {}
@@ -91,5 +92,5 @@ def menu(request):
                 ]
             }
 
-    print(menu_result)
+    # print(menu_result)
     return {'menu_result':menu_result}

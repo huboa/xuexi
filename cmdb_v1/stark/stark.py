@@ -134,7 +134,7 @@ class HostConfig(v1.StarkConfig):
         pk_list = request.POST.getlist("pk")
         print(pk_list, "测试2")
 
-    list_display = ['id', 'idc','sn','remoteip']
+    list_display = ['id', 'idc','sn','remoteip','hostname','host_ip','manufacturer','product_name']
     search_list = ["sn__contains", 'remoteip__contains']
     action_list = [{"name":"测试1","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]
 

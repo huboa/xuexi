@@ -63,7 +63,7 @@ class UserInfoModelForm(ModelForm):
 
 class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数据 只要添加
 
-    def logout_html(self,is_header=False,row=None):   ###添加显示字段
+    def logout(self,is_header=False,row=None):   ###添加显示字段
         if is_header:
             return '注销'
         return  mark_safe('<a href=/stark/rbac/userinfo/%s/logout/>注销</a> '%(row.id))
@@ -88,7 +88,7 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
         return row.dp.title
 
 ####显示列表可以添加函数数据库字段和
-    list_display = ['id', 'username',display_gender,display_status,display_dp,logout_html]
+    list_display = ['id', 'username',display_gender,display_status,display_dp,logout]
     search_list = ["username__contains",]
     comb_filter = ['gender','status','dp']
 

@@ -189,7 +189,6 @@ class StarkConfig(object):
             url(r'^(\d+)/del/$', self.delete_view, name="%s_%s_delete" % app_model_name),
         ]
         patterns.extend(self.extra_url())
-
         return patterns
     def extra_url(self):
         """

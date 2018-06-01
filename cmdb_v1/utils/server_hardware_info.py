@@ -78,13 +78,13 @@ class connect_ssh_tb(object):
 
 
 
-####使用说明创建跳扳机连接实例
-# ssh.connect(hostname='10.199.104.63', port=22, username='admin', password='1234qwer ')
-connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='!!feixueliantianshebailu!!=mtime.com')
-
-####获取信息
-# print(connect_obj.command_line(user='root',host='192.168.51.31',command='hostname'))
-sys_info_dict = connect_obj.get_sys_info(user='root',host='192.168.50.101',)
-print(sys_info_dict['Manufacturer'])
-print(sys_info_dict['Product Name'])
-print(sys_info_dict['Serial Number'])
+# ####使用说明创建跳扳机连接实例
+# # ssh.connect(hostname='10.199.104.63', port=22, username='admin', password='1234qwer ')
+# connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='!!feixueliantianshebailu!!=mtime.com')
+#
+# ####获取信息
+# # print(connect_obj.command_line(user='root',host='192.168.51.31',command='hostname'))
+# sys_info_dict = connect_obj.get_sys_info(user='root',host='192.168.50.101',)
+# print(sys_info_dict['Manufacturer'])
+# print(sys_info_dict['Product Name'])
+# print(sys_info_dict['Serial Number'])

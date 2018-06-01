@@ -10,6 +10,7 @@ from django.forms import fields
 from django.utils.safestring import mark_safe
 from django.urls import reverse
 from rbac.service.init_permissions import reset_permission
+from utils.server_hardware_info import connect_ssh_tb
 
 ##注册说明
 # 将models中的UserInfo类注册到【某个地方】
@@ -54,16 +55,16 @@ _registry = {
 """
 
 
-####form 表单
+####用户表单form 表单
 class UserInfoModelForm(ModelForm):
     xx = fields.CharField()
     class Meta:
         model = models.UserInfo
         fields = "__all__"
-
+##用户类
 class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数据 只要添加
 
-    def logout(self,is_header=False,row=None):   ###添加显示字段
+    def logout_url(self,is_header=False,row=None):   ###添加显示字段
         if is_header:
             return '注销'
         return  mark_safe('<a href=/stark/rbac/userinfo/%s/logout/>注销</a> '%(row.id))
@@ -88,7 +89,7 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
         return row.dp.title
 
 ####显示列表可以添加函数数据库字段和
-    list_display = ['id', 'username',display_gender,display_status,display_dp,logout]
+    list_display = ['id', 'username',display_gender,display_status,display_dp,logout_url]
     search_list = ["username__contains",]
     comb_filter = ['gender','status','dp']
 
@@ -120,7 +121,7 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
     model_form_cls = UserInfoModelForm  ####劫持form 表单
 
 
-####劫持角色配置类
+####角色类劫持角色配置类
 class RoleConfig(v1.StarkConfig):
     list_display = ['id', 'title']
 ####主机配置类
@@ -134,9 +135,28 @@ class HostConfig(v1.StarkConfig):
         pk_list = request.POST.getlist("pk")
         print(pk_list, "测试2")
 
-    list_display = ['id', 'idc','sn','remoteip','hostname','host_ip','manufacturer','product_name']
+    def update_url(self, is_header=False, row=None):  ###添加显示字段
+        if is_header:
+            return '更新硬件信息'
+        return mark_safe('<a href=/stark/app01/host/%s/updateinfo/>更新</a> ' % (row.id))
+
+    list_display = ['id', 'idc','sn','remoteip','hostname','host_ip','manufacturer','product_name',update_url]
     search_list = ["sn__contains", 'remoteip__contains']
+    ####批量执行清单
     action_list = [{"name":"测试1","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]
+
+
+    def extra_url(self):  #######钩子函数配了 会劫持 扩展url
+        patterns = [
+            url(r'^(\d+)/updateinfo/$', self.updatefunc),
+        ]
+        return patterns
+
+    def updatefunc(self,request,pk):
+        pk_list = request.POST.getlist("pk")
+        print(pk_list, "更新主机信息")
+        return redirect(self.get_list_url())
+
 
 ###权限类
 class PermissionsConfig(v1.StarkConfig):

@@ -53,7 +53,7 @@ class Permissions(models.Model):
     title = models.CharField(verbose_name="权限名称",max_length=32,unique=True)
     url = models.CharField(verbose_name="含正则url",max_length=255)
     code = models.CharField(verbose_name="权限代码", max_length=32,)
-    group = models.ForeignKey(verbose_name="应用",to="PermissionGroup",)
+    group = models.ForeignKey(verbose_name="表-权限组",to="PermissionGroup",)
     gmid = models.ForeignKey(verbose_name="组内菜单",to='self',null=True,blank=True,related_name='xxx')
     def __str__(self):
         return self.title
@@ -65,7 +65,7 @@ class PermissionGroup(models.Model):
 #     2 主机管理组
 #     3 其它组
 #     """
-    name = models.CharField(verbose_name='应用名称',max_length=32,default="默认组")
+    name = models.CharField(verbose_name='表名称',max_length=32,default="默认组")
     menu = models.ForeignKey(verbose_name="一级菜单",to='Menu',default=1)
 
 

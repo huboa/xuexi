@@ -31,7 +31,6 @@ class connect_ssh_tb(object):
         stdin, stdout, stderr = ssh.exec_command(command_line)
         result = stdout.readlines()
 
-
         # 关闭连接
         ssh.close()
         return  result
@@ -45,6 +44,9 @@ class connect_ssh_tb(object):
     def get_sys_info(self,user,host):
         data_list = self.command_line(user=user,host=host,command="dmidecode")
         list_info =self.parse_data(data_list)
+        if not list_info:
+            # print(list_info,"check-list info====")
+            return None
         dict_info =self.get_dmi(list_info)
         return  dict_info
     #加工decode 获取系统信息
@@ -80,9 +82,9 @@ class connect_ssh_tb(object):
 
 # ####使用说明创建跳扳机连接实例
 # # ssh.connect(hostname='10.199.104.63', port=22, username='admin', password='1234qwer ')
-# connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='!!feixueliantianshebailu!!=mtime.com')
-#
-# ####获取信息
+connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='!!feixueliantianshebailu!!=mtime.com')
+# #
+# # ####获取信息
 # # print(connect_obj.command_line(user='root',host='192.168.51.31',command='hostname'))
 # sys_info_dict = connect_obj.get_sys_info(user='root',host='192.168.50.101',)
 # print(sys_info_dict['Manufacturer'])

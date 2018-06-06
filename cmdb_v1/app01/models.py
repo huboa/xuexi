@@ -1,14 +1,33 @@
 from django.db import models
-
 # Create your models here.
-class Host(models.Model):
-    idc = models.CharField(max_length=32,default="廊坊")
-    sn = models.CharField(verbose_name="sn号",max_length=32,default='null',unique=True)
-    remoteip = models.GenericIPAddressField(verbose_name="带外ip",protocol='ipv4',default='null')
-    hostname = models.CharField(verbose_name="主机名",max_length=32,default='null')
-    host_ip = models.CharField(verbose_name="主机ip",max_length=32,default='null')
-    manufacturer = models.CharField(verbose_name="品牌",max_length=32,default='null')
-    product_name = models.CharField(verbose_name="型号",max_length=32,default='null')
+class IDC(models.Model):
+    Iname=models.CharField(verbose_name="机房名称",max_length=32,unique=True)
+    Icity=models.CharField(verbose_name="城市",max_length=32)
+    Iaddr=models.CharField(verbose_name="地址",max_length=32)
+    Itel=models.CharField(verbose_name="电话",max_length=32)
+    Icontact=models.CharField(verbose_name="联系人",max_length=32)
+    def __str__(self):
+        return self.Iname
+class Cabinet(models.Model):
+    name = models.CharField(verbose_name="机柜名",max_length=32,)
+    postion = models.CharField(verbose_name="机柜位",max_length=32)
+    idc = models.ForeignKey(verbose_name="机房", to="IDC", default=1)
 
+class Host(models.Model):
+    idc = models.ForeignKey(verbose_name="机房",to="IDC",default=1)
+
+    sn = models.CharField(verbose_name="sn号",max_length=32,)
+    remoteip = models.GenericIPAddressField(verbose_name="带外ip",default='0.0.0.0')
+    hostname = models.CharField(verbose_name="主机名",max_length=32,default="")
+    host_ip = models.CharField(verbose_name="主机ip",max_length=32,default="0.0.0.0")
+    manufacturer = models.CharField(verbose_name="品牌",max_length=32,default="")
+    product_name = models.CharField(verbose_name="型号",max_length=32,default="")
+    Hosys= models.CharField(verbose_name="操作系统",max_length=32,null=True)
+    Hcpu=models.CharField(verbose_name="cpu",max_length=32,default="")
+    Hmemory=models.CharField(verbose_name='内存',max_length=32,default="")
+    Hdisk=models.CharField(verbose_name="磁盘",max_length=32,default="")
+    HotherIp=models.CharField(verbose_name='其它ip',max_length=128,default="")
     def __str__(self):
         return self.hostname
+
+

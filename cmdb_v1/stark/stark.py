@@ -10,7 +10,7 @@ from django.forms import fields
 from django.utils.safestring import mark_safe
 from django.urls import reverse
 from rbac.service.init_permissions import reset_permission
-from utils.server_hardware_info import connect_ssh_tb
+from utils.server_hardware_info import connect_obj
 
 ##注册说明
 # 将models中的UserInfo类注册到【某个地方】
@@ -61,7 +61,32 @@ class UserInfoModelForm(ModelForm):
     class Meta:
         model = models.UserInfo
         fields = "__all__"
-##用户类
+
+###主机表单表单form 表单
+class HostModelForm(ModelForm):
+        class Meta:
+            model = amodels.Host
+            fields = "__all__"
+            # fields = ["idc", "remoteip", "host_ip"]
+            required = True
+            labels = {
+                "sn": "主机SN号",
+                "remoteip": "带外IP",
+                'host_ip': '主机IP',
+            }
+            error_messages = {
+                "idc": {
+                    "required": "不能为空"
+                },
+                "sn": {
+                    "required": "不能为空"
+                },
+                "remoteip": {
+                    "required": "不能为空"
+                }
+            }
+
+##用户类#角色类劫持角色配置类
 class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数据 只要添加
 
     def logout_url(self,is_header=False,row=None):   ###添加显示字段
@@ -92,7 +117,7 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
     list_display = ['id', 'username',display_gender,display_status,display_dp,logout_url]
     search_list = ["username__contains",]
     comb_filter = ['gender','status','dp']
-
+    model_form_cls = UserInfoModelForm  ####劫持form 表单
     # def changelist_view(self,request):
     #     print("劫持页面")
     #     return HttpResponse("特殊页面劫持")
@@ -116,21 +141,23 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
 
     def xx(self,request):
         return HttpResponse("xx劫持或添加")
-
-
-    model_form_cls = UserInfoModelForm  ####劫持form 表单
-
-
-####角色类劫持角色配置类
 class RoleConfig(v1.StarkConfig):
     list_display = ['id', 'title']
-####主机配置类
+
+
+###IDC 中心 机柜位c 配置 物理机配置
+class IdcConfig(v1.StarkConfig):
+    list_display = ['id',"Iname",'Icity',"Iaddr","Itel","Icontact"]
+class CabinetConfig(v1.StarkConfig):
+    list_display = ['name','postion','idc']
 class HostConfig(v1.StarkConfig):
     ####批量执行功能函数视图
     def pk_test(self, request, action):
         pk_list = request.POST.getlist("pk")
-        print(pk_list, "测试")
-
+        print(pk_list, "批量删除")
+        for n in pk_list:
+            amodels.Host.objects.filter(id=n).delete()
+            print(n, "批量删除")
     def pk_test1(self, request, action):
         pk_list = request.POST.getlist("pk")
         print(pk_list, "测试2")
@@ -140,10 +167,11 @@ class HostConfig(v1.StarkConfig):
             return '更新硬件信息'
         return mark_safe('<a href=/stark/app01/host/%s/updateinfo/>更新</a> ' % (row.id))
 
-    list_display = ['id', 'idc','sn','remoteip','hostname','host_ip','manufacturer','product_name',update_url]
-    search_list = ["sn__contains", 'remoteip__contains']
+    list_display = ['id', 'idc','sn','hostname','host_ip','manufacturer','product_name','remoteip',"Hosys","Hcpu","Hmemory","Hdisk","HotherIp",update_url]
+    search_list = ["sn__contains", 'remoteip__contains','hostname__contains','manufacturer__contains','product_name__contains',"host_ip__contains"]
     ####批量执行清单
-    action_list = [{"name":"测试1","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]
+    action_list = [{"name":"批量删除","func_name":"pk_test"},{"name":"测试2","func_name":"pk_test1"}]
+    model_form_cls = HostModelForm ####劫持form 表单
 
 
     def extra_url(self):  #######钩子函数配了 会劫持 扩展url
@@ -152,9 +180,15 @@ class HostConfig(v1.StarkConfig):
         ]
         return patterns
 
-    def updatefunc(self,request,pk):
-        pk_list = request.POST.getlist("pk")
-        print(pk_list, "更新主机信息")
+    def updatefunc(self,request,nid):
+        # print(nid, "更新主机信息")
+        host_set=amodels.Host.objects.get(id=nid)
+        sys_info_dict = connect_obj.get_sys_info(user='root',host=host_set.host_ip,)
+        if sys_info_dict:
+            host_set.manufacturer=sys_info_dict['Manufacturer']
+            host_set.sn=sys_info_dict['Serial Number']
+            host_set.product_name=sys_info_dict['Product Name']
+            host_set.save()
         return redirect(self.get_list_url())
 
 
@@ -166,10 +200,9 @@ class PermissionGroupConfig(v1.StarkConfig):
 
 ###菜单
 class MenuConfig(v1.StarkConfig):
-    list_display = ['id','name']
+    list_display = ['id','name',]
 
  #注册mode表 待生成url
-
 v1.site.registry(models.UserInfo,UserInfoConfig)
 v1.site.registry(models.Role,RoleConfig)
 
@@ -177,5 +210,7 @@ v1.site.registry(models.Permissions,PermissionsConfig)
 v1.site.registry(models.PermissionGroup,PermissionGroupConfig)
 v1.site.registry(models.Menu,MenuConfig)
 
+v1.site.registry(amodels.IDC,IdcConfig)
+v1.site.registry(amodels.Cabinet,CabinetConfig)
 v1.site.registry(amodels.Host,HostConfig)
 

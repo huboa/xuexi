@@ -1,20 +1,9 @@
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#    <head>#}
-{#        <meta charset="UTF-8">#}
-{#        <title>Title</title>#}
-{#        <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">#}
-{##}
-{#    </head>#}
-{##}
 
- <!-- 加载头菜单-->
-
-{#{% extends 'head.html' %}#}
+ <!-- 加载模板-->
 {% extends 'layout.html' %}
 
 {% block content %}
-{#     <div class="col-md-9">#}
+
             <h1>列表页面</h1>
             <!-- 组合搜索开始 -->
             <div class="comb-search" >
@@ -51,7 +40,7 @@
             </div>
 
 
-            <!--body+批量操作-->
+            <!--body+批量选择标签-->
             <div style="margin: 5px 0">
                 <form class="form-inline" method="post">
                     {% csrf_token %}
@@ -76,7 +65,8 @@
                         </tbody>
                     </table>
 
-                    <!-- 批量操作按钮-->
+                    <!-- 批量选择标签 结束-->
+
                     {% if cl.action_list %}
                         <div  class="btn">
                         {% for act in cl.action_list %}

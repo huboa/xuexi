@@ -13,6 +13,7 @@ from django.http import QueryDict
 from django.conf import settings
 from utils.md5 import  md5
 
+
 ####组合搜索类
 class FilterRow(object):
     def __init__(self,_field,name,request,get_list_url,is_choice=False):
@@ -189,7 +190,6 @@ class StarkConfig(object):
             url(r'^(\d+)/del/$', self.delete_view, name="%s_%s_delete" % app_model_name),
         ]
         patterns.extend(self.extra_url())
-
         return patterns
     def extra_url(self):
         """

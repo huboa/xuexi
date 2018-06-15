@@ -12,6 +12,7 @@ from django.db.models.fields.related import ForeignKey
 from django.http import QueryDict
 from django.conf import settings
 from utils.md5 import  md5
+import re
 
 
 ####组合搜索类
@@ -60,19 +61,19 @@ class GetListView(object):
     """
     用于对列表页面的功能做拆分
     """
-    def __init__(self,config,result_list,request):
+    def __init__(self,model_class_cfg,result_list,request):
         """
         :param config: 处理每个表增伤改查功能的对象
         :param result_list: 从数据库查询到的数据
         """
-        self.config = config
-        self.model_class = config.model_class
+        self.config = model_class_cfg
+        self.model_class = model_class_cfg.model_class
         self.request = request
         self.result_list = result_list
-        self.search_list = config.search_list
+        self.search_list = model_class_cfg.search_list
         self.search_value = self.request.GET.get("key","")
-        self.action_list = config.action_list
-        self.comb_filter  = config.comb_filter
+        self.action_list = model_class_cfg.action_list
+        self.comb_filter  = model_class_cfg.comb_filter
 
 
         page_obj=Pagination(self.request,self.result_list)  ##实例化页码对象
@@ -94,11 +95,14 @@ class GetListView(object):
         # ['ID', '用户名', '邮箱','临时表头',临时表头]
 
         for n in self.config.get_list_display():
+            print(n,type(n))
             if isinstance(n, FunctionType):
                 # 执行list_display中的函数
                 val = n(self.config, is_header=True)
+                print(val, type, "val-----------------")
             else:
                 val = self.config.model_class._meta.get_field(n).verbose_name
+                print(val,type,"val-----------------")
             result.append(val)
         return result
     def body_list(self):
@@ -176,13 +180,39 @@ class StarkConfig(object):
                  fields = "__all__"
         return TempModelForm
 
+
+
 ######生成路由url 处理########################
+    @property
+    def urls_list_dict(self):
+        '''
+        获取所有权限url 返回调用并写到数据库
+        :return:
+        '''
+        dic={}
+        project_name="stark"
+        app_model_name = (project_name,self.model_class._meta.app_label, self.model_class._meta.model_name,)
+        app_name=self.model_class._meta.model_name
+        line_list = '/%s/%s/%s/' % app_model_name
+        line_add = '/%s/%s/%s/add/' % app_model_name
+        line_del = '/%s/%s/%s/(\d+)/del/' % app_model_name
+        line_edit = '/%s/%s/%s/(\d+)/edit/' % app_model_name
+        dic[line_list]={"code":'list','title':"查看"+app_name}
+        dic[line_add]={"code": 'add','title':"添加"+app_name}
+        dic[line_del]={"code": 'del','title':"删除"+app_name}
+        dic[line_edit]={"code": 'edit','title':"编辑"+app_name}
+
+        for n in self.extra_url():
+            li=re.findall(r"\^(.+?)\$",str(n))
+            line_url = '/%s/%s/%s/%s' % (project_name,self.model_class._meta.app_label, self.model_class._meta.model_name,li[0])
+            dic[line_url]={"code": 'other','title':"other"+app_name}
+        return dic
+
     @property
     def urls(self):
         # self = StarkConfig(models.UserInfo) # obj.mcls = models.UserInfo
         # StarkConfig(models.Role),# # obj.model_class = models.Role
         app_model_name = (self.model_class._meta.app_label, self.model_class._meta.model_name,)  ###反向生成 url 用
-
         patterns = [
             url(r'^$', self.get_list_view, name='%s_%s_get_list' % app_model_name),
             url(r'^add/$', self.add_view, name='%s_%s_add' % app_model_name),
@@ -328,6 +358,15 @@ class StarkConfig(object):
             result.insert(0, StarkConfig.display_checkbox)
             result.append(StarkConfig.display_edit)
             result.append(StarkConfig.display_delete)
+        else:
+            fields = self.model_class._meta.fields
+            for f in fields:
+                result.append(f.name)
+
+            result.extend(self.list_display)
+            result.insert(0, StarkConfig.display_checkbox)
+            result.append(StarkConfig.display_edit)
+            result.append(StarkConfig.display_delete)
         return result
 
 ###注册数据库url
@@ -338,14 +377,49 @@ class StarkSite(object):
     def __init__(self):
         self._registry={}
 
-    def registry(self,model_class,config_cls=None):
-        if not  config_cls:
-            config_cls = StarkConfig       ###默认是StarkConfig
-        self._registry[model_class] = config_cls(model_class)
+    def registry(self,model_class,model_class_cfg=None):
+        if not  model_class_cfg:
+            model_class_cfg = StarkConfig       ###默认是StarkConfig
+        self._registry[model_class] = model_class_cfg(model_class)
+        # print("注册到字典,数据库为key config为值","数据库Model类key=",model_class,"config类=",config,)
+
         # print(self._registry,"打印字典k") ###打印注册到字典 _registry的类
         # print(self._registry.items(),"打印字典v")
-    def update_db(self):
-        print("#########")
+    def update_permissions_url(self):
+        """
+        根据注册表更新表
+        根据注册的 url 写到权限表
+        :return:
+        """
+        for model_class,config_obj in self._registry.items():
+            model_name=model_class._meta.model_name
+            if not models.PermissionGroup.objects.filter(model_name=model_name):
+                models.PermissionGroup(model_name=model_name,name=model_name).save()
+            mid=models.PermissionGroup.objects.get(model_name=model_name).id
+
+            dict=config_obj.urls_list_dict
+            for key in dict:
+                obj =  models.Permissions.objects.filter(url=key)
+                if not obj:
+                    code=dict[key]['code']
+                    title=dict[key]['title']
+                    obj=models.Permissions(url=key,title=title,code=code,group_id=mid)
+                    obj.save()
+                    # print(dict[key]['code'],dict[key]['title'])
+        self.update_admin_permission()
+    def update_admin_permission(self):
+        """
+        给管理员所有权限
+        :return:
+        """
+        admin_dict = {"id": 1, "title": 'admin'}  ###角色中管理员搜索条件
+        r_obj = models.Role.objects.get(**admin_dict)
+        for model_class, config_obj in self._registry.items():
+            dict = config_obj.urls_list_dict
+            for key in dict:
+                pobj = models.Permissions.objects.get(url=key)
+                if not r_obj.permissions.filter(id=pobj.id).exists():
+                    r_obj.permissions.add(pobj)
 
     def get_urls(self):
         """
@@ -366,10 +440,11 @@ class StarkSite(object):
 
             app_label = model_class._meta.app_label
             model_name = model_class._meta.model_name
-            print(app_label, model_name, "###############")
+            # print(app_label, model_name, "循环注册的类")
             temp = url(r'^%s/%s/' % (app_label, model_name),(config_obj.urls,None,None) )
             pts.append(temp)
         return pts
+
 
     @property
     def urls(self):
@@ -403,6 +478,7 @@ class StarkSite(object):
                         ])
 
         """
+        self.update_permissions_url()
         return self.get_urls(), None,"stark"
 
     def login(self, request):

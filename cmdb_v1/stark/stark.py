@@ -10,8 +10,9 @@ from django.forms import fields
 from django.utils.safestring import mark_safe
 from django.urls import reverse
 from rbac.service.init_permissions import reset_permission
-from utils.server_hardware_info import connect_obj
-
+from utils.server_hardware_info import connect_ssh_tb
+from utils.zabbix_api import Zabbix
+import requests
 ##注册说明
 # 将models中的UserInfo类注册到【某个地方】
 """
@@ -26,8 +27,6 @@ _registry = {
 
 /stark/app01/role/，执行 StarkConfig(models.Role).changelist_view()
 /stark/app01/role/add/，执行 StarkConfig(models.Role).add_view()
-
-
 
 
 for k,v in _registry.items():
@@ -46,11 +45,8 @@ _registry = {
 /stark/app01/userinfo/，执行 UserInfoConfig(models.UserInfo).changelist_view()
 /stark/app01/userinfo/add/，执行 UserInfoConfig(models.UserInfo).add_view()
 
-
 /stark/app01/role/，执行 StarkConfig(models.Role).changelist_view()
 /stark/app01/role/add/，执行 StarkConfig(models.Role).add_view()
-
-
 
 """
 
@@ -143,8 +139,7 @@ class UserInfoConfig(v1.StarkConfig):   ####可以劫持父类 中的 任何数�
         return HttpResponse("xx劫持或添加")
 
 
-###IDC 中心 机柜位c 配置 物理机配置
-
+### 物理机配置
 class HostConfig(v1.StarkConfig):
     ####批量执行功能函数视图
     def pk_del(self, request, action):
@@ -159,8 +154,6 @@ class HostConfig(v1.StarkConfig):
         for nid in pk_list:
             self.updatefunc(request,nid)
 
-
-
     def update_url(self, is_header=False, row=None):  ###添加显示字段
         if is_header:
             return '更新主'
@@ -169,7 +162,8 @@ class HostConfig(v1.StarkConfig):
     list_display = ['id', 'idc','sn','hostname','host_ip',"Hosys","Hcore",'manufacturer','product_name',"Hcpu","Hmemory","Hdisk",'remoteip',"HotherIp","Hother",update_url]
     search_list = ["sn__contains", 'remoteip__contains','hostname__contains','manufacturer__contains','product_name__contains',"host_ip__contains","Hosys__contains"]
     ####批量执行清单
-    action_list = [{"name":"批量删除","func_name":"pk_del"},{"name":"批量更新","func_name":"pk_update"}]
+    # action_list = [{"name":"批量删除","func_name":"pk_del"},{"name":"批量更新","func_name":"pk_update"}]
+    action_list = [ {"name": "批量更新", "func_name": "pk_update"}]
     model_form_cls = HostModelForm ####劫持form 表单
 
 
@@ -180,8 +174,13 @@ class HostConfig(v1.StarkConfig):
         return patterns
 
     def updatefunc(self,request,nid):
-        # print(nid, "更新主机信息")
-        host=amodels.Host.objects.get(id=nid)
+        try:
+            host = amodels.Host.objects.get(id=nid)
+            tb_obj = amodels.TBServer.objects.get(Tidc=host.idc_id)
+            connect_obj = connect_ssh_tb(ip=tb_obj.Tip, username=tb_obj.Tuser, password=tb_obj.Tpassword)
+        except:
+            print("跳转=============")
+            return redirect(self.get_list_url())
         sys_info_dict = connect_obj.get_sys_info(user='root',host=host.host_ip,)
         sys_os_info_dict = connect_obj.get_os_info(user='root',host=host.host_ip,)
         if sys_info_dict:
@@ -203,18 +202,64 @@ class HostConfig(v1.StarkConfig):
 class PermissionsConfig(v1.StarkConfig):
     list_display = ['id','title','url','code','group','gmid']
     search_list = ["title__contains",'url__contains', 'code__contains',]
-class PermissionGroupConfig(v1.StarkConfig):
-    list_display = ['id','name','menu']
+
+###监控zabbix
+class ZabbixConfig(v1.StarkConfig):
+    def display_status(self, is_header=False, row=None):
+        if is_header:
+            return '状态'
+        return row.get_Zstatus_display()
+
+    def conntest_url(self, is_header=False, row=None):  ###添加显示字段
+        if is_header:
+            return '测试连接'
+        return mark_safe('<a href=/stark/app01/zabbix/%s/conntest/>测试连接</a> ' % (row.id))
+
+    list_display = ['id', 'Zidc',"Zname",'Zip',"Zapi","Zadmin","ZabbixPassword",display_status,"Ztoken", conntest_url]
+
+    def extra_url(self):  #######钩子函数配了 会劫持 扩展url
+        patterns = [
+            url(r'^(\d+)/conntest/$', self.conn_test),
+        ]
+        return patterns
+
+    def conn_test(self, request, nid):
+
+        Zabbix_obj = amodels.Zabbix.objects.get(id=nid)
+        obj = Zabbix(url=Zabbix_obj.Zapi, user=Zabbix_obj.Zadmin, password=Zabbix_obj.ZabbixPassword)
+        token= obj.get_token()
+        if token:
+            Zabbix_obj.Zstatus=2
+            Zabbix_obj.Ztoken=token
+        else:
+            Zabbix_obj.Zstatus=1
+        Zabbix_obj.save()
+        return redirect(self.get_list_url())
+class ZabbixTempConfig(v1.StarkConfig):
+    action_list = [{"name": "同步zabbix_temp", "func_name": "rsyntemp"}]
+    def rsyntemp(self,request,action):
+        Zabbix_obj = amodels.Zabbix.objects.filter(Zstatus=2)
+        for z in Zabbix_obj:
+            zid=z.id
+            Zabbix_obj = amodels.Zabbix.objects.get(id=zid)
+            obj=Zabbix(url=Zabbix_obj.Zapi, user=Zabbix_obj.Zadmin, password=Zabbix_obj.ZabbixPassword)
+            temp_dic=obj.get_template_list()
+            for n in temp_dic["result"]:
+                Temp_obj=amodels.ZabbixTemplate.objects
+                T=Temp_obj.filter(Tzabbix_id=int(zid),Tid=int(n['templateid']))
+                if not T:
+                    Tobj=T.create(Tzabbix_id=int(zid),Tid=int(n['templateid']),Tname=n['name'])
+                    Tobj.save()
 
 
 
- #注册mode表 待生成url
+#注册mode表 待生成url
 v1.site.registry(models.UserInfo,UserInfoConfig)
 v1.site.registry(models.Role)
 v1.site.registry(models.Ldap)
 
 v1.site.registry(models.Permissions,PermissionsConfig)
-v1.site.registry(models.PermissionGroup,PermissionGroupConfig)
+v1.site.registry(models.PermissionGroup)
 v1.site.registry(models.Menu)
 
 v1.site.registry(amodels.IDC)
@@ -222,6 +267,10 @@ v1.site.registry(amodels.Cabinet)
 v1.site.registry(amodels.Host,HostConfig)
 v1.site.registry(amodels.Vhost)
 
-v1.site.registry(amodels.Zabbix)
-v1.site.registry(amodels.ZabbixTemplate)
+v1.site.registry(amodels.TBServer)
+
+v1.site.registry(amodels.Zabbix,ZabbixConfig)
+v1.site.registry(amodels.ZabbixTemplate,ZabbixTempConfig)
+
+
 

@@ -37,13 +37,28 @@ class Zabbix(models.Model):
     Zidc = models.ForeignKey(verbose_name="机房", to="IDC", default=1)
     Zname = models.CharField(verbose_name="name",max_length=32)
     Zip=models.CharField(verbose_name="zabbix_ip",max_length=32,default="0.0.0.0")
-
+    Zapi=models.CharField(verbose_name="API_url",max_length=128,blank=True,null=True)
+    Zadmin=models.CharField(verbose_name='zabbix-admin',max_length=16,default="Admin")
+    ZabbixPassword=models.CharField(verbose_name='zabbix-密码',max_length=32,blank=True, null=True,)
+    Zstatus_choice = (
+        (1, '错误'),
+        (2, 'OK'),
+    )
+    Zstatus = models.IntegerField(verbose_name='状态', choices=Zstatus_choice, default=1)
+    Ztoken = models.CharField(verbose_name='token',max_length=64,blank=True, null=True,)
+    def __str__(self):
+        return self.Zname
 class ZabbixTemplate(models.Model):
-    Zidc = models.ForeignKey(verbose_name="机房", to="IDC", default=1)
-    Zname = models.CharField(verbose_name="name",max_length=32)
-    Zip=models.CharField(verbose_name="zabbix_ip",max_length=32,default="0.0.0.0")
+    Tid=models.IntegerField(verbose_name="模板id",blank=True, null=True,)
+    Tname = models.CharField(verbose_name="name",max_length=32)
+    Tzabbix=models.ForeignKey(verbose_name="zabbix",to="Zabbix")
 
-# class JumpServer(models.Model):
-#     pass
+class TBServer(models.Model):
+    Tidc =models.ForeignKey(verbose_name="机房",to="IDC",blank=True,null=True)
+    Tname=models.CharField(verbose_name="名称",max_length=32,blank=True, null=True)
+    Tip=models.CharField(verbose_name="ip",max_length=32,blank=True, null=True)
+    Tuser=models.CharField(verbose_name="跳扳机用户",max_length=32,blank=True, null=True)
+    Tpassword=models.CharField(verbose_name="跳扳机密码",max_length=64,blank=True, null=True)
+
 
 

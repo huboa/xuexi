@@ -1,12 +1,22 @@
-from django.test import TestCase
-from django.shortcuts import render,HttpResponse,redirect
-from  app01 import models
-# Create your tests here.
-# def host(request):
-#     ##创建主机测试数据
-#     for i in range(302):
-#         dic ={"idc":"廊坊","sn":"12asdfadf","remoteip":"1.1.1.1",'hostname':'c%s.com' %(i,),"ip":'1.1.1.1'}
-#         models.Host.objects.create(**dic)
+# import pymysql
 #
-#     # return render(request,'host.html')
-#     return HttpResponse("创建成功")
+# # 打开数据库连接
+# db = pymysql.connect("192.168.53.3", "cmdb", "cmdb123456", "cmdb")
+#
+# # 使用 cursor() 方法创建一个游标对象 cursor
+# cursor = db.cursor()
+#
+# # 使用 execute()  方法执行 SQL 查询
+# cursor.execute("SELECT VERSION()")
+#
+# # 使用 fetchone() 方法获取单条数据.
+# data = cursor.fetchone()
+#
+# print("Database version : %s " % data)
+#
+# # 关闭数据库连接
+# db.close()
+
+
+from utils.md5 import  md5
+print(md5("123456"))

@@ -95,14 +95,14 @@ class GetListView(object):
         # ['ID', '用户名', '邮箱','临时表头',临时表头]
 
         for n in self.config.get_list_display():
-            print(n,type(n))
+            # print(n,type(n))
             if isinstance(n, FunctionType):
                 # 执行list_display中的函数
                 val = n(self.config, is_header=True)
-                print(val, type, "val-----------------")
+                # print(val, type, "val-----------------")
             else:
                 val = self.config.model_class._meta.get_field(n).verbose_name
-                print(val,type,"val-----------------")
+                # print(val,type,"val-----------------")
             result.append(val)
         return result
     def body_list(self):
@@ -409,15 +409,24 @@ class StarkSite(object):
         self.update_admin_permission()
     def update_admin_permission(self):
         """
-        给管理员所有权限
+        给管理员所有url权限
         :return:
         """
         admin_dict = {"id": 1, "title": 'admin'}  ###角色中管理员搜索条件
+        admin_obj=models.UserInfo.objects.get(id=admin_dict['id'])
+        if not admin_obj:
+            ###管理员不存在,则创建管理员
+            models.UserInfo(id=admin_dict['id'],title=admin_dict['title']).save()
         r_obj = models.Role.objects.get(**admin_dict)
         for model_class, config_obj in self._registry.items():
             dict = config_obj.urls_list_dict
             for key in dict:
                 pobj = models.Permissions.objects.get(url=key)
+
+                print(pobj.id,pobj.group_id,"gid")
+                m_obj = models.Permissions.objects.filter(code='list',group_id=pobj.group_id)
+                print(m_obj,type(m_obj))
+                ###如果管理员没有权限,则添加
                 if not r_obj.permissions.filter(id=pobj.id).exists():
                     r_obj.permissions.add(pobj)
 

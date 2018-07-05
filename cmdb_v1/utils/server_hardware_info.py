@@ -175,7 +175,7 @@ class connect_ssh_tb(object):
 ##调试信息
 # ####使用说明创建跳扳机连接实例
 # # ssh.connect(hostname='10.199.104.63', port=22, username='admin', password='1234qwer ')
-connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='!!feixueliantianshebailu!!=')
+# connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='!!feixueliantianshebailu!!=')
 # #
 # # ####获取信息
 # # print(connect_obj.command_line(user='root',host='192.168.51.31',command='hostname'))

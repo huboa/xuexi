@@ -422,11 +422,12 @@ class StarkSite(object):
             dict = config_obj.urls_list_dict
             for key in dict:
                 pobj = models.Permissions.objects.get(url=key)
-
-                print(pobj.id,pobj.group_id,"gid")
                 m_obj = models.Permissions.objects.filter(code='list',group_id=pobj.group_id)
-                print(m_obj,type(m_obj))
-                ###如果管理员没有权限,则添加
+                for mid in m_obj:
+                    if pobj.gmid_id  != mid.id:
+                        pobj.gmid_id=mid.id
+                        pobj.save()
+                ###添加所有权限给管理员
                 if not r_obj.permissions.filter(id=pobj.id).exists():
                     r_obj.permissions.add(pobj)
 

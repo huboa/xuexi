@@ -40,7 +40,6 @@ def init_permissions(user,request):
                                    'permissions__gmid_id',  ###组内菜单
                                    'permissions__group__menu__id',##top menu id
                                    'permissions__group__menu__name', ##top menu name
-
                                    ).distinct()
 
 

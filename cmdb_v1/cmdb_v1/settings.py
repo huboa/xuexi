@@ -25,7 +25,7 @@ SECRET_KEY = 'ativ^-=9=2kt+^#d=lpql%j-&4w6n&sb8f+r0nv)d)goku^_=9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition

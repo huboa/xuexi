@@ -31,7 +31,7 @@ class UserInfo(models.Model):
     )
     status = models.IntegerField(verbose_name='状态', choices=status_choice, default=1)
 
-    dp = models.ForeignKey(to='DepartMent', default=1)###部门
+    dp = models.ForeignKey(to='DepartMent',default=1,on_delete=models.CASCADE,)
     session_key = models.CharField(verbose_name='当前登录用户的session_key', max_length=40, null=True, blank=True)
 
     def __str__(self):
@@ -53,8 +53,8 @@ class Permissions(models.Model):
     title = models.CharField(verbose_name="权限名称",max_length=32,)
     url = models.CharField(verbose_name="含正则url",max_length=255)
     code = models.CharField(verbose_name="权限代码", max_length=32,)
-    group = models.ForeignKey(verbose_name="表",to="PermissionGroup",)
-    gmid = models.ForeignKey(verbose_name="组内菜单",to='self',null=True,blank=True,related_name='xxx')
+    group = models.ForeignKey(verbose_name="表",to="PermissionGroup", on_delete=models.CASCADE,)
+    gmid = models.ForeignKey(verbose_name="组内菜单",to='self',null=True,blank=True,related_name='xxx',on_delete=models.CASCADE,)
     def __str__(self):
         return self.title
 
@@ -67,7 +67,7 @@ class PermissionGroup(models.Model):
 #     """
     name = models.CharField(verbose_name='db_table',max_length=32,default="默认")
     model_name =  models.CharField(verbose_name='model注册名',max_length=32,blank=True, null=True)
-    menu = models.ForeignKey(verbose_name="一级菜单",to='Menu',blank=True, null=True)
+    menu = models.ForeignKey(verbose_name="一级菜单",to='Menu',blank=True, null=True, on_delete=models.CASCADE,)
 
 
 

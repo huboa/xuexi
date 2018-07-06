@@ -11,9 +11,9 @@ class IDC(models.Model):
 class Cabinet(models.Model):
     name = models.CharField(verbose_name="机柜名",max_length=32,)
     postion = models.CharField(verbose_name="机柜位",max_length=32)
-    idc = models.ForeignKey(verbose_name="机房", to="IDC", default=1)
+    idc = models.ForeignKey(verbose_name="机房", to="IDC", default=1,on_delete=models.CASCADE,)
 class Host(models.Model):
-    idc = models.ForeignKey(verbose_name="机房",to="IDC",default=1)
+    idc = models.ForeignKey(verbose_name="机房",to="IDC",default=1,on_delete=models.CASCADE,)
     sn = models.CharField(verbose_name="sn号",max_length=32,)
     remoteip = models.GenericIPAddressField(verbose_name="带外ip",default='0.0.0.0')
     hostname = models.CharField(verbose_name="主机名",max_length=32,default="")
@@ -30,11 +30,11 @@ class Host(models.Model):
     def __str__(self):
         return self.hostname
 class Vhost(models.Model):
-    idc = models.ForeignKey(verbose_name="机房", to="IDC", blank=True, null=True)
-    Host = models.ForeignKey(verbose_name="宿主机", to="Host",blank=True, null=True)
+    idc = models.ForeignKey(verbose_name="机房", on_delete=models.CASCADE,to="IDC", blank=True, null=True,)
+    Host = models.ForeignKey(verbose_name="宿主机",to="Host",blank=True, null=True,on_delete=models.CASCADE,)
 
 class Zabbix(models.Model):
-    Zidc = models.ForeignKey(verbose_name="机房", to="IDC", default=1)
+    Zidc = models.ForeignKey(verbose_name="机房", to="IDC", default=1,on_delete=models.CASCADE,)
     Zname = models.CharField(verbose_name="name",max_length=32)
     Zip=models.CharField(verbose_name="zabbix_ip",max_length=32,default="0.0.0.0")
     Zapi=models.CharField(verbose_name="API_url",max_length=128,blank=True,null=True)
@@ -51,10 +51,10 @@ class Zabbix(models.Model):
 class ZabbixTemplate(models.Model):
     Tid=models.IntegerField(verbose_name="模板id",blank=True, null=True,)
     Tname = models.CharField(verbose_name="name",max_length=32)
-    Tzabbix=models.ForeignKey(verbose_name="zabbix",to="Zabbix")
+    Tzabbix=models.ForeignKey(verbose_name="zabbix",to="Zabbix",on_delete=models.CASCADE,)
 
 class TBServer(models.Model):
-    Tidc =models.ForeignKey(verbose_name="机房",to="IDC",blank=True,null=True)
+    Tidc =models.ForeignKey(verbose_name="机房",on_delete=models.CASCADE,to="IDC",blank=True,null=True,)
     Tname=models.CharField(verbose_name="名称",max_length=32,blank=True, null=True)
     Tip=models.CharField(verbose_name="ip",max_length=32,blank=True, null=True)
     Tuser=models.CharField(verbose_name="跳扳机用户",max_length=32,blank=True, null=True)

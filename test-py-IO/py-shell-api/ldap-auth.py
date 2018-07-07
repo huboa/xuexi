@@ -1,81 +1,48 @@
 
 import ldap3
-ldapServer = 'LDAP://localhost'
-domain = 'mtime'
-userName = 'shengchong.zhao'
-domainUserName = domain + '\\' + userName
-password = 'DoNotUseMe'
-try:
-    conn = ldap.initialize(ldapServer)
-    conn.simple_bind_s(domainUserName, password)
-    # 认证通过
-except:
-    pass
-    # 认证失败。找原因
+from  ldap3 import NTLM
+"""
+   ldapDict=config.objects.get(key="ldap")
+            ldapUrl = ldapDict.value
+            # ldapUrl="ldap://[图片]10.10.30.206"
+            baseDN = "dc=mtime,dc=com"
+            searchScope = ldap3.SUBTREE
+            # 设置过滤属性，这里只显示cn=test的信息
+            searchFilter = "sAMAccountName=" + username
+            # 为用户名加上域名
+            loginUserName=username
+            username = 'mtime\\' + username
+            # None表示搜索所有属性，['cn']表示只搜索cn属性
+            retrieveAttributes = ["mail","displayName"]
+            server=ldap3.Server(ldapUrl,get_info=ldap3.ALL)
+            conn=ldap3.Connection(server,username,password,authentication="NTLM",auto_bind=True,receive_timeout=6)
+            print 'ldap connect successfully'
+        except Exception,error:
+            logger.error("{1}--{0}".format(error,"ldap登陆验证错误"))
+            return None
 
-'''
+"""
+server="ldap://10.10.30.206"
+baseDN = "dc=mtime,dc=com"
+username = "mtime\\shengchong.zhao"
+password = "admin2018+"
 
+conn = ldap3.Connection(server, username, password, authentication="NTLM", auto_bind=True, )
+
+# # import class and constants
+# from ldap import Server, Connection, ALL
 #
-# import ldap3
-# import configparser
-# conn = ldap3.get_config_parameter("ldap://10.10.30.206")
-# print(type(conn))
-
-# -*- coding: utf-8 -*-
-
-from ldap3 import Server, Connection, ALL, SUBTREE, ServerPool,
-
-LDAP_SERVER_POOL = ["10.10.30.206", ]
-LDAP_SERVER_PORT = 389
-ADMIN_DN = "mtime\\shengchong.zhao"
-ADMIN_PASSWORD = "zscxxcr1-2018"
-SEARCH_BASE = "ou=xxx,dc=xxx,dc=xxx"
-
-ldap_server_pool = ServerPool(LDAP_SERVER_POOL)
-conn = Connection(ldap_server_pool)
-print(conn)
-print(conn.open())
-conn.bind()
-
-
-def ldap_auth(username, password):
-    ldap_server_pool = ServerPool(LDAP_SERVER_POOL)
-    conn = Connection(ldap_server_pool, user=ADMIN_DN, password=ADMIN_PASSWORD, check_names=True, lazy=False, raise_exceptions=False)
-    conn.open()
-    conn.bind()
-
-    res = conn.search(
-        search_base = SEARCH_BASE,
-        search_filter = '(sAMAccountName={})'.format(username),
-        search_scope = SUBTREE,
-        attributes = ['cn', 'givenName', 'mail', 'sAMAccountName'],
-        paged_size = 5
-    )
-
-    if res:
-        entry = conn.response[0]
-        dn = entry['dn']
-        attr_dict = entry['attributes']
-
-        # check password by dn
-        try:
-            conn2 = Connection(ldap_server_pool, user=dn, password=password, check_names=True, lazy=False, raise_exceptions=False)
-            conn2.bind()
-            if conn2.result["description"] == "success":
-                print((True, attr_dict["mail"], attr_dict["sAMAccountName"], attr_dict["givenName"]))
-                return (True, attr_dict["mail"], attr_dict["sAMAccountName"], attr_dict["givenName"])
-            else:
-                print("auth fail")
-                return (False, None, None, None)
-        except Exception as e:
-            print("auth fail")
-            return (False, None, None, None)
-    else:
-        return (False, None, None, None)
-
-
-if __name__ == "__main__":
-    ldap_auth("shengchong.zhao", "admin2018")
-
-
-'''
+#
+# # define the server
+# s = Server('ldap://10.10.30.206', get_info=ALL)  # define an unsecure LDAP server, requesting info on DSE and schema
+#
+#
+# # define the server
+# # s = Server('servername', get_info=ALL)  # define an unsecure LDAP server, requesting info on DSE and schema
+#
+# # define the connection
+# c = Connection(s)  # define an ANONYMOUS connection
+#
+# # perform the Bind operation
+# if not c.bind():
+#     print('error in bind', c.result)

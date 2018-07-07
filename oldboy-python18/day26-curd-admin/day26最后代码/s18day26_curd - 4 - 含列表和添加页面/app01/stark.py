@@ -69,7 +69,8 @@ class UserInfoConfig(v1.StarkConfig):
     # def changelist_view(self,request):
     #     return render(request,'userinfo_list.html')
 
-v1.site.register(models.UserInfo,UserInfoConfig)
+# v1.site.register(models.UserInfo,UserInfoConfig)
+v1.site.register(models.UserInfo)
 
 
 
@@ -78,7 +79,7 @@ v1.site.register(models.UserInfo,UserInfoConfig)
 
 
 class RoleConfig(v1.StarkConfig):
-    list_display = ['id','title',]
+    # list_display = ['id','title',]
 
     def extra_url(self):
         patterns = [
@@ -91,10 +92,6 @@ class RoleConfig(v1.StarkConfig):
 
 
 v1.site.register(models.Role,RoleConfig)
-
-
-
-
 
 class GroupConfig(v1.StarkConfig):
     list_display = ['title']

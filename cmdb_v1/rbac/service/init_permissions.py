@@ -29,8 +29,8 @@ def init_permissions(user,request):
                    }
 
    """
-    #roles =UserInfo.objects.get(username=user).roles.all()
-    roles = user.roles.filter(permissions__id__isnull=False)
+    roles =UserInfo.objects.get(username=user).roles.all()
+    # roles = user.roles.filter(permissions__id__isnull=False)
     permission_list = roles.values('permissions__id', ##权限id
                                    'permissions__title',  ##权限名称
                                    'permissions__url',  ##权限 url
@@ -40,7 +40,6 @@ def init_permissions(user,request):
                                    'permissions__gmid_id',  ###组内菜单
                                    'permissions__group__menu__id',##top menu id
                                    'permissions__group__menu__name', ##top menu name
-
                                    ).distinct()
 
 

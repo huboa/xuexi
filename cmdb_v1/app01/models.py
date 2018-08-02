@@ -20,18 +20,28 @@ class Host(models.Model):
     host_ip = models.CharField(verbose_name="主机ip",max_length=32,default="0.0.0.0")
     manufacturer = models.CharField(verbose_name="品牌",max_length=32,default="")
     product_name = models.CharField(verbose_name="型号",max_length=32,default="")
-    Hosys= models.CharField(verbose_name="操作系统",max_length=32,null=True)
+    Hosys = models.CharField(verbose_name="操作系统",max_length=32,null=True)
     Hcore = models.CharField(verbose_name="内核架构", max_length=32, null=True)
-    Hcpu=models.CharField(verbose_name="cpu",max_length=64,default="")
-    Hmemory=models.CharField(verbose_name='内存',max_length=32,default="")
-    Hdisk=models.CharField(verbose_name="磁盘",max_length=64,default="")
-    HotherIp=models.CharField(verbose_name='其它ip',max_length=128,default="")
+    Hcpu = models.CharField(verbose_name="cpu",max_length=64,default="")
+    Hmemory = models.CharField(verbose_name='内存',max_length=32,default="")
+    Hdisk = models.CharField(verbose_name="磁盘",max_length=64,default="")
+    HotherIp = models.CharField(verbose_name='其它ip',max_length=128,default="")
     Hother = models.CharField(verbose_name='备注', max_length=128, default="")
     def __str__(self):
-        return self.hostname
+        return self.host_ip
 class Vhost(models.Model):
-    idc = models.ForeignKey(verbose_name="机房", on_delete=models.CASCADE,to="IDC", blank=True, null=True,)
+    uuid = models.CharField(verbose_name="uuid",max_length=64, blank=True, null=True)
+    Vname = models.CharField(verbose_name="VMname",max_length=64, blank=True, null=True)
+    VCPUs = models.CharField(verbose_name="CPU核数",max_length=32, blank=True, null=True)
+    Vmem = models.CharField(verbose_name="内存",max_length=32, blank=True, null=True)
+    Vdisk = models.CharField(verbose_name="磁盘", max_length=64, blank=True, null=True)
+    Vmac = models.CharField(verbose_name="MAC", max_length=32,blank=True, null=True)
+    Vstatus = models.CharField(verbose_name="状态", max_length=32,blank=True, null=True)
+    Vnetworks = models.CharField(verbose_name="IP",max_length=64, blank=True, null=True)
+    Vos = models.CharField(verbose_name="OS", max_length=64,blank=True, null=True)
     Host = models.ForeignKey(verbose_name="宿主机",to="Host",blank=True, null=True,on_delete=models.CASCADE,)
+
+
 
 class Zabbix(models.Model):
     Zidc = models.ForeignKey(verbose_name="机房", to="IDC", default=1,on_delete=models.CASCADE,)

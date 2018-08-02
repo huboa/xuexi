@@ -160,7 +160,7 @@ class connect_ssh_tb(object):
             sys_os_dict["disk_info"] = str(self.command_line(user=user, host=host,command="fdisk -l |grep Disk |egrep '/dev/sd'|awk '{print $2$3$4}'")).strip().strip("'[]n\\")
             sys_os_dict["hostname"] = str(self.command_line(user=user, host=host, command="hostname")).strip().strip("'[]n\\")
             os_info_list = self.command_line(user=user, host=host,command="cat /etc/issue")
-            print(os_info_list)
+            # print(os_info_list)
             os_info=str(os_info_list[0])
             if os_info.startswith("Ubuntu"):
                 sys_os_dict["os_info"] = str(self.command_line(user=user, host=host,command="cat /etc/issue|awk '{print$1\"-\"$2\"-\"$3}'|grep Ubuntu")).strip().strip("'[]n\\")
@@ -172,13 +172,96 @@ class connect_ssh_tb(object):
                 sys_os_dict["os_info"] = str(self.command_line(user=user, host=host,command="cat /etc/redhat-release |awk -F '[ -]+' '{print$1\"-\"$3}'")).strip().strip("'[]n\\")
                 sys_os_dict["core_info"] = str(self.command_line(user=user, host=host,command="uname -rm|awk -F '[ -]+' '{print$1\"-\"$NF}'")).strip().strip("'[]n\\")
         return sys_os_dict
+
+    def get_vhost_info(self,user,host,):
+        list_info = self.command_line(user=user, host=host,
+                                             command="xe vm-list  params=uuid,name-label,power-state,VCPUs-number,memory-static-max,os-version,networks | grep -v '^$'")
+        # print(list_info)
+
+        def vhost_dict(list_info,):
+            vm_dic = {}
+
+            def dict_format(line, lable,):
+                data = line.split(":")[1]
+                data = data.strip()
+                vm_dic[uuid][lable] = data
+
+            def get_mac(uuid):
+                command = ("xe vm-vif-list uuid=%s  params=MAC|grep -v '^$'" % (uuid))
+                mac_addr_info = self.command_line(user=user, host=host, command=command)
+                for n in mac_addr_info:
+                    mac = n.split(': ')[1]
+                    mac = mac.strip()
+                    if mac:
+                        return mac
+
+            def get_vhost_disk_list(uuid):
+                command = ("xe vm-disk-list   uuid=%s |grep virtual-size|awk '{print$NF}'" % (uuid))
+                vhost_disk_info = self.command_line(user=user, host=host, command=command)
+                vhost_disk=''
+                for n in vhost_disk_info:
+                    n = str(int(int(n)/1024/1024/1024))
+                    vhost_disk=vhost_disk + n + "G,"
+                if vhost_disk:
+                    return vhost_disk
+            for line in list_info:
+                line = line.strip()
+                if line.startswith('uuid'):  # 如果遍历到System Information 写入新列表
+                    uuid = line.split(":")[1]
+                    uuid = uuid.strip()
+                    vm_dic[uuid] = {}
+                    continue
+                elif line.startswith('name-label'):
+                    dict_format(line, lable="name-label")
+                    continue
+                elif line.startswith('power-state'):
+                    dict_format(line, lable='power-state')
+                    continue
+                elif line.startswith('VCPUs-number'):
+                    dict_format(line, lable="VCPUs-number")
+                    continue
+                elif line.startswith('memory-static-max'):
+                    dict_format(line, lable="memory-static-max")
+                    mm = vm_dic[uuid]['memory-static-max']
+                    vm_dic[uuid]['memory-static-max'] = str(int(int(mm)/1024/1024/1024))+'G'
+                    continue
+                elif line.startswith("networks"):
+                    string_ip=line
+                    result = re.findall(r"\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b", string_ip)
+                    result_list=[]
+                    for ip in result:
+                        if ip :
+                            result_list.append(ip)
+                        else:
+                            vm_dic[uuid]["networks"] = "no"
+                    vm_dic[uuid]["networks"] = str(result_list)
+                    continue
+                elif line.startswith("os-version"):
+                    group = re.search(r'name:(.*?)\(Core\);.+?uname:(.*?);', line, re.M)
+                    if group:
+                        group.group(1)
+                        group.group(2)
+                        vm_dic[uuid]["os-version"] =  group.group(1) +  group.group(2)
+                    else:
+                        vm_dic[uuid]["os-version"] = 'no'
+                    continue
+            for n in vm_dic:
+                vm_dic[n]["MAC"] = get_mac(n)
+                vm_dic[n]["DISK"] = get_vhost_disk_list(n)
+            return vm_dic
+        return vhost_dict(list_info,)
+
+
+
+
 ##调试信息
 # ####使用说明创建跳扳机连接实例
-# # ssh.connect(hostname='10.199.104.63', port=22, username='admin', password='1234qwer ')
-# connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='!!feixueliantianshebailu!!=')
+# # ssh.connect(hostname='10.199.104.63', port=22, username='admin', password='1r ')
+# connect_obj = connect_ssh_tb(ip='192.168.50.18',username='root',password='')
 # #
 # # ####获取信息
-# # print(connect_obj.command_line(user='root',host='192.168.51.31',command='hostname'))
+# print(connect_obj.get_vhost_info(user='root',host='192.168.51.31'))
+
 # sys_info_dict = connect_obj.get_sys_info(user='root',host='192.168.50.229',)
 # print(connect_obj.get_os_info(user='root',host='192.168.50.228'))
 # print(sys_info_dict['Manufacturer'])

@@ -156,11 +156,17 @@ class HostConfig(v1.StarkConfig):
 
     def update_url(self, is_header=False, row=None):  ###添加显示字段
         if is_header:
-            return '更新主'
-        return mark_safe('<a href=/stark/app01/host/%s/updateinfo/>更新</a> ' % (row.id))
+            return '更新host'
+        return mark_safe('<a href=/stark/app01/host/%s/updateinfo/>更新SYS</a> ' % (row.id))
 
-    list_display = ['id', 'idc','sn','hostname','host_ip',"Hosys","Hcore",'manufacturer','product_name',"Hcpu","Hmemory","Hdisk",'remoteip',"HotherIp","Hother",update_url]
+    def update_vhost_url(self, is_header=False, row=None):  ###添加显示字段
+        if is_header:
+            return '更新Vhost'
+        return mark_safe('<a href=/stark/app01/host/%s/updatevhost/>更新Vhost</a> ' % (row.id))
+
+    list_display = ['id', 'idc','sn','hostname','host_ip',"Hosys","Hcore",'manufacturer','product_name',"Hcpu","Hmemory","Hdisk",'remoteip',"HotherIp","Hother",update_vhost_url,update_url]
     search_list = ["sn__contains", 'remoteip__contains','hostname__contains','manufacturer__contains','product_name__contains',"host_ip__contains","Hosys__contains"]
+    comb_filter = ['idc', ]
     ####批量执行清单
     # action_list = [{"name":"批量删除","func_name":"pk_del"},{"name":"批量更新","func_name":"pk_update"}]
     action_list = [ {"name": "批量更新", "func_name": "pk_update"}]
@@ -170,16 +176,22 @@ class HostConfig(v1.StarkConfig):
     def extra_url(self):  #######钩子函数配了 会劫持 扩展url
         patterns = [
             url(r'^(\d+)/updateinfo/$', self.updatefunc),
+            url(r'^(\d+)/updatevhost/$', self.update_vhost),
         ]
         return patterns
 
     def updatefunc(self,request,nid):
+        """
+        更新宿主机硬件和 系统信息
+        :param request:
+        :param nid:
+        :return:
+        """
         try:
             host = amodels.Host.objects.get(id=nid)
             tb_obj = amodels.TBServer.objects.get(Tidc=host.idc_id)
             connect_obj = connect_ssh_tb(ip=tb_obj.Tip, username=tb_obj.Tuser, password=tb_obj.Tpassword)
         except:
-            print("跳转=============")
             return redirect(self.get_list_url())
         sys_info_dict = connect_obj.get_sys_info(user='root',host=host.host_ip,)
         sys_os_info_dict = connect_obj.get_os_info(user='root',host=host.host_ip,)
@@ -197,7 +209,58 @@ class HostConfig(v1.StarkConfig):
             host.Hcore = sys_os_info_dict["core_info"]
             host.save()
         return redirect(self.get_list_url())
+    def update_vhost(self,request,nid):
+        """
+        从宿主机更新虚拟机硬件信息
+        :param request:
+        :param nid:
+        :return:
+        """
+        try:
+            host = amodels.Host.objects.get(id=nid)
+            tb_obj = amodels.TBServer.objects.get(Tidc=host.idc_id)
+            connect_obj = connect_ssh_tb(ip=tb_obj.Tip, username=tb_obj.Tuser, password=tb_obj.Tpassword)
+            vhost_info = connect_obj.get_vhost_info('root', host.host_ip)
+        except:
+            return redirect(self.get_list_url())
+        vhost_models_obj = amodels.Vhost.objects
+        print(vhost_info)
+        for n in  vhost_info:
+            V = vhost_models_obj.filter(uuid=n)
+            if  V:
+                vhost = vhost_models_obj.get(uuid=n)
+                vhost.VCPUs = vhost_info[n]['VCPUs-number']
+                vhost.Vname = vhost_info[n]['name-label']
+                vhost.Vmem = vhost_info[n]['memory-static-max']
+                vhost.Vdisk = vhost_info[n]['DISK']
+                vhost.Vmac = vhost_info[n]['MAC']
+                vhost.Vstatus = vhost_info[n]['power-state']
+                vhost.Vnetworks = vhost_info[n]['networks']
+                vhost.Vos = vhost_info[n]['os-version']
+                vhost.Host_id = nid
 
+                vhost.save()
+            else:
+                vhost_models_obj.create(Vname=vhost_info[n]['name-label'],
+                                        VCPUs=vhost_info[n]['VCPUs-number'],
+                                        Vmem=vhost_info[n]['memory-static-max'],
+                                        Vdisk=vhost_info[n]['DISK'],
+                                        Vmac=vhost_info[n]['MAC'],
+                                        Vstatus=vhost_info[n]['power-state'],
+                                        Vnetworks=vhost_info[n]['networks'],
+                                        Host_id=nid,
+                                        uuid=n,
+                                        Vos=vhost_info[n]['os-version'],
+                                        )
+        return redirect(self.get_list_url())
+
+
+
+class VhostConfig(v1.StarkConfig):
+    ####批量执行功能函数视图
+
+    list_display = []
+    search_list = ["uuid__contains","Vname__contains","Vstatus__contains","Vnetworks__contains","Vos__contains",]
 ###权限类
 class PermissionsConfig(v1.StarkConfig):
     list_display = ['id','title','url','code','group','gmid']
@@ -265,7 +328,7 @@ v1.site.registry(models.Menu)
 v1.site.registry(amodels.IDC)
 v1.site.registry(amodels.Cabinet)
 v1.site.registry(amodels.Host,HostConfig)
-v1.site.registry(amodels.Vhost)
+v1.site.registry(amodels.Vhost,VhostConfig)
 
 v1.site.registry(amodels.TBServer)
 

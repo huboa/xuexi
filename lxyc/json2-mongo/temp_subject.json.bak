@@ -1,0 +1,1487 @@
+//init_data_callback({
+  "subject_list": [
+    {
+      "type":"yqh",
+      "title": "邀请函",
+      "bgimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b0fc4f0db4b9b06dc409903.png",
+      "adimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b149c3a347a19609b1e64c1.png",
+      "adlink":"/temp_package.php?type=cygg",
+      "more_temp":"/template.php?act=邀请函模板",
+      "temp_list": [
+      {
+            "url": "http://www.mugeda.com/case_preview.php?id=5b459f9792b5792fcf2ff0b0&levelOneCategory=shangye&total_fee=129&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Ffer_%2Findex.html&source=template&title=%E5%88%9B%E6%84%8F%E7%A7%91%E6%8A%80%E9%82%80%E8%AF%B7%E5%87%BD",
+            "title": "创意科技邀请函",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b459f5092b579322b7f1cf1.jpg",
+            "author":"匠君妙·臭袜子头",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/593654db347a191d0025623a.png?w=98&h=98&t=1&context=thumb",
+            "money":"129",
+            "buy":"/service.php?action=template&id=5b459f9792b5792fcf2ff0b0&total_fee=129",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5681d99ca3664eae0100049f"
+          },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5abddf99347a1968253fe584&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180330025328%2F5abdde3792b5796b5d5c91fc%2Findex.html&source=template&title=%E5%A5%94%E8%B7%91%E5%90%A7%E9%A9%AC%E6%8B%89%E6%9D%BE",
+          "title": "奔跑吧马拉松",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5abddf1a92b5794f2e6fc47d.jpg",
+          "author":"周疯子",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/57cfe832a3664e07730058fb.jpg?w=100&h=100&t=1",
+          "money":"199",
+          "buy":"/service.php?action=template&id=5abddf99347a1968253fe584&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56a5822fa3664e961200042d"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5ac33e17d2081032d750aabe&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180403043539%2F5ac33c8dd208101a1c27e9d9%2Findex.html&source=template&title=%E9%AB%98%E6%A1%A3%E9%BB%91%E9%87%91%E5%91%A8%E5%B9%B4%E5%BA%86%E9%82%80%E8%AF%B7%E5%87%BD",
+          "title": "高档黑金周年庆邀请函",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5ac33dd2d2081046ea61b81a.jpg",
+          "author":"目标视觉",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5abdd80e347a196a27458303.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"99",
+          "buy":"/service.php?action=template&id=5ac33e17d2081032d750aabe&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5abc8d6992b579156269cc08"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5aeff70292b57937cb1bed6a&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180507024338%2F5aeff3dc92b5790cac06d826%2Findex.html&source=template&title=%E4%BB%8E%E7%8E%B0%E5%9C%A8%E5%88%B0%E6%9C%AA%E6%9D%A5%E6%9C%89%E5%A4%9A%E8%BF%9C",
+          "title": "从现在到未来有多远",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5aeff65d92b5790fcc4943f6.jpg",
+          "author":"贾建博",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5ac46555d20810114c37912a.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"199",
+          "buy":"/service.php?action=template&id=5aeff70292b57937cb1bed6a&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=59a912b892b57930675b3e3f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5acde146347a19423670065b&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180411061651%2F5acddfbd347a1942d864e5a5%2Findex.html&source=template&title=%E6%8A%96%E9%9F%B3%E9%A3%8E%E9%82%80%E8%AF%B7%E5%87%BD",
+          "title": "抖音风邀请函",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acde112347a1940e54aa3f6.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"199",
+          "buy":"/service.php?action=template&id=5acde146347a19423670065b&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5ac341dbd208101177155fc6&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180403044959%2F5ac33fc3d208101b8323bf85%2Findex.html&source=template&title=%E9%AB%98%E7%AB%AF%E7%99%BD%E9%87%91%E4%BC%9A%E8%AE%AE%E9%82%80%E8%AF%B7%E5%87%BD",
+          "title": "高端白金会议邀请函",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5ac3418ed208102bb236c2e3.jpg",
+          "author":"目标视觉",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5abdd80e347a196a27458303.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"99",
+          "buy":"/service.php?action=template&id=5acde146347a19423670065b&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5abc8d6992b579156269cc08"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5aa7bc24aeece105456cecd4&levelOneCategory=shangye&total_fee=150&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180313075249%2F5aa7bb5caeece17a6408535d%2Findex.html&source=template&title=%E5%8D%9A%E8%A7%88%E4%BC%9A%E9%82%80%E8%AF%B7%E5%87%BD1",
+          "title": "博览会邀请函",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5aa7bbf5aeece17ef71f9ce8.jpg",
+          "author":"花轮先生",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5799b06526e298cd07003444.jpg?w=100&h=100&t=1",
+          "money":"150",
+          "buy":"/service.php?action=template&id=5aa7bc24aeece105456cecd4&total_fee=150",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56133a34a3664e8c600011bf"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59f04b0092b579568709c450&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171025041518%2F59f0448b347a1946944760cc%2Findex.html&source=template&title=%E9%82%80%E8%AF%B7%E5%87%BD%E2%80%94%E2%80%94wemedia",
+          "title": "邀请函——wemedia",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59f04a6b347a1949700e6b33.png?w=98&h=98&t=1&context=thumb",
+          "author":"未来应用",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/571092dda3664e4e4b000332.jpg?w=100&h=100&t=1",
+          "money":"299",
+          "buy":"/service.php?action=template&id=59f04b0092b579568709c450&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=59cfc5b5347a19246b50ad40"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a38b8fd92b57956cd621038&levelOneCategory=shangye&total_fee=118&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171219023751%2F5a38b3a9347a195c2741cc35%2Findex.html&source=template&title=%E9%97%AA%E4%BA%AE%E9%A3%8E%E6%A0%BC%E9%82%80%E8%AF%B7%E5%87%BD",
+          "title": "闪亮风格邀请函",
+          "temp_img": "http://cdn1.h5mc.com/user/data/56b64c48a3664eb54700057d/5a387851aeece10917608a08.png",
+          "author":"李志勇",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a3735e6347a191da6253e90.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"118",
+          "buy":"/service.php?action=template&id=5a38b8fd92b57956cd621038&total_fee=118",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56b64c48a3664eb54700057d"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5ab23ab9aeece138d80163ce&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180321063318%2F5ab23366aeece1362e76963b%2Findex.html&source=template&title=%E7%82%AB%E9%85%B7NCDA%E5%A4%A7%E8%B5%9B%E9%82%80%E8%AF%B7%E5%87%BD",
+          "title": "炫酷NCDA大赛邀请函",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5ab23a79aeece13a97104269.jpg",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5ab23ab9aeece138d80163ce&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5acda9e2347a19429c40648a&levelOneCategory=shangye&total_fee=50&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180410053953%2F5acc85ded208107d8529ea9e%2Findex.html&source=template&title=%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81%E5%B1%95",
+          "title": "我的作品展邀请函",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acda9bf92b579642d6e3a90.jpg",
+          "author":"色尚创意多媒体工作室",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5abdd80e347a190ff915cfc6.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"50",
+          "buy":"/service.php?action=template&id=5acda9e2347a19429c40648a&total_fee=50",
+          "author_space":"http://www.mugeda.com/designer.php?urid=555dd304a3664ec538000d16"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59361c9faeece1041b2ce5c5&levelOneCategory=shangye&total_fee=129&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170606103813%2F59361575347a191e0c7693f4%2Findex.html&source=template&title=%E8%BF%9E%E8%BF%9E%E7%9C%8B%E9%82%80%E8%AF%B7%E5%87%BD",
+          "title": "连连看邀请函",
+          "temp_img": "http://cdn1.h5mc.com/user/data/573d8804a3664e5d0d0000b4/58e49d45f4b768063c234c0e.jpg",
+          "author":"莫炼",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5861d9b992b5793db341dc61.jpg?w=100&h=100&t=1",
+          "money":"129",
+          "buy":"/service.php?action=template&id=59361c9faeece1041b2ce5c5&total_fee=129",
+          "author_space":"http://www.mugeda.com/designer.php?urid=573d8804a3664e5d0d0000b4"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a38b86b92b5795639463499&levelOneCategory=shangye&total_fee=120&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171219024705%2F5a38b5bf92b5795645590e50%2Findex.html&source=template&title=%E5%A9%9A%E7%A4%BC%E8%AF%B7%E6%9F%AC",
+          "title": "婚礼请柬",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a38b6df92b5795646368127.png?w=98&h=98&t=1&context=thumb",
+          "author":"姚美卿",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a38837d347a19454d0464f3.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"120",
+          "buy":"/service.php?action=template&id=5a38b86b92b5795639463499&total_fee=120",
+          "author_space":"http://www.mugeda.com/designer.php?urid=57ad78c4afec36c20c0032b4"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a65939892b57953494d1483&levelOneCategory=shangye&total_fee=88&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20180122033012%2F5a6592e092b57946e217e81d%2Findex.html&source=template&title=%E5%A9%9A%E7%A4%BC%E8%AF%B7%E6%9F%AC%E2%80%94%E7%99%BE%E5%B9%B4%E5%A5%BD%E5%90%88",
+          "title": "婚礼请柬—百年好合",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a65934092b579473a20be1f.png?w=98&h=98&t=1&context=thumb",
+          "author":"小球",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/57cfe836a3664e9b720059ae.jpg?w=100&h=100&t=1",
+          "money":"88",
+          "buy":"/service.php?action=template&id=5a65939892b57953494d1483&total_fee=88",
+          "author_space":"http://www.mugeda.com/designer.php?urid=561887c6a3664eea250000dd"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59375c5daeece147a337c451&levelOneCategory=shangye&total_fee=69&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170606061416%2F5936806592b57911b72651e7%2Findex.html&source=template&title=%E7%BB%93%E5%A9%9A%E9%82%80%E8%AF%B7%E5%87%BD",
+          "title": "结婚邀请函",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59375c20347a1958756e52b7.png?w=98&h=98&t=1&context=thumb",
+          "author":"王丫丫",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/568b8050a3664e324b000002.jpg",
+          "money":"69",
+          "buy":"/service.php?action=template&id=59375c5daeece147a337c451&total_fee=69",
+          "author_space":"http://www.mugeda.com/designer.php?urid=560264a7a3664e8e39000031"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5af0023692b579453b656365&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180507032923%2F5aeff92792b5790c641b8d3d%2Findex.html&source=template&title=%E8%BF%B7%E4%B9%8B%E6%A3%AE%E6%9E%97-%E7%94%BB%E4%B8%80%E4%B8%AA%E5%B0%8F%E4%BA%BA",
+          "title": "迷之森林-画一个小人",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5af0020292b5790c04093728.jpg",
+          "author":"贾建博",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5ac46555d20810114c37912a.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"199",
+          "buy":"/service.php?action=template&id=5af0023692b579453b656365&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=59a912b892b57930675b3e3f"
+        }
+      ]
+    },{
+      "type":"qz",
+      "title": "求职季",
+      "bgimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b0fc29bdb4b9b06de4d5f75.png",
+      "adimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b149fac347a19292152d78d.png",
+      "adlink":"http://bbs.mugeda.com/article/614",
+      "more_temp":"/template.php?act=简历模板",
+        "temp_list": [
+         {
+            "url": "http://www.mugeda.com/case_preview.php?id=5b321b04347a1912931f6e45&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2F7_jy%2Findex.html&source=template&title=VR%E5%9C%BA%E6%99%AF%E5%8C%96%E4%BC%81%E4%B8%9A%E5%AE%A3%E4%BC%A0%E6%8B%9B%E8%81%98",
+            "title": "VR场景化企业宣传招聘",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b321ad4347a194d2321c3ec.jpg",
+            "author": "奚俊生",
+            "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b0fac3baeece12394249b54.jpg?w=98&h=98&t=1&context=thumb",
+            "money": "199",
+            "buy":"/service.php?action=template&id=5b321b04347a1912931f6e45&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5add52f2347a19328c30eb6e"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5b1df2b0d6a11706b229fa8b&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180611115450%2F5b1de284cad25706b9575795%2Findex.html&source=template&title=%E5%8A%A8%E6%84%9F%E5%BF%AB%E9%97%AA%E7%AE%80%E5%8E%86",
+            "title": "动感快闪简历",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b1df255d6a11706a702a8ef.jpg",
+            "author": "奚俊生",
+            "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b0fac3baeece12394249b54.jpg?w=98&h=98&t=1&context=thumb",
+            "money": "99",
+            "buy":"/service.php?action=template&id=5b1df2b0d6a11706b229fa8b&total_fee=99",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5add52f2347a19328c30eb6e"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5af15620347a1944a71c2680&levelOneCategory=shangye&total_fee=59&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180508023357%2F5af1449a92b579279f091665%2Findex.html&source=template&title=%E6%8B%9B%E8%81%98~%E6%89%BE%E7%9A%84%E5%B0%B1%E6%98%AF%E4%BD%A0",
+            "title": "招聘~找的就是你",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5af145b892b5792b1441a225.jpg",
+            "author":"武磊",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a1e189e92b57948c57e5e67.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"59",
+            "buy":"/service.php?action=template&id=5af15620347a1944a71c2680&total_fee=59",
+            "author_space":"http://www.mugeda.com/designer.php?urid=58cd444692b5796fb71faebe"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5936235aaeece17c3c3eed2f&levelOneCategory=shangye&total_fee=98&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170606102416%2F59361232347a191d2b79a492%2Findex.html&source=template&title=2017%E4%BA%92%E9%80%9A%E5%9B%BD%E9%99%85%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98",
+            "title": "2017互通国际校园招聘",
+            "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5936204f347a191d2c21a835.png?w=98&h=98&t=1&context=thumb",
+            "author":"周疯子",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/57cfe832a3664e07730058fb.jpg?w=100&h=100&t=1",
+            "money":"98",
+            "buy":"/service.php?action=template&id=5936235aaeece17c3c3eed2f&total_fee=98",
+            "author_space":"http://www.mugeda.com/designer.php?urid=56a5822fa3664e961200042d"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5acdad2e347a1942b947cb13&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180410054340%2F5acc873ad2081079b464c51b%2Findex.html&source=template&title=%E5%AF%BB%E6%89%BE%E7%89%9B%E4%BA%BA-%E5%8D%A1%E9%80%9A%E6%8B%9B%E8%81%98",
+            "title": "寻找牛人-卡通招聘",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acdace792b5791e694c07b2.jpg",
+            "author":"色尚创意多媒体工作室",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5abdd80e347a190ff915cfc6.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"199",
+            "buy":"/service.php?action=template&id=5acdad2e347a1942b947cb13&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=555dd304a3664ec538000d16"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=59969b7492b579441e79aedf&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170818033151%2F5996937fd208101a57304526%2Findex.html&source=template&title=%E6%8B%9B%E8%81%98%EF%BC%8D%E8%8B%B1%E9%9B%84%E5%B8%96",
+            "title": "招聘－英雄帖",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/59969acf347a19740d747ccc.jpg",
+            "author":"乔铮",
+            "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+            "money":"99",
+            "buy":"/service.php?action=template&id=59969b7492b579441e79aedf&total_fee=99",
+            "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=598d620692b579382c7a6691&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170811032638%2F598d579cd208101a622d564f%2Findex.html&source=template&title=%E6%8B%9B%E8%81%98%EF%BC%8D%E5%A4%A7%E7%A5%9E%E6%90%9C%E5%AF%BB%E4%BB%A4",
+            "title": "招聘－大神搜寻令",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/598d61cdd208101a3619be59.jpg",
+            "author":"单世玉",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5940a2cb92b5795af060f588.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"99",
+            "buy":"/service.php?action=template&id=598d620692b579382c7a6691&total_fee=99",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5345fb03a3664eaa25000bbb"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5ad84f8a5a5ee807007fd1bd&levelOneCategory=guanfang&total_fee=52&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180410055416%2F5acc89b1d208107ad4653a79%2Findex.html&source=template&title=%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86",
+            "title": "个人简历",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acdd850347a194276583428.jpg",
+            "author":"梁丰蕲",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5ad6a50992b57979121abbaa.jpg",
+            "money":"52",
+            "buy":"/service.php?action=template&id=5ad84f8a5a5ee807007fd1bd&total_fee=52",
+            "author_space":"http://www.mugeda.com/designer.php?urid=57fc482a8e28cd19668b4626"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5ac9ecd9d20810287405ea62&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180408034137%2F5ac9c611aeece11a605f1f58%2Findex.html&source=template&title=%E8%B6%85%E9%85%B7%E9%AB%98%E7%AB%AF%E7%AE%80%E5%8E%86%E5%B8%A6%E5%BC%B9%E5%B9%95",
+            "title": "超酷高端简历带弹幕",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5ac9ecb5d2081063c9095235.jpg",
+            "author":"Aiyawoc",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/586b1dec92b57933175e89f0.jpg?w=100&h=100&t=1",
+            "money":"500",
+            "buy":"/service.php?action=template&id=5ac9ecd9d20810287405ea62&total_fee=500",
+            "author_space":"http://www.mugeda.com/designer.php?urid=579eb2aca348341030001ce1"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5acdb26e347a19443c41b0a7&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180410054520%2F5acc8794d208107d6046ec16%2Findex.html&source=template&title=%E5%AE%87%E5%AE%99%E5%B9%BB%E6%83%B3%E7%AE%80%E5%8E%86",
+            "title": "宇宙幻想简历",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acdb25292b579661729f6f8.jpg",
+            "author":"色尚创意多媒体工作室",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5abdd80e347a190ff915cfc6.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"99",
+            "buy":"/service.php?action=template&id=5acdb26e347a19443c41b0a7&total_fee=99",
+            "author_space":"http://www.mugeda.com/designer.php?urid=555dd304a3664ec538000d16"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5acc69f0d20810442757bee8&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180410032342%2F5acc65c4d2081044da77b86f%2Findex.html&source=template&title=%E9%9D%9E%E5%90%8C%E5%AF%BB%E5%B8%B8%E7%9A%84%E7%AE%80%E5%8E%86",
+            "title": "非同寻常的简历",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acc69cad2081020aa554013.jpg",
+            "author":"中视前卫-PowerBelif",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59b65e8e92b57934644a500e.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"199",
+            "buy":"/service.php?action=template&id=5acc69f0d20810442757bee8&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5878972a347a190c063c8495"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5acc7138d208107e8c438405&levelOneCategory=shangye&total_fee=66&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180410040615%2F5acc6f61d208106b19010180%2Findex.html&source=template&title=%E5%B7%A6%E5%8F%B3%E6%BB%91%E5%8A%A8%E5%BC%8F%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86",
+            "title": "左右滑动式个人简历",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acc7110d2081077c36b21b1.jpg",
+            "author":"王兵",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/593a38e2347a193587657edd.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"66",
+            "buy":"/service.php?action=template&id=5acc7138d208107e8c438405&total_fee=66",
+            "author_space":"http://www.mugeda.com/designer.php?urid=59169c6092b57906f7103dd6"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5ac9f582d20810489b541ab5&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180408064045%2F5ac9ef0daeece147c02a1145%2Findex.html&source=template&title=%E5%88%9B%E6%84%8F%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF",
+            "title": "创意简历模板",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5ac9f53ed208104c3a1f9b31.jpg",
+            "author":"匠君妙·臭袜子头",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/593654db347a191d0025623a.png?w=98&h=98&t=1&context=thumb",
+            "money":"99",
+            "buy":"/service.php?action=template&id=5ac9f582d20810489b541ab5&total_fee=99",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5681d99ca3664eae0100049f"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5abf0a2fd20810657d649e3f&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180331115938%2F5abf0713aeece115d3224bc9%2Findex.html%3Fvt%3D9019520180312A&source=template&title=%E8%AE%A9%E4%BA%BA%E7%9C%BC%E5%89%8D%E4%B8%80%E4%BA%AE%E7%9A%84%E7%AE%80%E5%8E%86",
+            "title": "让人眼前一亮的简历",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5abf09fdaeece12d99611315.jpg",
+            "author":"单世玉",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5940a2cb92b5795af060f588.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"199",
+            "buy":"/service.php?action=template&id=5abf0a2fd20810657d649e3f&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5345fb03a3664eaa25000bbb"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=58c75cc392b5791534547dff&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170307105410%2F58be2011347a197b5904c500%2Findex.html&source=template&title=%E9%85%B7%E7%82%AB%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86",
+            "title": "酷炫个人简历",
+            "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58c75c6d347a197d151734d9.png?w=98&h=98&t=1&context=thumb",
+            "author":"花轮先生",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5799b06526e298cd07003444.jpg?w=100&h=100&t=1",
+            "money":"99",
+            "buy":"/service.php?action=template&id=58c75cc392b5791534547dff&total_fee=99",
+            "author_space":"http://www.mugeda.com/designer.php?urid=56133a34a3664e8c600011bf"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5a3b6c5692b579404300c71b&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171221035336%2F5a3b686792b5793ef36145e6%2Findex.html&source=template&title=%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86",
+            "title": "个人简历",
+            "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a3b6b9a347a191dab698171.png?w=98&h=98&t=1&context=thumb",
+            "author":"小欣老师",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a323f16347a191721435130.jpg?w=98&h=98&t=1&context=thumb",
+            "money":"199",
+            "buy":"/service.php?action=template&id=5a3b6c5692b579404300c71b&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=597c7c1592b5792592659792"
+          },
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=5acc78afd2081078d13d8b70&levelOneCategory=shangye&total_fee=66&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180410043729%2F5acc772ed20810682a6b48a1%2Findex.html&source=template&title=%E4%B8%80%E5%B0%81%E7%AE%80%E5%8E%86-%E9%87%8D%E5%8A%9B%E6%84%9F%E5%BA%94",
+            "title": "一封简历-重力感应",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acc7881d20810682a6b48ad.jpg",
+            "author":"黄紫阳",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/57986e1b3bd2082610003c62.jpg?w=100&h=100&t=1",
+            "money":"66",
+            "buy":"/service.php?action=template&id=5acc78afd2081078d13d8b70&total_fee=66",
+            "author_space":"http://www.mugeda.com/designer.php?urid=55cf5448a3664ebd100000d7"
+          }
+        ]
+
+    },{
+      "type":"xwbd",
+      "title": "新闻报道",
+      "bgimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b0fc23edb4b9b06d678f210.png",
+      "adimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b14a02c347a19220c4454e8.png",
+      "adlink":"/temp_package.php?type=rmt",
+      "more_temp":"/template.php?act=新闻报道",
+      "temp_list": [
+      {
+            "url": "http://www.mugeda.com/case_preview.php?id=5b3f05a192b5790299006828&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2F530q%2Findex.html&source=template&title=%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AE%8C%E7%BE%8E%E4%BD%93%E9%AA%8C",
+            "title": "微信跳一跳完美体验",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b3f057e92b57902eb3b0cfa.jpg",
+            "author": "奚俊生",
+            "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b0fac3baeece12394249b54.jpg?w=98&h=98&t=1&context=thumb",
+            "money": "199",
+            "buy":"/service.php?action=template&id=5b3f05a192b5790299006828&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5add52f2347a19328c30eb6e"
+          },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b31e3f6347a1936a503b121&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fowna%2Findex.html&source=template&title=%E5%85%9A%E6%94%BF%E4%B8%80%E9%95%9C%E5%88%B0%E5%BA%95VR%E6%A8%A1%E6%9D%BF",
+          "title": "党政VR宣传",
+          "temp_img": "http://cdn1.u.mgd5.com/campaigns/55b9e370a3664e7315000124/20180525033700/5af29b81347a19078d128989/images/5b31e2371514c75ae2339d80.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5b31e3f6347a1936a503b121&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b322012347a193489083bb9&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fykbq%2Findex.html&source=template&title=%E6%8A%A5%E7%BA%B8%E5%9B%BE%E7%89%87%E5%90%88%E6%88%90",
+          "title": "新闻报纸图片合成",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b321f071514c719be3b73aa.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5b322012347a193489083bb9&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b11231c347a197d4e4cc8fa&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180601064220%2F5b0e79a32858606576799a67%2Findex.html&source=template&title=%E4%B8%96%E7%95%8C%E6%9D%AF%E8%B5%9B%E5%86%B5%E6%8A%A5%E9%81%93",
+          "title": "世界杯赛况报道",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b112270347a192ffd180530.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5b11231c347a197d4e4cc8fa&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b0687706aa46e06da1e1ac7&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180524052734%2F5b066cc66aa46e06dc118ffa%2Findex.html&source=template&title=%E4%B8%96%E7%95%8C%E6%9D%AF%E6%AF%94%E8%B5%9B%E6%8A%95%E7%A5%A8",
+          "title": "世界杯比赛投票",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b06874d9a221906ad277642.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5b0687706aa46e06da1e1ac7&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b1e1c79347a1975ff6347ec&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180611024943%2F5b1e1add4da2a1069c0d12da%2Findex.html&source=template&title=%E4%B8%96%E7%95%8C%E6%9D%AF%E5%A4%B4%E5%83%8F%E5%90%88%E6%88%90",
+          "title": "世界杯头像合成",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b1e1c4d4da2a1069f33fd29.jpg",
+          "author":"Aiyawoc",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/586b1dec92b57933175e89f0.jpg?w=100&h=100&t=1",
+          "money":"199",
+          "buy":"/service.php?action=template&id=5b1e1c79347a1975ff6347ec&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=579eb2aca348341030001ce1"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a703b458cd9461c5b777b74&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180130052920%2F5a7035e092b5797bc21ea2d6%2Findex.html&source=template&title=%E7%9F%A5%E8%AF%86%E5%AF%B9%E6%88%98%E7%AD%94%E9%A2%98",
+          "title": "知识对战答题",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a701fbf347a191ade6e07aa.jpg",
+          "author":"木箱子",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a0aa47692b5796d8e04bfc2.png",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a703b458cd9461c5b777b74&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=53d6188ba3664ed9620003cb"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a72e8b13bc5cf06324a9f22&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180201055109%2F5a72dfb1347a196bbb2eb884%2Findex.html&source=template&title=%E8%B5%B0%E8%BF%9B%E6%BC%94%E6%92%AD%E5%8E%85",
+          "title": "走进演播厅",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a72e18c347a196bbb2eb896.jpg",
+          "author":"Aiyawoc",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/586b1dec92b57933175e89f0.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a72e8b13bc5cf06324a9f22&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=579eb2aca348341030001ce1"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5acda52e347a19430d0324ec&levelOneCategory=shangye&total_fee=200&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180411015719%2F5acda36a92b579688d7aa78a%2Findex.html&source=template&title=%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%93%E5%88%97%E6%A8%A1%E6%9D%BF",
+          "title": "新时代专列模板",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acda4e092b579694e53ffb8.jpg",
+          "author":"CMF",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/570cb387a3664eb0430000dc.png?w=100&h=100&t=1",
+          "money":"200",
+          "buy":"/service.php?action=template&id=5acda52e347a19430d0324ec&total_fee=200",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56ea907ba3664eea6b000015"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5aba231caeece1190a4cd869&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180327060740%2F5aba16f3aeece1197c230b7e%2Findex.html&source=template&title=%E5%B9%B4%E5%BA%A6%E7%9B%98%E7%82%B9-%E7%81%AB%E7%83%AD%E7%9A%84%E7%83%AD%E8%AF%8D",
+          "title": "年度盘点-火热的热词",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5aba22e1aeece1190a4cd865.jpg",
+          "author":"李美燕",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a694d3b92b5793caf1bbd55.png?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5aba231caeece1190a4cd869&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5922909192b57927a227a8c5"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a689ced92b57935ce3ce285&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180124104107%2F5a689acd92b57935c4400fdd%2Findex.html&source=template&title=%E6%96%B0%E9%97%BB%E8%B7%B3%E4%B8%80%E8%B7%B3",
+          "title": "新闻跳一跳",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a6881ad92b57935c21fcf2c.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a689ced92b57935ce3ce285&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a3b6d1e92b5793ebd110bfa&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171221040326%2F5a3b6a9f347a191f2908cede%2Findex.html&source=template&title=%E4%BB%A3%E8%A1%A8%E5%9B%A2%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1",
+          "title": "代表团的一封信",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a3b6b9d347a1915781d0050.png?w=98&h=98&t=1&context=thumb",
+          "author":"武磊",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a1e189e92b57948c57e5e67.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5a3b6d1e92b5793ebd110bfa&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58cd444692b5796fb71faebe"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a686b7f92b5793e9105f604&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180124071809%2F5a684c5e92b5793e86244c5b%2Findex.html&source=template&title=%E6%94%BF%E5%8A%A1%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D",
+          "title": "政务视频通话",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a684f7492b5793e877d0eeb.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a686b7f92b5793e9105f604&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a2676bb347a195cdf3b3d4f&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171205062222%2F5a26713d347a197ea249dbc1%2Findex.html&source=template&title=%E8%B6%85%E9%85%B7%E8%AF%AD%E9%9F%B3%E6%8A%A5%E9%81%93",
+          "title": "超酷语音报道",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a26769d92b57976536fee9f.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a2676bb347a195cdf3b3d4f&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a252dc3347a19512f7a2995&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171204071133%2F5a252ce3347a195124371f43%2Findex.html&source=template&title=%E6%96%B0%E9%97%BB%E5%B1%95%E9%A6%86",
+          "title": "新闻展馆",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a22772792b57968cc1de438.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a252dc3347a19512f7a2995&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0d7436347a1921184028ab&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170926062417%2F59ca2abb92b5792df331e33c%2Findex.html&source=template&title=%E5%BF%AB%E9%97%AA%E7%89%B9%E5%88%AB%E6%8A%A5%E9%81%93",
+          "title": "快闪特别报道",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0d741b92b5790ff4762a92.jpg",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0d7436347a1921184028ab&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0d75e1347a1921b91a8ca4&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170928094325%2F59ccfc7292b57943673a8792%2Findex.html&source=template&title=%E5%9B%BE%E8%A7%A3%E5%8D%81%E4%B9%9D%E5%A4%A7%E5%8F%98%E5%8C%96",
+          "title": "图解十九大变化",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0d75c892b579137370a44c.jpg",
+          "author":"钟樾",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774e07ca3664e052b000340.png?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0d75e1347a1921b91a8ca4&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=563c6d56a3664efe230002ff"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5af1434e347a1944d715cef2&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180508021912%2F5af13fe792b5792a497b7d62%2Findex.html&source=template&title=%E8%B7%B3%E4%B8%80%E8%B7%B3",
+          "title": "跳一跳",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5af142ba92b5792b1441a206.jpg",
+          "author":"陈龙",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5ad0260e92b5791bc20d77c9.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5af1434e347a1944d715cef2&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=594cb26592b5796eae2d8cb5"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a7a7995347a192db22aa1d4&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180207115855%2F5a7a6d28347a1950a71d168f%2Findex.html&source=template&title=%E5%81%A5%E5%BA%B7%E6%97%85%E6%B8%B8%E6%96%B0%E9%97%BB",
+          "title": "健康旅游新闻",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5af142ba92b5792b1441a206.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a7a7995347a192db22aa1d4&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0ac11f92b5796dbd12b924&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171012021918%2F59ccb17d92b57941a068a1a6%2Findex.html&source=template&title=%E6%96%B0%E9%97%BB%E7%94%BB%E4%B8%AD%E7%94%BB",
+          "title": "新闻画中画",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0a976a92b57970351868e9.jpg",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0ac11f92b5796dbd12b924&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        }
+      ]
+    },{
+      "type":"by",
+      "title": "毕业季",
+      "bgimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b0fc36edb4b9b0ac22fbbae.png",
+      "adimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b149fac347a19292152d78d.png",
+      "adlink":"http://bbs.mugeda.com/article/614",
+      "more_temp":"/template.php?act=简历模板",
+      "temp_list": [
+      {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b32052c347a194d2321c39b&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fbxk9%2Findex.html&source=template&title=%E8%87%B4%E9%9D%92%E6%98%A5",
+          "title": "致青春",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b3204eb1514c719bf62c705.jpg",
+          "author": "火星时代教育",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b10e08fc09d3506b2552800.jpg?w=98&h=98&t=1&context=thumb",
+          "money": "99",
+          "buy":"/service.php?action=template&id=5b32052c347a194d2321c39b&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5b10acb31b41dc069e7b65e4"
+       },
+       {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b320c15347a19141f7c7e19&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2F0i40%2Findex.html&source=template&title=%E6%AF%95%E4%B8%9A%E5%AD%A3%E5%A4%A7%E8%80%83%E6%A0%B8",
+          "title": "毕业季大考核",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b320bddb6c6311b217c8030.jpg",
+          "author": "火星时代教育",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b10e08fc09d3506b2552800.jpg?w=98&h=98&t=1&context=thumb",
+          "money": "99",
+          "buy":"/service.php?action=template&id=5b320c15347a19141f7c7e19&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5b10acb31b41dc069e7b65e4"
+       },
+      {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b35980daac55306910a03a8&levelOneCategory=shangye&total_fee=59&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fpeuy%2Findex.html&source=template&title=%E6%AF%95%E4%B8%9A%E6%97%85%E8%A1%8C-%E9%9D%92%E6%98%A5%E4%B8%8D%E6%95%A3%E5%9C%BA",
+          "title": "毕业旅行-青春不散场",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b3595acd52c4906c52124a6.jpg",
+          "author": "火星时代教育",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b10e08fc09d3506b2552800.jpg?w=98&h=98&t=1&context=thumb",
+          "money": "59",
+          "buy":"/service.php?action=template&id=5b35980daac55306910a03a8&total_fee=59",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5b10acb31b41dc069e7b65e4"
+       },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b1e91714da2a1467961fd4b&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180611110105%2F5b1e5f64cad25751ad7f881e%2Findex.html&source=template&title=%E6%8E%A8%E8%8D%90%EF%BC%9A%E6%88%91%E4%BB%AC%E6%AF%95%E4%B8%9A%E4%BA%86",
+          "title": "我们毕业了",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b1e911c4da2a1466137c5d4.jpg",
+          "author": "火星时代教育",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b10e08fc09d3506b2552800.jpg?w=98&h=98&t=1&context=thumb",
+          "money": "99",
+          "buy":"/service.php?action=template&id=5b1e91714da2a1467961fd4b&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5b10acb31b41dc069e7b65e4"
+       },
+       {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b2b192e347a193f8463ca2e&levelOneCategory=shangye&total_fee=59&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2F5u3f%2Findex.html&source=template&title=%E4%BD%A0%E7%9A%84%E5%BD%95%E5%8F%96%E9%80%9A%E7%9F%A5%E4%B9%A6",
+          "title": "你的录取通知书",
+          "temp_img": "http://9.u.mgd5.com/c/tbmg/yb3s/images/5b2b1819d6a1173d612ec6f6.jpg",
+          "author":"火星时代教育",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b10e08fc09d3506b2552800.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"59",
+          "buy":"/service.php?action=template&id=5b2b192e347a193f8463ca2e&total_fee=59",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5b10acb31b41dc069e7b65e4"
+        },{
+          "url": "http://www.mugeda.com/case_preview.php?id=5b2b1866347a1954e61c001f&levelOneCategory=shangye&total_fee=59&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fl-ef%2Findex.html&source=template&title=%E9%9D%92%E6%98%A5%E4%B8%8D%E6%95%A3%E5%9C%BA",
+          "title": "青春不散场",
+          "temp_img": "http://9.u.mgd5.com/c/tbmg/yb3s/images/5b2a14144da2a148465b0177.jpg",
+          "author":"火星时代教育",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b10e08fc09d3506b2552800.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"59",
+          "buy":"/service.php?action=template&id=5b2b1866347a1954e61c001f&total_fee=59",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5b10acb31b41dc069e7b65e4"
+        },{
+          "url": "http://www.mugeda.com/case_preview.php?id=5b2b18d8347a19597c273ae4&levelOneCategory=shangye&total_fee=59&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fy_l9%2Findex.html&source=template&title=%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%A4%8F%E5%A4%A9",
+          "title": "最后一个夏天",
+          "temp_img": "http://9.u.mgd5.com/c/tbmg/yb3s/images/5b2b181cd6a1176e236cfb93.jpg",
+          "author":"火星时代教育",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b10e08fc09d3506b2552800.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"59",
+          "buy":"/service.php?action=template&id=5b2b18d8347a19597c273ae4&total_fee=59",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5b10acb31b41dc069e7b65e4"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a4c72b7347a197028101419&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20180103020028%2F5a4c716cd20810737c2633f2%2Findex.html&source=template&title=18%E5%B2%81%E5%A4%A7%E5%AF%B9%E6%AF%94%E7%9B%B8%E5%86%8C",
+          "title": "18岁大对比相册",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a4c726ad208106cac6b5954.png?w=98&h=98&t=1&context=thumb",
+          "author":"小酱油",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/57b5346da3664ef35e000134.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=5a4c72b7347a197028101419&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5741bc93a3664e2f7700026e"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=596dd4b792b5796ce41a01aa&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170718050313%2F596dcec492b5792d065b4238%2Findex.html&source=template&title=%E4%BD%A0%E6%9C%89%E6%96%99%E5%90%97%EF%BC%9F",
+          "title": "毕业活动大赛-你有料吗？",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/596ec1eb92b5793fb06b0e2f.png?w=98&h=98&t=1&context=thumb",
+          "author":"未来应用",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/571092dda3664e4e4b000332.jpg?w=100&h=100&t=1",
+          "money":"199",
+          "buy":"/service.php?action=template&id=596dd4b792b5796ce41a01aa&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=59cfc5b5347a19246b50ad40"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59f1990792b57933f6531f48&levelOneCategory=shangye&total_fee=69&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171026025519%2F59f186c392b5793363283e4b%2Findex.html&source=template&title=%E6%84%9F%E8%B0%A2%E6%9C%89%E4%BD%A0",
+          "title": "感谢有你",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59f197cd92b579333869c394.png?w=98&h=98&t=1&context=thumb",
+          "author":"汪蔼琳",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58c7babe347a1935c818a4b4.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"69",
+          "buy":"/service.php?action=template&id=59f1990792b57933f6531f48&total_fee=69",
+          "author_space":"http://www.mugeda.com/designer.php?urid=57b51f008e28cd45038b4658"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59f19a8f92b57933f6531f4e&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171026031715%2F59f18be092b57932e0142b27%2Findex.html&source=template&title=%E6%B8%B8%E8%AE%B0%E2%80%94%E7%85%A7%E7%89%87%E8%A7%86%E9%A2%91%E6%94%BE%E8%BF%9B%E6%9D%A5",
+          "title": "游记—照片视频放进来",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59f197ce92b579330247e69a.png?w=98&h=98&t=1&context=thumb",
+          "author":"莫炼",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5861d9b992b5793db341dc61.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=59f19a8f92b57933f6531f4e&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=573d8804a3664e5d0d0000b4"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=598183da347a1921d057a88f&levelOneCategory=guanfang&total_fee=199&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170802034550%2F598182da347a1921d057a876%2Findex.html&source=template&title=%E6%B5%B7%E6%8A%A5%E5%90%88%E6%88%90%E6%A8%A1%E7%89%88",
+          "title": "海报合成模版",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/598191b1347a191c252fd99f.png?w=98&h=98&t=1&context=thumb",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"199",
+          "buy":"/service.php?action=template&id=598183da347a1921d057a88f&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=597f053a92b57925e2160711&levelOneCategory=guanfang&total_fee=59&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170731061946%2F597df4cf92b5792c2e4b4a07%2Findex.html&source=template&title=%E8%90%A5%E9%94%80%EF%BC%8D%E6%97%85%E8%A1%8C%E6%95%85%E4%BA%8B",
+          "title": "毕业季-旅行故事",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/597f047e92b579238837a90a.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"59",
+          "buy":"/service.php?action=template&id=597f053a92b57925e2160711&total_fee=59",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5967211e92b5792be530d43b&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170713032433%2F59671d5a92b5792c127ba387%2Findex.html&source=template&title=%E8%90%A5%E9%94%80%EF%BC%8D%E7%95%99%E8%A8%80%E6%A0%91",
+          "title": "毕业季-留言树",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5967205292b5792bcc5c6544.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=5967211e92b5792be530d43b&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=595225df92b57927707545bb&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170627051137%2F5952209c347a190b895df20c%2Findex.html&source=template&title=%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD%E6%A8%A1%E6%9D%BF",
+          "title": "毕业季-语音留言板",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59522241347a190b7068b1d5.png?w=98&h=98&t=1&context=thumb",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=595225df92b57927707545bb&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=593e418c347a1911b81b7419&levelOneCategory=guanfang&total_fee=39&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170612031512%2F593e30ce347a1910783bb29e%2Findex.html&source=template&title=%E6%AF%95%E4%B8%9A%E5%AD%A3%EF%BC%8D%E9%9D%92%E6%98%A5%E7%BA%AA%E5%BF%B5%E5%86%8C",
+          "title": "毕业季－青春纪念册",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/593e4035347a1910df59c209.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"39",
+          "buy":"/service.php?action=template&id=593e418c347a1911b81b7419&total_fee=39",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5939048c92b5791a445a3446&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170608035425%2F5938fcc6347a196208400ede%2Findex.html&source=template&title=%E6%AF%95%E4%B8%9A%E5%AD%A3%EF%BC%8D%E6%88%91%E4%BB%AC%E6%AF%95%E4%B8%9A%E4%BA%86",
+          "title": "毕业季－我们毕业了",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/59390456347a19194617b728.jpg",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=5939048c92b5791a445a3446&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=590c13cb92b579641f12a1e2&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170505015108%2F590af8fe347a191c3a630a54%2Findex.html&source=template&title=%E8%90%A5%E9%94%80%E6%A8%A1%E6%9D%BF%E2%80%94%E6%97%B6%E5%85%89%E6%9C%BA",
+          "title": "毕业季—时光机",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/590c1380347a1977db4b2c85.png?w=98&h=98&t=1&context=thumb",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=590c13cb92b579641f12a1e2&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        }
+      ]
+    },{
+      "type":"dzzt",
+      "title": "党政专题",
+      "bgimg":"http://www.mugeda.com/c/user/data/55b9e370a3664e7315000124/5b35a00c1514c75b2d5dcb23.png",
+      "adimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b14a02c347a19220c4454e8.png",
+      "adlink":"/temp_package.php?type=rmt",
+      "more_temp":"/template.php?act=新闻报道",
+      "temp_list": [
+      {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b3d8244a92bf848ed50e7c0&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fcx0u%2Findex.html&source=template&title=%E6%96%B0%E6%97%B6%E4%BB%A3%E9%87%91%E5%8F%A5",
+          "title": "新时代金句",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b3d831ca92bf848ec202d60.jpg",
+          "author":"李美燕",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a694d3b92b5793caf1bbd55.png?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5b3d8244a92bf848ed50e7c0&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5922909192b57927a227a8c5"
+        },
+      {
+            "url": "http://www.mugeda.com/case_preview.php?id=5b3b14d5290a8334ed579947&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fphro%2Findex.html&source=template&title=%E5%BB%BA%E5%86%9B%E8%8A%82-%E9%85%B7%E7%82%ABVR%E5%85%A8%E5%8A%A8%E6%80%81%E4%BD%93%E9%AA%8C",
+            "title": "建军节-酷炫VR全动态体验",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b3b14b3290a83351617497a.jpg",
+            "author": "奚俊生",
+            "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5b0fac3baeece12394249b54.jpg?w=98&h=98&t=1&context=thumb",
+            "money": "199",
+            "buy":"/service.php?action=template&id=5b3b14d5290a8334ed579947&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5add52f2347a19328c30eb6e"
+          },
+       {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b31e3f6347a1936a503b121&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fowna%2Findex.html&source=template&title=%E5%85%9A%E6%94%BF%E4%B8%80%E9%95%9C%E5%88%B0%E5%BA%95VR%E6%A8%A1%E6%9D%BF",
+          "title": "党政VR宣传",
+          "temp_img": "http://cdn1.u.mgd5.com/campaigns/55b9e370a3664e7315000124/20180525033700/5af29b81347a19078d128989/images/5b31e2371514c75ae2339d80.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5b31e3f6347a1936a503b121&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5aab6d39347a1961d834b680&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180316024753%2F5aab58775a09ab300b074103%2Findex.html&source=template&title=%E5%B9%B4%E5%BA%A6%E6%96%B0%E9%97%BB%E4%BA%8B%E4%BB%B6%E7%9B%98%E7%82%B9",
+          "title": "年度新闻事件盘点",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5aab6d08347a1960270a5531.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5aab6d39347a1961d834b680&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b02a80792b5791f9328e2b7&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180521070128%2F5b02a6de92b5791f6d1af3ce%2Findex.html&source=template&title=%E7%83%AD%E8%AF%8D%E8%BF%99%E6%A0%B7%E5%A5%8B%E6%96%97",
+          "title": "热词这样奋斗",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b02a77792b5791f7010ddc4.jpg",
+          "author":"李美燕",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a694d3b92b5793caf1bbd55.png?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5b02a80792b5791f9328e2b7&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5922909192b57927a227a8c5"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0d6f87347a191d5e37435a&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170930031411%2F59cf284b92b5791b333acca9%2Findex.html&source=template&title=%E5%AD%A6%E5%85%9A%E7%AB%A0%E6%B5%8B%E8%AF%95",
+          "title": "学党章测试",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0d6f1192b57915e903369e.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0d6f87347a191d5e37435a&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0ac6ea92b57971a5471fb4&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170930062745%2F59cdfef392b579223d777847%2Findex.html&source=template&title=%E8%A7%86%E9%A2%91%E6%8A%A5%E9%81%93%E5%90%88%E8%BE%91",
+          "title": "视频报道合辑",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0ac6cd92b57970351869b3.jpg",
+          "author": "木箱子",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a0aa47692b5796d8e04bfc2.png",
+          "money": "500",
+          "buy":"/service.php?action=template&id=5a0ac6ea92b57971a5471fb4&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=53d6188ba3664ed9620003cb"
+        }, 
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59f19c0a92b5792ee4461fe2&levelOneCategory=shangye&total_fee=129&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171026032324%2F59f18d5492b5792ee4461f2d%2Findex.html&source=template&title=%E4%B8%BA%E7%A5%96%E5%9B%BD%E5%8D%87%E5%9B%BD%E6%97%97",
+          "title": "为祖国升国旗",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59f197cf92b57933f6531f37.png?w=98&h=98&t=1&context=thumb",
+          "author":"张顺贺",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5919722592b579465d51e4e2.png?w=98&h=98&t=1&context=thumb",
+          "money":"129",
+          "buy":"/service.php?action=template&id=59f19c0a92b5792ee4461fe2&total_fee=129",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58aef2db347a1906900b8427"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0a6b0992b57970121acf83&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171025125654%2F59ef5144347a195a2d579914%2Findex.html&source=template&title=%E4%B8%BA%E9%A2%86%E5%AF%BC%E4%BA%BA%E9%BC%93%E6%8E%8C%EF%BC%8D%E7%AB%96%E7%89%88%E8%A7%86%E9%A2%91徐谭谭",
+          "title": "为领导人鼓掌－竖版视频",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0a6ae892b5796d856982ca.jpg",
+          "author": "徐谭谭",
+          "faceimg": "http://card.mugeda.com/user/data/5396d21ca3664e2950000373/578ddcd4a3664e1e320001f5.jpg",
+          "money": "500",
+          "buy":"/service.php?action=template&id=5a0a6b0992b57970121acf83&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317f00a3664ee3200002b3"
+        }, 
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a7d6abffe5562069b249db2&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180202033128%2F5a740f44347a1975806a6a59%2Findex.html&source=template&title=%E5%9C%B0%E5%9B%BE%E5%9E%8B%E8%A7%86%E9%A2%91%E7%9B%AE%E5%BD%95",
+          "title": "地图型视频目录",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a7d6a6592b57970d121a4c8.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a7d6abffe5562069b249db2&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0ac11f92b5796dbd12b924&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171012021918%2F59ccb17d92b57941a068a1a6%2Findex.html&source=template&title=%E6%96%B0%E9%97%BB%E7%94%BB%E4%B8%AD%E7%94%BB",
+          "title": "新闻画中画",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0a976a92b57970351868e9.jpg",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0ac11f92b5796dbd12b924&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a7d781492b5795c3b104de2&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180209062904%2F5a7d77ce92b57975680fbd90%2Findex.html&source=template&title=%E5%85%9A%E6%94%BF%E9%A3%8E%E6%A0%BCVR%E7%BB%BC%E5%90%88%E5%B1%95%E7%A4%BA",
+          "title": "党政风格VR综合展示",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a7d6e9492b5795fcb78d50a.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a7d781492b5795c3b104de2&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a97750592b5794100343db0&levelOneCategory=shangye&total_fee=50&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180301112936%2F5a977343347a1968bb555cbb%2Findex.html%3Fvt%3D8086020180212A&source=template&title=%E7%B2%BE%E5%87%86%E6%89%B6%E8%B4%AB",
+          "title": "精准扶贫",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a9774d3347a1968923aab73.jpg",
+          "author":"阿里郎",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a93a84c92b57941e55bafd6.png?w=98&h=98&t=1&context=thumb",
+          "money":"50",
+          "buy":"/service.php?action=template&id=5a97750592b5794100343db0&total_fee=50",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5a278bf992b57973c2188f5c"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0578e292b5796e8c7d8059&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171110055123%2F5a0575e892b5796e8726e05f%2Findex.html&source=template&title=%E7%BB%99%E4%BB%A3%E8%A1%A8%E7%95%99%E8%A8%80",
+          "title": "给代表留言",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0578c092b5796e891d3075.jpg",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0578e292b5796e8c7d8059&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a05836692b5796e98296eb1&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171110064454%2F5a057be792b5796e97722456%2Findex.html&source=template&title=%E6%96%B0%E9%97%BB%E5%9B%BE%E7%89%87%E9%9B%86",
+          "title": "新闻图片集",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0582fe347a19622f37ff53.jpg",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a05836692b5796e98296eb1&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a12a63c92b57963c06624f3&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2Ff9b2db18.u.mgd5.com%2Fcampaigns%2F54f2c88fa3664e2d2d0007a6%2F20171120054139%2F5a12411baeece119ad64c378%2Findex.html&source=template&title=%E9%95%BF%E5%9B%BE%E6%8B%96%E5%8A%A8%E5%9B%BE%E6%96%87%E6%96%B0%E9%97%BB%E7%B1%BB-%E6%A8%A1%E6%9D%BF",
+          "title": "长图拖动图文新闻类-模板",
+          "temp_img": "http://cdn2.u.mgd5.com/campaigns/54f2c88fa3664e2d2d0007a6/20170710112833/5962f3d992b57905f732a2b3/5a12a3f5347a194c0e1e9b57.jpg",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a12a63c92b57963c06624f3&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0d6e12347a1920a3648f3c&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171001110539%2F59d0fc1b92b579613c7f38ec%2Findex.html&source=template&title=VR%E7%9C%8B%E6%96%B0%E9%97%BB",
+          "title": "VR看新闻",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0ba93192b57925282a634c.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0d6e12347a1920a3648f3c&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5acda52e347a19430d0324ec&levelOneCategory=shangye&total_fee=200&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180411015719%2F5acda36a92b579688d7aa78a%2Findex.html&source=template&title=%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%93%E5%88%97%E6%A8%A1%E6%9D%BF",
+          "title": "新时代专列模板",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acda4e092b579694e53ffb8.jpg",
+          "author": "CMF",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/570cb387a3664eb0430000dc.png?w=100&h=100&t=1",
+          "money": "200",
+          "buy":"/service.php?action=template&id=5acda52e347a19430d0324ec&total_fee=200",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56ea907ba3664eea6b000015"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a81413192b5795de20ca3d4&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180212024927%2F5a812ee9347a1936ca1cda0e%2Findex.html&source=template&title=%E6%96%B0%E9%97%BB%E6%8A%A5%E9%81%93%E8%A1%A8%E5%8D%95",
+          "title": "新闻报道表单合集",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a7ea490347a192ecd20c41f.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a81413192b5795de20ca3d4&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a02b7ba92b579175a0530ab&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171108034251%2F5a02a14b92b57917760fbd65%2Findex.html&source=template&title=%E5%9B%BE%E6%96%87%E6%8A%A5%E9%81%9320%E9%A1%B5",
+          "title": "图文报道20页",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a02b6f292b579176541367c.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a02b7ba92b579175a0530ab&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a0a8ea092b5796d85698312&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171001122441%2F59cfbb05347a191a6f50f6a9%2Findex.html&source=template&title=%E4%B8%80%E9%95%9C%E5%88%B0%E5%BA%95",
+          "title": "一镜到底",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0a8e1692b5796d8e04bf43.jpg",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a0a8ea092b5796d85698312&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a226a47347a191466165ecb&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171202043927%2F5a22664f92b5794bde258011%2Findex.html&source=template&title=%E5%8F%A4%E5%85%B8%E5%9B%BE%E6%96%87%E8%AF%AD%E9%9F%B3",
+          "title": "古典图文语音",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a226a1192b579221b5192c5.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a226a47347a191466165ecb&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a2273cf347a191ec558a9b5&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171202053037%2F5a226cf192b5796e7161eed4%2Findex.html&source=template&title=%E7%BE%8E%E4%B8%BD%E4%B8%AD%E5%9B%BDVR%E5%A4%9A%E5%9C%BA%E6%99%AF",
+          "title": "美丽中国VR多场景",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a2273ab92b57967c752a0a2.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a2273cf347a191ec558a9b5&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a3b6d1e92b5793ebd110bfa&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171221040326%2F5a3b6a9f347a191f2908cede%2Findex.html&source=template&title=%E4%BB%A3%E8%A1%A8%E5%9B%A2%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1",
+          "title": "代表团的一封信",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a3b6b9d347a1915781d0050.png?w=98&h=98&t=1&context=thumb",
+          "author":"武磊",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a1e189e92b57948c57e5e67.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5a3b6d1e92b5793ebd110bfa&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58cd444692b5796fb71faebe"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a420c52347a195b28294805&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180304044807%2F5a9bae5992b57931f60bec48%2Findex.html&source=template&title=2017%E4%B8%AD%E5%9B%BD%E6%9C%80%E7%BE%8E%E7%BA%AA%E5%BD%95%E7%89%87",
+          "title": "中国最美纪录片",
+          "temp_img": "http://card.mugeda.com/user/data/56317f00a3664ee3200002b3/5a420b46347a19073c3cd545.jpg",
+          "author": "徐谭谭",
+          "faceimg": "http://card.mugeda.com/user/data/5396d21ca3664e2950000373/578ddcd4a3664e1e320001f5.jpg",
+          "money": "500",
+          "buy":"/service.php?action=template&id=5a420c52347a195b28294805&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317f00a3664ee3200002b3"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a7aa18892b57965377ad7e8&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180207024730%2F5a7a9ad3347a19646c684a7c%2Findex.html&source=template&title=%E9%80%9A%E7%94%A8%E5%9B%BE%E6%96%87%E8%AF%AD%E9%9F%B3%E6%A8%A1%E6%9D%BF",
+          "title": "通用图文语音模板",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a7aa16c347a19646509d677.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a7aa18892b57965377ad7e8&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a68996392b57936130b90c0&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180124103037%2F5a68980592b57935a57adea3%2Findex.html&source=template&title=%E5%BC%80%E5%90%AF%E6%96%B0%E7%AF%87%E7%AB%A0",
+          "title": "开启新篇章",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a68993c92b57936027d30d0.jpg",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a68996392b57936130b90c0&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a6b0edc8cd94616184ec6d2&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180126071928%2F5a6b0e93d208101ba30feb8b%2Findex.html%3Fvt%3D5685820180108A&source=template&title=%E8%AE%A9%E4%B8%AD%E5%9B%BD%E9%A3%9E%E7%9A%84%E6%9B%B4%E9%AB%98",
+          "title": "让中国飞的更高",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a6b0e25d2081040284f379d.jpg",
+          "author": "徐谭谭",
+          "faceimg": "http://card.mugeda.com/user/data/5396d21ca3664e2950000373/578ddcd4a3664e1e320001f5.jpg",
+          "money": "500",
+          "buy":"/service.php?action=template&id=5a6b0edc8cd94616184ec6d2&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317f00a3664ee3200002b3"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a71a5b3ecd0010604315bb6&levelOneCategory=shangye&total_fee=500&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180131070043%2F5a71a123347a190ad650fb65%2Findex.html&source=template&title=%E6%88%91%E8%A6%81%E4%B8%8A%E5%A4%B4%E6%9D%A1",
+          "title": "我要上头条",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a71a34d347a190ae666a203.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"500",
+          "buy":"/service.php?action=template&id=5a71a5b3ecd0010604315bb6&total_fee=500",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        }
+      ]
+    },{
+      "type":"hd",
+      "title": "优惠专场",
+      "bgimg":"https://www.mugeda.com/c/user/data/55b9e370a3664e7315000124/5b4ef86bf1fdec2b462b9e95.jpg",
+      "adimg":"http://www.mugeda.com/c/user/data/5ad996659aeb702d834ce42d/5b14a02c347a19220c4454e8.png",
+      "adlink":"/temp_package.php?type=rmt",
+      "more_temp":"/template.php?act=新闻报道",
+      "temp_list": [
+      {
+          "url": "http://www.mugeda.com/case_preview.php?id=58749e859e89fc060015cab7&levelOneCategory=shangye&total_fee=9.9&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110034244%2F586609b592b5797e10603be7%2Findex.html&source=template&title=1%E6%8A%98%3E%E7%94%A8%E5%BF%83%E8%AF%B4%E7%88%B1%E4%BD%A0",
+          "title": "1折>用心说爱你",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a21347a19098862a6a8.png?w=98&h=98&t=1&context=thumb",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"9.9",
+          "buy":"/service.php?action=template&id=58749e859e89fc060015cab7&total_fee=9.9",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+       {
+          "url": "http://www.mugeda.com/case_preview.php?id=5b322012347a193489083bb9&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fykbq%2Findex.html&source=template&title=3.9%E6%8A%98%3E%E6%8A%A5%E7%BA%B8%E5%9B%BE%E7%89%87%E5%90%88%E6%88%90",
+          "title": "3.9折>报纸图片合成",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b321f071514c719be3b73aa.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"199",
+          "buy":"/service.php?action=template&id=5b322012347a193489083bb9&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5aa7b553aeece171ee6a4a3a&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180313072143%2F5aa7b3b6aeece117323b1b89%2Findex.html%3Fvt%3D2086920180212A&source=template&title=6%E6%8A%98%3E%E4%B8%A4%E4%BC%9A%E2%80%9C%E5%A5%B9%E2%80%9D%E6%88%90%E5%91%98",
+          "title": "6折>两会“她”成员",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5aa7b53aaeece17eea344f5e.jpg",
+          "author":"花轮先生",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5799b06526e298cd07003444.jpg?w=100&h=100&t=1",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5aa7b553aeece171ee6a4a3a&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56133a34a3664e8c600011bf"
+        },
+        {
+          "url": "https://www.mugeda.com/case_preview.php?id=5a7adaa892b579653a317beb&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180207065025%2F5a7ad9bc347a197956136096%2Findex.html&source=template&title=6%E6%8A%98%3E%E6%98%9F%E7%A9%BA%E5%AE%87%E5%AE%99%E5%85%A8%E6%99%AF",
+          "title": "6折>星空宇宙全景",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a7acccc92b579653c2a42f7.jpg",
+          "author": "木箱子",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a0aa47692b5796d8e04bfc2.png",
+          "money": "299",
+          "buy":"/service.php?action=template&id=5a7adaa892b579653a317beb&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=53d6188ba3664ed9620003cb"
+        },   
+       {
+          "url": "https://www.mugeda.com/case_preview.php?id=5a743f9d4e052b619f59ae13&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180202063420%2F5a743c6ece62e80afa2dffd3%2Findex.html&source=template&title=6%E6%8A%98%3E%E6%94%BF%E5%8A%A1%E5%85%A8%E6%99%AF%E5%B1%95%E5%8E%85",
+          "title": "6折>政务全景展厅",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a743f753bc5cf0aae6f9222.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5a743f9d4e052b619f59ae13&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        },       
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a7178c7347a193f2605be37&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180131035343%2F5a717202347a19671c35fc18%2Findex.html&source=template&title=6%E6%8A%98%3E%E6%97%B6%E9%97%B4%E8%BD%B4%E8%A7%86%E9%A2%91%E9%9B%86%E5%90%88",
+          "title": "6折>时间轴视频集合",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a7178a9347a193f21336a79.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5a7178c7347a193f2605be37&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=57970df6798da1b13f000020&levelOneCategory=shangye&total_fee=9.9&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160722031231%2F5791c70bafec36877c001af5%2Findex.html&source=template&title=1%E6%8A%98%3E%E8%A7%A3%E9%94%81%E7%88%B1%E6%83%85",
+          "title": "1折>解锁爱情",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5795deaf798da19503000c8f.png?w=100&h=100&t=1",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"9.9",
+          "buy":"/service.php?action=template&id=57970df6798da1b13f000020&total_fee=9.9",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59f04caf92b57954d1373250&levelOneCategory=shangye&total_fee=249&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20171025041615%2F59f04595347a1940fa1548dd%2Findex.html&source=template&title=8%E6%8A%98%3E%E5%BC%80%E5%90%AF%E6%99%BA%E8%83%BD%E8%AE%A4%E8%AF%81%E6%97%B6%E4%BB%A3",
+          "title": "8折>开启智能认证时代",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/59f04a6a347a191f0130aacd.png?w=98&h=98&t=1&context=thumb",
+          "author":"未来应用",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/571092dda3664e4e4b000332.jpg?w=100&h=100&t=1",
+          "money":"249",
+          "buy":"/service.php?action=template&id=59f04caf92b57954d1373250&total_fee=249",
+          "author_space":"http://www.mugeda.com/designer.php?urid=59cfc5b5347a19246b50ad40"
+        },         
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59f0554d92b579568709c4d9&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171025044822%2F59f04f1c92b5795499157390%2Findex.html&source=template&title=6%E6%8A%98%3E%E5%90%91%E6%96%B0%E6%97%B6%E4%BB%A3%E5%87%BA%E5%8F%91",
+          "title": "6折>向新时代出发",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/59f0550992b57956aa761b93.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"299",
+          "buy":"/service.php?action=template&id=59f0554d92b579568709c4d9&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },  
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a71adf6ecd00105fc6ca1b9&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180131074407%2F5a71ababecd00105ff07c387%2Findex.html&source=template&title=6%E6%8A%98%3E%E9%99%80%E8%9E%BA%E4%BB%AA%E6%93%8D%E6%8E%A7%E6%96%B0%E9%97%BB%E6%8A%A5%E9%81%93",
+          "title": "6折>陀螺仪操控新闻报道",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a71add7ecd00105ff07c38e.jpg",
+          "author": "徐谭谭",
+          "faceimg": "http://card.mugeda.com/user/data/5396d21ca3664e2950000373/578ddcd4a3664e1e320001f5.jpg",
+          "money": "299",
+          "buy":"/service.php?action=template&id=5a71adf6ecd00105fc6ca1b9&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317f00a3664ee3200002b3"
+        },         
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a2676bb347a195cdf3b3d4f&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171205062222%2F5a26713d347a197ea249dbc1%2Findex.html&source=template&title=6%E6%8A%98%3E%E8%B6%85%E9%85%B7%E8%AF%AD%E9%9F%B3%E6%8A%A5%E9%81%93",
+          "title": "6折>超酷语音报道",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a26769d92b57976536fee9f.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5a2676bb347a195cdf3b3d4f&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        }, 
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5874a0529e89fc05fa122a63&levelOneCategory=shangye&total_fee=9.9&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110040739%2F58660ab592b5797df831cf79%2Findex.html&source=template&title=1%E6%8A%98%3E%E7%88%B1%E6%83%85%E7%AB%A5%E8%AF%9D",
+          "title": "1折>爱情童话",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a21347a190ae2692bd4.png?w=98&h=98&t=1&context=thumb",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"9.9",
+          "buy":"/service.php?action=template&id=5874a0529e89fc05fa122a63&total_fee=9.9",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },      
+        {
+          "url": "https://www.mugeda.com/case_preview.php?id=5a0d75e1347a1921b91a8ca4&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170928094325%2F59ccfc7292b57943673a8792%2Findex.html&source=template&title=6%E6%8A%98%3E%E4%BB%8A%E6%98%94%E5%AF%B9%E6%AF%94-%E5%8F%98%E8%84%B8%E6%A8%A1%E6%9D%BF",
+          "title": "6折>今昔对比-变脸模板",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0d75c892b579137370a44c.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5a0d75e1347a1921b91a8ca4&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+       {
+          "url": "http://www.mugeda.com/case_preview.php?id=5ab23206aeece139b832981f&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180321061613%2F5ab22bf3aeece1395a1fc118%2Findex.html&source=template&title=6%E6%8A%98%3E%E7%BF%BB%E8%BD%AC%E5%9E%8B%E6%96%B0%E9%97%BB",
+          "title": "6折>翻转型新闻",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5ab231e2aeece138a5698c55.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5ab23206aeece139b832981f&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        }, 
+       {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a05691492b5796e9a41c3bc&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171110044832%2F5a05631292b5796ea54e4fa4%2Findex.html&source=template&title=6%E6%8A%98%3E%E4%B8%93%E5%AE%B6%E8%AE%BF%E8%B0%88%E8%A7%86%E9%A2%91%E5%9B%BE%E6%96%87",
+          "title": "6折>专家访谈视频图文",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a0568f792b5796ead69a84e.jpg",
+          "author":"宋丹",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5aa61b20dca86f21d96f4459.jpeg?w=98&h=98&t=1&context=thumb",
+          "money":"299",
+          "buy":"/service.php?action=template&id=5a05691492b5796e9a41c3bc&total_fee=299",
+          "author_space":"http://www.mugeda.com/designer.php?urid=58db7303b0f7612538723753"
+        }, 
+          {
+            "url": "http://www.mugeda.com/case_preview.php?id=59f2dcc192b5797a8c58564a&levelOneCategory=shangye&total_fee=299&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171027031035%2F59f2a697347a19135925369d%2Findex.html&source=template&title=6%E6%8A%98%3E%E5%AF%84%E7%BB%99%E6%AF%8D%E6%A0%A1%E7%9A%84%E6%98%8E%E4%BF%A1%E7%89%87",
+            "title": "6折>寄给母校的明信片",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/59f2dc9f347a195e8532ed99.jpg",
+            "author":"Aiyawoc",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/586b1dec92b57933175e89f0.jpg?w=100&h=100&t=1",
+            "money":"299",
+            "buy":"/service.php?action=template&id=59f2dcc192b5797a8c58564a&total_fee=299",
+            "author_space":"http://www.mugeda.com/designer.php?urid=579eb2aca348341030001ce1"
+          },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a4353cf347a19549a62110d&levelOneCategory=shangye&total_fee=159&preview_url=http%3A%2F%2F7d9d4d85.u.mgd5.com%2Fcampaigns%2F56317edca3664edd200001f2%2F20171227031710%2F5a377ddd347a19309f460a8b%2Findex.html&source=template&title=8%E6%8A%98%3E%E7%B2%BE%E8%87%B4%E5%B0%8F%E6%B8%B8%E6%88%8F",
+          "title": "8折>精致小游戏",
+          "temp_img": "http://card.mugeda.com/user/data/56317edca3664edd200001f2/5a4351fc92b5793fc21805ca.jpg",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"159",
+          "buy":"/service.php?action=template&id=5a4353cf347a19549a62110d&total_fee=159",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5acdc281347a19461771e609&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180411035344%2F5acc882ad2081077ae7457ce%2Findex.html&source=template&title=8%E6%8A%98%3E%E6%B5%B7%E6%B4%8B%E9%97%AE%E9%A2%98%E7%9F%A5%E5%A4%9A%E5%B0%91",
+          "title": "8折>海洋问题知多少",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5acdc0f992b579661729f79d.jpg",
+          "author":"色尚创意多媒体工作室",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5abdd80e347a190ff915cfc6.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"99",
+          "buy":"/service.php?action=template&id=5acdc281347a19461771e609&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=555dd304a3664ec538000d16"
+        }
+      ]
+    },{
+      "type":"qx",
+      "title": "七夕情人节",
+      "bgimg":"https://www.mugeda.com/c/user/data/55b9e370a3664e7315000124/5b641c69f1fdec78b3039872.jpg",
+      "adimg":"https://www.mugeda.com/c/user/data/55b9e370a3664e7315000124/5b6aa7f692b5796ec81b3b26.jpg",
+      "adlink":"/temp_subject.php?type=hd",
+      "more_temp":"/template.php?act=节日模板",
+      "temp_list": [
+      {
+            "url": "http://www.mugeda.com/case_preview.php?id=5b70e51892b579570818cf07&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9.u.mgd5.com%2Fc%2Ftbmg%2Fdh-o%2Findex.html&source=template&title=%E4%B8%83%E5%A4%95%E6%89%8B%E7%BB%98%E5%88%9B%E6%84%8F%E6%A8%A1%E7%89%88",
+            "title": "七夕手绘创意模版",
+            "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5b70e4ff2af95c687f358e2c.jpg",
+            "author":"匠君妙·臭袜子头",
+            "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/593654db347a191d0025623a.png?w=98&h=98&t=1&context=thumb",
+            "money":"199",
+            "buy":"/service.php?action=template&id=5b70e51892b579570818cf07&total_fee=199",
+            "author_space":"http://www.mugeda.com/designer.php?urid=5681d99ca3664eae0100049f"
+          },
+       {
+          "url": "http://www.mugeda.com/case_preview.php?id=593512ba92b579349f0512ae&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170605033138%2F593504f0347a192f4f03d905%2Findex.html&source=template&title=%E7%88%B1%E6%83%85/%E8%90%A5%E9%94%80-%E6%99%92%E5%B9%B8%E7%A6%8F%E6%B4%BB%E5%8A%A8",
+          "title": "爱情/营销-晒幸福活动",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5935129b347a19324a1074c4.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=593512ba92b579349f0512ae&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59818beb347a19203e53bedc&levelOneCategory=shangye&total_fee=128&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170802030709%2F5979b2ee92b5791d3b3bdbce%2Findex.html&source=template&title=%E7%88%B1%E6%83%85-%E7%94%BB%E5%9C%86%E6%B8%B8%E6%88%8F",
+          "title": "爱情-画圆游戏",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5981886492b57906484fccc4.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"128",
+          "buy":"/service.php?action=template&id=59818beb347a19203e53bedc&total_fee=128",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=590f3cc492b5797dae78531f&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170507102105%2F590f2690347a19157e26a5b1%2Findex.html&source=template&title=%E7%88%B1%E6%83%85/%E8%90%A5%E9%94%80-520%E6%83%8A%E5%96%9C",
+          "title": "爱情/营销-520惊喜",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/590f2880347a191c942dd33d.jpg?w=100&h=100&t=1",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=590f3cc492b5797dae78531f&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5935279aaeece104041ed524&levelOneCategory=shangye&total_fee=69&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170605053615%2F58db528eb3790f3a2810d7ee%2Findex.html&source=template&title=%E6%83%85%E4%BA%BA%E8%8A%82%E4%BD%A0%E6%80%8E%E4%B9%88%E8%BF%87",
+          "title": "情人节你怎么过",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5935271992b57933ec339ae0.png?w=98&h=98&t=1&context=thumb",
+          "author":"萌小强",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58525de2347a190f42496994.png?w=100&h=100&t=1",
+          "money":"69",
+          "buy":"/service.php?action=template&id=5935279aaeece104041ed524&total_fee=69",
+          "author_space":"http://www.mugeda.com/designer.php?urid=57e8f3577f09e1612e1af906"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59fc526f92b579476635c93f&levelOneCategory=guanfang&total_fee=159&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20171103072133%2F59fc4ecc347a191ad878d328%2Findex.html&source=template&title=CP%E6%B6%88%E6%B6%88%E4%B9%90",
+          "title": "CP消消乐",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/59fc524e347a191ae61fde8a.jpg",
+          "author": "木箱子",
+          "faceimg": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5a0aa47692b5796d8e04bfc2.png",
+          "money": "159",
+          "buy":"/service.php?action=template&id=59fc526f92b579476635c93f&total_fee=159",
+          "author_space":"http://www.mugeda.com/designer.php?urid=53d6188ba3664ed9620003cb"
+        },   
+         {
+          "url": "http://www.mugeda.com/case_preview.php?id=59352969aeece104021a0227&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170605051850%2F593521e492b579341e4416e8%2Findex.html&source=template&title=%E7%88%B1%E6%83%85%E6%A8%A1%E6%9D%BF-%E7%88%B1%E6%83%85%E4%B8%80%E7%94%9F",
+          "title": "爱情模板-爱情一生",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5935271992b57933ef670199.png?w=98&h=98&t=1&context=thumb",
+          "author":"花轮先生",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5799b06526e298cd07003444.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=59352969aeece104021a0227&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56133a34a3664e8c600011bf"
+        },   
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5874a1039e89fc05fd3c89bd&levelOneCategory=shangye&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110040918%2F58660ae492b5797e455227fa%2Findex.html&source=template&title=%E6%83%85%E4%BA%BA%E8%8A%82%E6%A8%A1%E6%9D%BF%E2%80%94%E7%88%B1%E5%9C%A8%E5%9B%9B%E5%AD%A3",
+          "title": "情人节模板—爱在四季",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a17347a190a930125b3.png?w=98&h=98&t=1&context=thumb",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=5874a1039e89fc05fd3c89bd&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=57970df6798da1b13f000020&levelOneCategory=shangye&total_fee=9.9&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160722031231%2F5791c70bafec36877c001af5%2Findex.html&source=template&title=1%E6%8A%98%3E%E8%A7%A3%E9%94%81%E7%88%B1%E6%83%85",
+          "title": "1折>解锁爱情",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5795deaf798da19503000c8f.png?w=100&h=100&t=1",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"9.9",
+          "buy":"/service.php?action=template&id=57970df6798da1b13f000020&total_fee=9.9",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=58ff0f8492b57973c313a163&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170425045502%2F58fec29a98ffc305ca611488%2Findex.html&source=template&title=%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF%EF%BC%8D%E5%BF%83%E7%90%86%E6%80%A7%E5%8F%96%E5%90%91",
+          "title": "测试模板－心理性取向",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/58f96f8e347a197dea0db154.jpg?w=100&h=100&t=1",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=58ff0f8492b57973c313a163&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=57970e62798da1253f000034&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160722024705%2F5791c0e1afec36a07c001a4f%2Findex.html&source=template&title=%E8%A7%81%E8%AF%81%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1",
+          "title": "见证我们的爱",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5795deaf798da14b03000c84.png?w=100&h=100&t=1",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=57970e62798da1253f000034&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=58749e859e89fc060015cab7&levelOneCategory=shangye&total_fee=9.9&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110034244%2F586609b592b5797e10603be7%2Findex.html&source=template&title=1%E6%8A%98%3E%E7%94%A8%E5%BF%83%E8%AF%B4%E7%88%B1%E4%BD%A0",
+          "title": "1折>用心说爱你",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a21347a19098862a6a8.png?w=98&h=98&t=1&context=thumb",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"9.9",
+          "buy":"/service.php?action=template&id=58749e859e89fc060015cab7&total_fee=9.9",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5a93a3a792b57957d04a44b8&levelOneCategory=shangye&total_fee=199&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20180226020017%2F5a93a1d592b57942dc0a8786%2Findex.html&source=template&title=%E5%86%AC%E6%97%A5%E7%88%B1%E6%83%85%E4%B9%8B%E6%97%85%E8%90%A5%E9%94%80%E6%A8%A1%E6%9D%BF",
+          "title": "冬日爱情之旅营销模板",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a93a37592b5794b9f6f2053.jpg",
+          "author":"橙子文化-张煦",
+          "faceimg":"http://card.mugeda.com/user/data/55b9e370a3664e7315000124/5a93a37592b5794b9f6f2053.jpg",
+          "money":"199",
+          "buy":"/service.php?action=template&id=5a93a3a792b57957d04a44b8&total_fee=199",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5732f5e2a3664e606d000262"
+        },
+      {
+          "url": "http://www.mugeda.com/case_preview.php?id=58749f7c9e89fc05f500dfcc&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110034635%2F586609ef92b5797e356aa414%2Findex.html&source=template&title=%E6%83%85%E4%BA%BA%E8%8A%82%E6%A8%A1%E6%9D%BF%E2%80%94%E6%83%85%E4%BA%BA%E4%BC%9A",
+          "title": "情人节模板—情人会",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a21347a190a9142f430.png?w=98&h=98&t=1&context=thumb",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=58749f7c9e89fc05f500dfcc&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=58749ffb9e89fc05f500dfdf&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110034827%2F58660a2292b5797e7477fea9%2Findex.html&source=template&title=%E6%83%85%E4%BA%BA%E8%8A%82%E6%A8%A1%E6%9D%BF%E2%80%94%E7%88%B1%E6%83%85%E6%B5%93%E6%B1%A4",
+          "title": "情人节模板—爱情浓汤",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a21347a1909aa257d5b.png?w=98&h=98&t=1&context=thumb",
+          "author":"森林味",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774d99ca3664e842900034c.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=58749ffb9e89fc05f500dfdf&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=51c14e83e8ad7eb64a00002f"
+        },
+         {
+          "url": "http://www.mugeda.com/case_preview.php?id=5874a0529e89fc05fa122a63&levelOneCategory=shangye&total_fee=9.9&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110040739%2F58660ab592b5797df831cf79%2Findex.html&source=template&title=1%E6%8A%98%3E%E7%88%B1%E6%83%85%E7%AB%A5%E8%AF%9D",
+          "title": "1折>爱情童话",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a21347a190ae2692bd4.png?w=98&h=98&t=1&context=thumb",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"9.9",
+          "buy":"/service.php?action=template&id=5874a0529e89fc05fa122a63&total_fee=9.9",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },      
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=5874a0a99e89fc05f644b12c&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.imugeda.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20170110041104%2F58660b6792b5797df831cfa2%2Findex.html&source=template&title=%E6%83%85%E4%BA%BA%E8%8A%82%E6%A8%A1%E6%9D%BF%E2%80%94%E7%88%B1%E6%83%85%E6%95%85%E4%BA%8B",
+          "title": "情人节模板—爱情故事",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/58749a21347a190a56166b09.png?w=98&h=98&t=1&context=thumb",
+          "author": "徐谭谭",
+          "faceimg": "http://card.mugeda.com/user/data/5396d21ca3664e2950000373/578ddcd4a3664e1e320001f5.jpg",
+          "money": "99",
+          "buy":"/service.php?action=template&id=5874a0a99e89fc05f644b12c&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317f00a3664ee3200002b3"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=595622be36dc3005bc72c0b5&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170630060503%2F595600c73224ae05ad0bba7f%2Findex.html&source=template&title=%E7%88%B1%E6%83%85%EF%BC%8D%E6%88%91%E4%BB%AC%E7%9A%84%E7%BA%AA%E5%BF%B5%E6%97%A5",
+          "title": "爱情－我们的纪念日",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/595622383224ae05ac19d75d.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=595622be36dc3005bc72c0b5&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=59a50ce392b579633d52f3e5&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F9b0daf50.u.mgd5.com%2Fcampaigns%2F55b9e370a3664e7315000124%2F20170829114304%2F59a4e2c292b5795e5461b009%2Findex.html&source=template&title=%E7%88%B1%E6%83%85/%E8%90%A5%E9%94%80%E6%A8%A1%E6%9D%BF%EF%BC%8D%E6%89%8B%E7%BB%98%E6%83%85%E4%B9%A6",
+          "title": "爱情/营销模板－手绘情书",
+          "temp_img": "http://card.mugeda.com/user/data/55b9e370a3664e7315000124/59a50cbd92b579633f3d4932.jpg",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=59a50ce392b579633d52f3e5&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=57970cec798da14f03003dbb&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160722115940%2F579199ccafec369c7c001404%2Findex.html&source=template&title=%E6%83%85%E4%BA%BA%E8%8A%82%E5%A4%B4%E6%9D%A1",
+          "title": "情人节头条",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5795deae798da16703000c7d.png?w=100&h=100&t=1",
+          "author":"单世玉",
+          "faceimg":"http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5940a2cb92b5795af060f588.jpg?w=98&h=98&t=1&context=thumb",
+          "money":"99",
+          "buy":"/service.php?action=template&id=57970cec798da14f03003dbb&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=5345fb03a3664eaa25000bbb"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=57970d46798da15f3f000002&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160722022605%2F5791bbe3afec366b7c00195d%2Findex.html&source=template&title=%E7%88%B1%E6%83%85%E8%AF%81%E4%B9%A6",
+          "title": "爱情证书",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5795deae798da14d03000c8f.png?w=100&h=100&t=1",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=57970d46798da15f3f000002&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=57970d99798da1243f000018&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2F1d1ebd92.u.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160722022839%2F5791bceaafec36837c0019b6%2Findex.html&source=template&title=%E4%B8%83%E5%A4%95%E6%83%85%E4%BA%BA%E8%8A%82%E6%9C%80%E7%97%B4%E6%83%85",
+          "title": "七夕情人节最痴情",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/5795deae798da19103000c4a.png?w=100&h=100&t=1",
+          "author":"乔铮",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774df51a3664ec029000351.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=57970d99798da1243f000018&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=504412e66803fa27080001d7"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=56dcfd4da3664e8a65000806&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2Fcard.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160530113443%2F574bb46ea3664e3e3c000970%2Findex.html&source=template&title=%E7%AD%94%E9%A2%98%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF3",
+          "title": "你和TA的般配指数",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/56dcfcbea3664e86650008a5.jpeg?w=100&h=100&t=1",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=56dcfd4da3664e8a65000806&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        },
+        {
+          "url": "http://www.mugeda.com/case_preview.php?id=56dcfd9ba3664ea565000812&levelOneCategory=guanfang&total_fee=99&preview_url=http%3A%2F%2Fcard.mgd5.com%2Fcampaigns%2F55a5d3a1a3664ebc630000c7%2F20160603040934%2F57513acea3664ef90400070b%2Findex.html&source=template&title=%E7%AD%94%E9%A2%98%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF4",
+          "title": "你为什么单身",
+          "temp_img": "http://card.mugeda.com/user/data/55a5d3a1a3664ebc630000c7/56dcfcbda3664eb16500088c.png?w=100&h=100&t=1",
+          "author":"李安",
+          "faceimg":"http://card.mugeda.com/user/data/5396d21ca3664e2950000373/5774da04a3664e3d320002fb.jpg?w=100&h=100&t=1",
+          "money":"99",
+          "buy":"/service.php?action=template&id=56dcfd9ba3664ea565000812&total_fee=99",
+          "author_space":"http://www.mugeda.com/designer.php?urid=56317edca3664edd200001f2"
+        }
+      ]
+    }
+  ]
+//})

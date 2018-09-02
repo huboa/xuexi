@@ -18,5 +18,6 @@
 # db.close()
 
 
-from utils.md5 import  md5
-print(md5("123456"))
+# from utils.md5 import  md5
+# print(md5("123456"))
+
